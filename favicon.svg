@@ -1,25 +1,68 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Dégradés pour chaque segment -->
+    <linearGradient id="gc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="gq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="gs" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F87171"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="ge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="gv" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+    <!-- Lueur centrale -->
+    <radialGradient id="glow">
+      <stop offset="0%" stop-color="white" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Ombre portée -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Fond sombre -->
   <circle cx="50" cy="50" r="50" fill="#0F172A"/>
 
-  <path d="M50,50 L50,2 A48,48,0,0,1,95.7,35.2 Z" fill="#3B82F6"/>
+  <!-- 5 segments avec dégradés -->
+  <path d="M50,50 L50,3 A47,47,0,0,1,94.7,35.5 Z" fill="url(#gc)"/>
+  <path d="M50,50 L94.7,35.5 A47,47,0,0,1,77.5,88 Z" fill="url(#gq)"/>
+  <path d="M50,50 L77.5,88 A47,47,0,0,1,22.5,88 Z" fill="url(#gs)"/>
+  <path d="M50,50 L22.5,88 A47,47,0,0,1,5.3,35.5 Z" fill="url(#ge)"/>
+  <path d="M50,50 L5.3,35.5 A47,47,0,0,1,50,3 Z" fill="url(#gv)"/>
 
-  <path d="M50,50 L95.7,35.2 A48,48,0,0,1,78.2,88.8 Z" fill="#10B981"/>
+  <!-- Séparateurs fins -->
+  <line x1="50" y1="50" x2="50" y2="3" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="50" y1="50" x2="94.7" y2="35.5" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="50" y1="50" x2="77.5" y2="88" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="50" y1="50" x2="22.5" y2="88" stroke="#0F172A" stroke-width="1.8"/>
+  <line x1="50" y1="50" x2="5.3" y2="35.5" stroke="#0F172A" stroke-width="1.8"/>
 
-  <path d="M50,50 L78.2,88.8 A48,48,0,0,1,21.8,88.8 Z" fill="#EF4444"/>
+  <!-- Centre sombre avec ombre -->
+  <circle cx="50" cy="50" r="17" fill="#0F172A" filter="url(#shadow)"/>
 
-  <path d="M50,50 L21.8,88.8 A48,48,0,0,1,4.3,35.2 Z" fill="#F59E0B"/>
+  <!-- Lueur centrale -->
+  <circle cx="50" cy="50" r="17" fill="url(#glow)"/>
 
-  <path d="M50,50 L4.3,35.2 A48,48,0,0,1,50,2 Z" fill="#8B5CF6"/>
+  <!-- Anneau intérieur brillant -->
+  <circle cx="50" cy="50" r="17" fill="none" stroke="white" stroke-width="0.6" opacity="0.2"/>
 
-  <line x1="50" y1="50" x2="50" y2="2" stroke="#0F172A" stroke-width="2"/>
-  <line x1="50" y1="50" x2="95.7" y2="35.2" stroke="#0F172A" stroke-width="2"/>
-  <line x1="50" y1="50" x2="78.2" y2="88.8" stroke="#0F172A" stroke-width="2"/>
-  <line x1="50" y1="50" x2="21.8" y2="88.8" stroke="#0F172A" stroke-width="2"/>
-  <line x1="50" y1="50" x2="4.3" y2="35.2" stroke="#0F172A" stroke-width="2"/>
+  <!-- Reflet subtil en haut (effet verre) -->
+  <ellipse cx="50" cy="30" rx="25" ry="18" fill="white" opacity="0.04"/>
 
-  <circle cx="50" cy="50" r="18" fill="#0F172A"/>
-
-  <circle cx="50" cy="50" r="18" fill="none" stroke="white" stroke-width="0.5" opacity="0.15"/>
-
-  <circle cx="50" cy="50" r="48" fill="none" stroke="white" stroke-width="0.3" opacity="0.1"/>
+  <!-- Contour extérieur -->
+  <circle cx="50" cy="50" r="49" fill="none" stroke="white" stroke-width="0.4" opacity="0.1"/>
 </svg>
