@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cqsev.netlify.app/sitemap.xml
