@@ -1,37 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-
-  <!-- Fond sombre pour bords propres -->
   <circle cx="50" cy="50" r="50" fill="#0F172A"/>
 
-  <!-- C — Bleu — Haut (position 12h → 2h) -->
   <path d="M50,50 L50,2 A48,48,0,0,1,95.7,35.2 Z" fill="#3B82F6"/>
 
-  <!-- Q — Vert — Droite haut (position 2h → 4h) -->
   <path d="M50,50 L95.7,35.2 A48,48,0,0,1,78.2,88.8 Z" fill="#10B981"/>
 
-  <!-- S — Rouge — Droite bas (position 4h → 8h) -->
   <path d="M50,50 L78.2,88.8 A48,48,0,0,1,21.8,88.8 Z" fill="#EF4444"/>
 
-  <!-- E — Ambre — Gauche bas (position 8h → 10h) -->
   <path d="M50,50 L21.8,88.8 A48,48,0,0,1,4.3,35.2 Z" fill="#F59E0B"/>
 
-  <!-- V — Violet — Gauche haut (position 10h → 12h) -->
   <path d="M50,50 L4.3,35.2 A48,48,0,0,1,50,2 Z" fill="#8B5CF6"/>
 
-  <!-- Séparateurs entre segments -->
   <line x1="50" y1="50" x2="50" y2="2" stroke="#0F172A" stroke-width="2"/>
   <line x1="50" y1="50" x2="95.7" y2="35.2" stroke="#0F172A" stroke-width="2"/>
   <line x1="50" y1="50" x2="78.2" y2="88.8" stroke="#0F172A" stroke-width="2"/>
   <line x1="50" y1="50" x2="21.8" y2="88.8" stroke="#0F172A" stroke-width="2"/>
   <line x1="50" y1="50" x2="4.3" y2="35.2" stroke="#0F172A" stroke-width="2"/>
 
-  <!-- Centre sombre — l'anneau -->
   <circle cx="50" cy="50" r="18" fill="#0F172A"/>
 
-  <!-- Anneau intérieur subtil -->
   <circle cx="50" cy="50" r="18" fill="none" stroke="white" stroke-width="0.5" opacity="0.15"/>
 
-  <!-- Anneau extérieur subtil -->
   <circle cx="50" cy="50" r="48" fill="none" stroke="white" stroke-width="0.3" opacity="0.1"/>
-
 </svg>
