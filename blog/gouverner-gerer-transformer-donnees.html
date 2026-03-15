@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO -->
+    <!-- ====== SEO ====== -->
     <title>Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois — CQSEV</title>
     <meta name="description" content="70% des initiatives data échouent. Le problème ? Les règles existent mais personne ne les applique. Découvrez comment les 3 volets du framework CQSEV connectent la stratégie au pipeline.">
     <meta name="author" content="Oleg Chitic">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html">
 
-    <!-- OPEN GRAPH -->
+    <!-- ====== OPEN GRAPH ====== -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois">
     <meta property="og:description" content="70% des initiatives data échouent. Découvrez les 3 volets du framework CQSEV pour connecter la stratégie au pipeline.">
@@ -25,25 +25,28 @@
     <meta property="article:tag" content="gestion données">
     <meta property="article:tag" content="transformation ETL">
     <meta property="article:tag" content="CQSEV">
+    <meta property="article:tag" content="data governance">
+    <meta property="article:tag" content="qualité des données">
 
-    <!-- TWITTER -->
+    <!-- ====== TWITTER ====== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gouverner, Gérer, Transformer — CQSEV">
     <meta name="twitter:description" content="70% des initiatives data échouent. Voici pourquoi — et comment y remédier.">
     <meta name="twitter:image" content="https://cqsev.github.io/og-image.png">
 
-    <!-- SCHEMA.ORG — BLOG POSTING -->
+    <!-- ====== SCHEMA.ORG — BLOG POSTING ====== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois",
-        "description": "70% des initiatives data échouent. Le problème ? Les règles existent mais personne ne les applique. Découvrez comment les 3 volets du framework CQSEV connectent la stratégie au pipeline.",
+        "description": "70% des initiatives de gouvernance des données échouent. Le problème ? Les règles existent mais personne ne les applique et les pipelines ETL ne les automatisent pas. Découvrez comment les 3 volets du framework CQSEV connectent la stratégie au pipeline.",
         "author": {
             "@type": "Person",
             "name": "Oleg Chitic",
             "url": "https://cqsev.github.io/",
-            "jobTitle": "Expert en Gouvernance et Gestion des Données"
+            "jobTitle": "Expert en Gouvernance et Gestion des Données",
+            "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"]
         },
         "publisher": {
             "@type": "Organization",
@@ -54,18 +57,18 @@
         "dateModified": "2025-01-20",
         "url": "https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html",
         "image": "https://cqsev.github.io/og-image.png",
-        "keywords": ["gouvernance données", "gestion données", "transformation ETL", "CQSEV", "data governance", "data management"],
+        "keywords": ["gouvernance données", "gestion données", "transformation ETL", "CQSEV", "data governance", "data management", "qualité données", "Loi 25", "data steward", "ETL ELT"],
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html"
         },
         "articleSection": "Gouvernance des données",
-        "wordCount": "2200",
+        "wordCount": "2800",
         "inLanguage": "fr-CA"
     }
     </script>
 
-    <!-- SCHEMA.ORG — BREADCRUMB -->
+    <!-- ====== SCHEMA.ORG — BREADCRUMB ====== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -78,6 +81,7 @@
     }
     </script>
 
+    <!-- ====== ASSETS ====== -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <meta name="theme-color" content="#0F172A">
 
@@ -94,18 +98,23 @@
 
     <style>
         * { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
         .grad-text-cqsev {
             background: linear-gradient(135deg, #3b82f6, #10b981, #ef4444, #f59e0b, #8b5cf6);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         article h2 { scroll-margin-top: 80px; }
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
         @media print { nav, footer, .no-print { display: none !important; } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- NAVIGATION -->
+    <!-- ====================================================== -->
+    <!-- NAVIGATION (identique au site principal)               -->
+    <!-- ====================================================== -->
     <nav class="fixed top-0 w-full bg-white/85 backdrop-blur-lg shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
             <a href="../" class="flex items-center gap-2.5" aria-label="Accueil CQSEV">
@@ -127,7 +136,9 @@
         </div>
     </nav>
 
-    <!-- FIL D'ARIANE -->
+    <!-- ====================================================== -->
+    <!-- FIL D'ARIANE                                           -->
+    <!-- ====================================================== -->
     <div class="max-w-3xl mx-auto px-6 pt-24 pb-4">
         <nav aria-label="Fil d'Ariane" class="text-sm text-gray-500">
             <a href="../" class="hover:text-indigo-600">Accueil</a>
@@ -138,10 +149,12 @@
         </nav>
     </div>
 
-    <!-- ARTICLE -->
+    <!-- ====================================================== -->
+    <!-- ARTICLE                                                -->
+    <!-- ====================================================== -->
     <article class="max-w-3xl mx-auto px-6 pb-20">
 
-        <!-- EN-TÊTE -->
+        <!-- ====== EN-TÊTE ====== -->
         <header class="mb-12">
             <div class="flex flex-wrap gap-2 mb-6">
                 <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">Gouvernance</span>
@@ -164,16 +177,89 @@
                 </div>
                 <div>
                     <p class="font-semibold text-gray-800">Oleg Chitic</p>
-                    <p class="text-sm text-gray-500">20 janvier 2025 · 8 min de lecture</p>
+                    <p class="text-sm text-gray-500">
+                        <time datetime="2025-01-20">20 janvier 2025</time> · 8 min de lecture
+                    </p>
                 </div>
             </div>
         </header>
 
-        <!-- CONTENU -->
-        <div class="prose prose-lg max-w-none">
+        <!-- ====== TL;DR — RÉSUMÉ SEO + GEO ====== -->
+        <div class="bg-indigo-50 rounded-2xl p-8 border border-indigo-200 mb-10">
+            <h2 class="text-lg font-bold text-indigo-800 mb-4 flex items-center gap-2">
+                <i class="fas fa-bolt text-indigo-500"></i> En résumé
+            </h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                La <strong>gouvernance des données</strong> ne se limite pas à écrire des politiques. 
+                Pour fiabiliser vos données, il faut connecter trois volets : 
+                <strong>gouverner</strong> (définir les règles), 
+                <strong>gérer</strong> (les appliquer au quotidien) et 
+                <strong>transformer</strong> (les automatiser dans les pipelines ETL/ELT). 
+                Le framework CQSEV évalue chaque axe dans ces 3 volets simultanément 
+                pour identifier exactement où intervenir.
+            </p>
+            <p class="text-sm text-indigo-600 font-medium">
+                ⏱️ Temps de lecture : 8 minutes
+            </p>
+        </div>
 
-            <!-- INTRO -->
+        <!-- ====== SOMMAIRE ====== -->
+        <nav class="bg-gray-50 rounded-2xl p-6 border border-gray-200 mb-12" aria-label="Sommaire de l'article">
+            <h2 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">
+                Dans cet article
+            </h2>
+            <ol class="space-y-2 text-sm">
+                <li>
+                    <a href="#probleme" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">1.</span> Le vrai problème : trois silos
+                    </a>
+                </li>
+                <li>
+                    <a href="#gouverner" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">2.</span> Gouverner — les règles du jeu
+                    </a>
+                </li>
+                <li>
+                    <a href="#gerer" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">3.</span> Gérer — les mains dans la terre
+                    </a>
+                </li>
+                <li>
+                    <a href="#transformer" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">4.</span> Transformer — l'usine ETL
+                    </a>
+                </li>
+                <li>
+                    <a href="#cqsev" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">5.</span> CQSEV connecte les trois volets
+                    </a>
+                </li>
+                <li>
+                    <a href="#conclusion" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">6.</span> Par où commencer ?
+                    </a>
+                </li>
+                <li>
+                    <a href="#faq-article" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2">
+                        <span class="text-gray-400">7.</span> Questions fréquentes
+                    </a>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- ====== CONTENU ====== -->
+        <div class="prose prose-lg max-w-none">
             <div class="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
+
+                <!-- INTRO ENRICHIE SEO -->
+                <p>
+                    Pourquoi <strong class="text-gray-900">70% des initiatives de gouvernance des données</strong> 
+                    échouent-elles ? Après 15 ans à accompagner des organisations dans 
+                    leur <strong class="text-gray-900">gestion des données</strong> et leurs projets de 
+                    <strong class="text-gray-900">transformation ETL</strong>, j'ai identifié une cause 
+                    récurrente : les trois volets essentiels — gouverner, gérer et 
+                    transformer — vivent dans des silos séparés.
+                </p>
 
                 <p>
                     Vous connaissez cette scène. Lundi matin, comité de direction.
@@ -197,7 +283,7 @@
                     </p>
                 </div>
 
-                <!-- SECTION 1 : LE PROBLÈME -->
+                <!-- ====== SECTION 1 : LE PROBLÈME ====== -->
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="probleme">
                     Le vrai problème : trois silos
                 </h2>
@@ -233,10 +319,18 @@
                     <strong class="text-gray-900">C'est exactement pour ça que j'ai créé CQSEV avec 3 volets intégrés.</strong>
                 </p>
 
-                <!-- SECTION 2 : VOLET 1 — GOUVERNER -->
+                <!-- ====== SECTION 2 : GOUVERNER ====== -->
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="gouverner">
                     <span class="text-indigo-600">Volet 1</span> — Gouverner : les règles du jeu
                 </h2>
+
+                <!-- DÉFINITION GEO -->
+                <p>
+                    <strong class="text-gray-900">La gouvernance des données</strong> est l'ensemble des 
+                    politiques, rôles et standards qui définissent comment une 
+                    organisation gère ses données. C'est le « quoi » et le « qui » — 
+                    pas le « comment ».
+                </p>
 
                 <p>
                     Gouverner, ce n'est pas créer de la bureaucratie. C'est répondre à une question simple :
@@ -288,10 +382,26 @@
                     </div>
                 </div>
 
-                <!-- SECTION 3 : VOLET 2 — GÉRER -->
+                <!-- LIEN INTERNE SEO -->
+                <p>
+                    Pour approfondir les 5 axes de la gouvernance pragmatique, 
+                    consultez le 
+                    <a href="../#framework" class="text-indigo-600 hover:text-indigo-800 font-semibold underline">
+                    framework CQSEV complet</a> avec ses 3 volets et 5 axes.
+                </p>
+
+                <!-- ====== SECTION 3 : GÉRER ====== -->
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="gerer">
                     <span class="text-emerald-600">Volet 2</span> — Gérer : les mains dans la terre
                 </h2>
+
+                <!-- DÉFINITION GEO -->
+                <p>
+                    <strong class="text-gray-900">La gestion des données</strong> (<em>data management</em>) 
+                    est l'application opérationnelle des règles de gouvernance au 
+                    quotidien. C'est le « comment » et le « quand » — la vérification 
+                    terrain que les règles sont respectées.
+                </p>
 
                 <p>
                     Avoir des règles, c'est bien. <strong class="text-gray-900">Vérifier qu'elles sont appliquées chaque jour</strong>, c'est mieux.
@@ -334,10 +444,26 @@
                     </div>
                 </div>
 
-                <!-- SECTION 4 : VOLET 3 — TRANSFORMER -->
+                <!-- LIEN INTERNE SEO -->
+                <p>
+                    Découvrez des 
+                    <a href="../#terrain" class="text-indigo-600 hover:text-indigo-800 font-semibold underline">
+                    cas concrets du terrain</a> où la gestion quotidienne 
+                    a fait la différence.
+                </p>
+
+                <!-- ====== SECTION 4 : TRANSFORMER ====== -->
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="transformer">
                     <span class="text-orange-600">Volet 3</span> — Transformer : l'usine
                 </h2>
+
+                <!-- DÉFINITION GEO -->
+                <p>
+                    <strong class="text-gray-900">La transformation des données</strong> désigne les processus 
+                    ETL (<em>Extract, Transform, Load</em>) et ELT qui déplacent, 
+                    nettoient et chargent les données d'un système à un autre. C'est 
+                    l'usine automatisée qui applique les règles à grande échelle.
+                </p>
 
                 <p>
                     C'est la partie que tout le monde oublie. <strong class="text-gray-900">Les pipelines ETL/ELT</strong> — la machinerie qui déplace, nettoie et charge les données.
@@ -379,7 +505,14 @@
                     </div>
                 </div>
 
-                <!-- SECTION 5 : CQSEV CONNECTE LES TROIS -->
+                <!-- LIEN INTERNE SEO -->
+                <p>
+                    La <a href="../#matrice" class="text-indigo-600 hover:text-indigo-800 font-semibold underline">
+                    matrice CQSEV</a> montre exactement comment les règles de 
+                    validation doivent être intégrées dans chaque pipeline.
+                </p>
+
+                <!-- ====== SECTION 5 : CQSEV ====== -->
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="cqsev">
                     Ce que CQSEV change : évaluer les trois en même temps
                 </h2>
@@ -418,7 +551,7 @@
                     Pas besoin de tout refaire. Juste de boucher le trou.
                 </p>
 
-                <!-- CONCLUSION -->
+                <!-- ====== SECTION 6 : CONCLUSION ====== -->
                 <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="conclusion">
                     Par où commencer ?
                 </h2>
@@ -457,7 +590,56 @@
             </div>
         </div>
 
-        <!-- AUTEUR -->
+        <!-- ====== FAQ DE L'ARTICLE — SEO + GEO ====== -->
+        <div class="mt-16 pt-8 border-t border-gray-200">
+            <h2 class="text-2xl font-black text-gray-900 mb-8" id="faq-article">
+                Questions fréquentes
+            </h2>
+
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden" open>
+                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition">
+                        <h3 class="font-bold text-gray-800 pr-4">Quelle est la différence entre gouvernance et gestion des données ?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <p>La <strong>gouvernance des données</strong> définit les règles, les rôles et les politiques (le « quoi » et le « qui »). La <strong>gestion des données</strong> applique ces règles au quotidien sur le terrain (le « comment » et le « quand »). La gouvernance sans gestion, c'est une politique que personne ne respecte. La gestion sans gouvernance, c'est du bricolage sans direction.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition">
+                        <h3 class="font-bold text-gray-800 pr-4">Pourquoi faut-il inclure la transformation ETL dans la gouvernance ?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <p>Parce que les règles de qualité qui ne sont pas codées dans le pipeline ETL ne sont pas appliquées. Si votre politique dit « rejeter les doublons » mais que votre pipeline les laisse passer, la donnée en sortie est non fiable. La transformation est là où les règles deviennent concrètes et automatisées.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition">
+                        <h3 class="font-bold text-gray-800 pr-4">Qu'est-ce que le framework CQSEV ?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <p><strong>CQSEV</strong> est un framework pragmatique qui évalue la maturité data d'une organisation sur 5 axes — Conformité, Qualité, Sécurité, Efficacité, Valorisation — à travers 3 volets : gouvernance (les règles), gestion (le terrain) et transformation (l'usine ETL/ELT). Il a été créé par Oleg Chitic après 15 ans d'expérience terrain en gouvernance et gestion des données.</p>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-xl border border-gray-200 overflow-hidden">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 transition">
+                        <h3 class="font-bold text-gray-800 pr-4">Par où commencer pour améliorer la gouvernance des données ?</h3>
+                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                        <p>Commencez par poser les 5 questions CQSEV à votre équipe. Pour chaque question, demandez : la règle existe-t-elle ? Quelqu'un la vérifie-t-il ? Le pipeline l'applique-t-il ? Les cases vides sont vos priorités d'action. Pas besoin de budget ni d'outil — juste de la clarté sur ce qui manque.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- ====== AUTEUR ====== -->
         <div class="mt-16 pt-8 border-t border-gray-200">
             <div class="flex items-start gap-6">
                 <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -465,7 +647,7 @@
                 </div>
                 <div>
                     <p class="font-bold text-lg text-gray-900">Oleg Chitic</p>
-                    <p class="text-gray-600 mt-1">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données. Je partage des réflexions terrain — pas de la théorie.</p>
+                    <p class="text-gray-600 mt-1">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données à travers les secteurs financier, assurance, commerce de détail et technologie à Montréal. Je partage des réflexions terrain — pas de la théorie.</p>
                     <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center gap-2 mt-3 text-[#0A66C2] font-semibold text-sm hover:underline">
                         <i class="fab fa-linkedin-in"></i> Suivre sur LinkedIn
@@ -474,7 +656,7 @@
             </div>
         </div>
 
-        <!-- CTA -->
+        <!-- ====== CTA ====== -->
         <div class="mt-12 bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-8 text-white text-center">
             <h3 class="text-2xl font-black mb-4">Envie d'aller plus loin ?</h3>
             <p class="text-gray-300 mb-6 max-w-lg mx-auto">
@@ -487,7 +669,7 @@
             </a>
         </div>
 
-        <!-- RETOUR BLOG -->
+        <!-- ====== RETOUR BLOG ====== -->
         <div class="mt-8 text-center">
             <a href="./" class="text-gray-500 hover:text-indigo-600 text-sm font-medium">
                 <i class="fas fa-arrow-left mr-1"></i> Retour au blog
@@ -496,7 +678,51 @@
 
     </article>
 
-    <!-- FOOTER -->
+    <!-- ====== SCHEMA.ORG FAQ ====== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Quelle est la différence entre gouvernance et gestion des données ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "La gouvernance des données définit les règles, les rôles et les politiques (le quoi et le qui). La gestion des données applique ces règles au quotidien sur le terrain (le comment et le quand). La gouvernance sans gestion est une politique que personne ne respecte. La gestion sans gouvernance est du bricolage sans direction."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Pourquoi faut-il inclure la transformation ETL dans la gouvernance ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Les règles de qualité qui ne sont pas codées dans le pipeline ETL ne sont pas appliquées. Si votre politique dit rejeter les doublons mais que votre pipeline les laisse passer, la donnée en sortie est non fiable. La transformation est là où les règles deviennent concrètes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que le framework CQSEV ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets : gouvernance, gestion et transformation ETL/ELT. Créé par Oleg Chitic après 15 ans d'expérience terrain."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Par où commencer pour améliorer la gouvernance des données ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Posez les 5 questions CQSEV à votre équipe. Pour chaque question demandez : la règle existe-t-elle ? Quelqu'un la vérifie-t-il ? Le pipeline l'applique-t-il ? Les cases vides sont vos priorités d'action."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ====================================================== -->
+    <!-- FOOTER                                                 -->
+    <!-- ====================================================== -->
     <footer class="bg-slate-950 text-gray-500 py-8">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
@@ -504,8 +730,8 @@
                 <p class="text-sm text-gray-600">Framework pragmatique de gouvernance, gestion et transformation des données</p>
             </div>
             <div class="flex items-center gap-4">
-                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition"><i class="fab fa-linkedin-in text-lg"></i></a>
-                <a href="mailto:cqsev.data@gmail.com" class="text-gray-500 hover:text-white transition"><i class="fas fa-envelope text-lg"></i></a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="mailto:cqsev.data@gmail.com" class="text-gray-500 hover:text-white transition" aria-label="Email"><i class="fas fa-envelope text-lg"></i></a>
             </div>
         </div>
         <div class="max-w-6xl mx-auto px-6 mt-6 pt-6 border-t border-gray-800">
