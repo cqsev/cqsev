@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois — CQSEV</title>
+    <meta name="description" content="70% des initiatives data échouent. Le problème ? Les règles existent mais personne ne les applique. Découvrez comment les 3 volets du framework CQSEV connectent la stratégie au pipeline.">
+    <meta name="author" content="Oleg Chitic">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html">
+
+    <!-- OPEN GRAPH -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois">
+    <meta property="og:description" content="70% des initiatives data échouent. Découvrez les 3 volets du framework CQSEV pour connecter la stratégie au pipeline.">
+    <meta property="og:url" content="https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html">
+    <meta property="og:image" content="https://cqsev.github.io/og-image.png">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:site_name" content="CQSEV Framework">
+    <meta property="article:author" content="Oleg Chitic">
+    <meta property="article:published_time" content="2025-01-20T00:00:00Z">
+    <meta property="article:tag" content="gouvernance données">
+    <meta property="article:tag" content="gestion données">
+    <meta property="article:tag" content="transformation ETL">
+    <meta property="article:tag" content="CQSEV">
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gouverner, Gérer, Transformer — CQSEV">
+    <meta name="twitter:description" content="70% des initiatives data échouent. Voici pourquoi — et comment y remédier.">
+    <meta name="twitter:image" content="https://cqsev.github.io/og-image.png">
+
+    <!-- SCHEMA.ORG — BLOG POSTING -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois",
+        "description": "70% des initiatives data échouent. Le problème ? Les règles existent mais personne ne les applique. Découvrez comment les 3 volets du framework CQSEV connectent la stratégie au pipeline.",
+        "author": {
+            "@type": "Person",
+            "name": "Oleg Chitic",
+            "url": "https://cqsev.github.io/",
+            "jobTitle": "Expert en Gouvernance et Gestion des Données"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CQSEV Framework",
+            "url": "https://cqsev.github.io/"
+        },
+        "datePublished": "2025-01-20",
+        "dateModified": "2025-01-20",
+        "url": "https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html",
+        "image": "https://cqsev.github.io/og-image.png",
+        "keywords": ["gouvernance données", "gestion données", "transformation ETL", "CQSEV", "data governance", "data management"],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html"
+        },
+        "articleSection": "Gouvernance des données",
+        "wordCount": "2200",
+        "inLanguage": "fr-CA"
+    }
+    </script>
+
+    <!-- SCHEMA.ORG — BREADCRUMB -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cqsev.github.io/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cqsev.github.io/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Gouverner, Gérer, Transformer"}
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="theme-color" content="#0F172A">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .grad-text-cqsev {
+            background: linear-gradient(135deg, #3b82f6, #10b981, #ef4444, #f59e0b, #8b5cf6);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        article h2 { scroll-margin-top: 80px; }
+        @media print { nav, footer, .no-print { display: none !important; } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full bg-white/85 backdrop-blur-lg shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+            <a href="../" class="flex items-center gap-2.5" aria-label="Accueil CQSEV">
+                <img src="../logo-icon.svg" alt="" width="32" height="32" class="h-8 w-8">
+                <span class="grad-text-cqsev font-black text-xl tracking-tight">CQSEV</span>
+            </a>
+            <div class="hidden md:flex items-center gap-7">
+                <a href="../#framework" class="text-sm font-medium text-gray-500 hover:text-indigo-600">Framework</a>
+                <a href="../#matrice" class="text-sm font-medium text-gray-500 hover:text-indigo-600">Matrice</a>
+                <a href="../#terrain" class="text-sm font-medium text-gray-500 hover:text-indigo-600">Terrain</a>
+                <a href="../#auteur" class="text-sm font-medium text-gray-500 hover:text-indigo-600">L'auteur</a>
+                <a href="../#faq" class="text-sm font-medium text-gray-500 hover:text-indigo-600">FAQ</a>
+                <a href="./" class="text-sm font-medium text-indigo-600 border-b-2 border-indigo-600 pb-1">Blog</a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
+                   class="bg-[#0A66C2] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#004182] transition flex items-center gap-2">
+                    <i class="fab fa-linkedin-in text-xs"></i> Suivre
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FIL D'ARIANE -->
+    <div class="max-w-3xl mx-auto px-6 pt-24 pb-4">
+        <nav aria-label="Fil d'Ariane" class="text-sm text-gray-500">
+            <a href="../" class="hover:text-indigo-600">Accueil</a>
+            <span class="mx-2">›</span>
+            <a href="./" class="hover:text-indigo-600">Blog</a>
+            <span class="mx-2">›</span>
+            <span class="text-gray-800 font-medium">Gouverner, Gérer, Transformer</span>
+        </nav>
+    </div>
+
+    <!-- ARTICLE -->
+    <article class="max-w-3xl mx-auto px-6 pb-20">
+
+        <!-- EN-TÊTE -->
+        <header class="mb-12">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">Gouvernance</span>
+                <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">Gestion</span>
+                <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold">Transformation</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
+                Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois
+            </h1>
+
+            <p class="text-xl text-gray-500 leading-relaxed mb-8">
+                70% des initiatives data échouent. Pas à cause de la technologie.
+                Le vrai problème ? Trois mondes qui ne se parlent pas.
+            </p>
+
+            <div class="flex items-center gap-4 pb-8 border-b border-gray-200">
+                <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold">OC</span>
+                </div>
+                <div>
+                    <p class="font-semibold text-gray-800">Oleg Chitic</p>
+                    <p class="text-sm text-gray-500">20 janvier 2025 · 8 min de lecture</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- CONTENU -->
+        <div class="prose prose-lg max-w-none">
+
+            <!-- INTRO -->
+            <div class="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed">
+
+                <p>
+                    Vous connaissez cette scène. Lundi matin, comité de direction.
+                    Le VP Marketing présente ses chiffres : <strong class="text-gray-900">« Le client moyen a dépensé 50 000 $ ce trimestre. »</strong>
+                </p>
+
+                <p>
+                    Le VP Finance fronce les sourcils. Ses chiffres disent <strong class="text-gray-900">45 000 $</strong>.
+                </p>
+
+                <p>
+                    Qui a raison ? Personne ne sait. Tout le monde blâme « les données ».
+                    Le CEO demande de « régler ça ». Un consultant est engagé. Un outil MDM à 500K$ est acheté.
+                    Six mois plus tard, les chiffres ne concordent toujours pas.
+                </p>
+
+                <div class="bg-slate-800 rounded-2xl p-8 text-white my-10">
+                    <p class="text-lg md:text-xl font-medium text-center">
+                        Le problème n'était pas l'outil.<br>
+                        Le problème, c'est que <span class="text-yellow-400">trois mondes essentiels ne se parlaient pas</span>.
+                    </p>
+                </div>
+
+                <!-- SECTION 1 : LE PROBLÈME -->
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="probleme">
+                    Le vrai problème : trois silos
+                </h2>
+
+                <p>
+                    Dans la plupart des organisations, la donnée est gérée en trois silos qui s'ignorent :
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+                    <div class="bg-indigo-50 rounded-xl p-6 border border-indigo-200">
+                        <div class="text-3xl mb-3">🏛️</div>
+                        <h3 class="font-bold text-indigo-800 mb-2">Les stratèges</h3>
+                        <p class="text-sm text-gray-600">Ils écrivent les politiques. 200 pages. Personne ne les lit.</p>
+                    </div>
+                    <div class="bg-emerald-50 rounded-xl p-6 border border-emerald-200">
+                        <div class="text-3xl mb-3">🔧</div>
+                        <h3 class="font-bold text-emerald-800 mb-2">Les opérationnels</h3>
+                        <p class="text-sm text-gray-600">Ils font ce qu'ils peuvent. Sans directives claires. Avec des Excel.</p>
+                    </div>
+                    <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+                        <div class="text-3xl mb-3">⚙️</div>
+                        <h3 class="font-bold text-orange-800 mb-2">Les ingénieurs</h3>
+                        <p class="text-sm text-gray-600">Ils construisent des pipelines. Sans savoir si les règles sont respectées.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Le résultat ? Les règles restent sur papier. Le terrain improvise.
+                    Et l'usine ETL transforme des données dont personne ne garantit la qualité.
+                </p>
+
+                <p>
+                    <strong class="text-gray-900">C'est exactement pour ça que j'ai créé CQSEV avec 3 volets intégrés.</strong>
+                </p>
+
+                <!-- SECTION 2 : VOLET 1 — GOUVERNER -->
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="gouverner">
+                    <span class="text-indigo-600">Volet 1</span> — Gouverner : les règles du jeu
+                </h2>
+
+                <p>
+                    Gouverner, ce n'est pas créer de la bureaucratie. C'est répondre à une question simple :
+                </p>
+
+                <div class="bg-indigo-50 rounded-2xl p-8 border border-indigo-200 my-8">
+                    <p class="text-xl font-bold text-indigo-800 text-center italic">
+                        « Qui décide quoi sur les données, et selon quelles règles ? »
+                    </p>
+                </div>
+
+                <p>
+                    Pensez au <strong class="text-gray-900">Ministère de la Santé</strong> pour l'eau potable.
+                    Il ne filtre pas l'eau lui-même. Il définit les normes : « L'eau doit contenir moins de
+                    0.5 mg/L de chlore. » Il nomme un responsable. Il audite les stations.
+                </p>
+
+                <p>
+                    En entreprise, c'est pareil. Le comité data définit que <strong class="text-gray-900">« client actif »
+                    = une transaction dans les 12 derniers mois</strong>. Point. Pas de débat possible.
+                    Marketing et Finance utilisent la même définition.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Concrètement, gouverner c'est :</h3>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-indigo-500 mt-1 flex-shrink-0"></i>
+                        <span>Nommer un <strong>Data Owner</strong> pour chaque domaine de données</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-indigo-500 mt-1 flex-shrink-0"></i>
+                        <span>Définir un <strong>glossaire métier</strong> — pas 200 pages, juste les 20 termes qui posent problème</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-indigo-500 mt-1 flex-shrink-0"></i>
+                        <span>Écrire les <strong>3 politiques critiques</strong> : qualité, accès, rétention</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-indigo-500 mt-1 flex-shrink-0"></i>
+                        <span>Mesurer la conformité à la <strong>Loi 25</strong> et au RGPD</span>
+                    </li>
+                </ul>
+
+                <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 my-8">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-lightbulb text-amber-500 text-xl mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700"><strong class="text-amber-800">Le piège :</strong> Trop de gouvernance tue la gouvernance. 3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p>
+                    </div>
+                </div>
+
+                <!-- SECTION 3 : VOLET 2 — GÉRER -->
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="gerer">
+                    <span class="text-emerald-600">Volet 2</span> — Gérer : les mains dans la terre
+                </h2>
+
+                <p>
+                    Avoir des règles, c'est bien. <strong class="text-gray-900">Vérifier qu'elles sont appliquées chaque jour</strong>, c'est mieux.
+                </p>
+
+                <p>
+                    Pensez à la <strong class="text-gray-900">station de traitement de l'eau</strong>. Chaque matin, un technicien teste le pH.
+                    Vérifie le chlore. Si c'est hors norme, il alerte et corrige. Il ne crée pas une nouvelle politique — il applique celle qui existe.
+                </p>
+
+                <p>
+                    En entreprise, c'est le <strong class="text-gray-900">Data Steward</strong> qui fait ce travail. Chaque semaine, il vérifie le taux de doublons dans le CRM. Si c'est au-dessus de 5%, il lance un nettoyage. Il ne demande pas la permission au comité. La règle est claire, il l'applique.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Concrètement, gérer c'est :</h3>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Mesurer</strong> la qualité chaque semaine (pas chaque trimestre)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Corriger</strong> les anomalies dès qu'elles sont détectées</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1 flex-shrink-0"></i>
+                        <span>Tenir les <strong>métadonnées à jour</strong> pour que tout le monde trouve ce qu'il cherche</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-emerald-500 mt-1 flex-shrink-0"></i>
+                        <span>Faire des <strong>revues d'accès</strong> trimestrielles : qui a accès à quoi ?</span>
+                    </li>
+                </ul>
+
+                <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 my-8">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-lightbulb text-amber-500 text-xl mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700"><strong class="text-amber-800">Le piège :</strong> Des règles sans vérification terrain = une fiction. Si personne ne vérifie, les règles n'existent pas vraiment.</p>
+                    </div>
+                </div>
+
+                <!-- SECTION 4 : VOLET 3 — TRANSFORMER -->
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="transformer">
+                    <span class="text-orange-600">Volet 3</span> — Transformer : l'usine
+                </h2>
+
+                <p>
+                    C'est la partie que tout le monde oublie. <strong class="text-gray-900">Les pipelines ETL/ELT</strong> — la machinerie qui déplace, nettoie et charge les données.
+                </p>
+
+                <p>
+                    Pensez aux <strong class="text-gray-900">tuyaux et filtres de l'eau</strong>. L'eau est captée (Extract), passe par les filtres (Transform), et arrive au réservoir (Load). Si un filtre casse, toute la ville boit de l'eau sale.
+                </p>
+
+                <p>
+                    En entreprise, c'est pareil. Votre pipeline extrait du CRM, nettoie, dédoublonne, et charge dans le Data Warehouse. Mais si les <strong class="text-gray-900">règles de qualité définies en gouvernance ne sont pas codées dans le pipeline</strong>, des données invalides passent. Le VP ouvre son rapport le lundi matin — et les chiffres sont faux.
+                </p>
+
+                <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">Concrètement, transformer c'est :</h3>
+
+                <ul class="space-y-3 my-6">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Intégrer les règles de validation</strong> directement dans le pipeline</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Rejeter automatiquement</strong> les données non conformes</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Masquer les données sensibles</strong> (PII) dès l'extraction</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-orange-500 mt-1 flex-shrink-0"></i>
+                        <span><strong>Alerter</strong> quand un flux échoue — pas découvrir le problème 3 jours après</span>
+                    </li>
+                </ul>
+
+                <div class="bg-amber-50 rounded-xl p-6 border border-amber-200 my-8">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-lightbulb text-amber-500 text-xl mt-1 flex-shrink-0"></i>
+                        <p class="text-gray-700"><strong class="text-amber-800">Le piège :</strong> Un pipeline sans règles de gouvernance intégrées = une usine qui produit des données non fiables à grande vitesse.</p>
+                    </div>
+                </div>
+
+                <!-- SECTION 5 : CQSEV CONNECTE LES TROIS -->
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="cqsev">
+                    Ce que CQSEV change : évaluer les trois en même temps
+                </h2>
+
+                <p>
+                    Le framework CQSEV pose <strong class="text-gray-900">5 questions</strong> (Conformité, Qualité, Sécurité, Efficacité, Valorisation) — mais chaque question est évaluée <strong class="text-gray-900">dans les 3 volets simultanément</strong>.
+                </p>
+
+                <p>
+                    Prenons la <strong class="text-gray-900">Qualité</strong> comme exemple :
+                </p>
+
+                <div class="overflow-x-auto my-8">
+                    <table class="w-full text-sm bg-white rounded-xl overflow-hidden border border-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="p-4 text-left bg-gray-100 text-gray-600 font-bold">Question</th>
+                                <th class="p-4 text-center bg-indigo-600 text-white font-bold">Gouverner</th>
+                                <th class="p-4 text-center bg-emerald-600 text-white font-bold">Gérer</th>
+                                <th class="p-4 text-center bg-orange-600 text-white font-bold">Transformer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-4 font-bold text-gray-800">Qualité</td>
+                                <td class="p-4 text-center text-gray-600 bg-indigo-50/50 text-xs">A-t-on défini les standards ?</td>
+                                <td class="p-4 text-center text-gray-600 bg-emerald-50/50 text-xs">Quelqu'un les vérifie-t-il chaque jour ?</td>
+                                <td class="p-4 text-center text-gray-600 bg-orange-50/50 text-xs">Le pipeline rejette-t-il les données invalides ?</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>
+                    Si la réponse est « non » à un seul niveau, on sait <strong class="text-gray-900">exactement où intervenir</strong>.
+                    Pas besoin de tout refaire. Juste de boucher le trou.
+                </p>
+
+                <!-- CONCLUSION -->
+                <h2 class="text-2xl md:text-3xl font-black text-gray-900 mt-16 mb-6" id="conclusion">
+                    Par où commencer ?
+                </h2>
+
+                <p>
+                    Si vous ne devez retenir qu'une chose de cet article, c'est celle-ci :
+                </p>
+
+                <div class="bg-slate-800 rounded-2xl p-8 text-white my-10">
+                    <p class="text-lg md:text-xl font-medium text-center">
+                        Ne commencez pas par acheter un outil.<br>
+                        Commencez par poser <span class="text-yellow-400">5 questions</span>,<br>
+                        dans <span class="text-indigo-400">3 volets</span>.
+                    </p>
+                </div>
+
+                <p>
+                    Pour chaque axe de CQSEV, demandez à votre équipe :
+                </p>
+
+                <ol class="space-y-3 my-6 list-decimal list-inside">
+                    <li><strong>La règle existe-t-elle ?</strong> (Gouverner)</li>
+                    <li><strong>Quelqu'un la vérifie-t-il ?</strong> (Gérer)</li>
+                    <li><strong>Le pipeline l'applique-t-il ?</strong> (Transformer)</li>
+                </ol>
+
+                <p>
+                    Les cases vides sont vos priorités d'action. Pas de budget requis.
+                    Pas d'outil à acheter. Juste de la clarté.
+                </p>
+
+                <p>
+                    <a href="../#matrice" class="text-indigo-600 hover:text-indigo-800 font-semibold underline">
+                        → Voir la matrice CQSEV complète (5 axes × 3 volets)</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- AUTEUR -->
+        <div class="mt-16 pt-8 border-t border-gray-200">
+            <div class="flex items-start gap-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <span class="text-white text-xl font-bold">OC</span>
+                </div>
+                <div>
+                    <p class="font-bold text-lg text-gray-900">Oleg Chitic</p>
+                    <p class="text-gray-600 mt-1">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données. Je partage des réflexions terrain — pas de la théorie.</p>
+                    <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 mt-3 text-[#0A66C2] font-semibold text-sm hover:underline">
+                        <i class="fab fa-linkedin-in"></i> Suivre sur LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-gradient-to-br from-slate-900 to-indigo-950 rounded-2xl p-8 text-white text-center">
+            <h3 class="text-2xl font-black mb-4">Envie d'aller plus loin ?</h3>
+            <p class="text-gray-300 mb-6 max-w-lg mx-auto">
+                Découvrez la matrice complète CQSEV —
+                15 points de contrôle pour diagnostiquer
+                votre maturité data en une seule grille.
+            </p>
+            <a href="../#matrice" class="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-indigo-500/25">
+                Voir la matrice CQSEV <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <!-- RETOUR BLOG -->
+        <div class="mt-8 text-center">
+            <a href="./" class="text-gray-500 hover:text-indigo-600 text-sm font-medium">
+                <i class="fas fa-arrow-left mr-1"></i> Retour au blog
+            </a>
+        </div>
+
+    </article>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-gray-500 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-bold text-gray-400">CQSEV</p>
+                <p class="text-sm text-gray-600">Framework pragmatique de gouvernance, gestion et transformation des données</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="mailto:cqsev.data@gmail.com" class="text-gray-500 hover:text-white transition"><i class="fas fa-envelope text-lg"></i></a>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 mt-6 pt-6 border-t border-gray-800">
+            <p class="text-xs text-gray-600 text-center">© 2025 Oleg Chitic — CQSEV Framework</p>
+        </div>
+    </footer>
+
+</body>
+</html>
