@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Blog CQSEV — Gouvernance, Gestion et Transformation des Données</title>
+    <meta name="description" content="Articles pratiques sur la gouvernance des données, la gestion terrain et la transformation ETL. Par Oleg Chitic, créateur du framework CQSEV.">
+    <meta name="author" content="Oleg Chitic">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cqsev.github.io/blog/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog CQSEV — Articles sur la Gouvernance des Données">
+    <meta property="og:description" content="Articles pratiques sur la gouvernance des données, la gestion terrain et la transformation ETL/ELT.">
+    <meta property="og:url" content="https://cqsev.github.io/blog/">
+    <meta property="og:image" content="https://cqsev.github.io/og-image.png">
+    <meta property="og:locale" content="fr_CA">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog CQSEV — Gouvernance des Données">
+    <meta name="twitter:description" content="Articles pratiques sur la gouvernance, gestion et transformation des données.">
+    <meta name="twitter:image" content="https://cqsev.github.io/og-image.png">
+
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta name="theme-color" content="#0F172A">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .grad-text-cqsev {
+            background: linear-gradient(135deg, #3b82f6, #10b981, #ef4444, #f59e0b, #8b5cf6);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-lift { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .card-lift:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(0,0,0,0.08); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full bg-white/85 backdrop-blur-lg shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
+            <a href="../" class="flex items-center gap-2.5" aria-label="Accueil CQSEV">
+                <img src="../logo-icon.svg" alt="" width="32" height="32" class="h-8 w-8">
+                <span class="grad-text-cqsev font-black text-xl tracking-tight">CQSEV</span>
+            </a>
+            <div class="hidden md:flex items-center gap-7">
+                <a href="../#framework" class="text-sm font-medium text-gray-500 hover:text-indigo-600">Framework</a>
+                <a href="../#matrice" class="text-sm font-medium text-gray-500 hover:text-indigo-600">Matrice</a>
+                <a href="./" class="text-sm font-medium text-indigo-600 border-b-2 border-indigo-600 pb-1">Blog</a>
+                <a href="../#faq" class="text-sm font-medium text-gray-500 hover:text-indigo-600">FAQ</a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
+                   class="bg-[#0A66C2] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#004182] transition flex items-center gap-2">
+                    <i class="fab fa-linkedin-in text-xs"></i> Suivre
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO BLOG -->
+    <section class="pt-28 pb-16 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="text-indigo-300 font-semibold text-sm uppercase tracking-wider mb-4">Blog CQSEV</p>
+            <h1 class="text-4xl md:text-5xl font-black mb-6">
+                Réflexions sur la gouvernance<br>des données
+            </h1>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                Articles pratiques, retours d'expérience et leçons du terrain.
+                Pas de théorie abstraite — que du concret.
+            </p>
+        </div>
+    </section>
+
+    <!-- FIL D'ARIANE -->
+    <div class="max-w-4xl mx-auto px-6 py-4">
+        <nav aria-label="Fil d'Ariane" class="text-sm text-gray-500">
+            <a href="../" class="hover:text-indigo-600">Accueil</a>
+            <span class="mx-2">›</span>
+            <span class="text-gray-800 font-medium">Blog</span>
+        </nav>
+    </div>
+
+    <!-- LISTE DES ARTICLES -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-6">
+
+            <!-- ARTICLE 1 -->
+            <a href="gouverner-gerer-transformer-donnees.html" class="card-lift block bg-white rounded-2xl border border-gray-200 overflow-hidden mb-8">
+                <div class="p-8">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">Gouvernance</span>
+                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold">Gestion</span>
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold">Transformation</span>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black text-gray-900 mb-4">
+                        Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        70% des initiatives data échouent. Pas à cause de la technologie. Le vrai problème ? 
+                        Les règles sont écrites mais personne ne les applique, et les pipelines transforment 
+                        des données sans savoir si elles sont fiables. Voici comment le framework CQSEV 
+                        connecte les trois volets.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                                <span class="text-white text-sm font-bold">OC</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-semibold text-gray-800">Oleg Chitic</p>
+                                <p class="text-xs text-gray-500">Janvier 2025 · 8 min de lecture</p>
+                            </div>
+                        </div>
+                        <span class="text-indigo-600 font-semibold text-sm flex items-center gap-1">
+                            Lire l'article <i class="fas fa-arrow-right text-xs"></i>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- MESSAGE POUR FUTURS ARTICLES -->
+            <div class="text-center py-12 text-gray-400">
+                <i class="fas fa-pen-fancy text-3xl mb-4"></i>
+                <p class="text-lg font-medium">D'autres articles arrivent bientôt.</p>
+                <p class="text-sm mt-2">
+                    <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" 
+                       class="text-indigo-500 hover:text-indigo-700 font-medium">
+                        Suivez-moi sur LinkedIn</a> pour ne rien manquer.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-gray-500 py-8">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <p class="font-bold text-gray-400">CQSEV</p>
+                <p class="text-sm text-gray-600">Framework pragmatique de gouvernance, gestion et transformation des données</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="mailto:cqsev.data@gmail.com" class="text-gray-500 hover:text-white transition" aria-label="Email"><i class="fas fa-envelope text-lg"></i></a>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 mt-6 pt-6 border-t border-gray-800">
+            <p class="text-xs text-gray-600 text-center">© 2025 Oleg Chitic — CQSEV Framework</p>
+        </div>
+    </footer>
+
+</body>
+</html>
