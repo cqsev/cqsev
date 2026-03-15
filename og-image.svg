@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="og-gov" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="100%" stop-color="#4338CA"/>
+    </linearGradient>
+    <linearGradient id="og-ges" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6EE7B7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="og-tra" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <filter id="og-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#818CF8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Fond sombre -->
+  <rect width="1200" height="630" fill="#0F172A"/>
+
+  <!-- Effets de lumière -->
+  <circle cx="120" cy="80" r="280" fill="#4F46E5" opacity="0.05"/>
+  <circle cx="1080" cy="550" r="320" fill="#7C3AED" opacity="0.04"/>
+  <circle cx="300" cy="500" r="200" fill="#059669" opacity="0.03"/>
+
+  <!-- ═══ TROIS ARCS À GAUCHE ═══ -->
+  <g transform="translate(220, 315)" filter="url(#og-glow)">
+    <path d="M 18.6,-10.7 A 21.4,21.4 0 1,0 18.6,10.7"
+          fill="none" stroke="url(#og-gov)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 33.3,-27.9 A 43.5,43.5 0 1,0 33.3,27.9"
+          fill="none" stroke="url(#og-ges)" stroke-width="11" stroke-linecap="round"/>
+    <path d="M 44.6,-53.2 A 69.4,69.4 0 1,0 44.6,53.2"
+          fill="none" stroke="url(#og-tra)" stroke-width="12" stroke-linecap="round"/>
+  </g>
+
+  <!-- Légendes arcs -->
+  <text x="220" y="440" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#818CF8">Gouverner</text>
+  <text x="220" y="462" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#6EE7B7">Gérer</text>
+  <text x="220" y="484" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="14" fill="#FDBA74">Transformer</text>
+
+  <!-- ═══ TEXTE À DROITE ═══ -->
+
+  <!-- CQSEV coloré -->
+  <text y="230" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="86" letter-spacing="-1">
+    <tspan x="480" fill="#3B82F6">C</tspan><tspan fill="#10B981">Q</tspan><tspan fill="#EF4444">S</tspan><tspan fill="#F59E0B">E</tspan><tspan fill="#8B5CF6">V</tspan>
+  </text>
+
+  <!-- Ligne séparatrice -->
+  <line x1="480" y1="255" x2="720" y2="255" stroke="#6366F1" stroke-width="3" opacity="0.5"/>
+
+  <!-- Sous-titre coloré -->
+  <text y="300" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="28">
+    <tspan x="480" fill="#818CF8">Gouverner</tspan><tspan fill="#475569"> · </tspan><tspan fill="#6EE7B7">Gérer</tspan><tspan fill="#475569"> · </tspan><tspan fill="#FDBA74">Transformer</tspan>
+  </text>
+
+  <!-- Description -->
+  <text x="480" y="360" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="22">Framework en 5 axes × 3 volets pour</text>
+  <text x="480" y="393" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="22">fiabiliser vos données — de la politique</text>
+  <text x="480" y="426" fill="#64748B" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="22">jusqu'au pipeline.</text>
+
+  <!-- URL -->
+  <text x="480" y="510" fill="#818CF8" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="20">cqsev.netlify.app</text>
+
+  <!-- Crédit -->
+  <text x="480" y="545" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="16">par Oleg Chitic — 15+ ans d'expérience terrain</text>
+
+  <!-- Bordure subtile -->
+  <rect x="1" y="1" width="1198" height="628" rx="4" ry="4" fill="none" stroke="white" stroke-width="1" opacity="0.05"/>
+</svg>
