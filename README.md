@@ -1,16 +1,20 @@
-## Hi there 👋
+# CQSEV — Framework de Gouvernance des Données
 
-<!--
-**CQSEV/cqsev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**Gouverner · Gérer · Transformer**
 
-Here are some ideas to get you started:
+CQSEV est un framework pragmatique en 5 axes × 3 volets 
+pour fiabiliser les données — de la politique au pipeline.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+🌐 **Site web** : [cqsev.github.io](https://cqsev.github.io)
+
+👤 **Créateur** : Oleg Chitic — 15+ ans d'expérience en 
+gouvernance et gestion des données
+
+🔗 **LinkedIn** : [oleg-chitic-67426915](https://www.linkedin.com/in/oleg-chitic-67426915/)
+
+---
+
+© 2025 Oleg Chitic — Tous droits réservés.
+
+Le framework CQSEV est une création originale. 
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
