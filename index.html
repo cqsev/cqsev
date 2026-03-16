@@ -1,682 +1,636 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr" class="scroll-smooth">
+<html lang="fr" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0f172a">
-    <meta name="google-site-verification" content="HbtMm0eXEvABW2QnFyBHFpEVDfq1IfxBph2c87icizo" />
 
-    <!-- Favicon inline -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg"> 
-    
-    <!-- SEO -->
-    <title>CQSEV — Gouverner, Gérer et Transformer vos Données | Framework par Oleg CHITIC</title>
+    <!-- ====== SEO ====== -->
+    <title>CQSEV — Gouverner, Gérer et Transformer vos Données | Framework par Oleg Chitic</title>
     <meta name="description" content="CQSEV : framework en 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) pour gouverner, gérer et transformer vos données sans bureaucratie. De la politique au pipeline.">
     <meta name="keywords" content="CQSEV, gouvernance données, data governance, gestion données, data management, ETL, transformation données, qualité données, Loi 25, DAMA DMBOK, framework données">
     <meta name="author" content="Oleg Chitic">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cqsev.github.io/">
+    <meta name="theme-color" content="#6366F1">
 
-    <!-- Open Graph -->
+    <!-- ====== OPEN GRAPH ====== -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="CQSEV - Gouverner, Gérer et Transformer vos Données">
-    <meta property="og:description" content="Un framework en 5 axes × 3 volets pour fiabiliser vos données de façon pragmatique. De la politique au pipeline.">
+    <meta property="og:title" content="CQSEV — Gouverner, Gérer et Transformer vos Données">
+    <meta property="og:description" content="Un framework en 5 axes × 3 volets pour fiabiliser vos données. De la politique au pipeline.">
     <meta property="og:url" content="https://cqsev.github.io/">
     <meta property="og:image" content="https://cqsev.github.io/og-image.png">
     <meta property="og:locale" content="fr_CA">
     <meta property="og:site_name" content="CQSEV Framework">
 
-    <!-- Twitter -->
+    <!-- ====== TWITTER ====== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="CQSEV — De la politique au pipeline">
     <meta name="twitter:description" content="5 axes × 3 volets pour fiabiliser vos données sans bureaucratie.">
     <meta name="twitter:image" content="https://cqsev.github.io/og-image.png">
 
-    <!-- Schema.org -->
+    <!-- ====== SCHEMA.ORG ====== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "CQSEV Framework",
         "url": "https://cqsev.github.io/",
-        "description": "CQSEV est un framework pragmatique en 5 axes pour gouverner, gérer et transformer les données. Il couvre la Conformité, la Qualité, la Sécurité, l'Efficacité et la Valorisation à travers 3 volets : gouvernance des données, gestion des données et transformation des données ETL/ELT.",
+        "description": "CQSEV est un framework pragmatique en 5 axes pour gouverner, gérer et transformer les données.",
         "author": {
             "@type": "Person",
             "name": "Oleg Chitic",
             "jobTitle": "Expert en Gouvernance et Gestion des Données",
-            "description": "Créateur du framework CQSEV. 15+ ans d'expérience combinant analyse d'affaires, gestion de projets et expertise data à travers les secteurs financier, assurance, commerce de détail et technologie à Montréal.",
-            "knowsAbout": [
-                "Data Governance", "Data Management", "Data Transformation",
-                "ETL", "ELT", "CQSEV Framework", "DAMA-DMBOK",
-                "Data Quality", "Master Data Management", "Loi 25", "RGPD",
-                "Power BI", "SQL", "Business Analysis", "Project Management",
-                "BABOK", "PMBOK", "ITIL", "Scrum", "Microsoft Purview"
-            ],
+            "description": "Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données à Montréal.",
+            "knowsAbout": ["Data Governance","Data Management","Data Transformation","ETL","ELT","CQSEV Framework","DAMA-DMBOK","Data Quality","Master Data Management","Loi 25","RGPD","Power BI","SQL","Business Analysis","Project Management","BABOK","PMBOK","ITIL","Scrum","Microsoft Purview"],
             "image": "https://cqsev.github.io/oleg-chitic-expert-gouvernance-donnees-cqsev.gif",
             "url": "https://cqsev.github.io/",
             "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"]
         }
     }
     </script>
-    
-    <!-- Assets -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config={
-        darkMode:'class',
-        theme:{extend:{
-            fontFamily:{sans:['Inter','system-ui','sans-serif']},
-            colors:{cqsev:{c:'#3B82F6',q:'#10B981',s:'#EF4444',e:'#F59E0B',v:'#8B5CF6'}}
-        }}
-    }
-    </script>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- ====== ASSETS ====== -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        cqsev: { c: '#3B82F6', q: '#10B981', s: '#EF4444', e: '#F59E0B', v: '#8B5CF6' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ====== AOS ====== -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- ====== GTM ====== -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
 
     <style>
-        *{font-family:'Inter',system-ui,sans-serif}
-        section[id]{scroll-margin-top:80px}
+        * { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html { scroll-behavior: smooth; }
+        section[id] { scroll-margin-top: 80px; }
 
-        /* Gradients */
-        .grad-text{background:linear-gradient(135deg,#818cf8,#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .grad-text-cqsev{background:linear-gradient(135deg,#3b82f6,#10b981,#ef4444,#f59e0b,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        /* Progress bar */
+        #progress-bar {
+            position: fixed; top: 0; left: 0; height: 3px; z-index: 60;
+            background: linear-gradient(90deg, #6366f1, #10b981, #f59e0b);
+            width: 0%;
+        }
 
-        /* Glass */
-        .glass-nav{background:rgba(255,255,255,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.06)}
-        .dark .glass-nav{background:rgba(15,23,42,0.82);border-bottom:1px solid rgba(255,255,255,0.06)}
-        .glass-card{background:rgba(255,255,255,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.06)}
-        .dark .glass-card{background:rgba(30,41,59,0.5);border:1px solid rgba(255,255,255,0.06)}
+        /* Wave divider */
+        .wave-divider { position: relative; overflow: hidden; }
+        .wave-divider svg { display: block; width: 100%; height: auto; }
 
-        /* Nav links */
-        .nav-link{position:relative}
-        .nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,#6366f1,#8b5cf6);transition:width .3s;border-radius:2px}
-        .nav-link:hover::after,.nav-link.active::after{width:100%}
+        /* Colorful cards */
+        .card-color {
+            border-radius: 24px;
+            padding: 48px 36px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-color:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
 
-        /* Cards */
-        .card-lift{transition:all .4s cubic-bezier(.16,1,.3,1)}
-        .card-lift:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(0,0,0,0.08)}
-        .dark .card-lift:hover{box-shadow:0 30px 60px rgba(0,0,0,0.3)}
+        /* Letter cards */
+        .letter-card {
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .letter-card:hover {
+            transform: scale(1.06) translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        }
 
-        /* Letters */
-        .letter-pop{transition:all .35s cubic-bezier(.16,1,.3,1)}
-        .letter-pop:hover{transform:scale(1.1) translateY(-10px)}
+        /* Giant number */
+        .giant-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 120px;
+            line-height: 1;
+            position: absolute;
+            top: -20px; right: 20px;
+            opacity: 0.08;
+        }
 
-        /* Reveal */
-        .reveal{opacity:0;transform:translateY(40px);transition:all .9s cubic-bezier(.16,1,.3,1)}
-        .reveal.visible{opacity:1;transform:translateY(0)}
-        .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+        /* Staircase */
+        .stair { transition: all 0.3s ease; cursor: pointer; }
+        .stair:hover { transform: translateX(16px) scale(1.02); }
 
-        /* Stairs */
-        .stair{transition:all .3s ease}
-        .stair:hover{transform:translateX(12px)}
+        /* Buttons */
+        .btn-cqsev {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-weight: 700; border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+        .btn-cqsev:hover { transform: translateY(-3px); }
+
+        .btn-filled {
+            background: #111827; color: white;
+            padding: 16px 36px;
+        }
+        .btn-filled:hover { background: #6366F1; box-shadow: 0 12px 30px rgba(99,102,241,0.3); }
+
+        .btn-outline-dark {
+            border: 2px solid #E5E7EB; color: #111827;
+            padding: 14px 34px;
+        }
+        .btn-outline-dark:hover { border-color: #6366F1; color: #6366F1; }
 
         /* FAQ */
-        details summary::-webkit-details-marker{display:none}
-        details summary{list-style:none}
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
 
-        /* Grain */
-        .grain::before{content:'';position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none}
+        /* Tag hover */
+        .tag { transition: all 0.2s ease; }
+        .tag:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
 
-        /* Glow */
-        .glow-indigo{box-shadow:0 0 40px rgba(99,102,241,0.15)}
-        .dark .glow-indigo{box-shadow:0 0 40px rgba(99,102,241,0.25)}
+        /* Section spacing */
+        .section-spacing { padding-top: 140px; padding-bottom: 140px; }
 
-        /* Theme toggle btn */
-        .theme-btn{transition:all .3s ease}
-        .theme-btn:hover{transform:rotate(30deg) scale(1.1)}
+        /* Back to top */
+        .back-to-top { opacity: 0; pointer-events: none; transition: all 0.3s ease; }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-4px); }
 
-        /* Hero blobs animation */
-        @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
-        @keyframes float-r{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,30px)}}
-        .blob-1{animation:float 8s ease-in-out infinite}
-        .blob-2{animation:float-r 10s ease-in-out infinite}
-        .blob-3{animation:float 12s ease-in-out infinite 2s}
+        /* Nav */
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: #6366f1;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-        @media print{nav,.no-print{display:none!important}.reveal{opacity:1!important;transform:none!important}}
+        @media print { nav, .no-print, .back-to-top, #progress-bar { display: none !important; } }
     </style>
 </head>
+<body class="bg-white text-gray-600 antialiased font-body">
 
-<body class="bg-gray-50 dark:bg-slate-900 text-gray-800 dark:text-gray-200 antialiased transition-colors duration-300">
+    <!-- GTM noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Progress bar -->
+    <div id="progress-bar" aria-hidden="true"></div>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- NAV                                           -->
-    <!-- ══════════════════════════════════════════════ -->
-    <nav class="fixed top-0 w-full glass-nav z-50 shadow-sm" role="navigation" aria-label="Navigation principale">
+    <!-- ====================================================== -->
+    <!-- NAVIGATION — Clean, Light                              -->
+    <!-- ====================================================== -->
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-lg border-b border-gray-100 z-50">
         <div class="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
             <a href="#hero" class="flex items-center gap-2.5" aria-label="Accueil CQSEV">
-                <img src="/logo-icon.svg" alt="" width="36" height="36" class="h-8 w-8">
-                <span class="grad-text-cqsev font-black text-xl tracking-tight">CQSEV</span>
+                <img src="logo-icon.svg" alt="" width="32" height="32" class="h-8 w-8">
+                <span class="font-heading font-extrabold text-xl text-gray-900">CQSEV</span>
             </a>
-            
-            <!-- Desktop -->
-            <div class="hidden md:flex items-center gap-6">
-                <a href="#framework" class="nav-link text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">Framework</a>
-                <a href="#matrice" class="nav-link text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">Matrice</a>
-                <a href="#terrain" class="nav-link text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">Terrain</a>
-                <a href="#auteur" class="nav-link text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">L'auteur</a>
-                <a href="#faq" class="nav-link text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400">FAQ</a>
-                <a href="blog/" class="nav-link text-sm font-medium text-gray-500 hover:text-indigo-400">Blog</a>
-                <button id="theme-toggle" class="theme-btn p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-800" aria-label="Basculer thème sombre">
-                    <i class="fas fa-moon text-base dark:hidden"></i>
-                    <i class="fas fa-sun text-base hidden dark:inline"></i>
-                </button>
+            <div class="hidden md:flex items-center gap-7">
+                <a href="#volets" class="nav-link text-sm font-medium text-gray-500 hover:text-indigo-600">Framework</a>
+                <a href="#matrice" class="nav-link text-sm font-medium text-gray-500 hover:text-indigo-600">Matrice</a>
+                <a href="#terrain" class="nav-link text-sm font-medium text-gray-500 hover:text-indigo-600">Terrain</a>
+                <a href="#auteur" class="nav-link text-sm font-medium text-gray-500 hover:text-indigo-600">L'auteur</a>
+                <a href="blog/" class="nav-link text-sm font-medium text-gray-500 hover:text-indigo-600">Blog</a>
                 <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
-                   class="bg-[#0A66C2] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-[#004182] transition flex items-center gap-2">
-                    <i class="fab fa-linkedin-in text-xs"></i> Suivre
+                   class="btn-cqsev btn-filled text-sm px-5 py-2.5">
+                    LinkedIn
                 </a>
             </div>
-
-            <!-- Mobile buttons -->
-            <div class="flex items-center gap-1 md:hidden">
-                <button id="theme-toggle-m" class="theme-btn p-2 rounded-lg text-gray-500 dark:text-gray-400" aria-label="Thème">
-                    <i class="fas fa-moon dark:hidden"></i>
-                    <i class="fas fa-sun hidden dark:inline"></i>
-                </button>
-                <button id="menu-toggle" class="p-2 text-gray-500 dark:text-gray-400" aria-label="Menu" aria-expanded="false">
-                    <i id="icon-bars" class="fas fa-bars text-xl"></i>
-                    <i id="icon-close" class="fas fa-times text-xl hidden"></i>
-                </button>
-            </div>
+            <button id="menu-toggle" aria-expanded="false" class="md:hidden text-gray-600 p-2" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
         </div>
-
-        <!-- Mobile menu -->
-        <div id="mob-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800 px-6 py-4 space-y-1">
-            <a href="#framework" class="mob-link block text-sm font-medium text-gray-600 dark:text-gray-300 py-3 border-b border-gray-100 dark:border-slate-800">Framework</a>
-            <a href="#matrice" class="mob-link block text-sm font-medium text-gray-600 dark:text-gray-300 py-3 border-b border-gray-100 dark:border-slate-800">Matrice</a>
-            <a href="#terrain" class="mob-link block text-sm font-medium text-gray-600 dark:text-gray-300 py-3 border-b border-gray-100 dark:border-slate-800">Terrain</a>
-            <a href="#auteur" class="mob-link block text-sm font-medium text-gray-600 dark:text-gray-300 py-3 border-b border-gray-100 dark:border-slate-800">L'auteur</a>
-            <a href="#faq" class="mob-link block text-sm font-medium text-gray-600 dark:text-gray-300 py-3 border-b border-gray-100 dark:border-slate-800">FAQ</a>
-            <a href="#blog" class="mob-link block text-sm font-medium text-gray-600 dark:text-gray-300 py-3 border-b border-gray-100 dark:border-slate-800">Blog</a>
+        <div id="mob-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-1">
+            <a href="#volets" class="block text-sm font-medium text-gray-600 py-3 border-b border-gray-100">Framework</a>
+            <a href="#matrice" class="block text-sm font-medium text-gray-600 py-3 border-b border-gray-100">Matrice</a>
+            <a href="#terrain" class="block text-sm font-medium text-gray-600 py-3 border-b border-gray-100">Terrain</a>
+            <a href="#auteur" class="block text-sm font-medium text-gray-600 py-3 border-b border-gray-100">L'auteur</a>
+            <a href="blog/" class="block text-sm font-medium text-gray-600 py-3 border-b border-gray-100">Blog</a>
             <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
-               class="mob-link block bg-[#0A66C2] text-white px-4 py-3 rounded-lg text-sm font-semibold text-center mt-3">
-                <i class="fab fa-linkedin-in mr-1"></i> Suivre sur LinkedIn
-            </a>
+               class="block btn-cqsev btn-filled text-sm text-center mt-3 py-3 px-5">LinkedIn</a>
         </div>
     </nav>
 
-
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 1. HERO                                       -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="hero" class="min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white relative overflow-hidden grain" aria-label="Introduction">
+    <!-- ====================================================== -->
+    <!-- 1. HERO — Fond clair, typographie massive               -->
+    <!-- ====================================================== -->
+    <section id="hero" class="min-h-screen flex items-center bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden" aria-label="Introduction">
+        <!-- Decorative shapes -->
         <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div class="blob-1 absolute top-10 left-10 w-80 h-80 bg-indigo-600/20 rounded-full blur-[120px]"></div>
-            <div class="blob-2 absolute bottom-10 right-10 w-96 h-96 bg-purple-600/15 rounded-full blur-[120px]"></div>
-            <div class="blob-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-600/8 rounded-full blur-[100px]"></div>
+            <div class="absolute top-20 right-20 w-96 h-96 bg-indigo-200/30 rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-40 left-10 w-72 h-72 bg-emerald-200/20 rounded-full blur-[100px]"></div>
+            <div class="absolute top-1/2 right-1/3 w-60 h-60 bg-amber-200/20 rounded-full blur-[80px]"></div>
         </div>
 
         <div class="max-w-6xl mx-auto px-6 py-32 relative z-10">
-            <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
-                <div class="lg:col-span-3">
-                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-indigo-300 font-medium mb-8 border border-white/10 reveal">
-                        <span class="w-2 h-2 bg-red-400 rounded-full animate-pulse"></span>
-                        70% des initiatives data échouent. Pas à cause de la technologie.
-                    </div>
-
-                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-black leading-[1.08] mb-8 reveal d1">
-                        Gouverner. Gérer.<br>Transformer.<br>
-                        <span class="grad-text" style="-webkit-text-fill-color:transparent">
-                            Vos données méritent mieux<br>que des politiques de 200 pages.
-                        </span>
-                    </h1>
-
-                    <p class="text-lg md:text-2xl text-gray-300 mb-10 leading-relaxed max-w-2xl reveal d2">
-                        <strong class="text-white">CQSEV</strong> est un framework en 5 axes × 3 volets
-                        pour fiabiliser vos données — de la stratégie jusqu'au pipeline.
-                    </p>
-
-                    <div class="flex flex-wrap gap-4 reveal d3">
-                        <a href="#framework" class="group bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-semibold transition-all text-lg flex items-center gap-2 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02]">
-                            Découvrir le framework <i class="fas fa-arrow-down ml-1 text-sm group-hover:translate-y-1 transition-transform"></i>
-                        </a>
-                        <a href="#matrice" class="border border-gray-500 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all text-lg hover:bg-white/5">
-                            Voir la matrice
-                        </a>
-                    </div>
+            <div class="max-w-4xl">
+                <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-8" data-aos="fade-up">
+                    <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
+                    70% des initiatives data échouent
                 </div>
 
-                <!-- CQSEV letters floating -->
-                <div class="lg:col-span-2 hidden lg:flex justify-center reveal d4" aria-hidden="true">
-                    <div class="relative w-80 h-80">
-                        <div class="letter-pop absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white text-3xl font-black shadow-2xl shadow-blue-500/30 cursor-default" style="animation:float 3s ease-in-out infinite">C</div>
-                        <div class="letter-pop absolute top-[22%] right-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-white text-3xl font-black shadow-2xl shadow-emerald-500/30 cursor-default" style="animation:float 3.3s ease-in-out infinite .2s">Q</div>
-                        <div class="letter-pop absolute bottom-[18%] right-2 w-20 h-20 rounded-2xl bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center text-white text-3xl font-black shadow-2xl shadow-red-500/30 cursor-default" style="animation:float 3.6s ease-in-out infinite .4s">S</div>
-                        <div class="letter-pop absolute bottom-[18%] left-2 w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-3xl font-black shadow-2xl shadow-amber-500/30 cursor-default" style="animation:float 3.9s ease-in-out infinite .6s">E</div>
-                        <div class="letter-pop absolute top-[22%] left-0 w-20 h-20 rounded-2xl bg-gradient-to-br from-violet-400 to-violet-600 flex items-center justify-center text-white text-3xl font-black shadow-2xl shadow-violet-500/30 cursor-default" style="animation:float 4.2s ease-in-out infinite .8s">V</div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-28 h-28 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 flex items-center justify-center">
-                                <span class="text-xs font-bold text-gray-400 text-center leading-tight">5 axes<br>×<br>3 volets</span>
-                            </div>
-                        </div>
-                    </div>
+                <h1 class="font-heading text-5xl sm:text-6xl md:text-8xl font-extrabold leading-[0.95] mb-8 text-gray-900" data-aos="fade-up" data-aos-delay="100">
+                    Gouverner.<br>
+                    <span class="text-emerald-500">Gérer.</span><br>
+                    <span class="text-amber-500">Transformer.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-gray-500 mb-12 leading-relaxed max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <strong class="text-gray-900">CQSEV</strong> est un framework en
+                    <strong class="text-gray-900">5 axes × 3 volets</strong>
+                    pour fiabiliser vos données — de la stratégie jusqu'au pipeline.
+                    Sans bureaucratie. Sans outil à 500K$.
+                </p>
+
+                <div class="flex flex-wrap gap-4" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#volets" class="btn-cqsev btn-filled text-base">
+                        Découvrir le framework
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    </a>
+                    <a href="#matrice" class="btn-cqsev btn-outline-dark text-base">
+                        Voir la matrice
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Wave divider -->
+    <div class="wave-divider bg-gradient-to-br from-indigo-50 via-white to-purple-50">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+        </svg>
+    </div>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 2. LE PROBLÈME                                -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section class="py-20 md:py-28 bg-white dark:bg-slate-800/50" aria-label="Le problème">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-10 text-center reveal">
-                Pourquoi la plupart des organisations<br>échouent avec leurs données
-            </h2>
-
-            <div class="space-y-6 text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed reveal d1">
-                <p>Vous connaissez cette situation : deux départements présentent les <strong class="text-gray-900 dark:text-white">mêmes chiffres</strong> au comité de direction. Sauf qu'ils ne concordent pas.</p>
-                <p>Marketing dit que le client a dépensé <strong class="text-gray-900 dark:text-white">50 000 $</strong>. Finance dit <strong class="text-gray-900 dark:text-white">45 000 $</strong>. Qui a raison ? Personne ne sait. Tout le monde blâme « les données ».</p>
-                <p>Le réflexe habituel ? Acheter un outil à 500K$. Créer un comité. Rédiger 200 pages de politiques que personne ne lira.</p>
-            </div>
-
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5 reveal d2">
-                <div class="glass-card rounded-2xl p-6 text-center card-lift">
-                    <div class="text-4xl mb-3" aria-hidden="true">😱</div>
-                    <h3 class="font-bold text-red-700 dark:text-red-400 mb-2">Le symptôme</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">« Nos rapports sont faux »</p>
-                </div>
-                <div class="glass-card rounded-2xl p-6 text-center card-lift">
-                    <div class="text-4xl mb-3" aria-hidden="true">🔨</div>
-                    <h3 class="font-bold text-orange-700 dark:text-orange-400 mb-2">Le réflexe</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">« Achetons un outil MDM »</p>
-                </div>
-                <div class="glass-card rounded-2xl p-6 text-center card-lift">
-                    <div class="text-4xl mb-3" aria-hidden="true">💡</div>
-                    <h3 class="font-bold text-green-700 dark:text-green-400 mb-2">La réalité</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Le problème n'est pas technique.<br>C'est un problème de gouvernance.</p>
-                </div>
-            </div>
-
-            <div class="mt-10 bg-slate-800 dark:bg-slate-700/50 rounded-2xl p-8 text-white text-center glow-indigo reveal d3">
-                <p class="text-lg md:text-xl font-medium">
-                    Mais pas n'importe quelle gouvernance. Pas celle des comités interminables.
-                    <span class="text-yellow-400">La gouvernance pragmatique</span> —
-                    celle qui va de la politique jusqu'au pipeline.
+    <!-- ====================================================== -->
+    <!-- 2. LES 3 VOLETS — Cards colorées                       -->
+    <!-- ====================================================== -->
+    <section id="volets" class="section-spacing bg-white" aria-label="Les 3 volets">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4" data-aos="fade-up">Un framework, trois dimensions</p>
+                <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                    De la politique<br>au pipeline
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    La plupart des frameworks s'arrêtent aux règles.
+                    CQSEV va jusqu'à l'usine.
                 </p>
             </div>
-        </div>
-    </section>
 
+            <!-- 3 cartes COLORÉES -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 3. LES 3 VOLETS                               -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="framework" class="py-20 md:py-28 bg-gray-50 dark:bg-slate-900" aria-label="Les 3 volets du framework">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-3 reveal">Un framework, trois dimensions</p>
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-6 reveal d1">CQSEV couvre le cycle complet</h2>
-                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-3xl mx-auto reveal d2">La plupart des frameworks s'arrêtent à la gouvernance. Les règles restent sur papier. CQSEV va jusqu'à l'usine pour s'assurer que les règles sont appliquées là où ça compte.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-                <!-- Gouvernance -->
-                <article class="card-lift bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 reveal">
-                    <div class="bg-gradient-to-br from-indigo-600 to-indigo-700 p-6 text-white">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><i class="fas fa-landmark text-2xl"></i></div>
-                            <div><h3 class="font-bold text-xl">Gouvernance</h3><p class="text-indigo-200 text-sm">Les règles du jeu</p></div>
+                <!-- Gouverner — Indigo -->
+                <div class="card-color bg-indigo-600 text-white relative overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                    <span class="giant-num text-white">01</span>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                         </div>
-                        <p class="text-indigo-100 text-sm leading-relaxed">Définir les politiques, les rôles et les standards. C'est le <strong>ministère</strong> qui écrit les normes.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-gray-700 dark:text-gray-300 text-xs uppercase tracking-wider mb-3">Questions clés</h4>
-                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-indigo-400 mt-1 text-xs"></i>Qui est responsable des données clients ?</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-indigo-400 mt-1 text-xs"></i>Quelles sont nos règles de qualité ?</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-indigo-400 mt-1 text-xs"></i>Comment mesure-t-on le respect des règles ?</li>
-                        </ul>
-                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-slate-700">
-                            <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Acteurs</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-md text-xs font-medium">Data Owner</span>
-                                <span class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-md text-xs font-medium">CDO</span>
-                                <span class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-2.5 py-1 rounded-md text-xs font-medium">Comité Data</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Gestion -->
-                <article class="card-lift bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 reveal d1">
-                    <div class="bg-gradient-to-br from-emerald-600 to-emerald-700 p-6 text-white">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><i class="fas fa-hands text-2xl"></i></div>
-                            <div><h3 class="font-bold text-xl">Gestion</h3><p class="text-emerald-200 text-sm">Les mains dans la terre</p></div>
-                        </div>
-                        <p class="text-emerald-100 text-sm leading-relaxed">Appliquer les règles au quotidien. C'est l'<strong>équipe terrain</strong> qui vérifie et corrige.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-gray-700 dark:text-gray-300 text-xs uppercase tracking-wider mb-3">Questions clés</h4>
-                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-emerald-400 mt-1 text-xs"></i>Les règles sont-elles appliquées chaque jour ?</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-emerald-400 mt-1 text-xs"></i>Qui vérifie la qualité ce matin ?</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-emerald-400 mt-1 text-xs"></i>Comment corrige-t-on un problème détecté ?</li>
-                        </ul>
-                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-slate-700">
-                            <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Acteurs</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-medium">Data Steward</span>
-                                <span class="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-medium">Analyste</span>
-                                <span class="bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-medium">Métier</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Transformation -->
-                <article class="card-lift bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-gray-200 dark:border-slate-700 reveal d2">
-                    <div class="bg-gradient-to-br from-orange-600 to-orange-700 p-6 text-white">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><i class="fas fa-industry text-2xl"></i></div>
-                            <div><h3 class="font-bold text-xl">Transformation</h3><p class="text-orange-200 text-sm">L'usine</p></div>
-                        </div>
-                        <p class="text-orange-100 text-sm leading-relaxed">Construire les pipelines qui déplacent et nettoient les données. C'est la <strong>machinerie</strong> ETL/ELT.</p>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="font-bold text-gray-700 dark:text-gray-300 text-xs uppercase tracking-wider mb-3">Questions clés</h4>
-                        <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-orange-400 mt-1 text-xs"></i>D'où viennent les données et où vont-elles ?</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-orange-400 mt-1 text-xs"></i>Les validations sont-elles dans le pipeline ?</li>
-                            <li class="flex items-start gap-2"><i class="fas fa-chevron-right text-orange-400 mt-1 text-xs"></i>Que se passe-t-il quand un flux échoue ?</li>
-                        </ul>
-                        <div class="mt-5 pt-4 border-t border-gray-100 dark:border-slate-700">
-                            <p class="text-xs text-gray-400 uppercase tracking-wider mb-2">Acteurs</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2.5 py-1 rounded-md text-xs font-medium">Data Engineer</span>
-                                <span class="bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2.5 py-1 rounded-md text-xs font-medium">ETL/ELT</span>
-                                <span class="bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2.5 py-1 rounded-md text-xs font-medium">DevOps</span>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Problème vs Solution -->
-            <div class="max-w-4xl mx-auto space-y-6 reveal">
-                <div class="bg-red-50 dark:bg-red-900/10 rounded-2xl p-8 border border-red-200 dark:border-red-900/30">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-red-500 text-white rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-unlink text-xl"></i></div>
-                        <div>
-                            <h3 class="font-bold text-red-800 dark:text-red-300 text-lg mb-2">Le problème classique : 3 volets qui vivent séparément</h3>
-                            <p class="text-gray-700 dark:text-gray-400 leading-relaxed">La gouvernance écrit des politiques que personne ne lit. La gestion fait ce qu'elle peut sans directives claires. Et l'usine ETL transforme des données sans savoir si les règles sont respectées. <strong class="dark:text-white">Résultat ?</strong> Le VP ouvre son rapport le lundi matin — et les chiffres sont faux.</p>
+                        <h3 class="font-heading text-3xl font-extrabold mb-2">Gouverner</h3>
+                        <p class="text-indigo-200 text-sm font-medium mb-5">Les règles du jeu</p>
+                        <p class="text-indigo-100 text-sm leading-relaxed mb-8">Définir les politiques, les rôles et les standards. C'est le ministère qui écrit les normes.</p>
+                        <div class="space-y-3">
+                            <p class="text-sm text-indigo-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Qui est responsable des données clients ?
+                            </p>
+                            <p class="text-sm text-indigo-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Quelles sont nos règles de qualité ?
+                            </p>
+                            <p class="text-sm text-indigo-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Comment mesure-t-on le respect ?
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-green-50 dark:bg-green-900/10 rounded-2xl p-8 border border-green-200 dark:border-green-900/30">
-                    <div class="flex items-start gap-4">
-                        <div class="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-link text-xl"></i></div>
-                        <div>
-                            <h3 class="font-bold text-green-800 dark:text-green-300 text-lg mb-2">Ce que CQSEV change</h3>
-                            <p class="text-gray-700 dark:text-gray-400 leading-relaxed">Chaque axe (C, Q, S, E, V) est évalué <strong class="dark:text-white">dans les 3 volets simultanément</strong>. Pas juste « a-t-on une politique de qualité ? » mais aussi « quelqu'un la vérifie-t-il chaque jour ? » ET « le pipeline rejette-t-il les données non conformes ? »</p>
+
+                <!-- Gérer — Émeraude -->
+                <div class="card-color bg-emerald-500 text-white relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <span class="giant-num text-white">02</span>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-3xl font-extrabold mb-2">Gérer</h3>
+                        <p class="text-emerald-200 text-sm font-medium mb-5">Les mains dans la terre</p>
+                        <p class="text-emerald-100 text-sm leading-relaxed mb-8">Appliquer les règles au quotidien. L'équipe terrain qui vérifie et corrige.</p>
+                        <div class="space-y-3">
+                            <p class="text-sm text-emerald-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Les règles sont-elles appliquées chaque jour ?
+                            </p>
+                            <p class="text-sm text-emerald-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Qui vérifie la qualité ce matin ?
+                            </p>
+                            <p class="text-sm text-emerald-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Comment corrige-t-on un problème ?
+                            </p>
                         </div>
                     </div>
+                </div>
+
+                <!-- Transformer — Ambre -->
+                <div class="card-color bg-amber-500 text-white relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <span class="giant-num text-white">03</span>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-3xl font-extrabold mb-2">Transformer</h3>
+                        <p class="text-amber-200 text-sm font-medium mb-5">L'usine ETL/ELT</p>
+                        <p class="text-amber-100 text-sm leading-relaxed mb-8">Construire les pipelines qui déplacent et nettoient les données à grande échelle.</p>
+                        <div class="space-y-3">
+                            <p class="text-sm text-amber-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                D'où viennent les données, où vont-elles ?
+                            </p>
+                            <p class="text-sm text-amber-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Les validations sont-elles dans le pipeline ?
+                            </p>
+                            <p class="text-sm text-amber-200 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 bg-white rounded-full flex-shrink-0"></span>
+                                Que se passe-t-il quand un flux échoue ?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3 Principes -->
+            <div class="max-w-4xl mx-auto mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div data-aos="fade-up">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="font-heading text-2xl font-extrabold text-indigo-600">1</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-extrabold text-gray-900 mb-1">Pragmatisme</h4>
+                    <p class="text-sm text-indigo-600 font-semibold mb-2">avant Perfection</p>
+                    <p class="text-sm text-gray-500">3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="font-heading text-2xl font-extrabold text-emerald-600">2</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-extrabold text-gray-900 mb-1">Valeur</h4>
+                    <p class="text-sm text-emerald-600 font-semibold mb-2">avant Contrôle</p>
+                    <p class="text-sm text-gray-500">Si les gens ne voient pas le bénéfice, ils contourneront les règles.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <span class="font-heading text-2xl font-extrabold text-amber-600">3</span>
+                    </div>
+                    <h4 class="font-heading text-lg font-extrabold text-gray-900 mb-1">Adoption</h4>
+                    <p class="text-sm text-amber-600 font-semibold mb-2">avant Technologie</p>
+                    <p class="text-sm text-gray-500">Un outil sans adhésion humaine prend la poussière.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Wave divider -->
+    <div class="wave-divider bg-white">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#FAFAFA"/>
+        </svg>
+    </div>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 4. LES 5 AXES — BENTO GRID                    -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section class="py-20 md:py-28 bg-white dark:bg-slate-800/50" aria-label="Les 5 axes CQSEV">
+    <!-- ====================================================== -->
+    <!-- 3. LES 5 AXES CQSEV — Lettres colorées                -->
+    <!-- ====================================================== -->
+    <section id="axes" class="section-spacing bg-gray-50" aria-label="Les 5 axes">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-3 reveal">Les 5 axes</p>
-                <h2 class="text-5xl md:text-6xl font-black mb-6 reveal d1"><span class="grad-text-cqsev">CQSEV</span></h2>
-                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto reveal d2">5 questions simples. Un diagnostic complet de votre maturité data — sans jargon.</p>
+            <div class="text-center mb-20">
+                <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4" data-aos="fade-up">Les 5 axes</p>
+                <h2 class="font-heading text-6xl md:text-8xl font-extrabold text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-cqsev-c">C</span><span class="text-cqsev-q">Q</span><span class="text-cqsev-s">S</span><span class="text-cqsev-e">E</span><span class="text-cqsev-v">V</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    5 questions simples. Un diagnostic complet.
+                </p>
             </div>
 
-            <!-- Bento Grid -->
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-                <!-- C — grand -->
-                <div class="letter-pop glass-card rounded-2xl p-6 border-t-4 border-cqsev-c col-span-2 reveal">
-                    <div class="flex items-start gap-5">
-                        <div class="w-20 h-20 bg-blue-50 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <span class="text-4xl font-black text-cqsev-c">C</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-xl text-gray-900 dark:text-white mb-1">Conformité</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Respecte-t-on les lois ?</p>
-                            <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3 text-xs text-gray-600 dark:text-gray-400">
-                                <p class="font-bold text-blue-800 dark:text-blue-300 mb-1">La question clé :</p>
-                                <p class="italic">« Si un citoyen demande ses données demain, pouvez-vous les retrouver et les supprimer ? »</p>
-                            </div>
-                            <div class="flex flex-wrap gap-1 mt-3">
-                                <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded text-xs">Loi 25</span>
-                                <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-0.5 rounded text-xs">RGPD</span>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 mb-20">
+                <div class="letter-card bg-blue-50 border-2 border-blue-100 rounded-2xl p-6 text-center" data-aos="fade-up">
+                    <span class="font-heading text-5xl font-extrabold text-cqsev-c block mb-3">C</span>
+                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Conformité</h3>
+                    <p class="text-xs text-gray-500 mb-3">Respecte-t-on les lois ?</p>
+                    <div class="flex flex-wrap gap-1 justify-center">
+                        <span class="tag bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Loi 25</span>
+                        <span class="tag bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">RGPD</span>
                     </div>
                 </div>
-
-                <!-- Q -->
-                <div class="letter-pop glass-card rounded-2xl p-6 border-t-4 border-cqsev-q text-center reveal d1">
-                    <div class="w-16 h-16 bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                        <span class="text-3xl font-black text-cqsev-q">Q</span>
+                <div class="letter-card bg-emerald-50 border-2 border-emerald-100 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <span class="font-heading text-5xl font-extrabold text-cqsev-q block mb-3">Q</span>
+                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Qualité</h3>
+                    <p class="text-xs text-gray-500 mb-3">Peut-on faire confiance ?</p>
+                    <div class="flex flex-wrap gap-1 justify-center">
+                        <span class="tag bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Exactitude</span>
                     </div>
-                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Qualité</h3>
-                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Peut-on faire confiance ?</p>
-                    <p class="text-xs italic text-gray-500 dark:text-gray-500">« Votre VP fait-il confiance au rapport du lundi ? »</p>
                 </div>
-
-                <!-- S -->
-                <div class="letter-pop glass-card rounded-2xl p-6 border-t-4 border-cqsev-s text-center reveal d2">
-                    <div class="w-16 h-16 bg-red-50 dark:bg-red-900/30 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                        <span class="text-3xl font-black text-cqsev-s">S</span>
+                <div class="letter-card bg-red-50 border-2 border-red-100 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <span class="font-heading text-5xl font-extrabold text-cqsev-s block mb-3">S</span>
+                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Sécurité</h3>
+                    <p class="text-xs text-gray-500 mb-3">Données protégées ?</p>
+                    <div class="flex flex-wrap gap-1 justify-center">
+                        <span class="tag bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">RBAC</span>
                     </div>
-                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Sécurité</h3>
-                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Les données sont-elles protégées ?</p>
-                    <p class="text-xs italic text-gray-500 dark:text-gray-500">« Qui a accès au fichier des salaires ? »</p>
                 </div>
-
-                <!-- E -->
-                <div class="letter-pop glass-card rounded-2xl p-6 border-t-4 border-cqsev-e text-center reveal d3">
-                    <div class="w-16 h-16 bg-amber-50 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center mx-auto mb-3">
-                        <span class="text-3xl font-black text-cqsev-e">E</span>
+                <div class="letter-card bg-amber-50 border-2 border-amber-100 rounded-2xl p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <span class="font-heading text-5xl font-extrabold text-cqsev-e block mb-3">E</span>
+                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Efficacité</h3>
+                    <p class="text-xs text-gray-500 mb-3">Facile à trouver ?</p>
+                    <div class="flex flex-wrap gap-1 justify-center">
+                        <span class="tag bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">Catalogue</span>
                     </div>
-                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-1">Efficacité</h3>
-                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Trouve-t-on les données ?</p>
-                    <p class="text-xs italic text-gray-500 dark:text-gray-500">« Combien de temps pour trouver une info fiable ? »</p>
                 </div>
-
-                <!-- V — grand -->
-                <div class="letter-pop glass-card rounded-2xl p-6 border-t-4 border-cqsev-v col-span-2 lg:col-span-3 reveal d4">
-                    <div class="flex items-start gap-5">
-                        <div class="w-20 h-20 bg-purple-50 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center flex-shrink-0">
-                            <span class="text-4xl font-black text-cqsev-v">V</span>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-xl text-gray-900 dark:text-white mb-1">Valorisation</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Les données créent-elles de la valeur ?</p>
-                            <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3 text-xs text-gray-600 dark:text-gray-400">
-                                <p class="font-bold text-purple-800 dark:text-purple-300 mb-1">La question clé :</p>
-                                <p class="italic">« Pouvez-vous nommer 3 décisions business prises grâce à vos données ce mois-ci ? »</p>
-                            </div>
-                            <div class="flex flex-wrap gap-1 mt-3">
-                                <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded text-xs">ROI</span>
-                                <span class="bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-0.5 rounded text-xs">BI / IA</span>
-                            </div>
-                        </div>
+                <div class="letter-card bg-purple-50 border-2 border-purple-100 rounded-2xl p-6 text-center col-span-2 sm:col-span-1" data-aos="fade-up" data-aos-delay="400">
+                    <span class="font-heading text-5xl font-extrabold text-cqsev-v block mb-3">V</span>
+                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Valorisation</h3>
+                    <p class="text-xs text-gray-500 mb-3">Crée de la valeur ?</p>
+                    <div class="flex flex-wrap gap-1 justify-center">
+                        <span class="tag bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-[10px] font-semibold">BI / IA</span>
                     </div>
                 </div>
             </div>
 
             <!-- Escalier -->
-            <div class="max-w-4xl mx-auto reveal">
-                <div class="glass-card rounded-2xl p-8">
-                    <h3 class="font-bold text-xl text-gray-900 dark:text-white mb-6 text-center">
-                        <i class="fas fa-stairs text-indigo-500 mr-2"></i>
-                        Pourquoi cet ordre ? C → Q → S → E → V
+            <div class="max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="bg-white rounded-3xl p-10 border border-gray-200 shadow-sm">
+                    <h3 class="font-heading font-extrabold text-xl text-gray-900 mb-8 text-center">
+                        C → Q → S → E → V — Chaque marche soutient la suivante
                     </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div>
-                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">On ne peut pas <strong class="dark:text-white">valoriser</strong> des données dont on ne connaît pas la <strong class="dark:text-white">qualité</strong>. On ne peut pas garantir la qualité si on ne contrôle pas la <strong class="dark:text-white">sécurité</strong>. Et rien de tout ça n'a de sens si on n'est pas <strong class="dark:text-white">conforme</strong> aux lois.</p>
-                            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">CQSEV se lit comme un escalier : chaque marche soutient la suivante.</p>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="stair bg-purple-500 text-white text-sm font-bold px-5 py-3 rounded-r-xl ml-24 md:ml-32 shadow-sm">V — Valorisation</div>
-                            <div class="stair bg-amber-500 text-white text-sm font-bold px-5 py-3 rounded-r-xl ml-16 md:ml-24 shadow-sm">E — Efficacité</div>
-                            <div class="stair bg-red-500 text-white text-sm font-bold px-5 py-3 rounded-r-xl ml-10 md:ml-16 shadow-sm">S — Sécurité</div>
-                            <div class="stair bg-emerald-500 text-white text-sm font-bold px-5 py-3 rounded-r-xl ml-4 md:ml-8 shadow-sm">Q — Qualité</div>
-                            <div class="stair bg-blue-500 text-white text-sm font-bold px-5 py-3 rounded-r-xl ml-0 shadow-sm">C — Conformité</div>
-                        </div>
+                    <div class="space-y-2">
+                        <div class="stair bg-purple-500 text-white text-sm font-bold px-6 py-3.5 rounded-r-2xl ml-32 md:ml-48">V — Valorisation</div>
+                        <div class="stair bg-amber-500 text-white text-sm font-bold px-6 py-3.5 rounded-r-2xl ml-24 md:ml-36">E — Efficacité</div>
+                        <div class="stair bg-red-500 text-white text-sm font-bold px-6 py-3.5 rounded-r-2xl ml-16 md:ml-24">S — Sécurité</div>
+                        <div class="stair bg-emerald-500 text-white text-sm font-bold px-6 py-3.5 rounded-r-2xl ml-8 md:ml-12">Q — Qualité</div>
+                        <div class="stair bg-blue-500 text-white text-sm font-bold px-6 py-3.5 rounded-r-2xl ml-0">C — Conformité</div>
                     </div>
-                </div>
-            </div>
-
-            <!-- 3 principes -->
-            <div class="max-w-4xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
-                <div class="card-lift glass-card rounded-2xl p-6">
-                    <div class="w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold mb-4 shadow-lg shadow-orange-500/25">1</div>
-                    <h4 class="font-bold text-lg text-gray-800 dark:text-white mb-1">Pragmatisme</h4>
-                    <p class="text-sm text-orange-600 dark:text-orange-400 font-medium mb-3">avant Perfection</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">3 politiques critiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p>
-                </div>
-                <div class="card-lift glass-card rounded-2xl p-6">
-                    <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold mb-4 shadow-lg shadow-green-500/25">2</div>
-                    <h4 class="font-bold text-lg text-gray-800 dark:text-white mb-1">Valeur</h4>
-                    <p class="text-sm text-green-600 dark:text-green-400 font-medium mb-3">avant Contrôle</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Si les gens ne voient pas le bénéfice, ils contourneront les règles. Toujours.</p>
-                </div>
-                <div class="card-lift glass-card rounded-2xl p-6">
-                    <div class="w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold mb-4 shadow-lg shadow-purple-500/25">3</div>
-                    <h4 class="font-bold text-lg text-gray-800 dark:text-white mb-1">Adoption</h4>
-                    <p class="text-sm text-purple-600 dark:text-purple-400 font-medium mb-3">avant Technologie</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Un outil sans adhésion humaine, c'est un logiciel de plus qui prend la poussière.</p>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Wave divider -->
+    <div class="wave-divider bg-gray-50">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,20 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#ffffff"/>
+        </svg>
+    </div>
 
-
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 5. ANALOGIE DE L'EAU                          -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section class="py-20 md:py-28 bg-gray-50 dark:bg-slate-900" aria-label="Analogie">
+    <!-- ====================================================== -->
+    <!-- 4. LA MATRICE 5×3                                      -->
+    <!-- ====================================================== -->
+    <section id="matrice" class="section-spacing bg-white" aria-label="Matrice CQSEV">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4">L'analogie de l'eau potable 💧</h2>
-                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">Pour expliquer CQSEV en 2 minutes à n'importe qui.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal d1">
-                <div class="glass-card rounded-2xl p-8 card-lift border-t-4 border-indigo-500">
-                    <div class="text-5xl mb-4" aria-hidden="true">🏛️</div>
-                    <h3 class="font-bold text-xl text-indigo-800 dark:text-indigo-300 mb-1">Le Ministère de la Santé</h3>
-                    <p class="text-indigo-600 dark:text-indigo-400 font-medium text-sm mb-4">= Gouvernance</p>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Il décide que l'eau doit contenir moins de 0.5 mg/L de chlore. Il nomme un responsable. Il audite les stations.</p>
-                    <div class="bg-white dark:bg-slate-800 rounded-lg p-3 text-xs text-gray-600 dark:text-gray-400">
-                        <p class="font-bold text-indigo-700 dark:text-indigo-300 mb-1">En entreprise :</p>
-                        <p>Le comité data définit que « client actif » = transaction dans les 12 derniers mois. Point.</p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-8 card-lift border-t-4 border-emerald-500">
-                    <div class="text-5xl mb-4" aria-hidden="true">🔧</div>
-                    <h3 class="font-bold text-xl text-emerald-800 dark:text-emerald-300 mb-1">La Station de Traitement</h3>
-                    <p class="text-emerald-600 dark:text-emerald-400 font-medium text-sm mb-4">= Gestion</p>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">Chaque matin, un technicien teste le pH et vérifie le chlore. Si c'est hors norme, il alerte et corrige.</p>
-                    <div class="bg-white dark:bg-slate-800 rounded-lg p-3 text-xs text-gray-600 dark:text-gray-400">
-                        <p class="font-bold text-emerald-700 dark:text-emerald-300 mb-1">En entreprise :</p>
-                        <p>Le Data Steward vérifie chaque semaine le taux de doublons. Si &gt;5%, il lance un nettoyage.</p>
-                    </div>
-                </div>
-                <div class="glass-card rounded-2xl p-8 card-lift border-t-4 border-orange-500">
-                    <div class="text-5xl mb-4" aria-hidden="true">⚙️</div>
-                    <h3 class="font-bold text-xl text-orange-800 dark:text-orange-300 mb-1">Les Tuyaux et les Filtres</h3>
-                    <p class="text-orange-600 dark:text-orange-400 font-medium text-sm mb-4">= Transformation (ETL/ELT)</p>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">L'eau est captée (Extract), passe par les filtres (Transform), et arrive au réservoir (Load). Si un filtre casse, toute la ville boit de l'eau sale.</p>
-                    <div class="bg-white dark:bg-slate-800 rounded-lg p-3 text-xs text-gray-600 dark:text-gray-400">
-                        <p class="font-bold text-orange-700 dark:text-orange-300 mb-1">En entreprise :</p>
-                        <p>Le pipeline ETL extrait du CRM, nettoie, dédoublonne, et charge dans le Data Warehouse.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-10 bg-slate-800 dark:bg-slate-700/50 rounded-2xl p-8 text-white text-center glow-indigo reveal d2">
-                <p class="text-lg md:text-xl font-medium max-w-3xl mx-auto">
-                    CQSEV évalue la <span class="text-indigo-400">qualité des normes</span>,
-                    la <span class="text-emerald-400">rigueur de l'application</span>,
-                    et la <span class="text-orange-400">fiabilité de l'usine</span> —
-                    en même temps, sur les mêmes 5 axes.
+            <div class="text-center mb-16">
+                <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4" data-aos="fade-up">Le cœur du framework</p>
+                <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                    La Matrice CQSEV
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    5 axes × 3 volets = 15 points de contrôle.
+                    Un diagnostic complet en une seule grille.
                 </p>
             </div>
-        </div>
-    </section>
 
-
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 6. MATRICE 5×3                                -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="matrice" class="py-20 md:py-28 bg-white dark:bg-slate-800/50" aria-label="Matrice CQSEV">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-12 reveal">
-                <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-3">Le cœur du framework</p>
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4">La Matrice CQSEV</h2>
-                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">5 axes × 3 volets = 15 points de contrôle. Un diagnostic complet en une seule grille.</p>
-            </div>
-
-            <div class="overflow-x-auto reveal d1">
-                <table class="w-full text-sm bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-gray-200 dark:border-slate-700 min-w-[700px]">
+            <div class="overflow-x-auto" data-aos="fade-up" data-aos-delay="300">
+                <table class="w-full text-sm rounded-3xl overflow-hidden shadow-lg border border-gray-100 min-w-[700px]">
                     <thead>
                         <tr>
-                            <th class="p-4 text-left bg-gray-100 dark:bg-slate-700 text-gray-600 dark:text-gray-300 font-bold w-1/5">Axe</th>
-                            <th class="p-4 text-center bg-indigo-600 text-white font-bold"><i class="fas fa-landmark mr-1"></i> Gouvernance<div class="text-xs font-normal text-indigo-200 mt-0.5">Les règles</div></th>
-                            <th class="p-4 text-center bg-emerald-600 text-white font-bold"><i class="fas fa-hands mr-1"></i> Gestion<div class="text-xs font-normal text-emerald-200 mt-0.5">Le terrain</div></th>
-                            <th class="p-4 text-center bg-orange-600 text-white font-bold"><i class="fas fa-industry mr-1"></i> Transformation<div class="text-xs font-normal text-orange-200 mt-0.5">L'usine</div></th>
+                            <th class="p-5 text-left bg-gray-50 text-gray-600 font-bold font-heading w-1/5">Axe</th>
+                            <th class="p-5 text-center bg-indigo-600 text-white font-bold font-heading">
+                                <span class="block text-base">Gouverner</span>
+                                <span class="block text-xs font-normal text-indigo-200 mt-1">Les règles</span>
+                            </th>
+                            <th class="p-5 text-center bg-emerald-500 text-white font-bold font-heading">
+                                <span class="block text-base">Gérer</span>
+                                <span class="block text-xs font-normal text-emerald-200 mt-1">Le terrain</span>
+                            </th>
+                            <th class="p-5 text-center bg-amber-500 text-white font-bold font-heading">
+                                <span class="block text-base">Transformer</span>
+                                <span class="block text-xs font-normal text-amber-200 mt-1">L'usine</span>
+                            </th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-100 dark:divide-slate-700">
-                        <tr class="hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition">
-                            <td class="p-4"><div class="flex items-center gap-3"><div class="w-9 h-9 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center"><span class="font-black text-blue-600 dark:text-blue-400">C</span></div><div><div class="font-bold text-gray-800 dark:text-white">Conformité</div><div class="text-xs text-gray-400">Loi 25, RGPD</div></div></div></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Politique de consentement<br><span class="text-gray-400 dark:text-gray-500">Classification définie</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Inventaire données sensibles<br><span class="text-gray-400 dark:text-gray-500">Audit terrain régulier</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Masquage PII dans le pipeline<br><span class="text-gray-400 dark:text-gray-500">Purge automatisée</span></td>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr class="hover:bg-blue-50/50 transition">
+                            <td class="p-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                                        <span class="font-heading font-extrabold text-blue-600">C</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-heading font-bold text-gray-900">Conformité</div>
+                                        <div class="text-xs text-gray-400">Loi 25, RGPD</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-5 text-center text-gray-600 bg-indigo-50/30 text-xs">Politique de consentement<br><span class="text-gray-400">Classification définie</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-emerald-50/30 text-xs">Inventaire données sensibles<br><span class="text-gray-400">Audit terrain régulier</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-amber-50/30 text-xs">Masquage PII dans le pipeline<br><span class="text-gray-400">Purge automatisée</span></td>
                         </tr>
-                        <tr class="hover:bg-emerald-50/50 dark:hover:bg-emerald-900/10 transition">
-                            <td class="p-4"><div class="flex items-center gap-3"><div class="w-9 h-9 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center"><span class="font-black text-emerald-600 dark:text-emerald-400">Q</span></div><div><div class="font-bold text-gray-800 dark:text-white">Qualité</div><div class="text-xs text-gray-400">Fiabilité</div></div></div></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Standards et KPIs définis<br><span class="text-gray-400 dark:text-gray-500">Data Dictionary</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Contrôles quotidiens<br><span class="text-gray-400 dark:text-gray-500">Score qualité mesuré</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Règles de validation ETL<br><span class="text-gray-400 dark:text-gray-500">Rejet auto si invalide</span></td>
+                        <tr class="hover:bg-emerald-50/50 transition">
+                            <td class="p-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center">
+                                        <span class="font-heading font-extrabold text-emerald-600">Q</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-heading font-bold text-gray-900">Qualité</div>
+                                        <div class="text-xs text-gray-400">Fiabilité</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-5 text-center text-gray-600 bg-indigo-50/30 text-xs">Standards et KPIs définis<br><span class="text-gray-400">Data Dictionary</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-emerald-50/30 text-xs">Contrôles quotidiens<br><span class="text-gray-400">Score qualité mesuré</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-amber-50/30 text-xs">Règles de validation ETL<br><span class="text-gray-400">Rejet auto si invalide</span></td>
                         </tr>
-                        <tr class="hover:bg-red-50/50 dark:hover:bg-red-900/10 transition">
-                            <td class="p-4"><div class="flex items-center gap-3"><div class="w-9 h-9 bg-red-100 dark:bg-red-900/30 rounded-lg flex items-center justify-center"><span class="font-black text-red-600 dark:text-red-400">S</span></div><div><div class="font-bold text-gray-800 dark:text-white">Sécurité</div><div class="text-xs text-gray-400">Protection</div></div></div></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Politique d'accès RBAC<br><span class="text-gray-400 dark:text-gray-500">Classification niveaux</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Revue des permissions<br><span class="text-gray-400 dark:text-gray-500">Audit trimestriel</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Chiffrement en transit<br><span class="text-gray-400 dark:text-gray-500">Logs et traçabilité</span></td>
+                        <tr class="hover:bg-red-50/50 transition">
+                            <td class="p-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
+                                        <span class="font-heading font-extrabold text-red-600">S</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-heading font-bold text-gray-900">Sécurité</div>
+                                        <div class="text-xs text-gray-400">Protection</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-5 text-center text-gray-600 bg-indigo-50/30 text-xs">Politique d'accès RBAC<br><span class="text-gray-400">Classification niveaux</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-emerald-50/30 text-xs">Revue des permissions<br><span class="text-gray-400">Audit trimestriel</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-amber-50/30 text-xs">Chiffrement en transit<br><span class="text-gray-400">Logs et traçabilité</span></td>
                         </tr>
-                        <tr class="hover:bg-amber-50/50 dark:hover:bg-amber-900/10 transition">
-                            <td class="p-4"><div class="flex items-center gap-3"><div class="w-9 h-9 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center"><span class="font-black text-amber-600 dark:text-amber-400">E</span></div><div><div class="font-bold text-gray-800 dark:text-white">Efficacité</div><div class="text-xs text-gray-400">Accessibilité</div></div></div></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Standards catalogage<br><span class="text-gray-400 dark:text-gray-500">Glossaire métier</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Métadonnées à jour<br><span class="text-gray-400 dark:text-gray-500">Recherche en &lt;5 min</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Indexation des tables<br><span class="text-gray-400 dark:text-gray-500">Performance pipeline</span></td>
+                        <tr class="hover:bg-amber-50/50 transition">
+                            <td class="p-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center">
+                                        <span class="font-heading font-extrabold text-amber-600">E</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-heading font-bold text-gray-900">Efficacité</div>
+                                        <div class="text-xs text-gray-400">Accessibilité</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-5 text-center text-gray-600 bg-indigo-50/30 text-xs">Standards catalogage<br><span class="text-gray-400">Glossaire métier</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-emerald-50/30 text-xs">Métadonnées à jour<br><span class="text-gray-400">Recherche en &lt;5 min</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-amber-50/30 text-xs">Indexation des tables<br><span class="text-gray-400">Performance pipeline</span></td>
                         </tr>
-                        <tr class="hover:bg-purple-50/50 dark:hover:bg-purple-900/10 transition">
-                            <td class="p-4"><div class="flex items-center gap-3"><div class="w-9 h-9 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center"><span class="font-black text-purple-600 dark:text-purple-400">V</span></div><div><div class="font-bold text-gray-800 dark:text-white">Valorisation</div><div class="text-xs text-gray-400">Valeur métier</div></div></div></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Cas d'usage métier<br><span class="text-gray-400 dark:text-gray-500">Roadmap BI/IA</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Dashboards utilisés<br><span class="text-gray-400 dark:text-gray-500">Adoption mesurée</span></td>
-                            <td class="p-4 text-center text-gray-600 dark:text-gray-400 text-xs">Data marts business<br><span class="text-gray-400 dark:text-gray-500">Modèles ML en prod</span></td>
+                        <tr class="hover:bg-purple-50/50 transition">
+                            <td class="p-5">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                                        <span class="font-heading font-extrabold text-purple-600">V</span>
+                                    </div>
+                                    <div>
+                                        <div class="font-heading font-bold text-gray-900">Valorisation</div>
+                                        <div class="text-xs text-gray-400">Valeur métier</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="p-5 text-center text-gray-600 bg-indigo-50/30 text-xs">Cas d'usage métier<br><span class="text-gray-400">Roadmap BI/IA</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-emerald-50/30 text-xs">Dashboards utilisés<br><span class="text-gray-400">Adoption mesurée</span></td>
+                            <td class="p-5 text-center text-gray-600 bg-amber-50/30 text-xs">Data marts business<br><span class="text-gray-400">Modèles ML en prod</span></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="mt-8 max-w-4xl mx-auto reveal">
-                <div class="bg-amber-50 dark:bg-amber-900/10 rounded-2xl p-6 border border-amber-200 dark:border-amber-900/30">
+            <!-- Comment lire -->
+            <div class="mt-10 max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="bg-amber-50 rounded-2xl p-8 border border-amber-200">
                     <div class="flex items-start gap-4">
-                        <i class="fas fa-lightbulb text-amber-500 text-2xl mt-1 flex-shrink-0"></i>
+                        <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                        </div>
                         <div>
-                            <p class="font-bold text-amber-800 dark:text-amber-300 mb-2">Comment lire cette matrice</p>
-                            <p class="text-sm text-gray-700 dark:text-gray-400 leading-relaxed mb-2"><strong>En ligne :</strong> si la Qualité est définie en gouvernance mais pas vérifiée en gestion ni appliquée dans le pipeline — la donnée n'est pas fiable.</p>
-                            <p class="text-sm text-gray-700 dark:text-gray-400 leading-relaxed"><strong>Les cases vides sont vos priorités d'action.</strong> Demandez à votre équipe : « Pour chaque case, est-ce documenté, exécuté et automatisé ? »</p>
+                            <p class="font-heading font-bold text-amber-800 mb-2 text-lg">Comment lire cette matrice</p>
+                            <p class="text-sm text-gray-700 leading-relaxed mb-2"><strong>En ligne :</strong> si la Qualité est définie en gouvernance mais pas vérifiée en gestion ni appliquée dans le pipeline — la donnée n'est pas fiable.</p>
+                            <p class="text-sm text-gray-700 leading-relaxed"><strong>Les cases vides sont vos priorités d'action.</strong></p>
                         </div>
                     </div>
                 </div>
@@ -684,98 +638,188 @@
         </div>
     </section>
 
+    <!-- Wave divider -->
+    <div class="wave-divider bg-white">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,50 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#FAFAFA"/>
+        </svg>
+    </div>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 7. TERRAIN                                    -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="terrain" class="py-20 md:py-28 bg-gray-50 dark:bg-slate-900" aria-label="Cas concrets">
+    <!-- ====================================================== -->
+    <!-- 5. SUR LE TERRAIN — Cas numérotés colorés              -->
+    <!-- ====================================================== -->
+    <section id="terrain" class="section-spacing bg-gray-50" aria-label="Cas concrets">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-3 reveal">Cas concrets</p>
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4 reveal d1">Sur le terrain</h2>
-                <p class="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto reveal d2">Les situations que CQSEV aide à diagnostiquer. Vous reconnaîtrez sûrement la vôtre.</p>
+            <div class="text-center mb-20">
+                <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-4" data-aos="fade-up">Cas concrets</p>
+                <h2 class="font-heading text-4xl md:text-6xl font-extrabold text-gray-900 mb-6" data-aos="fade-up" data-aos-delay="100">
+                    Sur le terrain
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Vous reconnaîtrez sûrement l'une de ces situations.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
-                <article class="card-lift glass-card rounded-2xl p-6">
-                    <div class="text-3xl mb-3" aria-hidden="true">📊</div>
-                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">« Marketing et Finance n'ont jamais les mêmes chiffres »</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Chaque département a sa version de la vérité dans son propre fichier.</p>
-                    <div class="bg-emerald-50 dark:bg-emerald-900/20 rounded-lg p-3"><p class="text-xs text-gray-700 dark:text-gray-400"><span class="font-bold text-emerald-700 dark:text-emerald-300">Axe → Qualité (Q)</span><br>Définir une source unique de vérité et un glossaire métier commun.</p></div>
-                </article>
-                <article class="card-lift glass-card rounded-2xl p-6">
-                    <div class="text-3xl mb-3" aria-hidden="true">🔒</div>
-                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">« Le fichier des salaires est accessible à tout le monde »</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Données sensibles sur SharePoint sans contrôle d'accès.</p>
-                    <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-3"><p class="text-xs text-gray-700 dark:text-gray-400"><span class="font-bold text-red-700 dark:text-red-300">Axe → Sécurité (S) + Conformité (C)</span><br>Audit des permissions, classification, Loi 25.</p></div>
-                </article>
-                <article class="card-lift glass-card rounded-2xl p-6">
-                    <div class="text-3xl mb-3" aria-hidden="true">🔍</div>
-                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">« Personne ne sait ce que CUST_STAT veut dire »</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Le développeur qui a créé la table est parti. Zéro documentation.</p>
-                    <div class="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3"><p class="text-xs text-gray-700 dark:text-gray-400"><span class="font-bold text-amber-700 dark:text-amber-300">Axe → Efficacité (E)</span><br>Dictionnaire de données et catalogage.</p></div>
-                </article>
-                <article class="card-lift glass-card rounded-2xl p-6">
-                    <div class="text-3xl mb-3" aria-hidden="true">📋</div>
-                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">« On a acheté un outil MDM à 500K$ — personne ne l'utilise »</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">La technologie est là, mais personne ne comprend pourquoi.</p>
-                    <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3"><p class="text-xs text-gray-700 dark:text-gray-400"><span class="font-bold text-purple-700 dark:text-purple-300">Principe → Adoption avant Technologie</span><br>Former au POURQUOI avant de donner un outil.</p></div>
-                </article>
-                <article class="card-lift glass-card rounded-2xl p-6">
-                    <div class="text-3xl mb-3" aria-hidden="true">👤</div>
-                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">« Marie est en vacances et elle seule connaît le fichier »</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Processus critiques dépendant d'une seule personne et de ses Excel.</p>
-                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-3"><p class="text-xs text-gray-700 dark:text-gray-400"><span class="font-bold text-blue-700 dark:text-blue-300">Axe → Efficacité (E) + Qualité (Q)</span><br>Documenter, centraliser, éliminer les points de défaillance uniques.</p></div>
-                </article>
-                <article class="card-lift glass-card rounded-2xl p-6">
-                    <div class="text-3xl mb-3" aria-hidden="true">💰</div>
-                    <h3 class="font-bold text-gray-900 dark:text-white text-lg mb-2">« On collecte des tonnes de données — on ne sait pas quoi en faire »</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Des téraoctets stockés, zéro insight actionnable.</p>
-                    <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-3"><p class="text-xs text-gray-700 dark:text-gray-400"><span class="font-bold text-purple-700 dark:text-purple-300">Axe → Valorisation (V)</span><br>Identifier 3 cas d'usage concrets. Commencer petit, prouver la valeur.</p></div>
-                </article>
+            <div class="space-y-8 max-w-4xl mx-auto">
+
+                <!-- Cas 1 -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden" data-aos="fade-up">
+                    <span class="giant-num text-emerald-500">01</span>
+                    <div class="relative z-10 md:flex md:items-start md:gap-8">
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-3">
+                                « Marketing et Finance n'ont jamais les mêmes chiffres »
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">Chaque département a sa version de la vérité dans son propre fichier.</p>
+                        </div>
+                        <div class="bg-emerald-50 rounded-2xl p-5 border border-emerald-200 md:w-64 flex-shrink-0">
+                            <p class="text-xs font-bold text-emerald-700 mb-1">Axe → Qualité (Q)</p>
+                            <p class="text-xs text-gray-600">Définir une source unique de vérité et un glossaire métier commun.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cas 2 -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden" data-aos="fade-up">
+                    <span class="giant-num text-red-500">02</span>
+                    <div class="relative z-10 md:flex md:items-start md:gap-8">
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-3">
+                                « Le fichier des salaires est accessible à tout le monde »
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">Données sensibles sur SharePoint sans contrôle d'accès.</p>
+                        </div>
+                        <div class="bg-red-50 rounded-2xl p-5 border border-red-200 md:w-64 flex-shrink-0">
+                            <p class="text-xs font-bold text-red-700 mb-1">Axe → Sécurité (S) + Conformité (C)</p>
+                            <p class="text-xs text-gray-600">Audit des permissions, classification, Loi 25.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cas 3 -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden" data-aos="fade-up">
+                    <span class="giant-num text-amber-500">03</span>
+                    <div class="relative z-10 md:flex md:items-start md:gap-8">
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-3">
+                                « Personne ne sait ce que CUST_STAT veut dire »
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">Le développeur qui a créé la table est parti. Zéro documentation.</p>
+                        </div>
+                        <div class="bg-amber-50 rounded-2xl p-5 border border-amber-200 md:w-64 flex-shrink-0">
+                            <p class="text-xs font-bold text-amber-700 mb-1">Axe → Efficacité (E)</p>
+                            <p class="text-xs text-gray-600">Dictionnaire de données et catalogage.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cas 4 -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden" data-aos="fade-up">
+                    <span class="giant-num text-purple-500">04</span>
+                    <div class="relative z-10 md:flex md:items-start md:gap-8">
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-3">
+                                « On a acheté un outil MDM à 500K$ — personne ne l'utilise »
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">La technologie est là, mais personne ne comprend pourquoi.</p>
+                        </div>
+                        <div class="bg-purple-50 rounded-2xl p-5 border border-purple-200 md:w-64 flex-shrink-0">
+                            <p class="text-xs font-bold text-purple-700 mb-1">Principe → Adoption avant Technologie</p>
+                            <p class="text-xs text-gray-600">Former au POURQUOI avant de donner un outil.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cas 5 -->
+                <div class="bg-white rounded-3xl p-8 md:p-10 border border-gray-100 shadow-sm relative overflow-hidden" data-aos="fade-up">
+                    <span class="giant-num text-blue-500">05</span>
+                    <div class="relative z-10 md:flex md:items-start md:gap-8">
+                        <div class="flex-1">
+                            <h3 class="font-heading text-xl md:text-2xl font-extrabold text-gray-900 mb-3">
+                                « On collecte des tonnes de données — on ne sait pas quoi en faire »
+                            </h3>
+                            <p class="text-gray-500 text-sm mb-4">Des téraoctets stockés, zéro insight actionnable.</p>
+                        </div>
+                        <div class="bg-blue-50 rounded-2xl p-5 border border-blue-200 md:w-64 flex-shrink-0">
+                            <p class="text-xs font-bold text-blue-700 mb-1">Axe → Valorisation (V)</p>
+                            <p class="text-xs text-gray-600">Identifier 3 cas d'usage concrets. Commencer petit.</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="mt-12 bg-slate-800 dark:bg-slate-700/50 rounded-2xl p-8 text-white text-center glow-indigo reveal">
-                <blockquote><p class="text-lg md:text-xl font-medium">« Si vous n'avez que 5 minutes pour résoudre un problème de données, passez-en 4 à comprendre dans quel axe CQSEV il se situe. »</p></blockquote>
+            <!-- Citation -->
+            <div class="mt-16 max-w-3xl mx-auto text-center" data-aos="fade-up">
+                <div class="bg-indigo-600 rounded-3xl p-10 text-white">
+                    <blockquote>
+                        <p class="font-heading text-xl md:text-2xl font-bold leading-relaxed">
+                            « Si vous n'avez que 5 minutes pour résoudre un problème de données, passez-en 4 à comprendre dans quel axe CQSEV il se situe. »
+                        </p>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Wave divider -->
+    <div class="wave-divider bg-gray-50">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,30 C720,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#ffffff"/>
+        </svg>
+    </div>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 8. AUTEUR                                     -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="auteur" class="py-20 md:py-28 bg-white dark:bg-slate-800/50" aria-label="L'auteur">
+    <!-- ====================================================== -->
+    <!-- 6. L'AUTEUR                                            -->
+    <!-- ====================================================== -->
+    <section id="auteur" class="section-spacing bg-white" aria-label="L'auteur">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-                <div class="lg:col-span-2 flex justify-center reveal">
-                    <img src="/oleg-chitic-expert-gouvernance-donnees-cqsev.gif" 
-                     alt="Oleg Chitic — Expert en gouvernance des données, gestion de projets data et transformation ETL. Créateur du framework CQSEV. 15 ans d'expérience en analyse d'affaires et data management à Montréal." 
-                     title="Oleg Chitic, créateur du framework CQSEV — Gouverner, Gérer et Transformer vos données" width="280" height="280" loading="lazy" itemprop="image" class="w-72 h-72 object-cover rounded-3xl shadow-2xl ring-4 ring-white/10">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
+                <div class="lg:col-span-2 flex justify-center" data-aos="fade-up">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-indigo-200 via-purple-200 to-emerald-200 rounded-[2rem] blur-2xl opacity-40"></div>
+                        <img src="oleg-chitic-expert-gouvernance-donnees-cqsev.gif"
+                             alt="Oleg Chitic — Expert en gouvernance des données, gestion de projets data et transformation ETL. Créateur du framework CQSEV. 15 ans d'expérience à Montréal."
+                             title="Oleg Chitic, créateur du framework CQSEV"
+                             width="280" height="280" loading="lazy" itemprop="image"
+                             class="relative w-72 h-72 object-cover rounded-3xl shadow-2xl">
                     </div>
-                <div class="lg:col-span-3 reveal d1">
-                    <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-3">Derrière CQSEV</p>
-                    <h2 class="text-4xl font-black text-gray-900 dark:text-white mb-6">Oleg</h2>
-                    <div class="space-y-4 text-base md:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p>Après <strong class="text-gray-900 dark:text-white">15 ans</strong> à voir des organisations investir dans des outils data sans résultat, j'ai compris une chose :</p>
-                        <p class="text-xl text-gray-900 dark:text-white font-semibold">Le problème n'est presque jamais technique.</p>
-                        <p>C'est un problème d'alignement entre ceux qui définissent les règles, ceux qui les appliquent, et ceux qui construisent les pipelines. Trois mondes qui se parlent rarement.</p>
-                        <p>Je porte trois casquettes : <strong class="text-gray-900 dark:text-white">analyste d'affaires</strong> (je comprends le besoin), <strong class="text-gray-900 dark:text-white">gestionnaire de projets</strong> (je sais le livrer), et <strong class="text-gray-900 dark:text-white">expert data</strong> (je fiabilise l'information). C'est cette combinaison qui m'a amené à créer CQSEV.</p>
+                </div>
+                <div class="lg:col-span-3" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">Derrière CQSEV</p>
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-gray-900 mb-8">Oleg Chitic</h2>
+                    <div class="space-y-5 text-base md:text-lg text-gray-500 leading-relaxed">
+                        <p>Après <strong class="text-gray-900">15 ans</strong> à voir des organisations investir dans des outils data sans résultat, j'ai compris une chose :</p>
+                        <p class="font-heading text-xl md:text-2xl text-gray-900 font-extrabold">Le problème n'est presque jamais technique.</p>
+                        <p>C'est un problème d'alignement entre ceux qui définissent les règles, ceux qui les appliquent, et ceux qui construisent les pipelines.</p>
                     </div>
-                    <div class="flex flex-wrap gap-8 mt-8">
-                        <div><div class="text-3xl font-black text-gray-900 dark:text-white">15+</div><div class="text-sm text-gray-500 dark:text-gray-400">Années de pratique</div></div>
-                        <div><div class="text-3xl font-black text-gray-900 dark:text-white">35+</div><div class="text-sm text-gray-500 dark:text-gray-400">Projets data & TI</div></div>
-                        <div><div class="text-3xl font-black text-gray-900 dark:text-white">5</div><div class="text-sm text-gray-500 dark:text-gray-400">Secteurs d'industrie</div></div>
+
+                    <!-- Stats -->
+                    <div class="flex flex-wrap gap-10 mt-10">
+                        <div>
+                            <div class="font-heading text-4xl font-extrabold text-gray-900">15+</div>
+                            <div class="text-sm text-gray-500">Années de pratique</div>
+                        </div>
+                        <div>
+                            <div class="font-heading text-4xl font-extrabold text-gray-900">35+</div>
+                            <div class="text-sm text-gray-500">Projets data & TI</div>
+                        </div>
+                        <div>
+                            <div class="font-heading text-4xl font-extrabold text-gray-900">5</div>
+                            <div class="text-sm text-gray-500">Secteurs d'industrie</div>
+                        </div>
                     </div>
+
+                    <!-- Tags -->
                     <div class="mt-8">
-                        <p class="text-xs text-gray-400 uppercase tracking-wider mb-3">Cadres de référence</p>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mb-3">Cadres de référence</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium">DAMA-DMBOK</span>
-                            <span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium">BABOK</span>
-                            <span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium">PMBOK</span>
-                            <span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium">ITIL</span>
-                            <span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium">Scrum</span>
-                            <span class="bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 px-3 py-1.5 rounded-lg text-xs font-medium">Loi 25</span>
+                            <span class="tag bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold">DAMA-DMBOK</span>
+                            <span class="tag bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold">BABOK</span>
+                            <span class="tag bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold">PMBOK</span>
+                            <span class="tag bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold">ITIL</span>
+                            <span class="tag bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold">Scrum</span>
+                            <span class="tag bg-gray-100 text-gray-700 px-3 py-1.5 rounded-full text-xs font-semibold">Loi 25</span>
                         </div>
                     </div>
                 </div>
@@ -783,218 +827,144 @@
         </div>
     </section>
 
+    <!-- Wave divider -->
+    <div class="wave-divider bg-white">
+        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#111827"/>
+        </svg>
+    </div>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 9. FAQ                                        -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="faq" class="py-20 md:py-28 bg-gray-50 dark:bg-slate-900" aria-label="Questions fréquentes">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white mb-4">Questions Fréquentes</h2>
-            </div>
-
-            <div class="space-y-4 reveal d1">
-                <details class="group glass-card rounded-2xl overflow-hidden" open>
-                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        <h3 class="font-bold text-gray-800 dark:text-white text-base md:text-lg pr-4">CQSEV remplace-t-il le DAMA-DMBOK ?</h3>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p class="mb-3">Non. Le DAMA-DMBOK est le standard mondial et il est excellent. CQSEV est un <strong class="dark:text-white">filtre pragmatique</strong> par-dessus.</p>
-                        <p>Imaginez le DMBOK comme l'encyclopédie complète de la médecine. CQSEV, c'est le questionnaire de votre médecin de famille — 5 questions pour savoir par où commencer avant d'envoyer chez le spécialiste.</p>
-                    </div>
-                </details>
-
-                <details class="group glass-card rounded-2xl overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        <h3 class="font-bold text-gray-800 dark:text-white text-base md:text-lg pr-4">Pourquoi 3 volets (Gouvernance, Gestion, Transformation) ?</h3>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p class="mb-3">Parce que c'est là que les organisations échouent : les règles sont écrites (gouvernance) mais personne ne les vérifie sur le terrain (gestion), et les pipelines de données ne les appliquent pas automatiquement (transformation).</p>
-                        <p>CQSEV force l'évaluation dans les 3 couches. Si une seule est manquante, le diagnostic montre exactement où intervenir.</p>
-                    </div>
-                </details>
-
-                <details class="group glass-card rounded-2xl overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        <h3 class="font-bold text-gray-800 dark:text-white text-base md:text-lg pr-4">Par quel axe devrait-on commencer ?</h3>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p class="mb-3">Ça dépend de votre contexte :</p>
-                        <ul class="list-disc list-inside space-y-2 mb-3">
-                            <li><strong class="dark:text-white">Secteur réglementé</strong> (banque, santé) → <strong>C</strong> (Conformité)</li>
-                            <li><strong class="dark:text-white">Rapports contestés</strong> → <strong>Q</strong> (Qualité)</li>
-                            <li><strong class="dark:text-white">Incident de sécurité</strong> → <strong>S</strong> (Sécurité)</li>
-                            <li><strong class="dark:text-white">Personne ne trouve rien</strong> → <strong>E</strong> (Efficacité)</li>
-                            <li><strong class="dark:text-white">Justifier l'investissement</strong> → <strong>V</strong> (Valorisation)</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="group glass-card rounded-2xl overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        <h3 class="font-bold text-gray-800 dark:text-white text-base md:text-lg pr-4">CQSEV fonctionne-t-il pour les PME ?</h3>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p class="mb-3">Oui. Les 5 questions sont les mêmes, que vous soyez 50 ou 5 000 employés. La différence, c'est la profondeur : une demi-journée pour une PME, plusieurs semaines par domaine pour une grande entreprise.</p>
-                        <p>Le principe reste le même : commencer par ce qui fait le plus mal, pas par ce qui est le plus à la mode.</p>
-                    </div>
-                </details>
-
-                <details class="group glass-card rounded-2xl overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        <h3 class="font-bold text-gray-800 dark:text-white text-base md:text-lg pr-4">Comment faire un diagnostic rapide avec CQSEV ?</h3>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p class="mb-3">Posez ces 5 questions à votre équipe. Notez chaque réponse sur 10 :</p>
-                        <ol class="list-decimal list-inside space-y-2 mb-3">
-                            <li><strong>C</strong> — « Si un citoyen demande ses données demain, on peut répondre en 24h ? »</li>
-                            <li><strong>Q</strong> — « Notre VP fait-il confiance aux rapports sans les vérifier dans Excel ? »</li>
-                            <li><strong>S</strong> — « On sait exactement qui a accès aux données sensibles ? »</li>
-                            <li><strong>E</strong> — « Un nouvel employé peut trouver une donnée fiable en moins de 5 min ? »</li>
-                            <li><strong>V</strong> — « On peut nommer 3 décisions métier prises grâce aux données ce trimestre ? »</li>
-                        </ol>
-                        <p>Score total sur 50. En dessous de 25 ? Vous avez un chantier prioritaire à identifier.</p>
-                    </div>
-                </details>
-
-                <details class="group glass-card rounded-2xl overflow-hidden">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                        <h3 class="font-bold text-gray-800 dark:text-white text-base md:text-lg pr-4">C'est quoi la Loi 25 et quel lien avec CQSEV ?</h3>
-                        <i class="fas fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0"></i>
-                    </summary>
-                    <div class="px-6 pb-6 text-gray-600 dark:text-gray-400 leading-relaxed">
-                        <p class="mb-3">La <strong class="dark:text-white">Loi 25</strong> est la loi québécoise sur la protection des renseignements personnels. Vous devez savoir quelles données personnelles vous collectez, pourquoi, qui y a accès, et pouvoir les supprimer sur demande.</p>
-                        <p>Sans gouvernance des données, c'est impossible à faire correctement. C'est pour ça que le <strong class="dark:text-white">C (Conformité)</strong> est le premier axe de CQSEV.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Schema.org -->
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"CQSEV remplace-t-il le DAMA-DMBOK ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le DAMA-DMBOK est le standard mondial. CQSEV est un filtre pragmatique par-dessus, comme le questionnaire de votre médecin de famille — 5 questions pour savoir par où commencer."}},
-        {"@type":"Question","name":"Pourquoi 3 volets ?","acceptedAnswer":{"@type":"Answer","text":"Les règles sont souvent écrites mais personne ne les vérifie et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches simultanément."}},
-        {"@type":"Question","name":"Par quel axe commencer ?","acceptedAnswer":{"@type":"Answer","text":"Secteur réglementé : Conformité. Rapports contestés : Qualité. Incident sécurité : Sécurité. Personne ne trouve rien : Efficacité. Justifier l'investissement : Valorisation."}},
-        {"@type":"Question","name":"CQSEV pour les PME ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les 5 questions sont les mêmes pour 50 ou 5000 employés."}},
-        {"@type":"Question","name":"Diagnostic rapide ?","acceptedAnswer":{"@type":"Answer","text":"Posez 5 questions, notez sur 10. Score total sur 50. En dessous de 25, chantier prioritaire."}},
-        {"@type":"Question","name":"Loi 25 et CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"La loi québécoise sur la protection des renseignements personnels. La Conformité est le premier axe de CQSEV."}}
-    ]}
-    </script>
-
-
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- 10. CONTACT                                   -->
-    <!-- ══════════════════════════════════════════════ -->
-    <section id="contact" class="py-20 md:py-28 bg-gradient-to-br from-slate-900 to-indigo-950 text-white relative overflow-hidden grain" aria-label="Contact">
-        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-            <div class="blob-2 absolute bottom-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px]"></div>
-            <div class="blob-1 absolute top-0 left-0 w-72 h-72 bg-purple-600/10 rounded-full blur-[100px]"></div>
-        </div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-black mb-4 reveal">Continuons la conversation</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto reveal d1">
+    <!-- ====================================================== -->
+    <!-- 7. CONTACT — Fond sombre (comme footer nodcoding)      -->
+    <!-- ====================================================== -->
+    <section id="contact" class="py-28 md:py-36 bg-gray-900 text-white" aria-label="Contact">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-heading text-4xl md:text-5xl font-extrabold mb-6" data-aos="fade-up">
+                Continuons la conversation
+            </h2>
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Je partage régulièrement mes réflexions sur la gouvernance des données,
                 la qualité et les défis concrets du terrain.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8 reveal d2">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8" data-aos="fade-up" data-aos-delay="200">
                 <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
-                   class="group bg-[#0A66C2] hover:bg-[#004182] text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-3 text-lg shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:scale-[1.02]">
-                    <i class="fab fa-linkedin-in text-xl"></i> Suivez-moi sur LinkedIn
+                   class="bg-[#0A66C2] hover:bg-[#004182] text-white px-8 py-4 rounded-full font-semibold text-base flex items-center justify-center gap-3 transition hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Suivez-moi sur LinkedIn
                 </a>
-                <a href="mailto:cqsev.data@gmail.com?subject=CQSEV%20%E2%80%94%20%C3%89change"
-                   class="group bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center gap-3 text-lg hover:scale-[1.02]">
-                    <i class="fas fa-envelope text-xl"></i> cqsev.data@gmail.com
+                <a href="mailto:cqsev.data@gmail.com?subject=CQSEV%20—%20Échange"
+                   class="border-2 border-gray-600 hover:border-white text-gray-300 hover:text-white px-8 py-4 rounded-full font-semibold text-base flex items-center justify-center gap-3 transition hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    Échangeons par courriel
                 </a>
             </div>
-            <p class="text-gray-500 text-sm reveal d3">Pas de spam. Pas de pitch. Juste des échanges entre professionnels de la data.</p>
+            <p class="text-gray-600 text-sm">Pas de spam. Pas de pitch. Juste des échanges entre professionnels de la data.</p>
         </div>
     </section>
 
-
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- FOOTER                                        -->
-    <!-- ══════════════════════════════════════════════ -->
-    <footer class="bg-slate-950 text-gray-500 py-8" role="contentinfo">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- ====================================================== -->
+    <!-- FOOTER                                                 -->
+    <!-- ====================================================== -->
+    <footer class="bg-gray-950 text-gray-500 py-10" role="contentinfo">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-                <p class="font-bold text-gray-400 grad-text-cqsev" style="-webkit-text-fill-color:transparent">CQSEV</p>
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="logo-icon.svg" alt="" width="24" height="24" class="h-6 w-6">
+                    <p class="font-heading font-extrabold text-gray-300 text-lg">CQSEV</p>
+                </div>
                 <p class="text-sm text-gray-600">Framework pragmatique de gouvernance, gestion et transformation des données</p>
             </div>
-            <div class="flex items-center gap-4">
-                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-lg"></i></a>
-                <a href="mailto:cqsev.data@gmail.com" class="text-gray-500 hover:text-white transition" aria-label="Email"><i class="fas fa-envelope text-lg"></i></a>
+            <div class="flex items-center gap-5">
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition" aria-label="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="mailto:cqsev.data@gmail.com" class="text-gray-500 hover:text-white transition" aria-label="Email">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </a>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-6 mt-6 pt-6 border-t border-gray-800">
-            <p class="text-xs text-gray-600 text-center">© 2025 Oleg — CQSEV est un framework développé à partir de 15 ans d'expérience terrain en gouvernance et gestion des données.</p>
+        <div class="max-w-6xl mx-auto px-6 mt-8 pt-8 border-t border-gray-800">
+            <p class="text-xs text-gray-600 text-center">© 2025 Oleg Chitic — CQSEV est un framework développé à partir de 15 ans d'expérience terrain en gouvernance et gestion des données.</p>
         </div>
     </footer>
 
+    <!-- BACK TO TOP -->
+    <button id="back-to-top" class="back-to-top fixed bottom-8 right-8 w-14 h-14 bg-indigo-600 hover:bg-indigo-500 text-white rounded-2xl shadow-lg shadow-indigo-500/20 flex items-center justify-center z-40" aria-label="Retour en haut">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
 
-    <!-- ══════════════════════════════════════════════ -->
-    <!-- JS                                            -->
-    <!-- ══════════════════════════════════════════════ -->
+    <!-- ====== FAQ SCHEMA.ORG ====== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"CQSEV remplace-t-il le DAMA-DMBOK ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le DAMA-DMBOK est le standard mondial. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer."}},
+            {"@type":"Question","name":"Pourquoi 3 volets ?","acceptedAnswer":{"@type":"Answer","text":"Les règles sont souvent écrites mais personne ne les vérifie et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches."}},
+            {"@type":"Question","name":"CQSEV fonctionne-t-il pour les PME ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les 5 questions sont les mêmes pour 50 ou 5000 employés. Une demi-journée pour une PME."}},
+            {"@type":"Question","name":"Qu'est-ce que le framework CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets. Créé par Oleg Chitic."}}
+        ]
+    }
+    </script>
+
+    <!-- ====== AOS Library ====== -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- ====================================================== -->
+    <!-- JAVASCRIPT                                             -->
+    <!-- ====================================================== -->
     <script>
-    (function(){
-        'use strict';
-
-        // ── Dark mode ──
-        const html = document.documentElement;
-        const saved = localStorage.getItem('theme');
-        if(saved==='dark'||(!saved && window.matchMedia('(prefers-color-scheme:dark)').matches)){
-            html.classList.add('dark');
-        }
-        function toggle(){
-            html.classList.toggle('dark');
-            localStorage.setItem('theme', html.classList.contains('dark')?'dark':'light');
-        }
-        document.getElementById('theme-toggle')?.addEventListener('click', toggle);
-        document.getElementById('theme-toggle-m')?.addEventListener('click', toggle);
-
-        // ── Mobile menu ──
-        const menuBtn = document.getElementById('menu-toggle');
-        const mob = document.getElementById('mob-menu');
-        const iconB = document.getElementById('icon-bars');
-        const iconC = document.getElementById('icon-close');
-
-        menuBtn?.addEventListener('click', function(){
-            mob.classList.toggle('hidden');
-            iconB.classList.toggle('hidden');
-            iconC.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', mob.classList.contains('hidden')?'false':'true');
+        // ====== AOS Init ======
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60
         });
 
-        document.querySelectorAll('.mob-link').forEach(function(a){
-            a.addEventListener('click', function(){
-                mob.classList.add('hidden');
-                iconB.classList.remove('hidden');
-                iconC.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded','false');
+        // ====== Progress Bar ======
+        const progressBar = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
+        }, { passive: true });
+
+        // ====== Active Nav ======
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+            });
+        }, { passive: true });
+
+        // ====== Mobile Menu ======
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobMenu = document.getElementById('mob-menu');
+        menuToggle.addEventListener('click', () => {
+            const isOpen = !mobMenu.classList.contains('hidden');
+            mobMenu.classList.toggle('hidden');
+            menuToggle.setAttribute('aria-expanded', !isOpen);
+        });
+        document.querySelectorAll('#mob-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobMenu.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
-        // ── Reveal ──
-        var ro = new IntersectionObserver(function(entries){
-            entries.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('visible'); });
-        },{threshold:0.08, rootMargin:'0px 0px -40px 0px'});
-        document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
-
-        // ── Active nav ──
-        var secs = document.querySelectorAll('section[id]');
-        var navs = document.querySelectorAll('.nav-link');
-        window.addEventListener('scroll',function(){
-            var cur='';
-            secs.forEach(function(s){if(window.scrollY>=s.offsetTop-120) cur=s.id;});
-            navs.forEach(function(n){n.classList.toggle('active',n.getAttribute('href')==='#'+cur);});
-        },{passive:true});
-    })();
+        // ====== Back to Top ======
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 600);
+        }, { passive: true });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
+
 </body>
 </html>
