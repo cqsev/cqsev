@@ -10,7 +10,7 @@
     <meta name="author" content="Oleg Chitic">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cqsev.github.io/blog/gouvernance-donnees-guide-complet.html">
-    <meta name="theme-color" content="#6366F1">
+    <meta name="theme-color" content="#F7F5F0">
 
     <!-- ====== OPEN GRAPH ====== -->
     <meta property="og:type" content="article">
@@ -23,7 +23,7 @@
     <meta property="og:locale" content="fr_CA">
     <meta property="og:site_name" content="CQSEV Framework">
     <meta property="article:author" content="Oleg Chitic">
-    <meta property="article:published_time" content="2026-03-19T00:00:00Z">
+    <meta property="article:published_time" content="2026-03-20T00:00:00Z">
     <meta property="article:tag" content="gouvernance données">
     <meta property="article:tag" content="data governance">
     <meta property="article:tag" content="guide 2026">
@@ -32,7 +32,7 @@
     <!-- ====== TWITTER ====== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gouvernance des données : guide complet 2026 — CQSEV">
-    <meta name="twitter:description" content="Qu'est-ce que la gouvernance des données ? Fondamentaux, rôles, 7 erreurs à éviter et méthode pragmatique. Guide complet 2026 par Oleg Chitic.">
+    <meta name="twitter:description" content="Fondamentaux, rôles, 7 erreurs à éviter et méthode pragmatique. Guide complet 2026 par Oleg Chitic.">
     <meta name="twitter:image" content="https://cqsev.github.io/img/og-image.png">
 
     <!-- ====== SCHEMA.ORG ====== -->
@@ -41,33 +41,19 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": "Gouvernance des données : guide complet 2026",
-        "description": "Qu'est-ce que la gouvernance des données ? Ce guide complet couvre les fondamentaux, les rôles clés (Data Owner, Data Steward), les erreurs à éviter et une méthode pragmatique pour démarrer en 2026.",
-        "author": {
-            "@type": "Person",
-            "name": "Oleg Chitic",
-            "url": "https://cqsev.github.io/",
-            "jobTitle": "Expert en Gouvernance et Gestion des Données",
-            "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"]
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "CQSEV Framework",
-            "url": "https://cqsev.github.io/"
-        },
-        "datePublished": "2026-03-19",
-        "dateModified": "2026-03-19",
+        "description": "Qu'est-ce que la gouvernance des données ? Ce guide complet couvre les fondamentaux, les rôles clés, les erreurs à éviter et une méthode pragmatique pour démarrer en 2026.",
+        "author": {"@type": "Person", "name": "Oleg Chitic", "url": "https://cqsev.github.io/", "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"]},
+        "publisher": {"@type": "Organization", "name": "CQSEV Framework", "url": "https://cqsev.github.io/"},
+        "datePublished": "2026-03-20",
+        "dateModified": "2026-03-20",
         "url": "https://cqsev.github.io/blog/gouvernance-donnees-guide-complet.html",
         "image": "https://cqsev.github.io/img/og-image.png",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://cqsev.github.io/blog/gouvernance-donnees-guide-complet.html"
-        },
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cqsev.github.io/blog/gouvernance-donnees-guide-complet.html"},
         "articleSection": "Gouvernance des données",
         "wordCount": "3400",
         "inLanguage": "fr-CA"
     }
     </script>
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -84,7 +70,7 @@
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
     <!-- ====== GTM ====== -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -93,633 +79,281 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
 
-    <!-- ====== CSS — Identique à Article 1 ====== -->
+    <!-- CSS — Identique à Article 1 -->
     <style>
-        :root {
-            --font-heading: 'Plus Jakarta Sans', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --c-indigo: #6366F1;
-            --c-green: #10B981;
-            --c-amber: #F59E0B;
-            --c-red: #EF4444;
-            --c-purple: #8B5CF6;
-            --c-blue: #3B82F6;
-            --c-gray-50: #F9FAFB;
-            --c-gray-100: #F3F4F6;
-            --c-gray-200: #E5E7EB;
-            --c-gray-300: #D1D5DB;
-            --c-gray-400: #9CA3AF;
-            --c-gray-500: #6B7280;
-            --c-gray-600: #4B5563;
-            --c-gray-700: #374151;
-            --c-gray-800: #1F2937;
-            --c-gray-900: #111827;
-            --c-gray-950: #030712;
-            --r-full: 9999px;
-            --r-md: 12px;
-            --r-lg: 16px;
-            --r-xl: 20px;
-            --r-2xl: 24px;
-            --r-3xl: 32px;
-        }
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); color: var(--c-gray-600); background: var(--c-gray-50); -webkit-font-smoothing: antialiased; line-height: 1.6; }
-        h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.15; color: var(--c-gray-900); }
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; height: auto; display: block; }
-        button { cursor: pointer; border: none; background: none; font: inherit; }
-        table { border-collapse: collapse; width: 100%; }
-        strong { color: var(--c-gray-900); }
-
-        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-
-        .site-nav { position: fixed; top: 0; width: 100%; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--c-gray-100); }
-        .nav-inner { max-width: 1152px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-        .nav-logo { display: flex; align-items: center; gap: 0.625rem; }
-        .nav-logo img { height: 32px; width: 32px; }
-        .nav-logo span { font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; color: var(--c-gray-900); }
-        .nav-links { display: none; align-items: center; gap: 1.75rem; }
-        .nav-link { font-size: 0.875rem; font-weight: 500; color: var(--c-gray-500); position: relative; transition: color 0.3s; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--c-indigo); transition: width 0.3s; }
-        .nav-link:hover { color: var(--c-indigo); }
-        .nav-link:hover::after { width: 100%; }
-        .nav-link.active { color: var(--c-indigo); }
-        .nav-link.active::after { width: 100%; }
-
-        .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; border-radius: var(--r-full); transition: all 0.3s; }
-        .btn:hover { transform: translateY(-3px); }
-        .btn-filled { background: var(--c-gray-900); color: #fff; padding: 10px 24px; font-size: 0.875rem; }
-        .btn-filled:hover { background: var(--c-indigo); box-shadow: 0 12px 30px rgba(99,102,241,0.3); }
-
-        .menu-toggle { display: block; color: var(--c-gray-600); padding: 8px; }
-        .mob-menu { display: none; background: #fff; border-top: 1px solid var(--c-gray-100); padding: 1rem 1.5rem; }
-        .mob-menu.open { display: block; }
-        .mob-menu a { display: block; font-size: 0.875rem; font-weight: 500; color: var(--c-gray-600); padding: 0.75rem 0; border-bottom: 1px solid var(--c-gray-100); }
-
-        @media (min-width: 768px) { .nav-links { display: flex; } .menu-toggle { display: none; } }
-
-        .article-container { max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; }
-        .breadcrumb { padding-top: 6rem; padding-bottom: 1rem; font-size: 0.875rem; color: var(--c-gray-400); }
-        .breadcrumb a { transition: color 0.3s; }
-        .breadcrumb a:hover { color: var(--c-indigo); }
-
-        .article-header { margin-bottom: 3rem; }
-        .article-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .tag { display: inline-block; padding: 4px 12px; border-radius: var(--r-full); font-size: 0.75rem; font-weight: 600; }
-        .article-title { font-size: clamp(1.75rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
-        .article-subtitle { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--c-gray-500); line-height: 1.6; margin-bottom: 2rem; }
-        .article-meta { display: flex; align-items: center; gap: 1rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-gray-200); }
-        .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--c-indigo), var(--c-purple)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; flex-shrink: 0; }
-
-        .tldr { background: #EEF2FF; border-radius: var(--r-2xl); padding: 2rem; border: 1px solid #C7D2FE; margin-bottom: 2.5rem; }
-        .tldr h2 { font-size: 1.125rem; color: #3730A3; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-        .tldr p { color: var(--c-gray-700); line-height: 1.7; }
-
-        .toc { background: var(--c-gray-50); border-radius: var(--r-2xl); padding: 1.5rem; border: 1px solid var(--c-gray-200); margin-bottom: 3rem; }
-        .toc h2 { font-size: 0.75rem; font-weight: 700; color: var(--c-gray-500); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
-        .toc ol { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-        .toc a { font-size: 0.875rem; font-weight: 500; color: var(--c-indigo); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
-        .toc a:hover { color: #4338CA; }
-        .toc .num { color: var(--c-gray-400); }
-
-        .prose { font-size: clamp(0.95rem, 2vw, 1.0625rem); line-height: 1.75; color: var(--c-gray-600); }
-        .prose p { margin-bottom: 1.25rem; }
-        .prose h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); font-weight: 800; margin-top: 3.5rem; margin-bottom: 1.5rem; scroll-margin-top: 80px; }
-        .prose h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
-        .prose a.link { color: var(--c-indigo); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-        .prose a.link:hover { color: #4338CA; }
-
-        .check-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
-        .check-list li { display: flex; align-items: flex-start; gap: 0.75rem; }
-        .check-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
-        .prose ol.numbered { list-style: decimal; list-style-position: inside; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
-
-        .callout { border-radius: var(--r-lg); padding: 1.5rem; margin: 2rem 0; display: flex; align-items: flex-start; gap: 0.75rem; }
-        .callout-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
-        .callout-tip { background: #FFFBEB; border: 1px solid #FDE68A; }
-        .callout-tip .label { color: #92400E; font-weight: 700; }
-
-        .quote-block { background: var(--c-gray-800); border-radius: var(--r-2xl); padding: 2rem; margin: 2.5rem 0; text-align: center; }
-        .quote-block p { color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; line-height: 1.6; margin: 0; }
-        .quote-block .highlight { color: #FDE68A; }
-        .quote-block .highlight-blue { color: #A5B4FC; }
-
-        .cards-3 { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 2rem 0; }
-        @media (min-width: 768px) { .cards-3 { grid-template-columns: repeat(3, 1fr); } .cards-2 { grid-template-columns: repeat(2, 1fr); } }
-        .card-silo { border-radius: var(--r-lg); padding: 1.5rem; border: 1px solid; }
-        .card-silo h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
-        .card-silo p { font-size: 0.8125rem; color: var(--c-gray-600); margin: 0; }
-
-        .article-table { overflow-x: auto; margin: 2rem 0; }
-        .article-table table { background: #fff; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--c-gray-200); }
-        .article-table th { padding: 1rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.875rem; }
-        .article-table td { padding: 1rem; font-size: 0.8125rem; }
-
-        .faq-item { background: #fff; border-radius: var(--r-lg); border: 1px solid var(--c-gray-200); margin-bottom: 0.75rem; overflow: hidden; }
-        .faq-item summary { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; cursor: pointer; font-family: var(--font-heading); font-weight: 700; color: var(--c-gray-900); font-size: 0.9rem; list-style: none; transition: background 0.3s; }
-        .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary:hover { background: var(--c-gray-50); }
-        .faq-item .chevron { transition: transform 0.3s; flex-shrink: 0; color: var(--c-gray-400); }
-        .faq-item[open] .chevron { transform: rotate(180deg); }
-        .faq-item .answer { padding: 0 1.5rem 1.25rem; color: var(--c-gray-600); font-size: 0.875rem; line-height: 1.7; }
-
-        .author-card { display: flex; align-items: flex-start; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-gray-200); }
-        .avatar-lg { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--c-indigo), var(--c-purple)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0; }
-
-        .cta-block { border-radius: var(--r-2xl); padding: 2rem; text-align: center; margin-top: 3rem; }
-        .cta-dark { background: linear-gradient(135deg, var(--c-gray-900), #1E1B4B); color: #fff; }
-        .cta-dark p { color: var(--c-gray-300); }
-        .cta-dark .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--c-indigo); color: #fff; padding: 14px 28px; border-radius: var(--r-lg); font-weight: 600; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; }
-        .cta-dark .btn-cta:hover { background: #4F46E5; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(99,102,241,0.25); }
-
-        .cta-indigo { background: var(--c-indigo); color: #fff; margin-top: 2rem; }
-        .cta-indigo p { color: #C7D2FE; }
-        .cta-indigo .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--c-indigo); padding: 14px 28px; border-radius: var(--r-full); font-weight: 700; font-size: 0.9rem; transition: all 0.3s; }
-        .cta-indigo .btn-cta:hover { background: #EEF2FF; transform: translateY(-2px); }
-
-        .back-link { text-align: center; margin-top: 2rem; margin-bottom: 3rem; }
-        .back-link a { font-size: 0.875rem; color: var(--c-gray-500); font-weight: 500; transition: color 0.3s; }
-        .back-link a:hover { color: var(--c-indigo); }
-
-        .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-gray-200); }
-        .related h3 { font-size: 1.125rem; font-weight: 800; margin-bottom: 1rem; }
-        .related a { display: block; padding: 1rem 1.25rem; background: #fff; border-radius: var(--r-lg); border: 1px solid var(--c-gray-200); margin-bottom: 0.75rem; transition: all 0.3s; }
-        .related a:hover { border-color: var(--c-indigo); transform: translateX(4px); }
-
-        .site-footer { background: var(--c-gray-950); padding: 2.5rem 0; }
-        .footer-inner { max-width: 1152px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
-        .footer-bottom { max-width: 1152px; margin: 2rem auto 0; padding: 2rem 1.5rem 0; border-top: 1px solid #1F2937; text-align: center; }
-
-        [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        [data-animate].visible { opacity: 1; transform: translateY(0); }
-
-        @media print { .site-nav, .mob-menu, .menu-toggle, .no-print, .site-footer { display: none !important; } body { background: #fff; } }
+        :root{--font-serif:'Playfair Display',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--paper:#F7F5F0;--white:#FFFFFF;--ink:#1A1A1A;--ink-light:#4A4A4A;--ink-10:rgba(26,26,26,0.10);--ink-5:rgba(26,26,26,0.05);--ink-20:rgba(26,26,26,0.20);--ink-30:rgba(26,26,26,0.30)}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;background:var(--paper)}
+        body{font-family:var(--font-sans);color:var(--ink-light);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.6;font-weight:300}
+        h1,h2,h3,h4,h5,h6{font-family:var(--font-serif);color:var(--ink);font-weight:500}
+        a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{cursor:pointer;border:none;background:none;font:inherit}table{border-collapse:collapse;width:100%}strong{color:var(--ink);font-weight:500}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--paper)}::-webkit-scrollbar-thumb{background:#D1CDD2;border-radius:10px}
+        .container{max-width:1320px;margin:0 auto;padding:0 2.5rem}.container-md{max-width:1080px;margin:0 auto;padding:0 2.5rem}.article-container{max-width:760px;margin:0 auto;padding:0 2.5rem}@media(max-width:767px){.container,.container-md,.article-container{padding:0 1.25rem}}
+        .label{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1.5rem;display:block}
+        .site-nav{position:fixed;top:0;width:100%;z-index:50;transition:all 0.3s;padding:1.5rem 0;background:transparent;border-bottom:1px solid transparent}.site-nav.scrolled{background:rgba(247,245,240,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--ink-10);padding:1rem 0}
+        .nav-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between}@media(max-width:767px){.nav-inner{padding:0 1.25rem}}
+        .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em}
+        .nav-links{display:none;align-items:center;gap:2rem}.nav-link{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.nav-link:hover,.nav-link.active{color:var(--ink)}
+        .nav-cta{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;padding:0.5rem 1.5rem;border-radius:9999px;border:1px solid var(--ink-20);transition:all 0.3s}.nav-cta:hover{background:var(--ink);color:var(--paper)}
+        .menu-toggle{display:block;color:var(--ink-light);padding:0.5rem}.mob-menu{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--paper);border-bottom:1px solid var(--ink-10);padding:1rem 1.5rem}.mob-menu.open{display:block}.mob-menu a{display:block;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;padding:0.75rem 0;border-bottom:1px solid var(--ink-5)}
+        @media(min-width:768px){.nav-links{display:flex}.menu-toggle{display:none}}
+        .btn-pill{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-sans);font-size:0.875rem;font-weight:500;padding:1rem 2rem;border-radius:9999px;transition:all 0.3s}.btn-pill:hover{transform:translateY(-2px)}.btn-dark{background:var(--ink);color:var(--white)}.btn-dark:hover{background:#333;box-shadow:0 8px 24px rgba(26,26,26,0.15)}
+        .tag{font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid var(--ink-5);color:var(--ink);background:var(--white)}
+        .prose{font-size:clamp(0.95rem,2vw,1.0625rem);line-height:1.8;color:var(--ink-light)}.prose p{margin-bottom:1.5rem}.prose h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:500;margin-top:4rem;margin-bottom:1.5rem;scroll-margin-top:80px}.prose h3{font-size:1.25rem;font-weight:500;margin-top:2.5rem;margin-bottom:1rem}.prose a.link{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px}.prose a.link:hover{color:var(--ink-light)}
+        .check-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin:2rem 0}.check-list li{display:flex;align-items:flex-start;gap:0.75rem}.check-icon{width:20px;height:20px;flex-shrink:0;margin-top:3px;color:var(--ink)}
+        .callout{border-radius:16px;padding:1.5rem;margin:2.5rem 0;display:flex;align-items:flex-start;gap:0.75rem;background:var(--paper);border:1px solid var(--ink-20)}.callout-icon{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--ink)}.callout .callout-label{font-weight:500;color:var(--ink);margin-bottom:0.25rem}
+        .quote-block{background:var(--ink);border-radius:24px;padding:2.5rem;margin:3rem 0;text-align:center}.quote-block p{color:var(--white);font-family:var(--font-serif);font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:400;font-style:italic;line-height:1.5;margin:0}
+        .cards-3{display:grid;grid-template-columns:1fr;gap:1rem;margin:2.5rem 0}.cards-2{display:grid;grid-template-columns:1fr;gap:1rem;margin:2.5rem 0}@media(min-width:768px){.cards-3{grid-template-columns:repeat(3,1fr)}.cards-2{grid-template-columns:repeat(2,1fr)}}
+        .card-silo{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04)}.card-silo h3{font-size:1rem;margin-bottom:0.5rem}.card-silo p{font-size:0.8125rem;margin:0;font-weight:300}
+        .article-table{overflow-x:auto;margin:2.5rem 0}.article-table table{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--ink-10)}.article-table th{padding:1rem;font-family:var(--font-serif);font-weight:500;font-size:0.875rem}.article-table td{padding:1rem;font-size:0.8125rem;font-weight:300}.article-table td:not(:last-child),.article-table th:not(:last-child){border-right:1px solid var(--ink-10)}.article-table thead th{border-bottom:1px solid var(--ink-10)}.article-table tbody tr+tr{border-top:1px solid var(--ink-5)}
+        .faq-item{background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;overflow:hidden}.faq-item summary{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;cursor:pointer;font-family:var(--font-serif);font-weight:500;color:var(--ink);font-size:0.95rem;list-style:none;transition:background 0.3s}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:hover{background:var(--paper)}.faq-item .chevron{transition:transform 0.3s;flex-shrink:0;color:var(--ink-light)}.faq-item[open] .chevron{transform:rotate(180deg)}.faq-item .answer{padding:0 1.5rem 1.25rem;color:var(--ink-light);font-size:0.875rem;line-height:1.7;font-weight:300}
+        .author-card{display:flex;align-items:flex-start;gap:1.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)}.avatar-lg{width:64px;height:64px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-serif);font-size:1.25rem;font-weight:500;flex-shrink:0}
+        .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)}.related h3{font-size:1.125rem;font-weight:500;margin-bottom:1rem}.related a{display:block;padding:1rem 1.25rem;background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;transition:all 0.3s}.related a:hover{border-color:var(--ink);transform:translateX(4px)}
+        .back-link{text-align:center;margin-top:2rem;margin-bottom:3rem}.back-link a{font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.back-link a:hover{color:var(--ink)}
+        .site-footer{background:var(--paper);padding:3rem 0;border-top:1px solid var(--ink-10)}.footer-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}@media(max-width:767px){.footer-inner{padding:0 1.25rem}}.footer-links{display:flex;gap:1.5rem;align-items:center}.footer-links a{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.footer-links a:hover{color:var(--ink)}.footer-copy{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em}
+        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}[data-animate].visible{opacity:1;transform:translateY(0)}
+        @media print{.site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important}body{background:#fff;color:#000}}
     </style>
 </head>
 <body>
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- NAV — Identique à Article 1 -->
-    <nav class="site-nav" role="navigation" aria-label="Navigation principale">
+    <!-- NAV — Identique -->
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navigation principale">
         <div class="nav-inner">
-            <a href="../" class="nav-logo" aria-label="Accueil CQSEV">
-                <img src="../logo-icon.svg" alt="" width="32" height="32">
-                <span>CQSEV</span>
-            </a>
+            <a href="../" class="nav-logo" aria-label="Accueil CQSEV">CQSEV.</a>
             <div class="nav-links">
-                <a href="../#definition" class="nav-link">Concept</a>
-                <a href="../#volets" class="nav-link">Framework</a>
+                <a href="../#concept" class="nav-link">Concept</a>
+                <a href="../#framework" class="nav-link">Framework</a>
                 <a href="../#matrice" class="nav-link">Matrice</a>
                 <a href="../#terrain" class="nav-link">Terrain</a>
-                <a href="../#auteur" class="nav-link">L'auteur</a>
-                <a href="../#faq" class="nav-link">FAQ</a>
+                <a href="../#auteur" class="nav-link">Auteur</a>
                 <a href="./" class="nav-link active">Blog</a>
-                <a href="../#contact" class="btn btn-filled">Contact</a>
+                <a href="../#contact" class="nav-cta">Contact</a>
             </div>
-            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-label="Menu">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            </button>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
         </div>
         <div id="mob-menu" class="mob-menu" role="menu">
-            <a href="../#definition" role="menuitem">Concept</a>
-            <a href="../#volets" role="menuitem">Framework</a>
-            <a href="../#matrice" role="menuitem">Matrice</a>
-            <a href="../#terrain" role="menuitem">Terrain</a>
-            <a href="../#auteur" role="menuitem">L'auteur</a>
-            <a href="../#faq" role="menuitem">FAQ</a>
-            <a href="./" role="menuitem" style="color:var(--c-indigo);font-weight:700;">Blog</a>
-            <a href="../#contact" role="menuitem" class="btn btn-filled" style="text-align:center;margin-top:0.75rem;justify-content:center;">Contact</a>
+            <a href="../#concept" role="menuitem">Concept</a><a href="../#framework" role="menuitem">Framework</a><a href="../#matrice" role="menuitem">Matrice</a><a href="../#terrain" role="menuitem">Terrain</a><a href="../#auteur" role="menuitem">Auteur</a>
+            <a href="./" role="menuitem" style="color:var(--ink);font-weight:500;">Blog</a>
+            <a href="../#contact" role="menuitem" style="margin-top:0.75rem;display:block;text-align:center;padding:0.75rem;border-radius:9999px;border:1px solid var(--ink-20);">Contact</a>
         </div>
     </nav>
         <!-- BREADCRUMB -->
-    <div class="article-container breadcrumb">
-        <nav aria-label="Fil d'Ariane">
-            <a href="../">Accueil</a>
-            <span style="margin:0 0.5rem;">›</span>
-            <a href="./">Blog</a>
-            <span style="margin:0 0.5rem;">›</span>
-            <span style="color:var(--c-gray-700);font-weight:500;">Gouvernance des données : guide complet 2026</span>
+    <div class="article-container" style="padding-top:7rem;padding-bottom:1rem;">
+        <nav aria-label="Fil d'Ariane" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);">
+            <a href="../" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Accueil</a>
+            <span style="margin:0 0.5rem;">/</span>
+            <a href="./" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Blog</a>
+            <span style="margin:0 0.5rem;">/</span>
+            <span style="color:var(--ink);">Guide complet 2026</span>
         </nav>
     </div>
 
-    <!-- ====================================================== -->
-    <!-- ARTICLE                                                -->
-    <!-- ====================================================== -->
     <article class="article-container" style="padding-bottom:3rem;">
 
         <!-- HEADER -->
-        <header class="article-header" data-animate>
-            <div class="article-tags">
-                <span class="tag" style="background:#E0E7FF;color:#4338CA;">Gouvernance</span>
-                <span class="tag" style="background:#DBEAFE;color:#1D4ED8;">Guide</span>
-                <span class="tag" style="background:#F3E8FF;color:#6D28D9;">Loi 25</span>
+        <header style="margin-bottom:3rem;" data-animate>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+                <span class="tag">Gouvernance</span>
+                <span class="tag">Guide</span>
+                <span class="tag">Loi 25</span>
             </div>
-            <h1 class="article-title">
+            <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
                 Gouvernance des données : guide complet 2026
             </h1>
-            <p class="article-subtitle">
-                La gouvernance des données n'est plus un luxe. Avec la Loi 25, le RGPD et l'essor de l'IA,
-                c'est une obligation légale et un avantage concurrentiel.
-                Voici tout ce que vous devez savoir pour démarrer — sans jargon.
+            <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:var(--ink-light);line-height:1.6;margin-bottom:2rem;font-weight:300;">
+                La gouvernance des données n'est plus un luxe. Avec la Loi 25, le RGPD et l'essor de l'IA, c'est une obligation légale et un avantage concurrentiel. Voici tout ce que vous devez savoir — sans jargon.
             </p>
-            <div class="article-meta">
-                <div class="avatar">OC</div>
+            <div style="display:flex;align-items:center;gap:1rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
+                <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:500;">OC</div>
                 <div>
-                    <p style="font-weight:600;color:var(--c-gray-900);font-size:0.875rem;">Oleg Chitic</p>
-                    <p style="font-size:0.8125rem;color:var(--c-gray-400);">
-                        <time datetime="2026-03-19">19 mars 2026</time> · 12 min de lecture
-                    </p>
+                    <p style="font-weight:500;color:var(--ink);font-size:0.875rem;">Oleg Chitic</p>
+                    <p style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);margin-top:0.125rem;"><time datetime="2026-03-20">20 mars 2026</time> · 12 min de lecture</p>
                 </div>
             </div>
         </header>
 
         <!-- TL;DR -->
-        <div class="tldr" data-animate>
-            <h2>
-                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                En résumé
-            </h2>
-            <p>
-                La <strong>gouvernance des données</strong> est l'ensemble des politiques, rôles et processus qui déterminent comment une organisation collecte, stocke, utilise et protège ses données. En 2026, avec la <strong>Loi 25</strong> au Québec et le <strong>RGPD</strong> en Europe, elle n'est plus optionnelle. Ce guide couvre les fondamentaux, les rôles clés, les 7 erreurs fatales et une méthode pragmatique en 5 étapes pour démarrer. Le framework <strong>CQSEV</strong> est présenté comme outil de diagnostic.
-            </p>
-            <p style="margin-top:0.75rem;font-size:0.875rem;color:var(--c-indigo);font-weight:500;">⏱️ Temps de lecture : 12 minutes</p>
+        <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:3rem;position:relative;overflow:hidden;" data-animate>
+            <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
+            <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> En résumé</h2>
+            <p style="color:var(--ink-light);line-height:1.7;font-weight:300;">La <strong>gouvernance des données</strong> est l'ensemble des politiques, rôles et processus qui déterminent comment une organisation collecte, stocke, utilise et protège ses données. En 2026, avec la <strong>Loi 25</strong> au Québec et le <strong>RGPD</strong> en Europe, elle n'est plus optionnelle. Ce guide couvre les fondamentaux, les rôles clés, les 7 erreurs fatales et une méthode en 5 étapes. Le framework <strong>CQSEV</strong> est présenté comme outil de diagnostic.</p>
+            <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">⏱️ 12 minutes</p>
         </div>
 
         <!-- SOMMAIRE -->
-        <nav class="toc" aria-label="Sommaire" data-animate>
-            <h2>Dans cet article</h2>
-            <ol>
-                <li><a href="#definition"><span class="num">1.</span> Qu'est-ce que la gouvernance des données ?</a></li>
-                <li><a href="#pourquoi"><span class="num">2.</span> Pourquoi c'est critique en 2026</a></li>
-                <li><a href="#composantes"><span class="num">3.</span> Les composantes essentielles</a></li>
-                <li><a href="#roles"><span class="num">4.</span> Les rôles clés</a></li>
-                <li><a href="#erreurs"><span class="num">5.</span> Les 7 erreurs fatales</a></li>
-                <li><a href="#demarrer"><span class="num">6.</span> Comment démarrer en 5 étapes</a></li>
-                <li><a href="#cqsev-role"><span class="num">7.</span> Le rôle du framework CQSEV</a></li>
-                <li><a href="#conclusion"><span class="num">8.</span> Ce qu'il faut retenir</a></li>
-                <li><a href="#faq-article"><span class="num">9.</span> Questions fréquentes</a></li>
+        <nav style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:3rem;" aria-label="Sommaire" data-animate>
+            <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">Dans cet article</h2>
+            <ol style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+                <li><a href="#definition" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">1.</span> Qu'est-ce que la gouvernance des données ?</a></li>
+                <li><a href="#pourquoi" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">2.</span> Pourquoi c'est critique en 2026</a></li>
+                <li><a href="#composantes" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">3.</span> Les composantes essentielles</a></li>
+                <li><a href="#roles" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">4.</span> Les rôles clés</a></li>
+                <li><a href="#erreurs" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">5.</span> Les 7 erreurs fatales</a></li>
+                <li><a href="#demarrer" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">6.</span> Comment démarrer en 5 étapes</a></li>
+                <li><a href="#cqsev-role" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">7.</span> Le rôle du framework CQSEV</a></li>
+                <li><a href="#conclusion" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">8.</span> Ce qu'il faut retenir</a></li>
+                <li><a href="#faq-article" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">9.</span> Questions fréquentes</a></li>
             </ol>
         </nav>
 
-        <!-- ====== PROSE ====== -->
+        <!-- PROSE -->
         <div class="prose">
 
-            <!-- ====== SECTION 1 : DÉFINITION ====== -->
             <h2 id="definition">Qu'est-ce que la gouvernance des données ?</h2>
-
-            <p>La <strong>gouvernance des données</strong> (<em>data governance</em> en anglais) est l'ensemble des politiques, rôles, processus et standards qui déterminent comment une organisation collecte, stocke, utilise, partage et protège ses données. C'est le cadre de décision qui répond à la question : <strong>« Qui est responsable de quoi, et selon quelles règles ? »</strong></p>
-
-            <p>Pour comprendre simplement, pensez au <strong>Code de la route</strong>. Il ne conduit pas à votre place. Il définit les règles : vitesse maximale, priorité à droite, feux rouges. Sans lui, chaque conducteur inventerait ses propres règles — et les accidents seraient inévitables.</p>
-
-            <p>La gouvernance des données, c'est le Code de la route de vos données. Elle ne gère pas les données elle-même (c'est le rôle de la <em>gestion des données</em>), mais elle définit <strong>les règles que tout le monde doit suivre</strong>.</p>
-
+            <p>La <strong>gouvernance des données</strong> (<em>data governance</em>) est l'ensemble des politiques, rôles, processus et standards qui déterminent comment une organisation collecte, stocke, utilise, partage et protège ses données. C'est le cadre de décision qui répond à la question : <strong>« Qui est responsable de quoi, et selon quelles règles ? »</strong></p>
+            <p>Pensez au <strong>Code de la route</strong>. Il ne conduit pas à votre place. Il définit les règles : vitesse maximale, priorité à droite, feux rouges. Sans lui, chaque conducteur inventerait ses propres règles — et les accidents seraient inévitables.</p>
+            <p>La gouvernance des données, c'est le Code de la route de vos données.</p>
             <div class="cards-3">
-                <div class="card-silo" style="background:#ECFDF5;border-color:#A7F3D0;">
-                    <h3 style="color:#065F46;">✅ Ce que c'est</h3>
-                    <p>Définir qui est responsable des données clients. Écrire les standards de qualité. Décider des règles d'accès.</p>
-                </div>
-                <div class="card-silo" style="background:#FEF2F2;border-color:#FECACA;">
-                    <h3 style="color:#991B1B;">❌ Ce que ce n'est pas</h3>
-                    <p>Acheter un outil à 500 K$. Créer 200 pages de politiques. Nommer un comité sans pouvoir.</p>
-                </div>
-                <div class="card-silo" style="background:#EEF2FF;border-color:#C7D2FE;">
-                    <h3 style="color:#3730A3;">💡 Ce que ça devrait être</h3>
-                    <p>Un cadre pragmatique. 3 politiques qui fonctionnent. Des rôles clairs. Des mesures concrètes.</p>
-                </div>
+                <div class="card-silo"><h3 style="color:#065F46;">✅ Ce que c'est</h3><p>Définir qui est responsable des données clients. Écrire les standards de qualité. Décider des règles d'accès.</p></div>
+                <div class="card-silo"><h3 style="color:#991B1B;">❌ Ce que ce n'est pas</h3><p>Acheter un outil à 500 K$. Créer 200 pages de politiques. Nommer un comité sans pouvoir.</p></div>
+                <div class="card-silo"><h3 style="color:#3730A3;">💡 Ce que ça devrait être</h3><p>Un cadre pragmatique. 3 politiques qui fonctionnent. Des rôles clairs. Des mesures concrètes.</p></div>
             </div>
 
-            <!-- ====== SECTION 2 : POURQUOI ====== -->
             <h2 id="pourquoi">Pourquoi c'est critique en 2026</h2>
-
-            <p>Trois forces convergent en 2026 pour rendre la gouvernance des données incontournable :</p>
-
             <h3>1. La pression réglementaire</h3>
-
-            <p>Au Québec, la <strong>Loi 25</strong> (Loi modernisant des dispositions législatives en matière de protection des renseignements personnels) est entrée pleinement en vigueur en septembre 2024. Elle impose aux entreprises de :</p>
-
+            <p>Au Québec, la <strong>Loi 25</strong> est entrée pleinement en vigueur en septembre 2024. Elle impose aux entreprises de :</p>
             <ul class="check-list">
-                <li><svg class="check-icon" style="color:var(--c-blue);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Nommer un <strong>responsable de la protection des renseignements personnels</strong></span></li>
-                <li><svg class="check-icon" style="color:var(--c-blue);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Réaliser des <strong>évaluations des facteurs relatifs à la vie privée</strong> (EFVP)</span></li>
-                <li><svg class="check-icon" style="color:var(--c-blue);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Obtenir un <strong>consentement explicite</strong> pour la collecte de données</span></li>
-                <li><svg class="check-icon" style="color:var(--c-blue);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Notifier la <strong>Commission d'accès à l'information</strong> en cas d'incident</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Nommer un <strong>responsable de la protection des renseignements personnels</strong></span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Réaliser des <strong>évaluations des facteurs relatifs à la vie privée</strong></span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Obtenir un <strong>consentement explicite</strong> pour la collecte</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Notifier la <strong>Commission d'accès à l'information</strong> en cas d'incident</span></li>
             </ul>
-
-            <p>Les amendes peuvent atteindre <strong>25 millions de dollars</strong> ou 4 % du chiffre d'affaires mondial. Sans gouvernance des données, la conformité est impossible.</p>
+            <p>Les amendes peuvent atteindre <strong>25 millions de dollars</strong> ou 4 % du chiffre d'affaires mondial.</p>
 
             <h3>2. L'IA a besoin de données fiables</h3>
-
-            <p>L'intelligence artificielle est le sujet de 2026. Mais un modèle d'IA entraîné sur des <strong>données incomplètes, dupliquées ou incorrectes</strong> produit des résultats dangereux. La formule est simple : <strong>« Garbage in, garbage out »</strong> — mais à l'échelle de l'IA, les conséquences sont amplifiées.</p>
-
-            <p>Concrètement, sans gouvernance des données, l'IA pose trois risques :</p>
-
+            <p>Un modèle d'IA entraîné sur des <strong>données incomplètes, dupliquées ou incorrectes</strong> produit des résultats dangereux. <strong>« Garbage in, garbage out »</strong> — à l'échelle de l'IA, les conséquences sont amplifiées :</p>
             <ul class="check-list">
-                <li><svg class="check-icon" style="color:var(--c-red);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg><span><strong>Biais algorithmique</strong> — Un modèle entraîné sur des données historiquement biaisées reproduit et amplifie ces biais dans ses décisions (recrutement, crédit, assurance)</span></li>
-                <li><svg class="check-icon" style="color:var(--c-red);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg><span><strong>Non-conformité réglementaire</strong> — La Loi 25 et le RGPD exigent de savoir quelles données personnelles alimentent vos modèles et d'obtenir le consentement approprié</span></li>
-                <li><svg class="check-icon" style="color:var(--c-red);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg><span><strong>Décisions erronées à grande vitesse</strong> — L'IA automatise les décisions. Si les données sont mauvaises, vous prenez de mauvaises décisions plus vite qu'avant — pas de meilleur résultat, juste plus de dégâts plus rapidement</span></li>
+                <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span><strong>Biais algorithmique</strong> — Un modèle biaisé reproduit et amplifie les biais dans ses décisions</span></li>
+                <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span><strong>Non-conformité réglementaire</strong> — La Loi 25 exige de savoir quelles données alimentent vos modèles</span></li>
+                <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span><strong>Décisions erronées à grande vitesse</strong> — Vous prenez de mauvaises décisions plus vite qu'avant</span></li>
             </ul>
-
-            <div class="callout callout-tip">
-                <svg class="callout-icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
-                <p><span class="label">Règle simple :</span> Avant de déployer un modèle d'IA, posez-vous les 5 questions CQSEV sur les données qui l'alimentent. Si vous ne pouvez pas répondre « oui » aux axes Conformité et Qualité, votre modèle est un risque, pas un atout.</p>
-            </div>
+            <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Règle simple :</p><p class="body-sm">Avant de déployer un modèle d'IA, posez-vous les 5 questions CQSEV sur les données qui l'alimentent. Si vous ne pouvez pas répondre « oui » aux axes Conformité et Qualité, votre modèle est un risque.</p></div></div>
 
             <h3>3. Le coût de la mauvaise qualité</h3>
+            <p>Selon Gartner, les organisations perdent en moyenne <strong>12,9 millions de dollars par an</strong> à cause de la mauvaise qualité des données.</p>
 
-            <p>Selon Gartner, les organisations perdent en moyenne <strong>12,9 millions de dollars par an</strong> à cause de la mauvaise qualité des données. Ce coût inclut les décisions erronées, le temps perdu à corriger les erreurs, et les opportunités manquées.</p>
-
-            <!-- ====== SECTION 3 : COMPOSANTES ====== -->
             <h2 id="composantes">Les composantes essentielles</h2>
-
-            <p>Une gouvernance des données efficace repose sur <strong>quatre piliers</strong> :</p>
-
-            <div class="cards-3 cards-2">
-                <div class="card-silo" style="background:#EEF2FF;border-color:#C7D2FE;">
-                    <h3 style="color:#3730A3;">📋 Politiques</h3>
-                    <p>Les règles du jeu : qualité, accès, rétention, classification. 3 politiques claires valent mieux que 200 pages.</p>
-                </div>
-                <div class="card-silo" style="background:#ECFDF5;border-color:#A7F3D0;">
-                    <h3 style="color:#065F46;">👥 Rôles</h3>
-                    <p>Qui est responsable de quoi : Data Owner, Data Steward, Data Custodian. Des noms, pas des fonctions vagues.</p>
-                </div>
-                <div class="card-silo" style="background:#FFFBEB;border-color:#FDE68A;">
-                    <h3 style="color:#92400E;">⚙️ Processus</h3>
-                    <p>Comment les règles sont appliquées, vérifiées et améliorées. Audit, mesure, escalade, correction.</p>
-                </div>
-                <div class="card-silo" style="background:#FAF5FF;border-color:#E9D5FF;">
-                    <h3 style="color:#6D28D9;">🔧 Outils</h3>
-                    <p>Catalogue de données, glossaire métier, lignage des données. L'outil vient APRÈS les processus, jamais avant.</p>
-                </div>
+            <div class="cards-2">
+                <div class="card-silo"><h3>📋 Politiques</h3><p>Les règles du jeu : qualité, accès, rétention, classification. 3 politiques claires valent mieux que 200 pages.</p></div>
+                <div class="card-silo"><h3>👥 Rôles</h3><p>Qui est responsable de quoi : Data Owner, Data Steward, Data Custodian. Des noms, pas des fonctions vagues.</p></div>
+                <div class="card-silo"><h3>⚙️ Processus</h3><p>Comment les règles sont appliquées, vérifiées et améliorées. Audit, mesure, escalade, correction.</p></div>
+                <div class="card-silo"><h3>🔧 Outils</h3><p>Catalogue de données, glossaire métier, lignage. L'outil vient APRÈS les processus, jamais avant.</p></div>
             </div>
 
-            <!-- ====== SECTION 4 : RÔLES ====== -->
             <h2 id="roles">Les rôles clés</h2>
-
-            <p>La gouvernance des données fonctionne avec <strong>trois rôles fondamentaux</strong> :</p>
-
             <div class="article-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="text-align:left;background:var(--c-gray-100);color:var(--c-gray-600);">Rôle</th>
-                            <th style="text-align:left;background:var(--c-gray-100);color:var(--c-gray-600);">Responsabilité</th>
-                            <th style="text-align:left;background:var(--c-gray-100);color:var(--c-gray-600);">Analogie</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:700;color:var(--c-gray-900);">Data Owner</td>
-                            <td>Décide des règles pour son domaine de données. A l'autorité de dire « oui » ou « non ».</td>
-                            <td style="color:var(--c-gray-500);font-style:italic;">Le propriétaire de l'immeuble</td>
-                        </tr>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:700;color:var(--c-gray-900);">Data Steward</td>
-                            <td>Applique les règles au quotidien. Vérifie la qualité, corrige les anomalies.</td>
-                            <td style="color:var(--c-gray-500);font-style:italic;">Le concierge de l'immeuble</td>
-                        </tr>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:700;color:var(--c-gray-900);">Data Custodian</td>
-                            <td>Gère l'infrastructure technique : stockage, sécurité, accès, pipelines.</td>
-                            <td style="color:var(--c-gray-500);font-style:italic;">L'entreprise de maintenance</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <table><thead><tr><th style="text-align:left;background:var(--paper);">Rôle</th><th style="text-align:left;background:var(--paper);">Responsabilité</th><th style="text-align:left;background:var(--paper);">Analogie</th></tr></thead>
+                <tbody>
+                    <tr><td style="font-weight:500;color:var(--ink);">Data Owner</td><td>Décide des règles pour son domaine. A l'autorité de dire « oui » ou « non ».</td><td style="font-style:italic;">Le propriétaire de l'immeuble</td></tr>
+                    <tr><td style="font-weight:500;color:var(--ink);">Data Steward</td><td>Applique les règles au quotidien. Vérifie la qualité, corrige les anomalies.</td><td style="font-style:italic;">Le concierge de l'immeuble</td></tr>
+                    <tr><td style="font-weight:500;color:var(--ink);">Data Custodian</td><td>Gère l'infrastructure technique : stockage, sécurité, accès, pipelines.</td><td style="font-style:italic;">L'entreprise de maintenance</td></tr>
+                </tbody></table>
             </div>
 
-            <div class="callout callout-tip">
-                <svg class="callout-icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
-                <p><span class="label">Erreur courante :</span> Nommer un « comité de gouvernance » sans nommer de Data Owner par domaine. Résultat : personne n'est réellement responsable et les réunions ne produisent aucune décision.</p>
-            </div>
-
-            <!-- ====== SECTION 5 : 7 ERREURS — Développées ====== -->
             <h2 id="erreurs">Les 7 erreurs fatales</h2>
-
-            <p>Après 15 ans sur le terrain, voici les 7 erreurs que je vois encore et encore :</p>
-
             <h3>Erreur 1 — Trop de bureaucratie</h3>
-            <p>Un grand assureur montréalais avait produit un document de gouvernance de 247 pages. Résultat : personne ne l'avait lu sauf le consultant qui l'avait écrit. <strong>Commencez par 3 politiques d'une page chacune</strong> : qualité, accès, rétention. Vous pourrez toujours ajouter plus tard.</p>
-
+            <p>Un grand assureur montréalais avait produit un document de gouvernance de 247 pages. Résultat : personne ne l'avait lu. <strong>Commencez par 3 politiques d'une page chacune.</strong></p>
             <h3>Erreur 2 — Pas de sponsor exécutif</h3>
-            <p>La gouvernance des données a besoin d'un VP ou d'un C-level qui porte le message. Sans sponsor exécutif, le comité de gouvernance se réunit, discute, puis rien ne change. <strong>Le sponsor ne doit pas être le CTO</strong> — idéalement, c'est un leader métier (VP Opérations, CFO) qui comprend l'impact business des données.</p>
-
+            <p>Sans un VP ou C-level qui porte le message, le comité de gouvernance se réunit, discute, puis rien ne change. <strong>Le sponsor ne doit pas être le CTO</strong> — idéalement un leader métier.</p>
             <h3>Erreur 3 — Commencer par l'outil</h3>
-            <p>« On va acheter Collibra / Informatica / Alation et le problème sera réglé. » J'ai vu cette erreur dans au moins 10 organisations. L'outil coûte 200 à 500 K$ par an. Six mois après l'achat, personne ne l'utilise parce que <strong>les processus n'ont jamais été définis</strong>. L'outil vient APRÈS les processus. Toujours.</p>
-
+            <p>« On va acheter Collibra / Informatica / Alation. » L'outil coûte 200 à 500 K$ par an. Six mois après, personne ne l'utilise parce que <strong>les processus n'ont jamais été définis</strong>.</p>
             <h3>Erreur 4 — Ignorer le terrain</h3>
-            <p>Des politiques parfaites dans un SharePoint que personne ne consulte. Si le Data Steward ne vérifie pas la qualité chaque semaine, <strong>les règles n'existent pas dans la réalité</strong>. La gouvernance doit être opérationnalisée — pas juste documentée.</p>
-
+            <p>Des politiques parfaites dans un SharePoint que personne ne consulte. Si le Data Steward ne vérifie pas chaque semaine, <strong>les règles n'existent pas dans la réalité</strong>.</p>
             <h3>Erreur 5 — Pas de mesure</h3>
-            <p>« Nos données sont de bonne qualité. » Vraiment ? Quel est le taux de doublons ? Quel est le pourcentage de champs obligatoires remplis ? <strong>Sans KPI mesurable, c'est de l'opinion, pas de la gouvernance.</strong> Définissez 3 métriques simples et mesurez-les chaque semaine.</p>
-
+            <p>« Nos données sont de bonne qualité. » Quel est le taux de doublons ? <strong>Sans KPI mesurable, c'est de l'opinion, pas de la gouvernance.</strong></p>
             <h3>Erreur 6 — Tout gouverner en même temps</h3>
-            <p>Vouloir gouverner toutes les données de l'entreprise dès le jour 1 est le meilleur moyen de ne rien livrer. <strong>Commencez par UN domaine critique</strong> — souvent les données clients ou les données financières — prouvez la valeur, puis élargissez.</p>
-
+            <p><strong>Commencez par UN domaine critique</strong> — souvent les données clients ou financières — prouvez la valeur, puis élargissez.</p>
             <h3>Erreur 7 — Oublier les pipelines ETL</h3>
-            <p>C'est l'erreur que la plupart des frameworks ne voient même pas. Les politiques de qualité sont définies, les Data Stewards les vérifient, mais <strong>les pipelines ETL continuent de charger des données invalides</strong> dans le Data Warehouse sans aucune validation. C'est pour corriger ça que CQSEV inclut un troisième volet : <a href="gouverner-gerer-transformer-donnees.html" class="link">la transformation</a>.</p>
+            <p>Les politiques sont définies mais <strong>les pipelines ETL continuent de charger des données invalides</strong>. C'est pour ça que CQSEV inclut un troisième volet : <a href="gouverner-gerer-transformer-donnees.html" class="link">la transformation</a>.</p>
 
-            <!-- ====== SECTION 6 : DÉMARRER — Étape 1 enrichie ====== -->
             <h2 id="demarrer">Comment démarrer en 5 étapes</h2>
-
-            <p>Voici une méthode pragmatique pour démarrer votre gouvernance des données <strong>sans budget massif</strong> :</p>
-
             <h3>Étape 1 — Identifiez 3 problèmes concrets</h3>
-
-            <p>Ne partez pas de la théorie. Partez des douleurs. Voici comment les trouver en 30 minutes :</p>
-
+            <p>Ne partez pas de la théorie. Partez des douleurs :</p>
             <ul class="check-list">
-                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Demandez à 5 personnes de départements différents : <strong>« Quelle donnée vous pose problème cette semaine ? »</strong></span></li>
-                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Vérifiez les <strong>rapports du dernier comité de direction</strong> : y a-t-il eu des chiffres contradictoires ?</span></li>
-                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Regardez les <strong>tickets d'incidents data</strong> des 3 derniers mois : quels problèmes reviennent ?</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Demandez à 5 personnes : <strong>« Quelle donnée vous pose problème cette semaine ? »</strong></span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Vérifiez les <strong>rapports du dernier comité</strong> : chiffres contradictoires ?</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Regardez les <strong>tickets d'incidents data</strong> des 3 derniers mois</span></li>
             </ul>
-
-            <p>Ces problèmes concrets deviennent vos cas d'usage prioritaires. Exemples classiques : « Marketing et Finance n'ont pas les mêmes chiffres de revenus », « Le fichier des salaires est accessible à tout le monde sur SharePoint », « Personne ne sait ce que le champ CUST_STAT signifie dans la base clients ».</p>
-
             <h3>Étape 2 — Nommez les responsables</h3>
-            <p>Pour chaque domaine de données impliqué, nommez un <strong>Data Owner</strong> (qui décide) et un <strong>Data Steward</strong> (qui vérifie au quotidien). Pas besoin de recruter — ce sont souvent des personnes qui font déjà ce travail informellement.</p>
-
+            <p>Pour chaque domaine, nommez un <strong>Data Owner</strong> et un <strong>Data Steward</strong>. Pas besoin de recruter — ce sont souvent des personnes qui font déjà ce travail informellement.</p>
             <h3>Étape 3 — Écrivez les 3 politiques critiques</h3>
-            <p>Une politique de <strong>qualité</strong> (quels standards, quels KPIs), une politique d'<strong>accès</strong> (qui a accès à quoi, selon quel processus), une politique de <strong>rétention</strong> (combien de temps on garde les données, quand on les purge). Chaque politique tient sur une page.</p>
-
+            <p>Une politique de <strong>qualité</strong>, une d'<strong>accès</strong>, une de <strong>rétention</strong>. Chaque politique tient sur une page.</p>
             <h3>Étape 4 — Mesurez votre baseline</h3>
-            <p>Avant d'améliorer, mesurez : quel est le taux de doublons dans le CRM ? Combien de colonnes n'ont pas de documentation ? Qui a accès aux données sensibles ? Cette baseline vous permettra de prouver le progrès.</p>
-
+            <p>Avant d'améliorer, mesurez : taux de doublons, colonnes sans documentation, qui a accès aux données sensibles.</p>
             <h3>Étape 5 — Évaluez avec CQSEV</h3>
-            <p>Utilisez la <a href="../#matrice" class="link">matrice CQSEV (5 axes × 3 volets)</a> pour évaluer chaque dimension : la règle existe-t-elle ? (Gouverner) Est-elle vérifiée ? (Gérer) Est-elle automatisée dans le pipeline ? (Transformer). Les cases vides sont vos priorités d'action.</p>
+            <p>Utilisez la <a href="../#matrice" class="link">matrice CQSEV (5 axes × 3 volets)</a> pour évaluer chaque dimension. Les cases vides sont vos priorités.</p>
 
-            <!-- ====== SECTION 7 : CQSEV ====== -->
             <h2 id="cqsev-role">Le rôle du framework CQSEV</h2>
-
-            <p>Le <strong>framework CQSEV</strong> a été conçu pour résoudre le problème fondamental de la gouvernance des données : <strong>le décalage entre les règles et la réalité</strong>.</p>
-
-            <p>La plupart des frameworks (DAMA-DMBOK, DCAM) se concentrent sur la gouvernance — les politiques et les standards. C'est nécessaire, mais insuffisant. CQSEV ajoute deux dimensions :</p>
-
+            <p>Le <strong>framework CQSEV</strong> résout le problème fondamental : <strong>le décalage entre les règles et la réalité</strong>.</p>
             <div class="article-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th style="text-align:left;background:var(--c-gray-100);color:var(--c-gray-600);">Aspect</th>
-                            <th style="text-align:center;background:var(--c-gray-100);color:var(--c-gray-600);">DAMA-DMBOK</th>
-                            <th style="text-align:center;background:var(--c-gray-100);color:var(--c-gray-600);">DCAM</th>
-                            <th style="text-align:center;background:var(--c-indigo);color:#fff;">CQSEV</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:600;">Portée</td>
-                            <td style="text-align:center;">11 knowledge areas</td>
-                            <td style="text-align:center;">8 capabilities</td>
-                            <td style="text-align:center;background:#EEF2FF;font-weight:600;">5 axes × 3 volets</td>
-                        </tr>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:600;">Inclut la gestion terrain</td>
-                            <td style="text-align:center;">Partiellement</td>
-                            <td style="text-align:center;">Partiellement</td>
-                            <td style="text-align:center;background:#EEF2FF;font-weight:600;">Oui (volet Gérer)</td>
-                        </tr>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:600;">Inclut l'ETL/pipeline</td>
-                            <td style="text-align:center;">Non</td>
-                            <td style="text-align:center;">Non</td>
-                            <td style="text-align:center;background:#EEF2FF;font-weight:600;">Oui (volet Transformer)</td>
-                        </tr>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:600;">Temps de diagnostic</td>
-                            <td style="text-align:center;">Semaines</td>
-                            <td style="text-align:center;">Jours</td>
-                            <td style="text-align:center;background:#EEF2FF;font-weight:600;">½ journée à 2 jours</td>
-                        </tr>
-                        <tr style="border-top:1px solid var(--c-gray-200);">
-                            <td style="font-weight:600;">Adapté aux PME</td>
-                            <td style="text-align:center;">Difficile</td>
-                            <td style="text-align:center;">Moyen</td>
-                            <td style="text-align:center;background:#EEF2FF;font-weight:600;">Oui</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <table><thead><tr><th style="text-align:left;background:var(--paper);">Aspect</th><th style="text-align:center;background:var(--paper);">DAMA-DMBOK</th><th style="text-align:center;background:var(--paper);">DCAM</th><th style="text-align:center;background:var(--ink);color:var(--white);">CQSEV</th></tr></thead>
+                <tbody>
+                    <tr><td style="font-weight:500;">Portée</td><td style="text-align:center;">11 knowledge areas</td><td style="text-align:center;">8 capabilities</td><td style="text-align:center;background:var(--paper);font-weight:500;">5 axes × 3 volets</td></tr>
+                    <tr><td style="font-weight:500;">Inclut la gestion terrain</td><td style="text-align:center;">Partiellement</td><td style="text-align:center;">Partiellement</td><td style="text-align:center;background:var(--paper);font-weight:500;">Oui (volet Gérer)</td></tr>
+                    <tr><td style="font-weight:500;">Inclut l'ETL/pipeline</td><td style="text-align:center;">Non</td><td style="text-align:center;">Non</td><td style="text-align:center;background:var(--paper);font-weight:500;">Oui (volet Transformer)</td></tr>
+                    <tr><td style="font-weight:500;">Temps de diagnostic</td><td style="text-align:center;">Semaines</td><td style="text-align:center;">Jours</td><td style="text-align:center;background:var(--paper);font-weight:500;">½ journée à 2 jours</td></tr>
+                    <tr><td style="font-weight:500;">Adapté aux PME</td><td style="text-align:center;">Difficile</td><td style="text-align:center;">Moyen</td><td style="text-align:center;background:var(--paper);font-weight:500;">Oui</td></tr>
+                </tbody></table>
             </div>
-
-            <p>CQSEV ne remplace pas le DAMA-DMBOK — il le complète en ajoutant un <strong>filtre pragmatique</strong> pour savoir par où commencer. Les deux sont complémentaires.</p>
-
             <p><a href="../#definition" class="link">→ En savoir plus sur le framework CQSEV</a></p>
 
-            <!-- ====== SECTION 8 : CONCLUSION ====== -->
             <h2 id="conclusion">Ce qu'il faut retenir</h2>
-
-            <p>La gouvernance des données en 2026 n'est plus un projet « nice to have ». C'est une <strong>obligation légale</strong> (Loi 25), un <strong>prérequis pour l'IA</strong>, et un <strong>avantage concurrentiel</strong> pour les organisations qui la prennent au sérieux.</p>
-
-            <p>Mais elle ne doit pas être complexe. Voici les 5 principes que j'applique après 15 ans de terrain :</p>
-
-            <ol class="numbered">
-                <li><strong>Pragmatisme avant perfection</strong> — 3 politiques qui fonctionnent battent 200 pages que personne ne lit</li>
+            <p>La gouvernance des données en 2026 n'est plus un projet « nice to have ». C'est une <strong>obligation légale</strong>, un <strong>prérequis pour l'IA</strong>, et un <strong>avantage concurrentiel</strong>.</p>
+            <p>Mais elle ne doit pas être complexe. 5 principes après 15 ans de terrain :</p>
+            <ol style="list-style:decimal;list-style-position:inside;display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;">
+                <li><strong>Pragmatisme avant perfection</strong> — 3 politiques qui fonctionnent battent 200 pages</li>
                 <li><strong>Valeur avant contrôle</strong> — Si les gens ne voient pas le bénéfice, ils contourneront les règles</li>
                 <li><strong>Adoption avant technologie</strong> — Un outil sans adhésion humaine prend la poussière</li>
-                <li><strong>Mesure avant opinion</strong> — Sans KPI, « nos données sont bonnes » est une croyance, pas un fait</li>
-                <li><strong>Un domaine avant tous</strong> — Prouvez la valeur sur un périmètre restreint, puis élargissez</li>
+                <li><strong>Mesure avant opinion</strong> — Sans KPI, c'est une croyance, pas un fait</li>
+                <li><strong>Un domaine avant tous</strong> — Prouvez la valeur, puis élargissez</li>
             </ol>
-
-            <div class="quote-block">
-                <p>La gouvernance des données n'est pas une destination.<br>C'est une <span class="highlight">habitude organisationnelle</span> qui se construit un axe à la fois.</p>
-            </div>
-
-        </div><!-- /prose -->
+            <div class="quote-block"><p>La gouvernance des données n'est pas une destination. C'est une habitude organisationnelle qui se construit un axe à la fois.</p></div>
+        </div>
 
         <!-- CTA GRILLE -->
-        <div class="cta-indigo" style="border-radius:var(--r-2xl);padding:2rem;">
-            <h3 style="font-family:var(--font-heading);font-weight:800;font-size:1.25rem;margin-bottom:0.5rem;">📊 Évaluez votre gouvernance des données</h3>
-            <p style="font-size:0.875rem;margin-bottom:1.25rem;">La grille CQSEV (5×3) en Excel. 15 points de contrôle. Diagnostic en 30 minutes.</p>
-            <a href="../cqsev-grille-diagnostic.xlsx" download class="cta-indigo btn-cta">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                Télécharger la grille (Excel)
-            </a>
+        <div style="background:var(--ink);border-radius:24px;padding:2.5rem;text-align:center;margin-top:3rem;color:var(--white);">
+            <h3 style="font-family:var(--font-serif);font-size:1.375rem;color:var(--white);margin-bottom:0.5rem;">📊 Évaluez votre gouvernance des données</h3>
+            <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem;font-weight:300;font-size:0.875rem;">La grille CQSEV (5×3) en Excel. 15 points de contrôle. Diagnostic en 30 minutes.</p>
+            <a href="../cqsev-grille-diagnostic.xlsx" download class="btn-pill" style="background:var(--white);color:var(--ink);"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Télécharger la grille (Excel)</a>
         </div>
 
         <!-- FAQ -->
-        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--c-gray-200);">
-            <h2 id="faq-article" style="font-family:var(--font-heading);font-size:1.5rem;font-weight:800;margin-bottom:1.5rem;">Questions fréquentes</h2>
-
-            <details class="faq-item" open>
-                <summary>
-                    Qu'est-ce que la gouvernance des données ?
-                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </summary>
-                <div class="answer">La gouvernance des données est l'ensemble des politiques, rôles et processus qui déterminent comment une organisation collecte, stocke, utilise et protège ses données. C'est le cadre de décision — le « Code de la route » des données — qui assure que tout le monde suit les mêmes règles.</div>
-            </details>
-
-            <details class="faq-item">
-                <summary>
-                    La gouvernance des données est-elle obligatoire au Québec ?
-                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </summary>
-                <div class="answer">Oui, indirectement. La Loi 25 (entrée pleinement en vigueur en septembre 2024) impose aux entreprises québécoises de protéger les renseignements personnels, de nommer un responsable, de réaliser des évaluations de risque et de signaler les incidents. Sans gouvernance des données formalisée, il est pratiquement impossible de respecter ces obligations. Les amendes peuvent atteindre 25 millions de dollars.</div>
-            </details>
-
-            <details class="faq-item">
-                <summary>
-                    Quelle est la différence entre gouvernance et gestion des données ?
-                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </summary>
-                <div class="answer">La gouvernance définit les règles (le « quoi » et le « qui »). La gestion applique ces règles au quotidien (le « comment » et le « quand »). La gouvernance sans gestion produit des politiques que personne ne respecte. La gestion sans gouvernance produit du bricolage sans direction. Le framework CQSEV évalue les deux — plus la transformation ETL — dans une matrice unique.</div>
-            </details>
-
-            <details class="faq-item">
-                <summary>
-                    Comment mesurer la maturité de la gouvernance des données ?
-                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </summary>
-                <div class="answer">Utilisez une matrice d'évaluation comme CQSEV. Pour chaque axe (Conformité, Qualité, Sécurité, Efficacité, Valorisation), évaluez de 0 à 5 dans chaque volet (Gouverner, Gérer, Transformer). Le score total sur 75 donne un niveau de maturité. Vous pouvez <a href="../cqsev-grille-diagnostic.xlsx" download style="color:var(--c-indigo);font-weight:600;">télécharger la grille gratuite</a> pour faire l'exercice.</div>
-            </details>
-
-            <details class="faq-item">
-                <summary>
-                    Combien de temps pour mettre en place une gouvernance des données ?
-                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                </summary>
-                <div class="answer">Un diagnostic initial prend une demi-journée à 2 jours. Les premières politiques et rôles peuvent être en place en 4 à 6 semaines. Mais la gouvernance est un processus continu, pas un projet avec une date de fin. L'objectif est de créer un cadre léger qui s'améliore trimestriellement.</div>
-            </details>
+        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
+            <h2 id="faq-article" style="font-size:1.5rem;margin-bottom:1.5rem;">Questions fréquentes</h2>
+            <details class="faq-item" open><summary>Qu'est-ce que la gouvernance des données ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="answer">L'ensemble des politiques, rôles et processus qui déterminent comment une organisation collecte, stocke, utilise et protège ses données. C'est le « Code de la route » des données.</div></details>
+            <details class="faq-item"><summary>La gouvernance est-elle obligatoire au Québec ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="answer">Oui, indirectement. La Loi 25 impose de protéger les renseignements personnels, nommer un responsable et signaler les incidents. Sans gouvernance formalisée, la conformité est impossible. Amendes jusqu'à 25 millions $.</div></details>
+            <details class="faq-item"><summary>Quelle est la différence entre gouvernance et gestion des données ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="answer">La gouvernance définit les règles (le « quoi » et le « qui »). La gestion applique ces règles au quotidien (le « comment »). CQSEV évalue les deux — plus la transformation ETL — dans une matrice unique.</div></details>
+            <details class="faq-item"><summary>Comment mesurer la maturité de la gouvernance ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="answer">Utilisez la matrice CQSEV. Pour chaque axe, évaluez de 0 à 5 dans chaque volet. Score total sur 75. <a href="../cqsev-grille-diagnostic.xlsx" download style="color:var(--ink);font-weight:500;">Téléchargez la grille gratuite</a>.</div></details>
+            <details class="faq-item"><summary>Combien de temps pour mettre en place une gouvernance ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary><div class="answer">Diagnostic initial : ½ journée à 2 jours. Premières politiques et rôles : 4 à 6 semaines. La gouvernance est un processus continu, pas un projet avec une date de fin.</div></details>
         </div>
 
         <!-- AUTEUR -->
         <div class="author-card">
             <div class="avatar-lg">OC</div>
             <div>
-                <p style="font-weight:700;font-size:1.125rem;color:var(--c-gray-900);">Oleg Chitic</p>
-                <p style="color:var(--c-gray-600);margin-top:0.25rem;font-size:0.875rem;line-height:1.6;">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données dans les secteurs financier, assurance, commerce de détail et technologie à Montréal.</p>
-                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
-                   style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;color:#0A66C2;font-size:0.875rem;font-weight:600;">
+                <p style="font-weight:500;font-size:1.125rem;color:var(--ink);">Oleg Chitic</p>
+                <p class="body-sm" style="margin-top:0.25rem;">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données dans les secteurs financier, assurance, commerce de détail et technologie à Montréal.</p>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;color:var(--ink);font-size:0.875rem;font-weight:500;">
                     <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                     Suivre sur LinkedIn
                 </a>
             </div>
         </div>
 
-        <!-- ARTICLES CONNEXES -->
+        <!-- CONNEXES -->
         <div class="related">
-            <h3 style="font-family:var(--font-heading);">Articles connexes</h3>
+            <h3 style="font-family:var(--font-serif);">Article connexe</h3>
             <a href="gouverner-gerer-transformer-donnees.html">
-                <span style="font-size:0.75rem;color:var(--c-indigo);font-weight:600;">ARTICLE PRÉCÉDENT</span>
-                <span style="display:block;font-weight:700;color:var(--c-gray-900);margin-top:0.25rem;">Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois →</span>
+                <span style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Article précédent</span>
+                <span style="display:block;font-weight:500;color:var(--ink);margin-top:0.25rem;">Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois →</span>
             </a>
         </div>
 
-        <!-- CTA FRAMEWORK -->
-        <div class="cta-block cta-dark">
-            <h3 style="font-family:var(--font-heading);font-size:1.5rem;font-weight:800;margin-bottom:0.75rem;">Envie d'aller plus loin ?</h3>
-            <p style="margin-bottom:1.5rem;max-width:32rem;margin-left:auto;margin-right:auto;font-size:0.9rem;">
-                Découvrez la matrice complète CQSEV — 15 points de contrôle pour diagnostiquer votre maturité data.
-            </p>
-            <a href="../#matrice" class="btn-cta">
-                Voir la matrice CQSEV
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
-        </div>
-
-        <!-- RETOUR -->
-        <div class="back-link">
-            <a href="./">← Retour au blog</a>
-        </div>
-
+        <div class="back-link"><a href="./">← Retour au blog</a></div>
     </article>
 
     <!-- FAQ SCHEMA.ORG -->
@@ -728,39 +362,29 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {"@type":"Question","name":"Qu'est-ce que la gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance des données est l'ensemble des politiques, rôles et processus qui déterminent comment une organisation collecte, stocke, utilise et protège ses données. C'est le cadre de décision qui assure que tout le monde suit les mêmes règles."}},
-            {"@type":"Question","name":"La gouvernance des données est-elle obligatoire au Québec ?","acceptedAnswer":{"@type":"Answer","text":"Oui, indirectement. La Loi 25 impose aux entreprises québécoises de protéger les renseignements personnels, nommer un responsable et signaler les incidents. Sans gouvernance formalisée, la conformité est impossible. Les amendes peuvent atteindre 25 millions de dollars."}},
-            {"@type":"Question","name":"Quelle est la différence entre gouvernance et gestion des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance définit les règles (le quoi et le qui). La gestion applique ces règles au quotidien (le comment et le quand). Le framework CQSEV évalue les deux — plus la transformation ETL — dans une matrice unique."}},
-            {"@type":"Question","name":"Comment mesurer la maturité de la gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez une matrice d'évaluation comme CQSEV. Pour chaque axe, évaluez de 0 à 5 dans chaque volet. Le score total sur 75 donne un niveau de maturité."}},
-            {"@type":"Question","name":"Combien de temps pour mettre en place une gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"Un diagnostic initial prend une demi-journée à 2 jours. Les premières politiques et rôles peuvent être en place en 4 à 6 semaines. La gouvernance est un processus continu."}}
+            {"@type":"Question","name":"Qu'est-ce que la gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"L'ensemble des politiques, rôles et processus qui déterminent comment une organisation collecte, stocke, utilise et protège ses données."}},
+            {"@type":"Question","name":"La gouvernance des données est-elle obligatoire au Québec ?","acceptedAnswer":{"@type":"Answer","text":"Oui, indirectement. La Loi 25 impose de protéger les renseignements personnels, nommer un responsable et signaler les incidents. Amendes jusqu'à 25 millions de dollars."}},
+            {"@type":"Question","name":"Quelle est la différence entre gouvernance et gestion des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance définit les règles (le quoi et le qui). La gestion applique ces règles au quotidien (le comment). CQSEV évalue les deux plus la transformation ETL dans une matrice unique."}},
+            {"@type":"Question","name":"Comment mesurer la maturité de la gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"Utilisez la matrice CQSEV. Pour chaque axe, évaluez de 0 à 5 dans chaque volet. Score total sur 75."}},
+            {"@type":"Question","name":"Combien de temps pour mettre en place une gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"Diagnostic initial : une demi-journée à 2 jours. Premières politiques et rôles en 4 à 6 semaines. La gouvernance est un processus continu."}}
         ]
     }
     </script>
 
-    <!-- FOOTER — Identique à Article 1 -->
-    <footer class="site-footer">
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
-            <div>
-                <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;">
-                    <img src="../logo-icon.svg" alt="" width="24" height="24" style="height:24px;width:24px;">
-                    <p style="font-family:var(--font-heading);font-weight:800;font-size:1.125rem;color:var(--c-gray-300);">CQSEV</p>
-                </div>
-                <p style="font-size:0.875rem;color:var(--c-gray-600);">Framework pragmatique de gouvernance, gestion et transformation des données</p>
+            <a href="../" class="nav-logo" style="font-size:1.25rem;">CQSEV.</a>
+            <span class="footer-copy">© 2026 Oleg Chitic. Tous droits réservés.</span>
+            <div class="footer-links">
+                <a href="./">Blog</a>
+                <a href="../#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
             </div>
-            <div style="display:flex;align-items:center;gap:1.25rem;">
-                <a href="./" style="color:var(--c-gray-500);font-size:0.875rem;transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--c-gray-500)'">Blog</a>
-                <a href="../#contact" style="color:var(--c-gray-500);font-size:0.875rem;transition:color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--c-gray-500)'">Contact</a>
-                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" style="color:var(--c-gray-500);transition:color 0.3s;" aria-label="LinkedIn" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--c-gray-500)'">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p style="font-size:0.75rem;color:var(--c-gray-600);">© 2026 Oleg Chitic — CQSEV Framework</p>
         </div>
     </footer>
 
-    <!-- JS — Identique à Article 1 -->
+    <!-- JS -->
     <script>
     (function() {
         'use strict';
@@ -768,6 +392,11 @@
             e.forEach(function(i) { if (i.isIntersecting) { i.target.classList.add('visible'); o.unobserve(i.target); } });
         }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('[data-animate]').forEach(function(el) { o.observe(el); });
+
+        var nav = document.getElementById('site-nav');
+        var st = false;
+        function un() { nav.classList.toggle('scrolled', window.scrollY > 20); st = false; }
+        window.addEventListener('scroll', function() { if (!st) { requestAnimationFrame(un); st = true; } }, { passive: true });
 
         var t = document.getElementById('menu-toggle'), m = document.getElementById('mob-menu');
         if (t && m) {
@@ -780,6 +409,14 @@
                 a.addEventListener('click', function() { m.classList.remove('open'); m.style.display = 'none'; t.setAttribute('aria-expanded','false'); });
             });
         }
+
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var id = this.getAttribute('href'); if (id === '#') return;
+                var target = document.querySelector(id);
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
     })();
     </script>
 
