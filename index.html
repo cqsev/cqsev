@@ -73,7 +73,7 @@
 
     <style>
         /* ================================================ */
-        /* DESIGN SYSTEM — Éditorial Premium                */
+        /* DESIGN SYSTEM — Éditorial Premium + Paysage      */
         /* ================================================ */
         :root {
             --font-serif: 'Playfair Display', Georgia, serif;
@@ -114,24 +114,14 @@
 
         .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
 
-        /* Custom scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--paper); }
         ::-webkit-scrollbar-thumb { background: #D1CDD2; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--ink-light); }
 
         /* ================================================ */
-        /* LAYOUT                                           */
+        /* LAYOUT — Élargi (Paysage)                        */
         /* ================================================ */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .container-sm { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
-        .container-xs { max-width: 672px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 8rem 0; border-top: 1px solid var(--ink-10); }
-
-        /* ================================================ */
-        /* TYPOGRAPHY                                       */
-        /* ================================================ */
-        /* ✅ NOUVEAU — Plus large */
         .container { max-width: 1320px; margin: 0 auto; padding: 0 2.5rem; }
         .container-md { max-width: 1080px; margin: 0 auto; padding: 0 2.5rem; }
         .container-sm { max-width: 900px; margin: 0 auto; padding: 0 2.5rem; }
@@ -139,22 +129,20 @@
         @media (max-width: 767px) {
             .container, .container-md, .container-sm, .container-xs { padding: 0 1.25rem; }
         }
+        .section { padding: 8rem 0; border-top: 1px solid var(--ink-10); }
+        @media (max-width: 767px) { .section { padding: 4rem 0; } }
+
+        /* ================================================ */
+        /* TYPOGRAPHY                                       */
+        /* ================================================ */
+        .label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem; font-weight: 400;
+            color: var(--ink-light);
+            text-transform: uppercase; letter-spacing: 0.15em;
+            margin-bottom: 1.5rem; display: block;
+        }
         .heading-xl { font-size: clamp(3rem, 8vw, 8rem); line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
-        /* Hero bottom — 2 colonnes desktop */
-        .hero-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-        @media (min-width: 768px) {
-            .hero-bottom {
-                flex-direction: row;
-                align-items: flex-end;
-                justify-content: space-between;
-                gap: 4rem;
-            }
-        }
         .heading-lg { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
         .heading-md { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; margin-bottom: 1rem; }
         .heading-sm { font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.75rem; }
@@ -178,50 +166,42 @@
             border-bottom-color: var(--ink-10);
             padding: 1rem 0;
         }
-        /* ✅ NOUVEAU */
         .nav-inner {
             max-width: 1320px; margin: 0 auto; padding: 0 2.5rem;
             display: flex; align-items: center; justify-content: space-between;
         }
+        @media (max-width: 767px) { .nav-inner { padding: 0 1.25rem; } }
         .nav-logo {
-            font-family: var(--font-serif);
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--ink);
-            letter-spacing: -0.02em;
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.5rem; color: var(--ink); letter-spacing: -0.02em;
         }
         .nav-links { display: none; align-items: center; gap: 2rem; }
         .nav-link {
-            font-family: var(--font-mono);
-            font-size: 0.6875rem;
-            color: var(--ink-light);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: color 0.3s;
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink-light); text-transform: uppercase;
+            letter-spacing: 0.1em; transition: color 0.3s;
         }
         .nav-link:hover { color: var(--ink); }
         .nav-cta {
-            font-family: var(--font-mono);
-            font-size: 0.6875rem;
-            color: var(--ink);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 0.5rem 1.5rem;
-            border-radius: 9999px;
-            border: 1px solid var(--ink-20);
-            transition: all 0.3s;
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink); text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.5rem 1.5rem; border-radius: 9999px;
+            border: 1px solid var(--ink-20); transition: all 0.3s;
         }
         .nav-cta:hover { background: var(--ink); color: var(--paper); }
 
         .menu-toggle { display: block; color: var(--ink-light); padding: 0.5rem; }
-        .mob-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--paper); border-bottom: 1px solid var(--ink-10); padding: 1rem 1.5rem; }
+        .mob-menu {
+            display: none; position: absolute; top: 100%; left: 0; width: 100%;
+            background: var(--paper); border-bottom: 1px solid var(--ink-10);
+            padding: 1rem 1.5rem;
+        }
         .mob-menu.open { display: block; }
         .mob-menu a {
             display: block; font-family: var(--font-mono); font-size: 0.75rem;
             color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em;
             padding: 0.75rem 0; border-bottom: 1px solid var(--ink-5);
         }
-
         @media (min-width: 768px) { .nav-links { display: flex; } .menu-toggle { display: none; } }
 
         /* ================================================ */
@@ -229,11 +209,8 @@
         /* ================================================ */
         .btn-pill {
             display: inline-flex; align-items: center; gap: 0.5rem;
-            font-family: var(--font-sans);
-            font-size: 0.875rem; font-weight: 500;
-            padding: 1rem 2rem;
-            border-radius: 9999px;
-            transition: all 0.3s ease;
+            font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500;
+            padding: 1rem 2rem; border-radius: 9999px; transition: all 0.3s ease;
         }
         .btn-pill:hover { transform: translateY(-2px); }
         .btn-dark { background: var(--ink); color: var(--white); }
@@ -242,17 +219,26 @@
         .btn-outline:hover { background: var(--ink); color: var(--paper); }
 
         /* ================================================ */
+        /* HERO                                             */
+        /* ================================================ */
+        .hero-bottom {
+            display: flex; flex-direction: column; gap: 2rem; margin-top: 4rem;
+        }
+        @media (min-width: 768px) {
+            .hero-bottom {
+                flex-direction: row; align-items: flex-end;
+                justify-content: space-between; gap: 4rem;
+            }
+        }
+
+        /* ================================================ */
         /* CARDS                                            */
         /* ================================================ */
         .card {
-            background: var(--white);
-            border: 1px solid var(--ink-10);
-            border-radius: 24px;
-            padding: 2.5rem;
+            background: var(--white); border: 1px solid var(--ink-10);
+            border-radius: 24px; padding: 2.5rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            transition: all 0.4s ease; position: relative; overflow: hidden;
         }
         .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
         .card-paper { background: var(--paper); }
@@ -272,15 +258,24 @@
         /* GRIDS                                            */
         /* ================================================ */
         .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        .grid-5 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+        .grid-5 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
         .grid-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .principle-icon {
+            width: 4rem; height: 4rem; border-radius: 16px;
+            border: 1px solid var(--ink-10); background: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .principle-icon span { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; color: var(--ink); }
+
         @media (min-width: 768px) {
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
             .grid-5 { grid-template-columns: repeat(5, 1fr); }
-            .grid-2 { grid-template-columns: 1fr 2fr; }
         }
-        /* ✅ NOUVEAU — Colonne gauche plus large */
+        @media (max-width: 767px) {
+            .grid-5 { grid-template-columns: repeat(2, 1fr); }
+        }
+
         @media (min-width: 1024px) {
             .grid-2-sticky { display: grid; grid-template-columns: 5fr 6fr; gap: 6rem; }
             .sticky-left { position: sticky; top: 8rem; align-self: start; }
@@ -299,14 +294,16 @@
         .matrix th {
             padding: 1.5rem; text-align: left;
             font-family: var(--font-serif); font-weight: 500;
-            border-bottom: 1px solid var(--ink-10);
-            background: var(--paper);
+            border-bottom: 1px solid var(--ink-10); background: var(--paper);
         }
-        .matrix th .sub { display: block; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-weight: 400; }
+        .matrix th .sub {
+            display: block; font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink-light); text-transform: uppercase;
+            letter-spacing: 0.1em; margin-top: 0.5rem; font-weight: 400;
+        }
         .matrix td {
             padding: 1.5rem; font-size: 0.875rem; font-weight: 300;
-            border-bottom: 1px solid var(--ink-5);
-            color: var(--ink-light);
+            border-bottom: 1px solid var(--ink-5); color: var(--ink-light);
         }
         .matrix td:not(:last-child), .matrix th:not(:last-child) { border-right: 1px solid var(--ink-10); }
         .matrix tr:hover td { background: rgba(247,245,240,0.5); }
@@ -318,12 +315,12 @@
         @media (min-width: 1024px) { .matrix-mobile { display: none; } .matrix-desktop { display: block; } }
 
         /* ================================================ */
-        /* TERRAIN CASES                                    */
+        /* TERRAIN                                          */
         /* ================================================ */
         .case-card {
             display: flex; gap: 2rem; align-items: flex-start;
             background: var(--paper); border: 1px solid var(--ink-10);
-            border-radius: 24px; padding: 2rem 2.5rem;
+            border-radius: 24px; padding: 2.5rem 3rem;
             transition: all 0.3s ease;
         }
         .case-card:hover { background: var(--white); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
@@ -344,20 +341,33 @@
             padding: 0.375rem 0.75rem; border-radius: 9999px;
             border: 1px solid var(--ink-20); color: var(--ink);
         }
+        @media (max-width: 767px) {
+            .case-card { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+        }
 
         /* ================================================ */
         /* AUTHOR                                           */
         /* ================================================ */
-        .author-photo-wrap { width: 100%; }
+        .author-grid {
+            display: flex; flex-direction: column;
+            align-items: center; gap: 4rem;
+        }
+        @media (min-width: 1024px) {
+            .author-grid {
+                flex-direction: row; align-items: flex-start; gap: 6rem;
+            }
+            .author-photo-wrap { flex-shrink: 0; }
+        }
+        .author-photo-wrap { width: 100%; max-width: 320px; }
         .author-photo-arch {
-            aspect-ratio: 3/4; border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+            aspect-ratio: 3/4;
+            border-radius: 50% 50% 0 0 / 40% 40% 0 0;
             overflow: hidden; border: 8px solid var(--white);
             box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         .author-photo {
             width: 100%; height: 100%; object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 0.7s ease;
+            filter: grayscale(100%); transition: filter 0.7s ease;
         }
         .author-photo:hover { filter: grayscale(0%); }
         .author-quote {
@@ -367,20 +377,27 @@
             margin: 1.5rem 0;
         }
         .stat-card {
-            background: var(--white); border-radius: 16px;
-            padding: 1.5rem; border: 1px solid var(--ink-5);
-            text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            background: var(--white); border-radius: 16px; padding: 1.5rem;
+            border: 1px solid var(--ink-5); text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         }
         .stat-num { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem; }
         .stat-label { font-family: var(--font-mono); font-size: 0.625rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.15em; }
 
         /* ================================================ */
-        /* FAQ                                              */
+        /* FAQ — Layout 2 colonnes                          */
         /* ================================================ */
+        .faq-layout { display: flex; flex-direction: column; gap: 3rem; }
+        @media (min-width: 1024px) {
+            .faq-layout {
+                display: grid; grid-template-columns: 1fr 2fr;
+                gap: 4rem; align-items: start;
+            }
+            .faq-layout > div:first-child { position: sticky; top: 8rem; }
+        }
         .faq-item {
             background: var(--white); border-radius: 16px;
-            border: 1px solid var(--ink-10); margin-bottom: 0.75rem;
-            overflow: hidden;
+            border: 1px solid var(--ink-10); margin-bottom: 0.75rem; overflow: hidden;
         }
         .faq-item summary {
             display: flex; align-items: center; justify-content: space-between;
@@ -416,16 +433,14 @@
         /* ================================================ */
         /* FOOTER                                           */
         /* ================================================ */
-        .site-footer {
-            background: var(--paper); padding: 3rem 0;
-            border-top: 1px solid var(--ink-10);
-        }
+        .site-footer { background: var(--paper); padding: 3rem 0; border-top: 1px solid var(--ink-10); }
         .footer-inner {
-            max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+            max-width: 1320px; margin: 0 auto; padding: 0 2.5rem;
             display: flex; flex-wrap: wrap; align-items: center;
             justify-content: space-between; gap: 1.5rem;
         }
-        .footer-links { display: flex; gap: 1.5rem; }
+        @media (max-width: 767px) { .footer-inner { padding: 0 1.25rem; } }
+        .footer-links { display: flex; gap: 1.5rem; align-items: center; }
         .footer-links a {
             font-family: var(--font-mono); font-size: 0.6875rem;
             color: var(--ink-light); text-transform: uppercase;
@@ -434,8 +449,7 @@
         .footer-links a:hover { color: var(--ink); }
         .footer-copy {
             font-family: var(--font-mono); font-size: 0.6875rem;
-            color: var(--ink-light); text-transform: uppercase;
-            letter-spacing: 0.1em;
+            color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em;
         }
 
         /* ================================================ */
@@ -450,18 +464,8 @@
         [data-animate][data-delay="2"] { transition-delay: 200ms; }
         [data-animate][data-delay="3"] { transition-delay: 300ms; }
         [data-animate][data-delay="4"] { transition-delay: 400ms; }
-
         @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.5} }
         .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
-
-        /* ================================================ */
-        /* RESPONSIVE                                       */
-        /* ================================================ */
-        @media (max-width: 767px) {
-            .case-card { flex-direction: column; gap: 1rem; padding: 1.5rem; }
-            .section { padding: 4rem 0; }
-            .heading-xl { font-size: 3rem; }
-        }
 
         /* ================================================ */
         /* PRINT                                            */
@@ -504,24 +508,23 @@
             <a href="#contact" role="menuitem" style="margin-top:0.75rem;display:block;text-align:center;padding:0.75rem;border-radius:9999px;border:1px solid var(--ink-20);">Contact</a>
         </div>
     </nav>
-
-        <!-- ====== HERO — REMPLACER le contenu du container ====== -->
+        <!-- ====================================================== -->
+    <!-- HERO                                                   -->
+    <!-- ====================================================== -->
+    <section id="hero" class="section" style="min-height:100vh;display:flex;align-items:center;padding-top:5rem;border-top:none;background:var(--paper);" aria-label="Introduction">
         <div class="container">
             <div data-animate>
-                <!-- Badge -->
                 <div style="display:inline-flex;align-items:center;gap:0.75rem;padding:0.375rem 1rem;border-radius:9999px;border:1px solid var(--ink-10);background:rgba(255,255,255,0.5);margin-bottom:3rem;">
                     <span style="width:6px;height:6px;background:var(--ink);border-radius:50%;" class="pulse"></span>
                     <span class="label" style="margin-bottom:0;">Gouvernance des données</span>
                 </div>
-        
-                <!-- H1 -->
+
                 <h1 class="heading-xl">
                     Gouverner.<br>
                     <em style="color:var(--ink-light);">Gérer.</em><br>
                     Transformer.
                 </h1>
-        
-                <!-- Sub + CTA en 2 colonnes sur desktop -->
+
                 <div class="hero-bottom">
                     <p class="body-lg" style="max-width:36rem;">
                         <strong>CQSEV</strong> est un framework en <strong>5 axes × 3 volets</strong> pour fiabiliser vos données — de la stratégie jusqu'au pipeline. Sans bureaucratie. Sans outil à 500 K$.
@@ -531,36 +534,26 @@
                             Découvrir l'approche
                             <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </a>
-                        <a href="blog/" class="btn-pill btn-outline">
-                            Lire le blog
-                        </a>
+                        <a href="blog/" class="btn-pill btn-outline">Lire le blog</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-        <!-- ====================================================== -->
+
+    <!-- ====================================================== -->
     <!-- CONCEPT                                                -->
     <!-- ====================================================== -->
     <section id="concept" class="section" style="background:var(--white);" aria-label="Le concept CQSEV">
         <div class="container">
             <div class="grid-2-sticky">
-                <!-- Colonne gauche sticky -->
                 <div class="sticky-left" data-animate>
                     <span class="label">01 // Le Concept</span>
-                    <h2 class="heading-lg">
-                        L'architecture<br>de la <em>confiance</em>.
-                    </h2>
+                    <h2 class="heading-lg">L'architecture<br>de la <em>confiance</em>.</h2>
                 </div>
-
-                <!-- Colonne droite contenu -->
                 <div style="display:flex;flex-direction:column;gap:2rem;" class="body-lg">
-                    <p data-animate>
-                        <strong>CQSEV</strong> est un framework de gouvernance, gestion et transformation des données créé par <strong>Oleg Chitic</strong> à Montréal. L'acronyme représente 5 axes d'évaluation : Conformité, Qualité, Sécurité, Efficacité, et Valorisation.
-                    </p>
-                    <p data-animate data-delay="1">
-                        Contrairement aux frameworks traditionnels comme le DAMA-DMBOK qui se concentrent principalement sur la gouvernance (les règles), CQSEV évalue chaque axe à travers <strong>3 volets</strong> : la gouvernance (définir), la gestion (appliquer), et la transformation ETL/ELT (intégrer dans les pipelines).
-                    </p>
+                    <p data-animate><strong>CQSEV</strong> est un framework de gouvernance, gestion et transformation des données créé par <strong>Oleg Chitic</strong> à Montréal. L'acronyme représente 5 axes d'évaluation : Conformité, Qualité, Sécurité, Efficacité, et Valorisation.</p>
+                    <p data-animate data-delay="1">Contrairement aux frameworks traditionnels comme le DAMA-DMBOK qui se concentrent principalement sur la gouvernance (les règles), CQSEV évalue chaque axe à travers <strong>3 volets</strong> : la gouvernance (définir), la gestion (appliquer), et la transformation ETL/ELT (intégrer dans les pipelines).</p>
                     <div class="card card-paper" style="font-family:var(--font-serif);font-size:1.25rem;font-style:italic;color:var(--ink);padding:2rem;" data-animate data-delay="2">
                         "Le croisement des 5 axes et des 3 volets produit une matrice de 15 points de contrôle qui permet de diagnostiquer rapidement la maturité data d'une organisation."
                     </div>
@@ -570,7 +563,7 @@
     </section>
 
     <!-- ====================================================== -->
-    <!-- FRAMEWORK — 3 Volets                                   -->
+    <!-- FRAMEWORK                                              -->
     <!-- ====================================================== -->
     <section id="framework" class="section" style="background:var(--paper);" aria-label="Les 3 volets">
         <div class="container">
@@ -581,12 +574,9 @@
             </div>
 
             <div class="grid-3">
-                <!-- Gouverner -->
                 <div class="card" data-animate>
                     <span class="card-watermark">01</span>
-                    <div class="card-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
+                    <div class="card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
                     <h3 class="heading-md" style="font-family:var(--font-serif);">Gouverner</h3>
                     <span class="label">Les règles du jeu</span>
                     <p class="body" style="margin-bottom:2.5rem;">Définir les politiques, les rôles et les standards. C'est le ministère qui écrit les normes.</p>
@@ -596,13 +586,9 @@
                         <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> Comment mesure-t-on le respect ?</p>
                     </div>
                 </div>
-
-                <!-- Gérer -->
                 <div class="card" data-animate data-delay="1">
                     <span class="card-watermark">02</span>
-                    <div class="card-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
+                    <div class="card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
                     <h3 class="heading-md" style="font-family:var(--font-serif);">Gérer</h3>
                     <span class="label">Les mains dans la terre</span>
                     <p class="body" style="margin-bottom:2.5rem;">Appliquer les règles au quotidien. L'équipe terrain qui vérifie et corrige.</p>
@@ -612,13 +598,9 @@
                         <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> Comment corrige-t-on un problème ?</p>
                     </div>
                 </div>
-
-                <!-- Transformer -->
                 <div class="card" data-animate data-delay="2">
                     <span class="card-watermark">03</span>
-                    <div class="card-icon">
-                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-                    </div>
+                    <div class="card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg></div>
                     <h3 class="heading-md" style="font-family:var(--font-serif);">Transformer</h3>
                     <span class="label">L'usine ETL/ELT</span>
                     <p class="body" style="margin-bottom:2.5rem;">Construire les pipelines qui déplacent et nettoient les données à grande échelle.</p>
@@ -627,6 +609,28 @@
                         <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> Les validations sont-elles dans le pipeline ?</p>
                         <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> Que se passe-t-il quand un flux échoue ?</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- 3 Principes -->
+            <div class="grid-3" style="margin-top:5rem;text-align:center;">
+                <div data-animate>
+                    <div class="principle-icon"><span>1</span></div>
+                    <h4 style="font-family:var(--font-serif);font-size:1.125rem;margin-bottom:0.25rem;">Pragmatisme</h4>
+                    <span class="label" style="color:var(--ink);">avant Perfection</span>
+                    <p class="body-sm">3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p>
+                </div>
+                <div data-animate data-delay="1">
+                    <div class="principle-icon"><span>2</span></div>
+                    <h4 style="font-family:var(--font-serif);font-size:1.125rem;margin-bottom:0.25rem;">Valeur</h4>
+                    <span class="label" style="color:var(--ink);">avant Contrôle</span>
+                    <p class="body-sm">Si les gens ne voient pas le bénéfice, ils contourneront les règles.</p>
+                </div>
+                <div data-animate data-delay="2">
+                    <div class="principle-icon"><span>3</span></div>
+                    <h4 style="font-family:var(--font-serif);font-size:1.125rem;margin-bottom:0.25rem;">Adoption</h4>
+                    <span class="label" style="color:var(--ink);">avant Technologie</span>
+                    <p class="body-sm">Un outil sans adhésion humaine prend la poussière.</p>
                 </div>
             </div>
         </div>
@@ -651,10 +655,7 @@
                     <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">C</span>
                     <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Conformité</h3>
                     <p class="body-sm" style="margin-bottom:1.5rem;">Respecte-t-on les lois ?</p>
-                    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;">
-                        <span class="case-tag" style="font-size:0.625rem;">Loi 25</span>
-                        <span class="case-tag" style="font-size:0.625rem;">RGPD</span>
-                    </div>
+                    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;"><span class="case-tag" style="font-size:0.625rem;">Loi 25</span><span class="case-tag" style="font-size:0.625rem;">RGPD</span></div>
                 </div>
                 <div class="card card-paper" style="text-align:center;padding:2rem;" data-animate data-delay="1">
                     <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">Q</span>
@@ -674,7 +675,7 @@
                     <p class="body-sm" style="margin-bottom:1.5rem;">Facile à trouver ?</p>
                     <span class="case-tag" style="font-size:0.625rem;">Catalogue</span>
                 </div>
-                <div class="card card-paper" style="text-align:center;padding:2rem;grid-column:span 2;" data-animate data-delay="4">
+                <div class="card card-paper" style="text-align:center;padding:2rem;" data-animate data-delay="4">
                     <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">V</span>
                     <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Valorisation</h3>
                     <p class="body-sm" style="margin-bottom:1.5rem;">Crée de la valeur ?</p>
@@ -685,7 +686,7 @@
     </section>
 
     <!-- ====================================================== -->
-    <!-- MATRICE 5×3                                            -->
+    <!-- MATRICE                                                -->
     <!-- ====================================================== -->
     <section id="matrice" class="section" style="background:var(--paper);" aria-label="Matrice CQSEV">
         <div class="container">
@@ -697,59 +698,22 @@
 
             <!-- Mobile -->
             <div class="matrix-mobile" style="display:flex;flex-direction:column;gap:1.5rem;" data-animate>
-                <div class="card" style="padding:1.5rem;">
-                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">C</span><span style="font-weight:500;color:var(--ink);">Conformité</span></div>
-                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Politique de consentement · Classification définie</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Inventaire données sensibles · Audit terrain</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Masquage PII dans le pipeline · Purge automatisée</p></div>
-                    </div>
-                </div>
-                <div class="card" style="padding:1.5rem;">
-                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">Q</span><span style="font-weight:500;color:var(--ink);">Qualité</span></div>
-                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Standards et KPIs définis · Data Dictionary</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Contrôles quotidiens · Score qualité mesuré</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Règles de validation ETL · Rejet auto si invalide</p></div>
-                    </div>
-                </div>
-                <div class="card" style="padding:1.5rem;">
-                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">S</span><span style="font-weight:500;color:var(--ink);">Sécurité</span></div>
-                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Politique d'accès RBAC · Classification niveaux</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Revue des permissions · Audit trimestriel</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Chiffrement en transit · Logs et traçabilité</p></div>
-                    </div>
-                </div>
-                <div class="card" style="padding:1.5rem;">
-                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">E</span><span style="font-weight:500;color:var(--ink);">Efficacité</span></div>
-                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Standards catalogage · Glossaire métier</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Métadonnées à jour · Recherche en &lt;5 min</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Indexation des tables · Performance pipeline</p></div>
-                    </div>
-                </div>
-                <div class="card" style="padding:1.5rem;">
-                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">V</span><span style="font-weight:500;color:var(--ink);">Valorisation</span></div>
-                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Cas d'usage métier · Roadmap BI/IA</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Dashboards utilisés · Adoption mesurée</p></div>
-                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Data marts business · Modèles ML en prod</p></div>
-                    </div>
-                </div>
+                <div class="card" style="padding:1.5rem;"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">C</span><span style="font-weight:500;color:var(--ink);">Conformité</span></div><div style="display:flex;flex-direction:column;gap:0.75rem;"><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Politique de consentement · Classification définie</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Inventaire données sensibles · Audit terrain</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Masquage PII dans le pipeline · Purge automatisée</p></div></div></div>
+                <div class="card" style="padding:1.5rem;"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">Q</span><span style="font-weight:500;color:var(--ink);">Qualité</span></div><div style="display:flex;flex-direction:column;gap:0.75rem;"><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Standards et KPIs définis · Data Dictionary</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Contrôles quotidiens · Score qualité mesuré</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Règles de validation ETL · Rejet auto si invalide</p></div></div></div>
+                <div class="card" style="padding:1.5rem;"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">S</span><span style="font-weight:500;color:var(--ink);">Sécurité</span></div><div style="display:flex;flex-direction:column;gap:0.75rem;"><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Politique d'accès RBAC · Classification niveaux</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Revue des permissions · Audit trimestriel</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Chiffrement en transit · Logs et traçabilité</p></div></div></div>
+                <div class="card" style="padding:1.5rem;"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">E</span><span style="font-weight:500;color:var(--ink);">Efficacité</span></div><div style="display:flex;flex-direction:column;gap:0.75rem;"><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Standards catalogage · Glossaire métier</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Métadonnées à jour · Recherche en &lt;5 min</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Indexation des tables · Performance pipeline</p></div></div></div>
+                <div class="card" style="padding:1.5rem;"><div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">V</span><span style="font-weight:500;color:var(--ink);">Valorisation</span></div><div style="display:flex;flex-direction:column;gap:0.75rem;"><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Cas d'usage métier · Roadmap BI/IA</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Dashboards utilisés · Adoption mesurée</p></div><div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Data marts business · Modèles ML en prod</p></div></div></div>
             </div>
 
             <!-- Desktop -->
             <div class="matrix-desktop matrix-wrap" data-animate>
                 <table class="matrix">
-                    <thead>
-                        <tr>
-                            <th style="width:25%;"></th>
-                            <th style="width:25%;">Gouverner<span class="sub">Les règles</span></th>
-                            <th style="width:25%;">Gérer<span class="sub">Le terrain</span></th>
-                            <th style="width:25%;">Transformer<span class="sub">L'usine</span></th>
-                        </tr>
-                    </thead>
+                    <thead><tr>
+                        <th style="width:25%;"></th>
+                        <th style="width:25%;">Gouverner<span class="sub">Les règles</span></th>
+                        <th style="width:25%;">Gérer<span class="sub">Le terrain</span></th>
+                        <th style="width:25%;">Transformer<span class="sub">L'usine</span></th>
+                    </tr></thead>
                     <tbody>
                         <tr><td><div class="axe-cell"><span class="axe-letter">C</span><span class="axe-name">Conformité</span></div></td><td>Politique de consentement</td><td>Inventaire données sensibles</td><td>Masquage PII dans le pipeline</td></tr>
                         <tr><td><div class="axe-cell"><span class="axe-letter">Q</span><span class="axe-name">Qualité</span></div></td><td>Standards et KPIs définis</td><td>Contrôles quotidiens</td><td>Règles de validation ETL</td></tr>
@@ -775,17 +739,16 @@
     </section>
 
     <!-- ====================================================== -->
-    <!-- TERRAIN — Cas concrets                                 -->
+    <!-- TERRAIN                                                -->
     <!-- ====================================================== -->
     <section id="terrain" class="section" style="background:var(--white);" aria-label="Cas concrets">
-        <div class="container-sm">
+        <div class="container-md">
             <div style="margin-bottom:4rem;" data-animate>
                 <span class="label">05 // Terrain</span>
                 <h2 class="heading-lg">Cas <em>Concrets.</em></h2>
             </div>
 
             <div style="display:flex;flex-direction:column;gap:1.5rem;">
-                <!-- Cas 1 -->
                 <div class="case-card" data-animate>
                     <span class="case-num">01</span>
                     <div style="flex:1;">
@@ -798,8 +761,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Cas 2 -->
                 <div class="case-card" data-animate>
                     <span class="case-num">02</span>
                     <div style="flex:1;">
@@ -812,8 +773,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Cas 3 -->
                 <div class="case-card" data-animate>
                     <span class="case-num">03</span>
                     <div style="flex:1;">
@@ -834,9 +793,8 @@
     <!-- ====================================================== -->
     <section id="auteur" class="section" style="background:var(--paper);" aria-label="L'auteur">
         <div class="container">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4rem;" class="author-grid">
-                <!-- Photo arche -->
-                <div class="author-photo-wrap" style="max-width:320px;" data-animate>
+            <div class="author-grid">
+                <div class="author-photo-wrap" data-animate>
                     <div class="author-photo-arch">
                         <img src="oleg-chitic-expert-gouvernance-donnees-cqsev.gif"
                              alt="Oleg Chitic — Expert en gouvernance des données, créateur du framework CQSEV à Montréal."
@@ -845,36 +803,20 @@
                              class="author-photo">
                     </div>
                 </div>
-
-                <!-- Texte -->
                 <div data-animate data-delay="1">
                     <span class="label">06 // L'Auteur</span>
                     <h2 class="heading-lg">Oleg Chitic</h2>
-
                     <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem;" class="body-lg">
                         <p>Après <strong>15 ans</strong> à voir des organisations investir dans des outils data sans résultat, j'ai compris une chose :</p>
                         <p class="author-quote">Le problème n'est presque jamais technique.</p>
                         <p>C'est un problème d'alignement entre ceux qui définissent les règles, ceux qui les appliquent, et ceux qui construisent les pipelines.</p>
                         <p class="body-sm" style="color:var(--ink-light);">Intervenu dans des contextes Loi 25, migrations cloud data et mises en conformité pour des organisations de 200 à 5 000 employés dans les secteurs banque, assurance, santé, commerce de détail et gouvernement.</p>
                     </div>
-
-                    <!-- Stats -->
                     <div class="grid-stats">
-                        <div class="stat-card">
-                            <div class="stat-num">15+</div>
-                            <div class="stat-label">Années Exp.</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">35+</div>
-                            <div class="stat-label">Projets Data</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-num">5</div>
-                            <div class="stat-label">Secteurs</div>
-                        </div>
+                        <div class="stat-card"><div class="stat-num">15+</div><div class="stat-label">Années Exp.</div></div>
+                        <div class="stat-card"><div class="stat-num">35+</div><div class="stat-label">Projets Data</div></div>
+                        <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Secteurs</div></div>
                     </div>
-
-                    <!-- Tags -->
                     <div style="margin-top:2rem;">
                         <span class="label">Cadres de référence</span>
                         <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
@@ -889,77 +831,46 @@
                 </div>
             </div>
         </div>
-
-        <style>
-            @media (min-width: 1024px) {
-                .author-grid {
-                    flex-direction: row !important;
-                    align-items: flex-start !important;
-                    gap: 6rem !important;
-                }
-                .author-photo-wrap { flex-shrink: 0; }
-            }
-        </style>
     </section>
 
     <!-- ====================================================== -->
-    <!-- FAQ                                                    -->
+    <!-- FAQ — Layout 2 colonnes                                -->
     <!-- ====================================================== -->
     <section id="faq" class="section" style="background:var(--white);" aria-label="Questions fréquentes">
-        <div class="container-sm">
-            <div style="text-align:center;margin-bottom:4rem;" data-animate>
-                <span class="label">07 // FAQ</span>
-                <h2 class="heading-lg">Questions <em>fréquentes</em></h2>
-            </div>
-
-            <div data-animate data-delay="1">
-                <details class="faq-item">
-                    <summary>
-                        Qu'est-ce que le framework CQSEV ?
-                        <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </summary>
-                    <div class="answer">CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions.</div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        CQSEV remplace-t-il le DAMA-DMBOK ?
-                        <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </summary>
-                    <div class="answer">Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires.</div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        Pourquoi 3 volets et pas 2 ou 4 ?
-                        <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </summary>
-                    <div class="answer">Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données).</div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        CQSEV fonctionne-t-il pour les PME ?
-                        <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </summary>
-                    <div class="answer">Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME.</div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        Quelle est la différence entre gouvernance et gestion des données ?
-                        <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </summary>
-                    <div class="answer">La gouvernance des données définit les politiques, les rôles et les standards (le « quoi » et le « qui »). La gestion des données applique ces règles au quotidien sur le terrain (le « comment » opérationnel). CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles.</div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>
-                        Comment commencer avec CQSEV ?
-                        <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                    </summary>
-                    <div class="answer">Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés (gouvernance, opérations, technique), et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action.</div>
-                </details>
+        <div class="container-md">
+            <div class="faq-layout">
+                <!-- Colonne gauche sticky -->
+                <div data-animate>
+                    <span class="label">07 // FAQ</span>
+                    <h2 class="heading-lg">Questions <em>fréquentes</em></h2>
+                </div>
+                <!-- Colonne droite FAQ -->
+                <div data-animate data-delay="1">
+                    <details class="faq-item">
+                        <summary>Qu'est-ce que le framework CQSEV ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>CQSEV remplace-t-il le DAMA-DMBOK ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Pourquoi 3 volets et pas 2 ou 4 ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données).</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>CQSEV fonctionne-t-il pour les PME ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Quelle est la différence entre gouvernance et gestion des données ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">La gouvernance des données définit les politiques, les rôles et les standards (le « quoi » et le « qui »). La gestion des données applique ces règles au quotidien sur le terrain (le « comment » opérationnel). CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Comment commencer avec CQSEV ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés (gouvernance, opérations, technique), et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action.</div>
+                    </details>
+                </div>
             </div>
         </div>
     </section>
@@ -968,14 +879,14 @@
     <!-- CONTACT                                                -->
     <!-- ====================================================== -->
     <section id="contact" class="section" style="background:var(--paper);" aria-label="Contact">
-        <div class="container-xs">
+        <div class="container-sm">
             <div style="text-align:center;margin-bottom:4rem;" data-animate>
                 <span class="label">08 // Contact</span>
                 <h2 class="heading-lg">Initialiser la <em>séquence</em>.</h2>
                 <p class="body" style="color:var(--ink-light);">Une question sur le framework ? Écrivez-moi directement.</p>
             </div>
 
-            <form action="https://formspree.io/f/VOTRE_ID" method="POST" data-animate data-delay="1">
+            <form action="https://formspree.io/f/xgonrbnd" method="POST" data-animate data-delay="1">
                 <div class="form-grid">
                     <div class="form-group">
                         <label class="form-label" for="name">Nom</label>
@@ -996,7 +907,6 @@
                 </button>
             </form>
 
-            <!-- LinkedIn discret -->
             <div style="text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--ink-5);" data-animate data-delay="2">
                 <p class="body-sm" style="margin-bottom:0.5rem;">Vous préférez les réseaux ?</p>
                 <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
@@ -1006,10 +916,7 @@
                     Retrouvez-moi sur LinkedIn →
                 </a>
             </div>
-
-            <p class="body-sm" style="text-align:center;margin-top:1.5rem;color:var(--ink-30);">
-                Pas de spam. Pas de pitch. Réponse sous 48h.
-            </p>
+            <p class="body-sm" style="text-align:center;margin-top:1.5rem;color:var(--ink-30);">Pas de spam. Pas de pitch. Réponse sous 48h.</p>
         </div>
     </section>
 
@@ -1037,11 +944,11 @@
         "@type": "FAQPage",
         "mainEntity": [
             {"@type":"Question","name":"Qu'est-ce que le framework CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions."}},
-            {"@type":"Question","name":"CQSEV remplace-t-il le DAMA-DMBOK ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires."}},
-            {"@type":"Question","name":"Pourquoi 3 volets et pas 2 ou 4 ?","acceptedAnswer":{"@type":"Answer","text":"Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données)."}},
-            {"@type":"Question","name":"CQSEV fonctionne-t-il pour les PME ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME."}},
-            {"@type":"Question","name":"Quelle est la différence entre gouvernance et gestion des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance des données définit les politiques, les rôles et les standards. La gestion des données applique ces règles au quotidien sur le terrain. CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles."}},
-            {"@type":"Question","name":"Comment commencer avec CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés, et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action."}}
+            {"@type":"Question","name":"CQSEV remplace-t-il le DAMA-DMBOK ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le DAMA-DMBOK est le standard mondial de référence. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires."}},
+            {"@type":"Question","name":"Pourquoi 3 volets et pas 2 ou 4 ?","acceptedAnswer":{"@type":"Answer","text":"Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent."}},
+            {"@type":"Question","name":"CQSEV fonctionne-t-il pour les PME ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME."}},
+            {"@type":"Question","name":"Quelle est la différence entre gouvernance et gestion des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance définit les politiques, rôles et standards. La gestion applique ces règles au quotidien. CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent ces règles."}},
+            {"@type":"Question","name":"Comment commencer avec CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés, et évaluez chaque case. Les cases vides sont vos priorités d'action."}}
         ]
     }
     </script>
@@ -1053,38 +960,26 @@
     (function() {
         'use strict';
 
-        // ====== Scroll Animations ======
+        // Scroll Animations
         var animObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    animObserver.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); animObserver.unobserve(entry.target); }
             });
         }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
-        document.querySelectorAll('[data-animate]').forEach(function(el) {
-            animObserver.observe(el);
-        });
+        document.querySelectorAll('[data-animate]').forEach(function(el) { animObserver.observe(el); });
 
-        // ====== Nav Scroll Effect ======
+        // Nav Scroll
         var nav = document.getElementById('site-nav');
         var scrollTicking = false;
         function updateNav() {
-            if (window.scrollY > 20) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 20);
             scrollTicking = false;
         }
         window.addEventListener('scroll', function() {
-            if (!scrollTicking) {
-                requestAnimationFrame(updateNav);
-                scrollTicking = true;
-            }
+            if (!scrollTicking) { requestAnimationFrame(updateNav); scrollTicking = true; }
         }, { passive: true });
 
-        // ====== Mobile Menu ======
+        // Mobile Menu
         var menuToggle = document.getElementById('menu-toggle');
         var mobMenu = document.getElementById('mob-menu');
         if (menuToggle && mobMenu) {
@@ -1096,26 +991,21 @@
             });
             mobMenu.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
-                    mobMenu.classList.remove('open');
-                    mobMenu.style.display = 'none';
+                    mobMenu.classList.remove('open'); mobMenu.style.display = 'none';
                     menuToggle.setAttribute('aria-expanded', 'false');
                 });
             });
         }
 
-        // ====== Smooth Scroll ======
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
-                var targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                var target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                var id = this.getAttribute('href');
+                if (id === '#') return;
+                var target = document.querySelector(id);
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
-
     })();
     </script>
 
