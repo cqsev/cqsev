@@ -63,7 +63,7 @@
             "@id": "https://cqsev.github.io/blog/gouverner-gerer-transformer-donnees.html"
         },
         "articleSection": "Gouvernance des données",
-        "wordCount": "2800",
+        "wordCount": "3200",
         "inLanguage": "fr-CA"
     }
     </script>
@@ -93,7 +93,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
 
-    <!-- ====== CSS COMPLET ====== -->
     <style>
         :root {
             --font-heading: 'Plus Jakarta Sans', sans-serif;
@@ -149,7 +148,7 @@
             clip: rect(0,0,0,0); white-space: nowrap; border: 0;
         }
 
-        /* === NAV === */
+        /* NAV */
         .site-nav {
             position: fixed; top: 0; width: 100%; z-index: 50;
             background: rgba(255,255,255,0.92);
@@ -182,120 +181,63 @@
             font-weight: 700; border-radius: var(--r-full); transition: all 0.3s;
         }
         .btn:hover { transform: translateY(-3px); }
-        .btn-filled {
-            background: var(--c-gray-900); color: #fff;
-            padding: 10px 24px; font-size: 0.875rem;
-        }
+        .btn-filled { background: var(--c-gray-900); color: #fff; padding: 10px 24px; font-size: 0.875rem; }
         .btn-filled:hover { background: var(--c-indigo); box-shadow: 0 12px 30px rgba(99,102,241,0.3); }
 
         .menu-toggle { display: block; color: var(--c-gray-600); padding: 8px; }
-        .mob-menu {
-            display: none; background: #fff; border-top: 1px solid var(--c-gray-100);
-            padding: 1rem 1.5rem;
-        }
+        .mob-menu { display: none; background: #fff; border-top: 1px solid var(--c-gray-100); padding: 1rem 1.5rem; }
         .mob-menu.open { display: block; }
-        .mob-menu a {
-            display: block; font-size: 0.875rem; font-weight: 500;
-            color: var(--c-gray-600); padding: 0.75rem 0;
-            border-bottom: 1px solid var(--c-gray-100);
-        }
+        .mob-menu a { display: block; font-size: 0.875rem; font-weight: 500; color: var(--c-gray-600); padding: 0.75rem 0; border-bottom: 1px solid var(--c-gray-100); }
 
-        @media (min-width: 768px) {
-            .nav-links { display: flex; }
-            .menu-toggle { display: none; }
-        }
+        @media (min-width: 768px) { .nav-links { display: flex; } .menu-toggle { display: none; } }
 
-        /* === ARTICLE LAYOUT === */
+        /* ARTICLE */
         .article-container { max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; }
-
-        /* Breadcrumb */
         .breadcrumb { padding-top: 6rem; padding-bottom: 1rem; font-size: 0.875rem; color: var(--c-gray-400); }
         .breadcrumb a { transition: color 0.3s; }
         .breadcrumb a:hover { color: var(--c-indigo); }
 
-        /* Header */
         .article-header { margin-bottom: 3rem; }
         .article-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .tag {
-            display: inline-block; padding: 4px 12px; border-radius: var(--r-full);
-            font-size: 0.75rem; font-weight: 600;
-        }
-        .article-title {
-            font-size: clamp(1.75rem, 5vw, 2.75rem);
-            font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem;
-        }
-        .article-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: var(--c-gray-500); line-height: 1.6; margin-bottom: 2rem;
-        }
-        .article-meta {
-            display: flex; align-items: center; gap: 1rem;
-            padding-bottom: 2rem; border-bottom: 1px solid var(--c-gray-200);
-        }
-        .avatar {
-            width: 48px; height: 48px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--c-indigo), var(--c-purple));
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-weight: 700; flex-shrink: 0;
-        }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: var(--r-full); font-size: 0.75rem; font-weight: 600; }
+        .article-title { font-size: clamp(1.75rem, 5vw, 2.75rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
+        .article-subtitle { font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--c-gray-500); line-height: 1.6; margin-bottom: 2rem; }
+        .article-meta { display: flex; align-items: center; gap: 1rem; padding-bottom: 2rem; border-bottom: 1px solid var(--c-gray-200); }
+        .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--c-indigo), var(--c-purple)); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; flex-shrink: 0; }
 
-        /* TL;DR */
-        .tldr {
-            background: #EEF2FF; border-radius: var(--r-2xl);
-            padding: 2rem; border: 1px solid #C7D2FE; margin-bottom: 2.5rem;
-        }
+        .tldr { background: #EEF2FF; border-radius: var(--r-2xl); padding: 2rem; border: 1px solid #C7D2FE; margin-bottom: 2.5rem; }
         .tldr h2 { font-size: 1.125rem; color: #3730A3; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
         .tldr p { color: var(--c-gray-700); line-height: 1.7; }
 
-        /* TOC */
-        .toc {
-            background: var(--c-gray-50); border-radius: var(--r-2xl);
-            padding: 1.5rem; border: 1px solid var(--c-gray-200); margin-bottom: 3rem;
-        }
+        .toc { background: var(--c-gray-50); border-radius: var(--r-2xl); padding: 1.5rem; border: 1px solid var(--c-gray-200); margin-bottom: 3rem; }
         .toc h2 { font-size: 0.75rem; font-weight: 700; color: var(--c-gray-500); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; }
         .toc ol { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
         .toc a { font-size: 0.875rem; font-weight: 500; color: var(--c-indigo); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; }
         .toc a:hover { color: #4338CA; }
         .toc .num { color: var(--c-gray-400); }
 
-        /* === ARTICLE PROSE === */
         .prose { font-size: clamp(0.95rem, 2vw, 1.0625rem); line-height: 1.75; color: var(--c-gray-600); }
         .prose p { margin-bottom: 1.25rem; }
-        .prose h2 {
-            font-size: clamp(1.5rem, 4vw, 1.875rem); font-weight: 800;
-            margin-top: 3.5rem; margin-bottom: 1.5rem; scroll-margin-top: 80px;
-        }
+        .prose h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); font-weight: 800; margin-top: 3.5rem; margin-bottom: 1.5rem; scroll-margin-top: 80px; }
         .prose h3 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 1rem; }
         .prose a.link { color: var(--c-indigo); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
         .prose a.link:hover { color: #4338CA; }
 
-        /* Lists */
         .check-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
         .check-list li { display: flex; align-items: flex-start; gap: 0.75rem; }
-        .check-list .icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+        .check-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
         .prose ol.numbered { list-style: decimal; list-style-position: inside; display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0; }
-        .prose ol.numbered li { font-weight: 400; }
-        .prose ol.numbered strong { font-weight: 700; }
 
-        /* Callout boxes */
-        .callout {
-            border-radius: var(--r-lg); padding: 1.5rem; margin: 2rem 0;
-            display: flex; align-items: flex-start; gap: 0.75rem;
-        }
-        .callout .icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .callout { border-radius: var(--r-lg); padding: 1.5rem; margin: 2rem 0; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .callout-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
         .callout-tip { background: #FFFBEB; border: 1px solid #FDE68A; }
         .callout-tip .label { color: #92400E; font-weight: 700; }
 
-        /* Quote block */
-        .quote-block {
-            background: var(--c-gray-800); border-radius: var(--r-2xl);
-            padding: 2rem; margin: 2.5rem 0; text-align: center;
-        }
+        .quote-block { background: var(--c-gray-800); border-radius: var(--r-2xl); padding: 2rem; margin: 2.5rem 0; text-align: center; }
         .quote-block p { color: #fff; font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: 500; line-height: 1.6; margin: 0; }
         .quote-block .highlight { color: #FDE68A; }
         .quote-block .highlight-blue { color: #A5B4FC; }
 
-        /* 3-column cards */
         .cards-3 { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 2rem 0; }
         @media (min-width: 768px) { .cards-3 { grid-template-columns: repeat(3, 1fr); } }
         .card-silo { border-radius: var(--r-lg); padding: 1.5rem; border: 1px solid; }
@@ -303,103 +245,47 @@
         .card-silo h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
         .card-silo p { font-size: 0.8125rem; color: var(--c-gray-600); margin: 0; }
 
-        /* Table */
         .article-table { overflow-x: auto; margin: 2rem 0; }
         .article-table table { background: #fff; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--c-gray-200); }
         .article-table th { padding: 1rem; font-family: var(--font-heading); font-weight: 700; font-size: 0.875rem; }
         .article-table td { padding: 1rem; font-size: 0.8125rem; }
 
-        /* FAQ */
-        .faq-item {
-            background: #fff; border-radius: var(--r-lg); border: 1px solid var(--c-gray-200);
-            margin-bottom: 0.75rem; overflow: hidden;
-        }
-        .faq-item summary {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 1.25rem 1.5rem; cursor: pointer; font-family: var(--font-heading);
-            font-weight: 700; color: var(--c-gray-900); font-size: 0.9rem;
-            list-style: none; transition: background 0.3s;
-        }
+        .faq-item { background: #fff; border-radius: var(--r-lg); border: 1px solid var(--c-gray-200); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-item summary { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; cursor: pointer; font-family: var(--font-heading); font-weight: 700; color: var(--c-gray-900); font-size: 0.9rem; list-style: none; transition: background 0.3s; }
         .faq-item summary::-webkit-details-marker { display: none; }
         .faq-item summary:hover { background: var(--c-gray-50); }
         .faq-item .chevron { transition: transform 0.3s; flex-shrink: 0; color: var(--c-gray-400); }
         .faq-item[open] .chevron { transform: rotate(180deg); }
         .faq-item .answer { padding: 0 1.5rem 1.25rem; color: var(--c-gray-600); font-size: 0.875rem; line-height: 1.7; }
 
-        /* Author card */
-        .author-card {
-            display: flex; align-items: flex-start; gap: 1.5rem;
-            margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-gray-200);
-        }
-        .author-card .avatar-lg {
-            width: 64px; height: 64px; border-radius: 50%;
-            background: linear-gradient(135deg, var(--c-indigo), var(--c-purple));
-            display: flex; align-items: center; justify-content: center;
-            color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0;
-        }
+        .author-card { display: flex; align-items: flex-start; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-gray-200); }
+        .avatar-lg { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--c-indigo), var(--c-purple)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.25rem; font-weight: 700; flex-shrink: 0; }
 
-        /* CTA blocks */
-        .cta-block {
-            border-radius: var(--r-2xl); padding: 2rem; text-align: center;
-            margin-top: 3rem;
-        }
-        .cta-dark {
-            background: linear-gradient(135deg, var(--c-gray-900), #1E1B4B);
-            color: #fff;
-        }
+        .cta-block { border-radius: var(--r-2xl); padding: 2rem; text-align: center; margin-top: 3rem; }
+        .cta-dark { background: linear-gradient(135deg, var(--c-gray-900), #1E1B4B); color: #fff; }
         .cta-dark p { color: var(--c-gray-300); }
-        .cta-dark .btn-cta {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: var(--c-indigo); color: #fff; padding: 14px 28px;
-            border-radius: var(--r-lg); font-weight: 600; font-size: 0.9rem;
-            transition: all 0.3s; border: none; cursor: pointer;
-        }
+        .cta-dark .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--c-indigo); color: #fff; padding: 14px 28px; border-radius: var(--r-lg); font-weight: 600; font-size: 0.9rem; transition: all 0.3s; border: none; cursor: pointer; }
         .cta-dark .btn-cta:hover { background: #4F46E5; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(99,102,241,0.25); }
 
-        .cta-indigo {
-            background: var(--c-indigo); color: #fff; margin-top: 2rem;
-        }
+        .cta-indigo { background: var(--c-indigo); color: #fff; margin-top: 2rem; }
         .cta-indigo p { color: #C7D2FE; }
-        .cta-indigo .btn-cta {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: #fff; color: var(--c-indigo); padding: 14px 28px;
-            border-radius: var(--r-full); font-weight: 700; font-size: 0.9rem;
-            transition: all 0.3s;
-        }
+        .cta-indigo .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--c-indigo); padding: 14px 28px; border-radius: var(--r-full); font-weight: 700; font-size: 0.9rem; transition: all 0.3s; }
         .cta-indigo .btn-cta:hover { background: #EEF2FF; transform: translateY(-2px); }
 
-        /* Back link */
         .back-link { text-align: center; margin-top: 2rem; margin-bottom: 3rem; }
         .back-link a { font-size: 0.875rem; color: var(--c-gray-500); font-weight: 500; transition: color 0.3s; }
         .back-link a:hover { color: var(--c-indigo); }
 
-        /* Related articles */
         .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--c-gray-200); }
         .related h3 { font-size: 1.125rem; font-weight: 800; margin-bottom: 1rem; }
-        .related a {
-            display: block; padding: 1rem 1.25rem; background: #fff;
-            border-radius: var(--r-lg); border: 1px solid var(--c-gray-200);
-            margin-bottom: 0.75rem; transition: all 0.3s;
-        }
+        .related a { display: block; padding: 1rem 1.25rem; background: #fff; border-radius: var(--r-lg); border: 1px solid var(--c-gray-200); margin-bottom: 0.75rem; transition: all 0.3s; }
         .related a:hover { border-color: var(--c-indigo); transform: translateX(4px); }
 
-        /* Footer */
         .site-footer { background: var(--c-gray-950); padding: 2.5rem 0; }
-        .footer-inner {
-            max-width: 1152px; margin: 0 auto; padding: 0 1.5rem;
-            display: flex; flex-wrap: wrap; align-items: center;
-            justify-content: space-between; gap: 1.5rem;
-        }
-        .footer-bottom {
-            max-width: 1152px; margin: 2rem auto 0; padding: 2rem 1.5rem 0;
-            border-top: 1px solid #1F2937; text-align: center;
-        }
+        .footer-inner { max-width: 1152px; margin: 0 auto; padding: 0 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .footer-bottom { max-width: 1152px; margin: 2rem auto 0; padding: 2rem 1.5rem 0; border-top: 1px solid #1F2937; text-align: center; }
 
-        /* Animations */
-        [data-animate] {
-            opacity: 0; transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
+        [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
         [data-animate].visible { opacity: 1; transform: translateY(0); }
 
         @media print { .site-nav, .mob-menu, .menu-toggle, .no-print, .site-footer { display: none !important; } body { background: #fff; } }
@@ -407,8 +293,7 @@
 </head>
 <body>
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- NAV -->
     <nav class="site-nav" role="navigation" aria-label="Navigation principale">
@@ -453,7 +338,9 @@
         </nav>
     </div>
 
-    <!-- ARTICLE -->
+    <!-- ====================================================== -->
+    <!-- ARTICLE                                                -->
+    <!-- ====================================================== -->
     <article class="article-container" style="padding-bottom:3rem;">
 
         <!-- HEADER -->
@@ -475,7 +362,7 @@
                 <div>
                     <p style="font-weight:600;color:var(--c-gray-900);font-size:0.875rem;">Oleg Chitic</p>
                     <p style="font-size:0.8125rem;color:var(--c-gray-400);">
-                        <time datetime="2026-03-01">01 mars 2026</time> · 8 min de lecture
+                        <time datetime="2025-01-20">20 janvier 2025</time> · 8 min de lecture
                     </p>
                 </div>
             </div>
@@ -515,11 +402,11 @@
             </ol>
         </nav>
 
-        <!-- PROSE -->
+        <!-- ====== PROSE ====== -->
         <div class="prose">
 
-            <!-- INTRO -->
-            <p>Pourquoi <strong>70 % des initiatives de gouvernance des données</strong> échouent-elles ? Après 15 ans à accompagner des organisations dans leur <strong>gestion des données</strong> et leurs projets de <strong>transformation ETL</strong>, j'ai identifié une cause récurrente : les trois volets essentiels — gouverner, gérer et transformer — vivent dans des silos séparés.</p>
+            <!-- INTRO — Source Gartner ajoutée -->
+            <p>Pourquoi <strong>70 % des initiatives de gouvernance des données</strong> échouent-elles ? Ce chiffre, cité par <strong>Gartner</strong> dans ses études sur le data management, reflète une réalité que j'observe depuis 15 ans sur le terrain. Après avoir accompagné des organisations dans leur <strong>gestion des données</strong> et leurs projets de <strong>transformation ETL</strong>, j'ai identifié une cause récurrente : les trois volets essentiels — gouverner, gérer et transformer — vivent dans des silos séparés.</p>
 
             <p>Vous connaissez cette scène. Lundi matin, comité de direction. Le VP Marketing présente ses chiffres : <strong>« Le client moyen a dépensé 50 000 $ ce trimestre. »</strong></p>
 
@@ -531,7 +418,7 @@
                 <p>Le problème n'était pas l'outil.<br>Le problème, c'est que <span class="highlight">trois mondes essentiels ne se parlaient pas</span>.</p>
             </div>
 
-            <!-- SECTION 1 -->
+            <!-- ====== SECTION 1 ====== -->
             <h2 id="probleme">Le vrai problème : trois silos</h2>
 
             <p>Dans la plupart des organisations, la donnée est gérée en trois silos qui s'ignorent :</p>
@@ -558,7 +445,7 @@
 
             <p><strong>C'est exactement pour ça que j'ai créé CQSEV avec 3 volets intégrés.</strong></p>
 
-            <!-- SECTION 2 -->
+            <!-- ====== SECTION 2 : GOUVERNER ====== -->
             <h2 id="gouverner"><span style="color:var(--c-indigo);">Volet 1</span> — Gouverner : les règles du jeu</h2>
 
             <p><strong>La gouvernance des données</strong> est l'ensemble des politiques, rôles et standards qui définissent comment une organisation gère ses données. C'est le « quoi » et le « qui » — pas le « comment ».</p>
@@ -578,86 +465,74 @@
             <h3>Concrètement, gouverner c'est :</h3>
 
             <ul class="check-list">
-                <li>
-                    <svg class="icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Nommer un <strong>Data Owner</strong> pour chaque domaine de données</span>
-                </li>
-                <li>
-                    <svg class="icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Définir un <strong>glossaire métier</strong> — pas 200 pages, juste les 20 termes qui posent problème</span>
-                </li>
-                <li>
-                    <svg class="icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Écrire les <strong>3 politiques critiques</strong> : qualité, accès, rétention</span>
-                </li>
-                <li>
-                    <svg class="icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <span>Mesurer la conformité à la <strong>Loi 25</strong> et au RGPD</span>
-                </li>
+                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Nommer un <strong>Data Owner</strong> pour chaque domaine de données</span></li>
+                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Définir un <strong>glossaire métier</strong> — pas 200 pages, juste les 20 termes qui posent problème</span></li>
+                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Écrire les <strong>3 politiques critiques</strong> : qualité, accès, rétention</span></li>
+                <li><svg class="check-icon" style="color:var(--c-indigo);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Mesurer la conformité à la <strong>Loi 25</strong> et au RGPD</span></li>
             </ul>
 
             <div class="callout callout-tip">
-                <svg class="icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+                <svg class="callout-icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
                 <p><span class="label">Le piège :</span> Trop de gouvernance tue la gouvernance. 3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p>
             </div>
 
             <p>Pour approfondir les 5 axes de la gouvernance pragmatique, consultez le <a href="../#volets" class="link">framework CQSEV complet</a>.</p>
 
-            <!-- SECTION 3 -->
+            <!-- ====== SECTION 3 : GÉRER — Analogie usine alimentaire ====== -->
             <h2 id="gerer"><span style="color:var(--c-green);">Volet 2</span> — Gérer : les mains dans la terre</h2>
 
             <p><strong>La gestion des données</strong> (<em>data management</em>) est l'application opérationnelle des règles de gouvernance au quotidien. C'est le « comment » et le « quand » — la vérification terrain que les règles sont respectées.</p>
 
             <p>Avoir des règles, c'est bien. <strong>Vérifier qu'elles sont appliquées chaque jour</strong>, c'est mieux.</p>
 
-            <p>Pensez à la <strong>station de traitement de l'eau</strong>. Chaque matin, un technicien teste le pH. Vérifie le chlore. Si c'est hors norme, il alerte et corrige. Il ne crée pas une nouvelle politique — il applique celle qui existe.</p>
+            <p>Pensez au <strong>contrôle qualité dans une usine alimentaire</strong>. Chaque matin, un inspecteur prélève des échantillons sur la ligne de production. Il vérifie la température, la date de péremption, la traçabilité des lots. Si quelque chose est hors norme, il retire le produit <em>avant</em> qu'il n'atteigne le consommateur. Il ne réécrit pas la recette — il applique les standards existants.</p>
 
             <p>En entreprise, c'est le <strong>Data Steward</strong> qui fait ce travail. Chaque semaine, il vérifie le taux de doublons dans le CRM. Si c'est au-dessus de 5 %, il lance un nettoyage. Il ne demande pas la permission au comité. La règle est claire, il l'applique.</p>
 
             <h3>Concrètement, gérer c'est :</h3>
 
             <ul class="check-list">
-                <li><svg class="icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Mesurer</strong> la qualité chaque semaine (pas chaque trimestre)</span></li>
-                <li><svg class="icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Corriger</strong> les anomalies dès qu'elles sont détectées</span></li>
-                <li><svg class="icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Tenir les <strong>métadonnées à jour</strong> pour que tout le monde trouve ce qu'il cherche</span></li>
-                <li><svg class="icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Faire des <strong>revues d'accès</strong> trimestrielles : qui a accès à quoi ?</span></li>
+                <li><svg class="check-icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Mesurer</strong> la qualité chaque semaine (pas chaque trimestre)</span></li>
+                <li><svg class="check-icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Corriger</strong> les anomalies dès qu'elles sont détectées</span></li>
+                <li><svg class="check-icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Tenir les <strong>métadonnées à jour</strong> pour que tout le monde trouve ce qu'il cherche</span></li>
+                <li><svg class="check-icon" style="color:var(--c-green);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Faire des <strong>revues d'accès</strong> trimestrielles : qui a accès à quoi ?</span></li>
             </ul>
 
             <div class="callout callout-tip">
-                <svg class="icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+                <svg class="callout-icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
                 <p><span class="label">Le piège :</span> Des règles sans vérification terrain = une fiction. Si personne ne vérifie, les règles n'existent pas vraiment.</p>
             </div>
 
             <p>Découvrez des <a href="../#terrain" class="link">cas concrets du terrain</a> où la gestion quotidienne a fait la différence.</p>
 
-            <!-- SECTION 4 -->
+            <!-- ====== SECTION 4 : TRANSFORMER — Analogie chaîne de montage ====== -->
             <h2 id="transformer"><span style="color:var(--c-amber);">Volet 3</span> — Transformer : l'usine ETL/ELT</h2>
 
             <p><strong>La transformation des données</strong> désigne les processus ETL (<em>Extract, Transform, Load</em>) et ELT qui déplacent, nettoient et chargent les données d'un système à un autre. C'est l'usine automatisée qui applique les règles à grande échelle.</p>
 
             <p>C'est la partie que tout le monde oublie. <strong>Les pipelines ETL/ELT</strong> — la machinerie qui déplace, nettoie et charge les données.</p>
 
-            <p>Pensez aux <strong>tuyaux et filtres de l'eau</strong>. L'eau est captée (Extract), passe par les filtres (Transform), et arrive au réservoir (Load). Si un filtre casse, toute la ville boit de l'eau sale.</p>
+            <p>Pensez à une <strong>chaîne de montage automobile</strong>. Les pièces arrivent de dizaines de fournisseurs (Extract). Chaque pièce est vérifiée, ajustée, assemblée selon un plan précis (Transform). Le véhicule fini est livré au concessionnaire (Load). Si un capteur détecte qu'un boulon est mal serré, la chaîne s'arrête automatiquement. Pas besoin d'attendre le rappel de 50 000 véhicules.</p>
 
             <p>En entreprise, c'est pareil. Votre pipeline extrait du CRM, nettoie, dédoublonne, et charge dans le Data Warehouse. Mais si les <strong>règles de qualité définies en gouvernance ne sont pas codées dans le pipeline</strong>, des données invalides passent. Le VP ouvre son rapport le lundi matin — et les chiffres sont faux.</p>
 
             <h3>Concrètement, transformer c'est :</h3>
 
             <ul class="check-list">
-                <li><svg class="icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Intégrer les règles de validation</strong> directement dans le pipeline</span></li>
-                <li><svg class="icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Rejeter automatiquement</strong> les données non conformes</span></li>
-                <li><svg class="icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Masquer les données sensibles</strong> (PII) dès l'extraction</span></li>
-                <li><svg class="icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Alerter</strong> quand un flux échoue — pas découvrir le problème 3 jours après</span></li>
+                <li><svg class="check-icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Intégrer les règles de validation</strong> directement dans le pipeline</span></li>
+                <li><svg class="check-icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Rejeter automatiquement</strong> les données non conformes</span></li>
+                <li><svg class="check-icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Masquer les données sensibles</strong> (PII) dès l'extraction</span></li>
+                <li><svg class="check-icon" style="color:var(--c-amber);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Alerter</strong> quand un flux échoue — pas découvrir le problème 3 jours après</span></li>
             </ul>
 
             <div class="callout callout-tip">
-                <svg class="icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
+                <svg class="callout-icon" style="color:#D97706;" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM4 11a1 1 0 100-2H3a1 1 0 000 2h1zM10 17a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM7.05 15.95a1 1 0 00-1.414 0l-.707.707a1 1 0 001.414 1.414l.707-.707a1 1 0 000-1.414zm8.486 0a1 1 0 011.414 0l.707.707a1 1 0 01-1.414 1.414l-.707-.707a1 1 0 010-1.414zM12 7a5 5 0 100 10 5 5 0 000-10z"/></svg>
                 <p><span class="label">Le piège :</span> Un pipeline sans règles de gouvernance intégrées = une usine qui produit des données non fiables à grande vitesse.</p>
             </div>
 
             <p>La <a href="../#matrice" class="link">matrice CQSEV</a> montre exactement comment les règles de validation doivent être intégrées dans chaque pipeline.</p>
 
-            <!-- SECTION 5 -->
+            <!-- ====== SECTION 5 : CQSEV ====== -->
             <h2 id="cqsev">Ce que CQSEV change : évaluer les trois en même temps</h2>
 
             <p>Le framework CQSEV pose <strong>5 questions</strong> (Conformité, Qualité, Sécurité, Efficacité, Valorisation) — mais chaque question est évaluée <strong>dans les 3 volets simultanément</strong>.</p>
@@ -687,7 +562,7 @@
 
             <p>Si la réponse est « non » à un seul niveau, on sait <strong>exactement où intervenir</strong>. Pas besoin de tout refaire. Juste de boucher le trou.</p>
 
-            <!-- SECTION 6 -->
+            <!-- ====== SECTION 6 : CONCLUSION ====== -->
             <h2 id="conclusion">Par où commencer ?</h2>
 
             <p>Si vous ne devez retenir qu'une chose de cet article :</p>
@@ -707,6 +582,21 @@
             <p>Les cases vides sont vos priorités d'action. Pas de budget requis. Pas d'outil à acheter. Juste de la clarté.</p>
 
             <p><a href="../#matrice" class="link">→ Voir la matrice CQSEV complète (5 axes × 3 volets)</a></p>
+
+            <!-- ====== LE MOT DE LA FIN ====== -->
+            <h3>Le mot de la fin</h3>
+
+            <p>En 15 ans, je n'ai jamais vu une organisation échouer parce qu'elle n'avait pas le bon outil. Je les ai vues échouer parce que :</p>
+
+            <ul class="check-list">
+                <li><svg class="check-icon" style="color:var(--c-red);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg><span>Les <strong>règles existaient</strong> mais personne ne savait qu'elles existaient</span></li>
+                <li><svg class="check-icon" style="color:var(--c-red);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg><span>La <strong>vérification</strong> n'était faite par personne</span></li>
+                <li><svg class="check-icon" style="color:var(--c-red);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg><span>Les <strong>pipelines</strong> ignoraient totalement les politiques</span></li>
+            </ul>
+
+            <p>CQSEV existe pour que ces trois échecs ne se reproduisent plus. <strong>Gouverner sans gérer, c'est de la fiction. Gérer sans transformer, c'est du bricolage. Transformer sans gouverner, c'est de l'automatisation aveugle.</strong></p>
+
+            <p>Les trois ensemble, c'est la fiabilité.</p>
 
         </div><!-- /prose -->
 
@@ -776,7 +666,7 @@
             <h3 style="font-family:var(--font-heading);">Articles connexes</h3>
             <a href="gouvernance-donnees-guide-complet.html">
                 <span style="font-size:0.75rem;color:var(--c-indigo);font-weight:600;">PROCHAIN ARTICLE</span>
-                <span style="display:block;font-weight:700;color:var(--c-gray-900);margin-top:0.25rem;">Gouvernance des données : guide complet 2026 →</span>
+                <span style="display:block;font-weight:700;color:var(--c-gray-900);margin-top:0.25rem;">Gouvernance des données : guide complet 2025 →</span>
             </a>
         </div>
 
@@ -832,7 +722,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p style="font-size:0.75rem;color:var(--c-gray-600);">© 2026 Oleg Chitic — CQSEV Framework</p>
+            <p style="font-size:0.75rem;color:var(--c-gray-600);">© 2025 Oleg Chitic — CQSEV Framework</p>
         </div>
     </footer>
 
