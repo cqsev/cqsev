@@ -10,7 +10,7 @@
     <meta name="author" content="Oleg Chitic">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cqsev.github.io/">
-    <meta name="theme-color" content="#6366F1">
+    <meta name="theme-color" content="#F7F5F0">
 
     <!-- ====== OPEN GRAPH ====== -->
     <meta property="og:type" content="website">
@@ -29,7 +29,7 @@
     <meta name="twitter:description" content="Framework pragmatique en 5 axes × 3 volets pour gouverner, gérer et transformer vos données. Grille de diagnostic gratuite incluse.">
     <meta name="twitter:image" content="https://cqsev.github.io/img/og-image.png">
 
-    <!-- ====== SCHEMA.ORG — Corrigé avec @graph ====== -->
+    <!-- ====== SCHEMA.ORG ====== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -52,15 +52,7 @@
                 "image": "https://cqsev.github.io/oleg-chitic-expert-gouvernance-donnees-cqsev.gif",
                 "url": "https://cqsev.github.io/",
                 "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"],
-                "knowsAbout": [
-                    "Gouvernance des données",
-                    "Data Management",
-                    "ETL/ELT",
-                    "DAMA-DMBOK",
-                    "Loi 25",
-                    "Qualité des données",
-                    "RGPD"
-                ]
+                "knowsAbout": ["Gouvernance des données","Data Management","ETL/ELT","DAMA-DMBOK","Loi 25","Qualité des données","RGPD"]
             }
         ]
     }
@@ -68,15 +60,9 @@
 
     <!-- ====== ASSETS ====== -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <!-- Fonts optimisées : seulement les graisses utilisées -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- 
-        MIGRATION FUTURE : télécharger les .woff2 dans /fonts/ et remplacer par :
-        <link rel="stylesheet" href="/css/fonts.css">
-    -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
     <!-- ====== GTM ====== -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -85,1352 +71,839 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
 
-    <!-- ============================================================ -->
-    <!-- CSS COMPLET — Remplace Tailwind CDN + AOS CSS                -->
-    <!-- ============================================================ -->
     <style>
-        /* ======================== */
-        /* VARIABLES                */
-        /* ======================== */
+        /* ================================================ */
+        /* DESIGN SYSTEM — Éditorial Premium                */
+        /* ================================================ */
         :root {
-            --font-heading: 'Plus Jakarta Sans', sans-serif;
-            --font-body: 'Inter', sans-serif;
-
-            /* CQSEV Colors */
-            --c-blue: #3B82F6;
-            --c-green: #10B981;
-            --c-red: #EF4444;
-            --c-amber: #F59E0B;
-            --c-purple: #8B5CF6;
-
-            /* Brand */
-            --c-indigo: #6366F1;
-            --c-indigo-dark: #4F46E5;
-            --c-indigo-light: #E0E7FF;
-            --c-indigo-600: #4F46E5;
-
-            /* Grays */
-            --c-gray-50: #F9FAFB;
-            --c-gray-100: #F3F4F6;
-            --c-gray-200: #E5E7EB;
-            --c-gray-300: #D1D5DB;
-            --c-gray-400: #9CA3AF;
-            --c-gray-500: #6B7280;
-            --c-gray-600: #4B5563;
-            --c-gray-700: #374151;
-            --c-gray-800: #1F2937;
-            --c-gray-900: #111827;
-            --c-gray-950: #030712;
-
-            /* Spacing */
-            --section-pad: 140px;
-            --container-max: 1152px;
-            --container-md: 896px;
-            --container-sm: 768px;
-            --container-xs: 672px;
-
-            /* Radius */
-            --r-sm: 8px;
-            --r-md: 12px;
-            --r-lg: 16px;
-            --r-xl: 20px;
-            --r-2xl: 24px;
-            --r-3xl: 32px;
-            --r-full: 9999px;
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --paper: #F7F5F0;
+            --white: #FFFFFF;
+            --ink: #1A1A1A;
+            --ink-light: #4A4A4A;
+            --ink-10: rgba(26,26,26,0.10);
+            --ink-5: rgba(26,26,26,0.05);
+            --ink-20: rgba(26,26,26,0.20);
+            --ink-30: rgba(26,26,26,0.30);
         }
 
-        /* ======================== */
-        /* RESET & BASE             */
-        /* ======================== */
+        /* ================================================ */
+        /* RESET                                            */
+        /* ================================================ */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        html { scroll-behavior: smooth; background: var(--paper); }
         section[id] { scroll-margin-top: 80px; }
-
         body {
-            font-family: var(--font-body);
-            color: var(--c-gray-600);
-            background: #fff;
+            font-family: var(--font-sans);
+            color: var(--ink-light);
+            background: var(--paper);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             line-height: 1.6;
+            font-weight: 300;
         }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            line-height: 1.15;
-            color: var(--c-gray-900);
-        }
-
+        h1,h2,h3,h4,h5,h6 { font-family: var(--font-serif); color: var(--ink); font-weight: 500; }
         a { color: inherit; text-decoration: none; }
         img { max-width: 100%; height: auto; display: block; }
         button { cursor: pointer; border: none; background: none; font: inherit; }
         table { border-collapse: collapse; width: 100%; }
+        strong { color: var(--ink); font-weight: 500; }
+        em, .italic { font-style: italic; }
 
-        /* Screen reader only */
-        .sr-only {
-            position: absolute; width: 1px; height: 1px;
-            padding: 0; margin: -1px; overflow: hidden;
-            clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--paper); }
+        ::-webkit-scrollbar-thumb { background: #D1CDD2; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--ink-light); }
+
+        /* ================================================ */
+        /* LAYOUT                                           */
+        /* ================================================ */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .container-sm { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+        .container-xs { max-width: 672px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 8rem 0; border-top: 1px solid var(--ink-10); }
+
+        /* ================================================ */
+        /* TYPOGRAPHY                                       */
+        /* ================================================ */
+        .label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            font-weight: 400;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            display: block;
         }
+        .heading-xl { font-size: clamp(3rem, 8vw, 8rem); line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+        .heading-lg { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+        .heading-md { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; margin-bottom: 1rem; }
+        .heading-sm { font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.75rem; }
+        .body-lg { font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7; font-weight: 300; }
+        .body { font-size: 1rem; line-height: 1.7; font-weight: 300; }
+        .body-sm { font-size: 0.875rem; line-height: 1.6; font-weight: 300; }
 
-        /* ======================== */
-        /* LAYOUT                   */
-        /* ======================== */
-        .container { max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem; }
-        .container-md { max-width: var(--container-md); margin: 0 auto; padding: 0 1.5rem; }
-        .container-sm { max-width: var(--container-sm); margin: 0 auto; padding: 0 1.5rem; }
-        .container-xs { max-width: var(--container-xs); margin: 0 auto; padding: 0 1.5rem; }
-
-        .section-spacing { padding-top: var(--section-pad); padding-bottom: var(--section-pad); }
-        .text-center { text-align: center; }
-
-        .flex { display: flex; }
-        .flex-col { flex-direction: column; }
-        .flex-wrap { flex-wrap: wrap; }
-        .items-center { align-items: center; }
-        .items-start { align-items: flex-start; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        .gap-2 { gap: 0.5rem; }
-        .gap-3 { gap: 0.75rem; }
-        .gap-4 { gap: 1rem; }
-        .gap-5 { gap: 1.25rem; }
-        .gap-7 { gap: 1.75rem; }
-        .gap-8 { gap: 2rem; }
-        .gap-10 { gap: 2.5rem; }
-        .gap-12 { gap: 3rem; }
-        .gap-16 { gap: 4rem; }
-        .flex-1 { flex: 1; }
-        .flex-shrink-0 { flex-shrink: 0; }
-
-        .grid { display: grid; }
-        .grid-cols-1 { grid-template-columns: 1fr; }
-        .space-y-1 > * + * { margin-top: 0.25rem; }
-        .space-y-2 > * + * { margin-top: 0.5rem; }
-        .space-y-3 > * + * { margin-top: 0.75rem; }
-        .space-y-4 > * + * { margin-top: 1rem; }
-        .space-y-5 > * + * { margin-top: 1.25rem; }
-        .space-y-6 > * + * { margin-top: 1.5rem; }
-        .space-y-8 > * + * { margin-top: 2rem; }
-
-        .relative { position: relative; }
-        .absolute { position: absolute; }
-        .fixed { position: fixed; }
-        .z-10 { z-index: 10; }
-        .z-40 { z-index: 40; }
-        .z-50 { z-index: 50; }
-        .z-60 { z-index: 60; }
-        .overflow-hidden { overflow: hidden; }
-        .overflow-x-auto { overflow-x: auto; }
-        .w-full { width: 100%; }
-        .min-h-screen { min-height: 100vh; }
-        .hidden { display: none; }
-        .block { display: block; }
-        .inline-flex { display: inline-flex; }
-
-        /* ======================== */
-        /* TYPOGRAPHY               */
-        /* ======================== */
-        .font-heading { font-family: var(--font-heading); }
-        .text-xs { font-size: 0.75rem; line-height: 1rem; }
-        .text-xxs { font-size: 0.625rem; line-height: 0.875rem; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-base { font-size: 1rem; line-height: 1.5rem; }
-        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-        .text-5xl { font-size: 3rem; line-height: 1; }
-        .text-6xl { font-size: 3.75rem; line-height: 1; }
-        .text-8xl { font-size: 6rem; line-height: 1; }
-
-        .font-medium { font-weight: 500; }
-        .font-semibold { font-weight: 600; }
-        .font-bold { font-weight: 700; }
-        .font-extrabold { font-weight: 800; }
-
-        .leading-relaxed { line-height: 1.625; }
-        .leading-tight { line-height: 1.15; }
-        .tracking-widest { letter-spacing: 0.1em; }
-        .uppercase { text-transform: uppercase; }
-
-        /* ======================== */
-        /* COLORS                   */
-        /* ======================== */
-        .text-white { color: #fff; }
-        .text-gray-300 { color: var(--c-gray-300); }
-        .text-gray-400 { color: var(--c-gray-400); }
-        .text-gray-500 { color: var(--c-gray-500); }
-        .text-gray-600 { color: var(--c-gray-600); }
-        .text-gray-700 { color: var(--c-gray-700); }
-        .text-gray-900 { color: var(--c-gray-900); }
-        .text-indigo-600 { color: var(--c-indigo); }
-        .text-indigo-700 { color: #4338CA; }
-        .text-indigo-200 { color: #C7D2FE; }
-        .text-indigo-100 { color: #E0E7FF; }
-        .text-indigo-300 { color: #A5B4FC; }
-        .text-emerald-200 { color: #A7F3D0; }
-        .text-emerald-100 { color: #D1FAE5; }
-        .text-emerald-500 { color: var(--c-green); }
-        .text-emerald-600 { color: #059669; }
-        .text-emerald-700 { color: #047857; }
-        .text-amber-200 { color: #FDE68A; }
-        .text-amber-100 { color: #FEF3C7; }
-        .text-amber-500 { color: var(--c-amber); }
-        .text-amber-600 { color: #D97706; }
-        .text-amber-700 { color: #B45309; }
-        .text-amber-800 { color: #92400E; }
-        .text-red-600 { color: #DC2626; }
-        .text-red-700 { color: #B91C1C; }
-        .text-purple-600 { color: #7C3AED; }
-        .text-purple-700 { color: #6D28D9; }
-        .text-blue-600 { color: #2563EB; }
-        .text-blue-700 { color: #1D4ED8; }
-
-        .text-cqsev-c { color: var(--c-blue); }
-        .text-cqsev-q { color: var(--c-green); }
-        .text-cqsev-s { color: var(--c-red); }
-        .text-cqsev-e { color: var(--c-amber); }
-        .text-cqsev-v { color: var(--c-purple); }
-
-        .bg-white { background-color: #fff; }
-        .bg-gray-50 { background-color: var(--c-gray-50); }
-        .bg-gray-100 { background-color: var(--c-gray-100); }
-        .bg-gray-900 { background-color: var(--c-gray-900); }
-        .bg-gray-950 { background-color: var(--c-gray-950); }
-        .bg-indigo-50 { background-color: #EEF2FF; }
-        .bg-indigo-100 { background-color: #E0E7FF; }
-        .bg-indigo-600 { background-color: var(--c-indigo); }
-        .bg-emerald-50 { background-color: #ECFDF5; }
-        .bg-emerald-100 { background-color: #D1FAE5; }
-        .bg-emerald-500 { background-color: var(--c-green); }
-        .bg-amber-50 { background-color: #FFFBEB; }
-        .bg-amber-100 { background-color: #FEF3C7; }
-        .bg-amber-500 { background-color: var(--c-amber); }
-        .bg-red-50 { background-color: #FEF2F2; }
-        .bg-red-100 { background-color: #FEE2E2; }
-        .bg-red-500 { background-color: var(--c-red); }
-        .bg-purple-50 { background-color: #FAF5FF; }
-        .bg-purple-100 { background-color: #F3E8FF; }
-        .bg-purple-500 { background-color: var(--c-purple); }
-        .bg-blue-50 { background-color: #EFF6FF; }
-        .bg-blue-100 { background-color: #DBEAFE; }
-        .bg-blue-500 { background-color: var(--c-blue); }
-
-        .border { border: 1px solid var(--c-gray-200); }
-        .border-gray-100 { border-color: var(--c-gray-100); }
-        .border-gray-200 { border-color: var(--c-gray-200); }
-        .border-gray-600 { border-color: var(--c-gray-600); }
-        .border-gray-800 { border-color: #1F2937; }
-        .border-b { border-bottom: 1px solid var(--c-gray-200); }
-        .border-t { border-top: 1px solid var(--c-gray-200); }
-        .border-2 { border-width: 2px; }
-        .border-blue-100 { border-color: #DBEAFE; }
-        .border-blue-200 { border-color: #BFDBFE; }
-        .border-emerald-100 { border-color: #D1FAE5; }
-        .border-emerald-200 { border-color: #A7F3D0; }
-        .border-red-100 { border-color: #FEE2E2; }
-        .border-red-200 { border-color: #FECACA; }
-        .border-amber-100 { border-color: #FEF3C7; }
-        .border-amber-200 { border-color: #FDE68A; }
-        .border-purple-100 { border-color: #F3E8FF; }
-        .border-purple-200 { border-color: #E9D5FF; }
-        .border-indigo-200 { border-color: #C7D2FE; }
-
-        /* ======================== */
-        /* SPACING HELPERS          */
-        /* ======================== */
-        .mb-1 { margin-bottom: 0.25rem; }
-        .mb-2 { margin-bottom: 0.5rem; }
-        .mb-3 { margin-bottom: 0.75rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-5 { margin-bottom: 1.25rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mb-10 { margin-bottom: 2.5rem; }
-        .mb-12 { margin-bottom: 3rem; }
-        .mb-16 { margin-bottom: 4rem; }
-        .mb-20 { margin-bottom: 5rem; }
-        .mt-3 { margin-top: 0.75rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .mt-8 { margin-top: 2rem; }
-        .mt-10 { margin-top: 2.5rem; }
-        .mt-16 { margin-top: 4rem; }
-        .mt-24 { margin-top: 6rem; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .p-3 { padding: 0.75rem; }
-        .p-5 { padding: 1.25rem; }
-        .p-6 { padding: 1.5rem; }
-        .p-8 { padding: 2rem; }
-        .p-10 { padding: 2.5rem; }
-        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
-        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .px-8 { padding-left: 2rem; padding-right: 2rem; }
-        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-        .py-10 { padding-top: 2.5rem; padding-bottom: 2.5rem; }
-        .py-28 { padding-top: 7rem; padding-bottom: 7rem; }
-        .py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-        .pt-8 { padding-top: 2rem; }
-
-        .rounded-full { border-radius: var(--r-full); }
-        .rounded-xl { border-radius: var(--r-md); }
-        .rounded-2xl { border-radius: var(--r-lg); }
-        .rounded-3xl { border-radius: var(--r-3xl); }
-        .rounded-r-2xl { border-radius: 0 var(--r-lg) var(--r-lg) 0; }
-        .shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
-        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); }
-
-        .max-w-2xl { max-width: 42rem; }
-        .max-w-3xl { max-width: 48rem; }
-        .max-w-4xl { max-width: 56rem; }
-        .max-w-lg { max-width: 32rem; }
-
-        /* ======================== */
-        /* COMPONENTS               */
-        /* ======================== */
-
-        /* --- Progress Bar --- */
-        #progress-bar {
-            position: fixed; top: 0; left: 0; height: 3px; z-index: 60;
-            background: linear-gradient(90deg, var(--c-indigo), var(--c-green), var(--c-amber));
-            width: 0%; transition: width 0.1s linear;
-            pointer-events: none;
-        }
-
-        /* --- Navigation --- */
+        /* ================================================ */
+        /* NAVIGATION                                       */
+        /* ================================================ */
         .site-nav {
             position: fixed; top: 0; width: 100%; z-index: 50;
-            background: rgba(255,255,255,0.92);
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+        }
+        .site-nav.scrolled {
+            background: rgba(247,245,240,0.92);
             backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--c-gray-100);
+            border-bottom-color: var(--ink-10);
+            padding: 1rem 0;
         }
         .nav-inner {
-            max-width: var(--container-max); margin: 0 auto; padding: 0 1.5rem;
-            display: flex; align-items: center; justify-content: space-between; height: 64px;
+            max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; align-items: center; justify-content: space-between;
         }
-        .nav-logo { display: flex; align-items: center; gap: 0.625rem; }
-        .nav-logo img { height: 32px; width: 32px; }
-        .nav-logo span { font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; color: var(--c-gray-900); }
-        .nav-links { display: none; align-items: center; gap: 1.75rem; }
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+        .nav-links { display: none; align-items: center; gap: 2rem; }
         .nav-link {
-            font-size: 0.875rem; font-weight: 500; color: var(--c-gray-500);
-            position: relative; transition: color 0.3s ease;
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            color: var(--ink-light);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
         }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 2px; background: var(--c-indigo);
-            transition: width 0.3s ease;
+        .nav-link:hover { color: var(--ink); }
+        .nav-cta {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            color: var(--ink);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            border: 1px solid var(--ink-20);
+            transition: all 0.3s;
         }
-        .nav-link:hover, .nav-link.active { color: var(--c-indigo); }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-cta:hover { background: var(--ink); color: var(--paper); }
 
-        /* --- Buttons --- */
-        .btn {
-            display: inline-flex; align-items: center; gap: 8px;
-            font-weight: 700; border-radius: var(--r-full);
-            transition: all 0.3s ease; font-size: 0.875rem;
-        }
-        .btn:hover { transform: translateY(-3px); }
-
-        .btn-filled {
-            background: var(--c-gray-900); color: #fff; padding: 12px 28px;
-        }
-        .btn-filled:hover { background: var(--c-indigo); box-shadow: 0 12px 30px rgba(99,102,241,0.3); }
-
-        .btn-filled-lg { padding: 16px 36px; font-size: 1rem; }
-
-        .btn-outline {
-            border: 2px solid var(--c-gray-200); color: var(--c-gray-900); padding: 14px 34px;
-        }
-        .btn-outline:hover { border-color: var(--c-indigo); color: var(--c-indigo); }
-
-        .btn-linkedin {
-            background: #0A66C2; color: #fff; padding: 16px 32px;
-            border-radius: var(--r-full); font-weight: 600; font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        .btn-linkedin:hover {
-            background: #004182;
-            box-shadow: 0 12px 30px rgba(10,102,194,0.2);
-            transform: translateY(-3px);
-        }
-
-        .btn-ghost {
-            border: 2px solid var(--c-gray-600); color: var(--c-gray-300);
-            padding: 16px 32px; border-radius: var(--r-full);
-            font-weight: 600; font-size: 1rem; transition: all 0.3s ease;
-        }
-        .btn-ghost:hover { border-color: #fff; color: #fff; transform: translateY(-3px); }
-
-        .btn-white {
-            background: #fff; color: var(--c-indigo); padding: 16px 32px;
-            border-radius: var(--r-full); font-weight: 700; font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        .btn-white:hover { background: #EEF2FF; transform: translateY(-3px); }
-
-        /* --- Mobile Menu --- */
-        .menu-toggle { display: block; color: var(--c-gray-600); padding: 8px; }
-        .mob-menu {
-            display: none; background: #fff; border-top: 1px solid var(--c-gray-100);
-            padding: 1rem 1.5rem;
-        }
+        .menu-toggle { display: block; color: var(--ink-light); padding: 0.5rem; }
+        .mob-menu { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--paper); border-bottom: 1px solid var(--ink-10); padding: 1rem 1.5rem; }
         .mob-menu.open { display: block; }
         .mob-menu a {
-            display: block; font-size: 0.875rem; font-weight: 500;
-            color: var(--c-gray-600); padding: 0.75rem 0;
-            border-bottom: 1px solid var(--c-gray-100);
+            display: block; font-family: var(--font-mono); font-size: 0.75rem;
+            color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.75rem 0; border-bottom: 1px solid var(--ink-5);
         }
 
-        /* --- Wave Dividers --- */
-        .wave-divider { position: relative; overflow: hidden; line-height: 0; }
-        .wave-divider svg { display: block; width: 100%; height: auto; }
+        @media (min-width: 768px) { .nav-links { display: flex; } .menu-toggle { display: none; } }
 
-        /* --- Card Volet --- */
-        .card-volet {
-            border-radius: var(--r-2xl); padding: 48px 36px;
-            color: #fff; position: relative; overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        /* ================================================ */
+        /* BUTTONS                                          */
+        /* ================================================ */
+        .btn-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-family: var(--font-sans);
+            font-size: 0.875rem; font-weight: 500;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
         }
-        .card-volet:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-        .card-volet.volet-gouverner { background: var(--c-indigo); }
-        .card-volet.volet-gerer { background: var(--c-green); }
-        .card-volet.volet-transformer { background: var(--c-amber); }
+        .btn-pill:hover { transform: translateY(-2px); }
+        .btn-dark { background: var(--ink); color: var(--white); }
+        .btn-dark:hover { background: #333; box-shadow: 0 8px 24px rgba(26,26,26,0.15); }
+        .btn-outline { border: 1px solid var(--ink-20); color: var(--ink); background: transparent; }
+        .btn-outline:hover { background: var(--ink); color: var(--paper); }
 
+        /* ================================================ */
+        /* CARDS                                            */
+        /* ================================================ */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--ink-10);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .card-paper { background: var(--paper); }
         .card-icon {
-            width: 56px; height: 56px; background: rgba(255,255,255,0.2);
-            border-radius: var(--r-lg); display: flex; align-items: center;
-            justify-content: center; margin-bottom: 1.5rem;
+            width: 3rem; height: 3rem; border-radius: 50%;
+            border: 1px solid var(--ink-10);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 2rem; background: var(--paper);
+        }
+        .card-watermark {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            font-family: var(--font-serif); font-size: 3.75rem; font-weight: 700;
+            color: var(--ink-5); pointer-events: none; line-height: 1;
         }
 
-        .giant-num {
-            font-family: var(--font-heading); font-weight: 800;
-            font-size: 120px; line-height: 1; position: absolute;
-            top: -20px; right: 20px; opacity: 0.08; color: #fff;
-            pointer-events: none;
+        /* ================================================ */
+        /* GRIDS                                            */
+        /* ================================================ */
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .grid-5 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 4rem; }
+        .grid-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        @media (min-width: 768px) {
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-5 { grid-template-columns: repeat(5, 1fr); }
+            .grid-2 { grid-template-columns: 1fr 2fr; }
+        }
+        @media (min-width: 1024px) {
+            .grid-2-sticky { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+            .sticky-left { position: sticky; top: 8rem; align-self: start; }
         }
 
-        /* --- Letter Cards --- */
-        .letter-card {
-            border-radius: var(--r-xl); padding: 1.5rem; text-align: center;
-            border: 2px solid; transition: all 0.3s ease;
+        /* ================================================ */
+        /* MATRIX TABLE                                     */
+        /* ================================================ */
+        .matrix-wrap { overflow-x: auto; padding-bottom: 1rem; }
+        .matrix {
+            min-width: 900px; background: var(--white);
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid var(--ink-10);
         }
-        .letter-card:hover {
-            transform: scale(1.06) translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+        .matrix th {
+            padding: 1.5rem; text-align: left;
+            font-family: var(--font-serif); font-weight: 500;
+            border-bottom: 1px solid var(--ink-10);
+            background: var(--paper);
         }
+        .matrix th .sub { display: block; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; font-weight: 400; }
+        .matrix td {
+            padding: 1.5rem; font-size: 0.875rem; font-weight: 300;
+            border-bottom: 1px solid var(--ink-5);
+            color: var(--ink-light);
+        }
+        .matrix td:not(:last-child), .matrix th:not(:last-child) { border-right: 1px solid var(--ink-10); }
+        .matrix tr:hover td { background: rgba(247,245,240,0.5); }
+        .matrix .axe-cell { display: flex; align-items: center; gap: 1rem; }
+        .matrix .axe-letter { font-family: var(--font-serif); font-size: 1.875rem; font-weight: 500; color: var(--ink); }
+        .matrix .axe-name { font-family: var(--font-sans); font-weight: 500; font-size: 0.875rem; color: var(--ink); }
+        .matrix-mobile { display: block; }
+        .matrix-desktop { display: none; }
+        @media (min-width: 1024px) { .matrix-mobile { display: none; } .matrix-desktop { display: block; } }
 
-        /* --- Staircase --- */
-        .stair {
-            font-size: 0.875rem; font-weight: 700; color: #fff;
-            padding: 14px 24px; border-radius: 0 var(--r-lg) var(--r-lg) 0;
-            transition: all 0.3s ease; cursor: pointer;
-        }
-        .stair:hover { transform: translateX(16px) scale(1.02); }
-
-        /* --- Tags --- */
-        .tag {
-            display: inline-block; padding: 2px 8px; border-radius: var(--r-full);
-            font-size: 0.625rem; font-weight: 600;
-            transition: all 0.2s ease;
-        }
-        .tag:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        .tag-lg { padding: 6px 12px; font-size: 0.75rem; }
-
-        /* --- Terrain Cases --- */
+        /* ================================================ */
+        /* TERRAIN CASES                                    */
+        /* ================================================ */
         .case-card {
-            background: #fff; border-radius: var(--r-3xl); padding: 2rem 2.5rem;
-            border: 1px solid var(--c-gray-100); box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-            position: relative; overflow: hidden;
+            display: flex; gap: 2rem; align-items: flex-start;
+            background: var(--paper); border: 1px solid var(--ink-10);
+            border-radius: 24px; padding: 2rem 2.5rem;
+            transition: all 0.3s ease;
+        }
+        .case-card:hover { background: var(--white); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+        .case-num {
+            font-family: var(--font-serif); font-size: 3rem; font-weight: 500;
+            color: var(--ink-5); line-height: 1; transition: color 0.3s;
+            flex-shrink: 0; padding-top: 0.25rem;
+        }
+        .case-card:hover .case-num { color: var(--ink); }
+        .case-footer {
+            display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;
+            padding-top: 1.5rem; margin-top: 1.5rem;
+            border-top: 1px solid var(--ink-10);
+        }
+        .case-tag {
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.375rem 0.75rem; border-radius: 9999px;
+            border: 1px solid var(--ink-20); color: var(--ink);
         }
 
-        /* --- FAQ --- */
+        /* ================================================ */
+        /* AUTHOR                                           */
+        /* ================================================ */
+        .author-photo-wrap { width: 100%; }
+        .author-photo-arch {
+            aspect-ratio: 3/4; border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+            overflow: hidden; border: 8px solid var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .author-photo {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.7s ease;
+        }
+        .author-photo:hover { filter: grayscale(0%); }
+        .author-quote {
+            font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500;
+            color: var(--ink); font-style: italic; line-height: 1.4;
+            border-left: 2px solid var(--ink-20); padding-left: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            background: var(--white); border-radius: 16px;
+            padding: 1.5rem; border: 1px solid var(--ink-5);
+            text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .stat-num { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem; }
+        .stat-label { font-family: var(--font-mono); font-size: 0.625rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.15em; }
+
+        /* ================================================ */
+        /* FAQ                                              */
+        /* ================================================ */
         .faq-item {
-            background: #fff; border-radius: var(--r-lg); border: 1px solid var(--c-gray-200);
-            margin-bottom: 1rem; overflow: hidden;
+            background: var(--white); border-radius: 16px;
+            border: 1px solid var(--ink-10); margin-bottom: 0.75rem;
+            overflow: hidden;
         }
         .faq-item summary {
             display: flex; align-items: center; justify-content: space-between;
-            padding: 1.5rem; cursor: pointer; font-family: var(--font-heading);
-            font-weight: 700; color: var(--c-gray-900); font-size: 0.95rem;
-            transition: color 0.3s ease; list-style: none;
+            padding: 1.25rem 1.5rem; cursor: pointer;
+            font-family: var(--font-serif); font-weight: 500;
+            color: var(--ink); font-size: 0.95rem;
+            list-style: none; transition: background 0.3s;
         }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary:hover { color: var(--c-indigo); }
-        .faq-item summary .chevron { transition: transform 0.3s ease; flex-shrink: 0; }
-        .faq-item[open] summary .chevron { transform: rotate(180deg); }
-        .faq-item .faq-content {
-            padding: 0 1.5rem 1.5rem; color: var(--c-gray-600);
-            font-size: 0.875rem; line-height: 1.7;
-        }
+        .faq-item summary:hover { background: var(--paper); }
+        .faq-item .chevron { transition: transform 0.3s; flex-shrink: 0; color: var(--ink-light); }
+        .faq-item[open] .chevron { transform: rotate(180deg); }
+        .faq-item .answer { padding: 0 1.5rem 1.25rem; color: var(--ink-light); font-size: 0.875rem; line-height: 1.7; font-weight: 300; }
 
-        /* --- Author Photo --- */
-        .author-photo-wrap { position: relative; }
-        .author-photo-wrap::before {
-            content: ''; position: absolute; inset: -16px;
-            background: linear-gradient(135deg, #C7D2FE, #E9D5FF, #A7F3D0);
-            border-radius: 2rem; filter: blur(32px); opacity: 0.4;
-        }
-        .author-photo {
-            position: relative; width: 288px; height: 288px;
-            object-fit: cover; border-radius: var(--r-2xl);
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
-        }
-
-        /* --- Back to Top --- */
-        .back-to-top {
-            position: fixed; bottom: 2rem; right: 2rem;
-            width: 56px; height: 56px; background: var(--c-indigo);
-            color: #fff; border-radius: var(--r-lg);
-            box-shadow: 0 10px 30px rgba(99,102,241,0.2);
-            display: flex; align-items: center; justify-content: center;
-            z-index: 40; opacity: 0; pointer-events: none;
-            transition: all 0.3s ease;
-        }
-        .back-to-top.visible { opacity: 1; pointer-events: auto; }
-        .back-to-top:hover { background: #4F46E5; transform: translateY(-4px); }
-
-        /* --- Table --- */
-        .matrix-table { border-radius: var(--r-2xl); overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 1px solid var(--c-gray-100); min-width: 700px; }
-        .matrix-table th { padding: 1.25rem; font-family: var(--font-heading); font-weight: 700; }
-        .matrix-table td { padding: 1.25rem; font-size: 0.75rem; }
-        .matrix-table tbody tr { transition: background 0.2s ease; }
-        .matrix-table tbody tr:hover { background: rgba(99,102,241,0.04); }
-        .matrix-table tbody tr + tr { border-top: 1px solid var(--c-gray-100); }
-
-        /* --- Dot indicator --- */
-        .dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; flex-shrink: 0; }
-        .dot-sm { width: 8px; height: 8px; }
-
-        /* --- Hero decorative blobs --- */
-        .hero-blob {
-            position: absolute; border-radius: 50%; pointer-events: none;
-        }
-
-        /* --- Principle card --- */
-        .principle-num {
-            width: 64px; height: 64px; border-radius: var(--r-lg);
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1rem;
-        }
-        .principle-num span { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; }
-
-        /* --- Form --- */
+        /* ================================================ */
+        /* CONTACT FORM                                     */
+        /* ================================================ */
+        .form-group { margin-bottom: 2rem; }
+        .form-label { display: block; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; }
         .form-input {
-            width: 100%; padding: 0.75rem 1rem; border-radius: var(--r-md);
-            border: 1px solid var(--c-gray-300); font-size: 0.875rem;
-            font-family: var(--font-body); transition: border-color 0.3s ease;
-            margin-bottom: 1rem; background: #fff; color: var(--c-gray-900);
+            width: 100%; background: transparent; border: none;
+            border-bottom: 1px solid var(--ink-20);
+            padding: 0.75rem 0; font-family: var(--font-sans);
+            font-size: 1rem; color: var(--ink); font-weight: 400;
+            transition: border-color 0.3s;
         }
-        .form-input:focus {
-            outline: none; border-color: var(--c-indigo);
-            box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
-        }
-        .form-input::placeholder { color: var(--c-gray-400); }
-        textarea.form-input { resize: vertical; min-height: 120px; }
+        .form-input:focus { outline: none; border-bottom-color: var(--ink); }
+        .form-input::placeholder { color: var(--ink-30); }
+        textarea.form-input { resize: none; min-height: 120px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
 
-        /* ======================== */
-        /* ANIMATIONS (remplace AOS)*/
-        /* ======================== */
+        /* ================================================ */
+        /* FOOTER                                           */
+        /* ================================================ */
+        .site-footer {
+            background: var(--paper); padding: 3rem 0;
+            border-top: 1px solid var(--ink-10);
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;
+            display: flex; flex-wrap: wrap; align-items: center;
+            justify-content: space-between; gap: 1.5rem;
+        }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink-light); text-transform: uppercase;
+            letter-spacing: 0.1em; transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--ink); }
+        .footer-copy {
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink-light); text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ================================================ */
+        /* ANIMATIONS                                       */
+        /* ================================================ */
         [data-animate] {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0; transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
         }
         [data-animate].visible { opacity: 1; transform: translateY(0); }
-        [data-animate][data-delay="100"] { transition-delay: 100ms; }
-        [data-animate][data-delay="200"] { transition-delay: 200ms; }
-        [data-animate][data-delay="300"] { transition-delay: 300ms; }
-        [data-animate][data-delay="400"] { transition-delay: 400ms; }
+        [data-animate][data-delay="1"] { transition-delay: 100ms; }
+        [data-animate][data-delay="2"] { transition-delay: 200ms; }
+        [data-animate][data-delay="3"] { transition-delay: 300ms; }
+        [data-animate][data-delay="4"] { transition-delay: 400ms; }
 
-        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-        .animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.5} }
+        .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
 
-        /* ======================== */
-        /* RESPONSIVE               */
-        /* ======================== */
-        @media (min-width: 640px) {
-            .sm-grid-3 { grid-template-columns: repeat(3, 1fr); }
-            .sm-flex-row { flex-direction: row; }
-            .sm-text-6xl { font-size: 3.75rem; }
-            .sm-col-span-1 { grid-column: span 1; }
+        /* ================================================ */
+        /* RESPONSIVE                                       */
+        /* ================================================ */
+        @media (max-width: 767px) {
+            .case-card { flex-direction: column; gap: 1rem; padding: 1.5rem; }
+            .section { padding: 4rem 0; }
+            .heading-xl { font-size: 3rem; }
         }
 
-        @media (min-width: 768px) {
-            .nav-links { display: flex; }
-            .menu-toggle { display: none; }
-            .md-hidden { display: none; }
-            .md-block { display: block; }
-            .md-flex { display: flex; }
-            .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
-            .md-grid-5 { grid-template-columns: repeat(5, 1fr); }
-            .md-text-6xl { font-size: 3.75rem; }
-            .md-text-8xl { font-size: 6rem; }
-            .md-text-5xl { font-size: 3rem; }
-            .md-text-2xl { font-size: 1.5rem; }
-            .md-text-xl { font-size: 1.25rem; }
-            .md-text-lg { font-size: 1.125rem; }
-            .md-p-10 { padding: 2.5rem; }
-            .md-w-64 { width: 16rem; }
-            .md-ml-12 { margin-left: 3rem; }
-            .md-ml-24 { margin-left: 6rem; }
-            .md-ml-36 { margin-left: 9rem; }
-            .md-ml-48 { margin-left: 12rem; }
-            .md-py-36 { padding-top: 9rem; padding-bottom: 9rem; }
-        }
-
-        @media (min-width: 1024px) {
-            .lg-grid-5 { grid-template-columns: repeat(5, 1fr); }
-            .lg-grid-5-2-3 { grid-template-columns: 2fr 3fr; }
-        }
-
-        /* Mobile matrix: show cards, hide table */
-        .matrix-mobile { display: block; }
-        .matrix-desktop { display: none; }
-        @media (min-width: 768px) {
-            .matrix-mobile { display: none; }
-            .matrix-desktop { display: block; }
-        }
-
-        /* ======================== */
-        /* PRINT                    */
-        /* ======================== */
-        @media print {
-            .site-nav, .no-print, .back-to-top, #progress-bar, .wave-divider,
-            .mob-menu, .menu-toggle { display: none !important; }
-            body { color: #000; }
-            .section-spacing { padding-top: 2rem; padding-bottom: 2rem; }
-        }
+        /* ================================================ */
+        /* PRINT                                            */
+        /* ================================================ */
+        @media print { .site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important} body{background:#fff;color:#000} .section{padding:2rem 0} }
     </style>
 </head>
 <body>
 
-    <!-- GTM noscript -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-
-    <!-- Progress bar -->
-    <div id="progress-bar" aria-hidden="true"></div>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- ====================================================== -->
     <!-- NAVIGATION                                             -->
     <!-- ====================================================== -->
-    <nav class="site-nav" role="navigation" aria-label="Navigation principale">
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navigation principale">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo" aria-label="Accueil CQSEV">
-                <img src="logo-icon.svg" alt="" width="32" height="32">
-                <span>CQSEV</span>
-            </a>
+            <a href="#hero" class="nav-logo" aria-label="Accueil CQSEV">CQSEV.</a>
             <div class="nav-links">
-                <a href="#definition" class="nav-link">Concept</a>
-                <a href="#volets" class="nav-link">Framework</a>
+                <a href="#concept" class="nav-link">Concept</a>
+                <a href="#framework" class="nav-link">Framework</a>
                 <a href="#matrice" class="nav-link">Matrice</a>
                 <a href="#terrain" class="nav-link">Terrain</a>
-                <a href="#auteur" class="nav-link">L'auteur</a>
+                <a href="#auteur" class="nav-link">Auteur</a>
                 <a href="#faq" class="nav-link">FAQ</a>
                 <a href="blog/" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#contact" class="nav-cta">Contact</a>
             </div>
-            <button id="menu-toggle" class="menu-toggle md-hidden" aria-expanded="false" aria-label="Menu">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-label="Menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
         <div id="mob-menu" class="mob-menu" role="menu">
-            <a href="#definition" role="menuitem">Concept</a>
-            <a href="#volets" role="menuitem">Framework</a>
+            <a href="#concept" role="menuitem">Concept</a>
+            <a href="#framework" role="menuitem">Framework</a>
             <a href="#matrice" role="menuitem">Matrice</a>
             <a href="#terrain" role="menuitem">Terrain</a>
-            <a href="#auteur" role="menuitem">L'auteur</a>
+            <a href="#auteur" role="menuitem">Auteur</a>
             <a href="#faq" role="menuitem">FAQ</a>
             <a href="blog/" role="menuitem">Blog</a>
-            <a href="#contact" role="menuitem">Contact</a>
+            <a href="#contact" role="menuitem" style="margin-top:0.75rem;display:block;text-align:center;padding:0.75rem;border-radius:9999px;border:1px solid var(--ink-20);">Contact</a>
         </div>
     </nav>
 
     <!-- ====================================================== -->
-    <!-- 1. HERO                                                -->
+    <!-- HERO                                                   -->
     <!-- ====================================================== -->
-    <section id="hero" class="min-h-screen flex items-center relative overflow-hidden" style="background:linear-gradient(135deg,#EEF2FF,#fff,#FAF5FF);" aria-label="Introduction">
-        <!-- Blobs décoratifs -->
-        <div class="hero-blob" style="top:5rem;right:5rem;width:24rem;height:24rem;background:rgba(199,210,254,0.3);filter:blur(100px);" aria-hidden="true"></div>
-        <div class="hero-blob" style="bottom:10rem;left:2rem;width:18rem;height:18rem;background:rgba(167,243,208,0.2);filter:blur(100px);" aria-hidden="true"></div>
-        <div class="hero-blob" style="top:50%;right:33%;width:15rem;height:15rem;background:rgba(253,230,138,0.2);filter:blur(80px);" aria-hidden="true"></div>
-
-        <div class="container py-32 relative z-10">
-            <div class="max-w-4xl">
+    <section id="hero" class="section" style="min-height:100vh;display:flex;align-items:center;padding-top:5rem;border-top:none;background:var(--paper);" aria-label="Introduction">
+        <div class="container">
+            <div style="max-width:56rem;" data-animate>
                 <!-- Badge -->
-                <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-8" data-animate>
-                    <span style="width:8px;height:8px;background:var(--c-indigo);border-radius:50%;" class="animate-pulse"></span>
-                    70 % des initiatives data échouent
+                <div style="display:inline-flex;align-items:center;gap:0.75rem;padding:0.375rem 1rem;border-radius:9999px;border:1px solid var(--ink-10);background:rgba(255,255,255,0.5);margin-bottom:3rem;">
+                    <span style="width:6px;height:6px;background:var(--ink);border-radius:50%;" class="pulse"></span>
+                    <span class="label" style="margin-bottom:0;">Gouvernance des données</span>
                 </div>
 
-                <!-- H1 avec mot-clé "données" -->
-                <h1 class="font-heading font-extrabold leading-tight mb-8" style="font-size:clamp(3rem,8vw,6rem);" data-animate data-delay="100">
+                <!-- H1 -->
+                <h1 class="heading-xl">
                     Gouverner.<br>
-                    <span class="text-emerald-500">Gérer.</span><br>
-                    <span class="text-amber-500">Transformer</span><br>
-                    <span class="text-gray-400" style="font-size:clamp(1.5rem,4vw,3rem);">vos données.</span>
+                    <em style="color:var(--ink-light);">Gérer.</em><br>
+                    Transformer.
                 </h1>
 
-                <p class="text-lg text-gray-500 mb-12 leading-relaxed max-w-2xl" data-animate data-delay="200" style="font-size:clamp(1rem,2.5vw,1.25rem);">
-                    <strong class="text-gray-900">CQSEV</strong> est un framework en
-                    <strong class="text-gray-900">5 axes × 3 volets</strong>
-                    pour fiabiliser vos données — de la stratégie jusqu'au pipeline.
-                    Sans bureaucratie. Sans outil à 500 K$.
-                </p>
+                <!-- Sub + CTA -->
+                <div style="display:grid;gap:3rem;margin-top:4rem;" class="grid-2">
+                    <p class="body-lg">
+                        <strong>CQSEV</strong> est un framework en <strong>5 axes × 3 volets</strong> pour fiabiliser vos données — de la stratégie jusqu'au pipeline.
+                    </p>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
+                        <a href="#concept" class="btn-pill btn-dark">
+                            Découvrir l'approche
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ====================================================== -->
+    <!-- CONCEPT                                                -->
+    <!-- ====================================================== -->
+    <section id="concept" class="section" style="background:var(--white);" aria-label="Le concept CQSEV">
+        <div class="container">
+            <div class="grid-2-sticky">
+                <!-- Colonne gauche sticky -->
+                <div class="sticky-left" data-animate>
+                    <span class="label">01 // Le Concept</span>
+                    <h2 class="heading-lg">
+                        L'architecture<br>de la <em>confiance</em>.
+                    </h2>
+                </div>
 
-                <div class="flex flex-wrap gap-4" data-animate data-delay="300">
-                    <a href="#definition" class="btn btn-filled btn-filled-lg">
-                        Découvrir le framework
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                    </a>
-                    <a href="blog/" class="btn btn-outline" style="font-size:1rem;">
-                        Lire le blog
-                    </a>
+                <!-- Colonne droite contenu -->
+                <div style="display:flex;flex-direction:column;gap:2rem;" class="body-lg">
+                    <p data-animate>
+                        <strong>CQSEV</strong> est un framework de gouvernance, gestion et transformation des données créé par <strong>Oleg Chitic</strong> à Montréal. L'acronyme représente 5 axes d'évaluation : Conformité, Qualité, Sécurité, Efficacité, et Valorisation.
+                    </p>
+                    <p data-animate data-delay="1">
+                        Contrairement aux frameworks traditionnels comme le DAMA-DMBOK qui se concentrent principalement sur la gouvernance (les règles), CQSEV évalue chaque axe à travers <strong>3 volets</strong> : la gouvernance (définir), la gestion (appliquer), et la transformation ETL/ELT (intégrer dans les pipelines).
+                    </p>
+                    <div class="card card-paper" style="font-family:var(--font-serif);font-size:1.25rem;font-style:italic;color:var(--ink);padding:2rem;" data-animate data-delay="2">
+                        "Le croisement des 5 axes et des 3 volets produit une matrice de 15 points de contrôle qui permet de diagnostiquer rapidement la maturité data d'une organisation."
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave-divider" style="background:linear-gradient(135deg,#EEF2FF,#fff,#FAF5FF);">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
-        </svg>
-    </div>
-
-        <!-- ====================================================== -->
-    <!-- 2. DÉFINITION — Crucial pour SEO + GEO                 -->
     <!-- ====================================================== -->
-    <section id="definition" class="section-spacing bg-white" aria-label="Qu'est-ce que CQSEV">
-        <div class="container-sm">
-            <div class="text-center mb-12" data-animate>
-                <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-4">Le concept</p>
-                <h2 class="font-heading font-extrabold text-gray-900 mb-6" style="font-size:clamp(1.75rem,5vw,3rem);">
-                    Qu'est-ce que le framework CQSEV ?
-                </h2>
-            </div>
-            <div class="space-y-5" data-animate data-delay="100">
-                <p class="text-gray-600 leading-relaxed" style="font-size:1.05rem;">
-                    <strong class="text-gray-900">CQSEV</strong> est un framework de gouvernance, gestion et transformation
-                    des données créé par <strong class="text-gray-900">Oleg Chitic</strong> à Montréal. L'acronyme représente
-                    5 axes d'évaluation : <strong class="text-gray-900">C</strong>onformité (respect des lois comme la Loi 25
-                    et le RGPD), <strong class="text-gray-900">Q</strong>ualité (fiabilité et exactitude des données),
-                    <strong class="text-gray-900">S</strong>écurité (protection des données sensibles), <strong class="text-gray-900">E</strong>fficacité
-                    (accessibilité et facilité de découverte), et <strong class="text-gray-900">V</strong>alorisation
-                    (création de valeur métier via BI et IA).
-                </p>
-                <p class="text-gray-600 leading-relaxed" style="font-size:1.05rem;">
-                    Contrairement aux frameworks traditionnels comme le DAMA-DMBOK qui se concentrent
-                    principalement sur la gouvernance (les règles), CQSEV évalue chaque axe à travers
-                    <strong class="text-gray-900">3 volets</strong> : la gouvernance des données (définir les politiques),
-                    la gestion des données (appliquer les règles au quotidien), et la transformation
-                    des données ETL/ELT (intégrer les contrôles dans les pipelines de données).
-                </p>
-                <p class="text-gray-600 leading-relaxed" style="font-size:1.05rem;">
-                    Le croisement des 5 axes et des 3 volets produit une <strong class="text-gray-900">matrice de 15 points
-                    de contrôle</strong> qui permet de diagnostiquer rapidement la maturité data d'une
-                    organisation et d'identifier les lacunes prioritaires.
-                </p>
-            </div>
-        </div>
-    </section>
-
+    <!-- FRAMEWORK — 3 Volets                                   -->
     <!-- ====================================================== -->
-    <!-- 3. LES 3 VOLETS                                        -->
-    <!-- ====================================================== -->
-    <section id="volets" class="section-spacing bg-white" aria-label="Les 3 volets" style="padding-top:4rem;">
+    <section id="framework" class="section" style="background:var(--paper);" aria-label="Les 3 volets">
         <div class="container">
-            <div class="text-center mb-20">
-                <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-4" data-animate>Un framework, trois dimensions</p>
-                <h2 class="font-heading font-extrabold text-gray-900 mb-6" style="font-size:clamp(2rem,5vw,3.75rem);" data-animate data-delay="100">
-                    De la politique<br>au pipeline
-                </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-animate data-delay="200">
-                    La plupart des frameworks s'arrêtent aux règles.
-                    CQSEV va jusqu'à l'usine.
-                </p>
+            <div style="text-align:center;max-width:48rem;margin:0 auto 5rem;" data-animate>
+                <span class="label">02 // Framework</span>
+                <h2 class="heading-lg">De la politique<br><em>au pipeline.</em></h2>
+                <p class="body-lg" style="color:var(--ink-light);">La plupart des frameworks s'arrêtent aux règles. CQSEV va jusqu'à l'usine.</p>
             </div>
 
-            <!-- 3 cartes colorées -->
-            <div class="grid gap-8 md-grid-3">
-
+            <div class="grid-3">
                 <!-- Gouverner -->
-                <div class="card-volet volet-gouverner" data-animate>
-                    <span class="giant-num">01</span>
-                    <div class="relative z-10">
-                        <div class="card-icon">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                        </div>
-                        <h3 class="font-heading text-3xl font-extrabold mb-2">Gouverner</h3>
-                        <p class="text-indigo-200 text-sm font-medium mb-5">Les règles du jeu</p>
-                        <p class="text-indigo-100 text-sm leading-relaxed mb-8">Définir les politiques, les rôles et les standards. C'est le ministère qui écrit les normes.</p>
-                        <div class="space-y-3">
-                            <p class="text-sm text-indigo-200 flex items-center gap-2"><span class="dot"></span>Qui est responsable des données clients ?</p>
-                            <p class="text-sm text-indigo-200 flex items-center gap-2"><span class="dot"></span>Quelles sont nos règles de qualité ?</p>
-                            <p class="text-sm text-indigo-200 flex items-center gap-2"><span class="dot"></span>Comment mesure-t-on le respect ?</p>
-                        </div>
+                <div class="card" data-animate>
+                    <span class="card-watermark">01</span>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="heading-md" style="font-family:var(--font-serif);">Gouverner</h3>
+                    <span class="label">Les règles du jeu</span>
+                    <p class="body" style="margin-bottom:2.5rem;">Définir les politiques, les rôles et les standards. C'est le ministère qui écrit les normes.</p>
+                    <div style="display:flex;flex-direction:column;gap:1rem;">
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">01.</span> Qui est responsable des données clients ?</p>
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> Quelles sont nos règles de qualité ?</p>
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> Comment mesure-t-on le respect ?</p>
                     </div>
                 </div>
 
                 <!-- Gérer -->
-                <div class="card-volet volet-gerer" data-animate data-delay="100">
-                    <span class="giant-num">02</span>
-                    <div class="relative z-10">
-                        <div class="card-icon">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                        </div>
-                        <h3 class="font-heading text-3xl font-extrabold mb-2">Gérer</h3>
-                        <p class="text-emerald-200 text-sm font-medium mb-5">Les mains dans la terre</p>
-                        <p class="text-emerald-100 text-sm leading-relaxed mb-8">Appliquer les règles au quotidien. L'équipe terrain qui vérifie et corrige.</p>
-                        <div class="space-y-3">
-                            <p class="text-sm text-emerald-200 flex items-center gap-2"><span class="dot"></span>Les règles sont-elles appliquées chaque jour ?</p>
-                            <p class="text-sm text-emerald-200 flex items-center gap-2"><span class="dot"></span>Qui vérifie la qualité ce matin ?</p>
-                            <p class="text-sm text-emerald-200 flex items-center gap-2"><span class="dot"></span>Comment corrige-t-on un problème ?</p>
-                        </div>
+                <div class="card" data-animate data-delay="1">
+                    <span class="card-watermark">02</span>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="heading-md" style="font-family:var(--font-serif);">Gérer</h3>
+                    <span class="label">Les mains dans la terre</span>
+                    <p class="body" style="margin-bottom:2.5rem;">Appliquer les règles au quotidien. L'équipe terrain qui vérifie et corrige.</p>
+                    <div style="display:flex;flex-direction:column;gap:1rem;">
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">01.</span> Les règles sont-elles appliquées chaque jour ?</p>
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> Qui vérifie la qualité ce matin ?</p>
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> Comment corrige-t-on un problème ?</p>
                     </div>
                 </div>
 
                 <!-- Transformer -->
-                <div class="card-volet volet-transformer" data-animate data-delay="200">
-                    <span class="giant-num">03</span>
-                    <div class="relative z-10">
-                        <div class="card-icon">
-                            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        </div>
-                        <h3 class="font-heading text-3xl font-extrabold mb-2">Transformer</h3>
-                        <p class="text-amber-200 text-sm font-medium mb-5">L'usine ETL/ELT</p>
-                        <p class="text-amber-100 text-sm leading-relaxed mb-8">Construire les pipelines qui déplacent et nettoient les données à grande échelle.</p>
-                        <div class="space-y-3">
-                            <p class="text-sm text-amber-200 flex items-center gap-2"><span class="dot"></span>D'où viennent les données, où vont-elles ?</p>
-                            <p class="text-sm text-amber-200 flex items-center gap-2"><span class="dot"></span>Les validations sont-elles dans le pipeline ?</p>
-                            <p class="text-sm text-amber-200 flex items-center gap-2"><span class="dot"></span>Que se passe-t-il quand un flux échoue ?</p>
-                        </div>
+                <div class="card" data-animate data-delay="2">
+                    <span class="card-watermark">03</span>
+                    <div class="card-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
                     </div>
-                </div>
-            </div>
-
-            <!-- 3 Principes -->
-            <div class="max-w-4xl mx-auto mt-24 grid md-grid-3 gap-12 text-center">
-                <div data-animate>
-                    <div class="principle-num bg-indigo-100">
-                        <span class="text-indigo-600">1</span>
+                    <h3 class="heading-md" style="font-family:var(--font-serif);">Transformer</h3>
+                    <span class="label">L'usine ETL/ELT</span>
+                    <p class="body" style="margin-bottom:2.5rem;">Construire les pipelines qui déplacent et nettoient les données à grande échelle.</p>
+                    <div style="display:flex;flex-direction:column;gap:1rem;">
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">01.</span> D'où viennent les données, où vont-elles ?</p>
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> Les validations sont-elles dans le pipeline ?</p>
+                        <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> Que se passe-t-il quand un flux échoue ?</p>
                     </div>
-                    <h4 class="font-heading text-lg font-extrabold text-gray-900 mb-1">Pragmatisme</h4>
-                    <p class="text-sm text-indigo-600 font-semibold mb-2">avant Perfection</p>
-                    <p class="text-sm text-gray-500">3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p>
-                </div>
-                <div data-animate data-delay="100">
-                    <div class="principle-num bg-emerald-100">
-                        <span class="text-emerald-600">2</span>
-                    </div>
-                    <h4 class="font-heading text-lg font-extrabold text-gray-900 mb-1">Valeur</h4>
-                    <p class="text-sm text-emerald-600 font-semibold mb-2">avant Contrôle</p>
-                    <p class="text-sm text-gray-500">Si les gens ne voient pas le bénéfice, ils contourneront les règles.</p>
-                </div>
-                <div data-animate data-delay="200">
-                    <div class="principle-num bg-amber-100">
-                        <span class="text-amber-600">3</span>
-                    </div>
-                    <h4 class="font-heading text-lg font-extrabold text-gray-900 mb-1">Adoption</h4>
-                    <p class="text-sm text-amber-600 font-semibold mb-2">avant Technologie</p>
-                    <p class="text-sm text-gray-500">Un outil sans adhésion humaine prend la poussière.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave-divider bg-white">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#FAFAFA"/>
-        </svg>
-    </div>
-
     <!-- ====================================================== -->
-    <!-- 4. LES 5 AXES CQSEV                                   -->
+    <!-- LES 5 AXES                                             -->
     <!-- ====================================================== -->
-    <section id="axes" class="section-spacing bg-gray-50" aria-label="Les 5 axes">
+    <section id="axes" class="section" style="background:var(--white);" aria-label="Les 5 axes">
         <div class="container">
-            <div class="text-center mb-20">
-                <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-4" data-animate>Les 5 axes</p>
-                <h2 class="font-heading font-extrabold text-gray-900 mb-6" style="font-size:clamp(3rem,8vw,6rem);" data-animate data-delay="100">
-                    <span class="text-cqsev-c">C</span><span class="text-cqsev-q">Q</span><span class="text-cqsev-s">S</span><span class="text-cqsev-e">E</span><span class="text-cqsev-v">V</span>
+            <div style="text-align:center;margin-bottom:4rem;" data-animate>
+                <span class="label">03 // Les 5 Axes</span>
+                <h2 style="font-size:clamp(3rem,8vw,6rem);letter-spacing:0.1em;margin-bottom:1.5rem;">
+                    C Q S E V
                     <span class="sr-only"> — Les 5 axes du framework de gouvernance des données</span>
                 </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-animate data-delay="200">
-                    5 questions simples. Un diagnostic complet.
-                </p>
+                <p class="body-lg" style="color:var(--ink-light);">5 questions simples. Un diagnostic complet.</p>
             </div>
 
-            <!-- 5 letter cards -->
-            <div class="grid gap-5" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));">
-                <div class="letter-card bg-blue-50 border-blue-100" data-animate>
-                    <span class="font-heading text-5xl font-extrabold text-cqsev-c block mb-3">C</span>
-                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Conformité</h3>
-                    <p class="text-xs text-gray-500 mb-3">Respecte-t-on les lois ?</p>
-                    <div class="flex flex-wrap gap-1 justify-center">
-                        <span class="tag bg-blue-100 text-blue-700">Loi 25</span>
-                        <span class="tag bg-blue-100 text-blue-700">RGPD</span>
+            <div class="grid-5">
+                <div class="card card-paper" style="text-align:center;padding:2rem;" data-animate>
+                    <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">C</span>
+                    <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Conformité</h3>
+                    <p class="body-sm" style="margin-bottom:1.5rem;">Respecte-t-on les lois ?</p>
+                    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem;">
+                        <span class="case-tag" style="font-size:0.625rem;">Loi 25</span>
+                        <span class="case-tag" style="font-size:0.625rem;">RGPD</span>
                     </div>
                 </div>
-                <div class="letter-card bg-emerald-50 border-emerald-100" data-animate data-delay="100">
-                    <span class="font-heading text-5xl font-extrabold text-cqsev-q block mb-3">Q</span>
-                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Qualité</h3>
-                    <p class="text-xs text-gray-500 mb-3">Peut-on faire confiance ?</p>
-                    <div class="flex flex-wrap gap-1 justify-center">
-                        <span class="tag bg-emerald-100 text-emerald-700">Exactitude</span>
-                    </div>
+                <div class="card card-paper" style="text-align:center;padding:2rem;" data-animate data-delay="1">
+                    <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">Q</span>
+                    <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Qualité</h3>
+                    <p class="body-sm" style="margin-bottom:1.5rem;">Peut-on faire confiance ?</p>
+                    <span class="case-tag" style="font-size:0.625rem;">Exactitude</span>
                 </div>
-                <div class="letter-card bg-red-50 border-red-100" data-animate data-delay="200">
-                    <span class="font-heading text-5xl font-extrabold text-cqsev-s block mb-3">S</span>
-                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Sécurité</h3>
-                    <p class="text-xs text-gray-500 mb-3">Données protégées ?</p>
-                    <div class="flex flex-wrap gap-1 justify-center">
-                        <span class="tag bg-red-100 text-red-700">RBAC</span>
-                    </div>
+                <div class="card card-paper" style="text-align:center;padding:2rem;" data-animate data-delay="2">
+                    <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">S</span>
+                    <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Sécurité</h3>
+                    <p class="body-sm" style="margin-bottom:1.5rem;">Données protégées ?</p>
+                    <span class="case-tag" style="font-size:0.625rem;">RBAC</span>
                 </div>
-                <div class="letter-card bg-amber-50 border-amber-100" data-animate data-delay="300">
-                    <span class="font-heading text-5xl font-extrabold text-cqsev-e block mb-3">E</span>
-                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Efficacité</h3>
-                    <p class="text-xs text-gray-500 mb-3">Facile à trouver ?</p>
-                    <div class="flex flex-wrap gap-1 justify-center">
-                        <span class="tag bg-amber-100 text-amber-700">Catalogue</span>
-                    </div>
+                <div class="card card-paper" style="text-align:center;padding:2rem;" data-animate data-delay="3">
+                    <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">E</span>
+                    <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Efficacité</h3>
+                    <p class="body-sm" style="margin-bottom:1.5rem;">Facile à trouver ?</p>
+                    <span class="case-tag" style="font-size:0.625rem;">Catalogue</span>
                 </div>
-                <div class="letter-card bg-purple-50 border-purple-100" data-animate data-delay="400">
-                    <span class="font-heading text-5xl font-extrabold text-cqsev-v block mb-3">V</span>
-                    <h3 class="font-heading font-bold text-gray-900 text-sm mb-1">Valorisation</h3>
-                    <p class="text-xs text-gray-500 mb-3">Crée de la valeur ?</p>
-                    <div class="flex flex-wrap gap-1 justify-center">
-                        <span class="tag bg-purple-100 text-purple-700">BI / IA</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Escalier -->
-            <div class="max-w-3xl mx-auto mt-16" data-animate>
-                <div class="bg-white rounded-3xl p-10 border shadow-sm" style="border-color:var(--c-gray-200);">
-                    <h3 class="font-heading font-extrabold text-xl text-gray-900 mb-8 text-center">
-                        C → Q → S → E → V — Chaque marche soutient la suivante
-                    </h3>
-                    <div class="space-y-2">
-                        <div class="stair bg-purple-500" style="margin-left:40%;">V — Valorisation</div>
-                        <div class="stair bg-amber-500" style="margin-left:30%;">E — Efficacité</div>
-                        <div class="stair bg-red-500" style="margin-left:20%;">S — Sécurité</div>
-                        <div class="stair bg-emerald-500" style="margin-left:10%;">Q — Qualité</div>
-                        <div class="stair bg-blue-500" style="margin-left:0;">C — Conformité</div>
-                    </div>
+                <div class="card card-paper" style="text-align:center;padding:2rem;grid-column:span 2;" data-animate data-delay="4">
+                    <span style="display:block;font-family:var(--font-serif);font-size:3rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;">V</span>
+                    <h3 style="font-family:var(--font-sans);font-weight:500;font-size:1.125rem;margin-bottom:0.5rem;">Valorisation</h3>
+                    <p class="body-sm" style="margin-bottom:1.5rem;">Crée de la valeur ?</p>
+                    <span class="case-tag" style="font-size:0.625rem;">BI / IA</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave-divider bg-gray-50">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,20 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#ffffff"/>
-        </svg>
-    </div>
-
     <!-- ====================================================== -->
-    <!-- 5. LA MATRICE 5×3                                      -->
+    <!-- MATRICE 5×3                                            -->
     <!-- ====================================================== -->
-    <section id="matrice" class="section-spacing bg-white" aria-label="Matrice CQSEV">
+    <section id="matrice" class="section" style="background:var(--paper);" aria-label="Matrice CQSEV">
         <div class="container">
-            <div class="text-center mb-16">
-                <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-4" data-animate>Le cœur du framework</p>
-                <h2 class="font-heading font-extrabold text-gray-900 mb-6" style="font-size:clamp(2rem,5vw,3.75rem);" data-animate data-delay="100">
-                    La Matrice CQSEV
-                </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-animate data-delay="200">
-                    5 axes × 3 volets = 15 points de contrôle.
-                    Un diagnostic complet en une seule grille.
-                </p>
+            <div style="margin-bottom:4rem;" data-animate>
+                <span class="label">04 // La Matrice</span>
+                <h2 class="heading-lg">La Matrice <em>CQSEV</em></h2>
+                <p class="body-lg" style="max-width:42rem;">5 axes × 3 volets = 15 points de contrôle.</p>
             </div>
 
-            <!-- ===== VUE MOBILE : Cartes empilées ===== -->
-            <div class="matrix-mobile space-y-6" data-animate data-delay="300">
-                <!-- C -->
-                <div class="bg-white rounded-2xl p-6 border-2 border-blue-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="font-heading text-3xl font-extrabold text-cqsev-c">C</span>
-                        <div><div class="font-bold text-gray-900">Conformité</div><div class="text-xs text-gray-400">Loi 25, RGPD</div></div>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <div class="bg-indigo-50 rounded-xl p-3"><span class="text-xs font-bold text-indigo-600">Gouverner</span><p class="text-gray-600 mt-1">Politique de consentement · Classification définie</p></div>
-                        <div class="bg-emerald-50 rounded-xl p-3"><span class="text-xs font-bold text-emerald-600">Gérer</span><p class="text-gray-600 mt-1">Inventaire données sensibles · Audit terrain régulier</p></div>
-                        <div class="bg-amber-50 rounded-xl p-3"><span class="text-xs font-bold text-amber-600">Transformer</span><p class="text-gray-600 mt-1">Masquage PII dans le pipeline · Purge automatisée</p></div>
+            <!-- Mobile -->
+            <div class="matrix-mobile" style="display:flex;flex-direction:column;gap:1.5rem;" data-animate>
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">C</span><span style="font-weight:500;color:var(--ink);">Conformité</span></div>
+                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Politique de consentement · Classification définie</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Inventaire données sensibles · Audit terrain</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Masquage PII dans le pipeline · Purge automatisée</p></div>
                     </div>
                 </div>
-                <!-- Q -->
-                <div class="bg-white rounded-2xl p-6 border-2 border-emerald-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="font-heading text-3xl font-extrabold text-cqsev-q">Q</span>
-                        <div><div class="font-bold text-gray-900">Qualité</div><div class="text-xs text-gray-400">Fiabilité</div></div>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <div class="bg-indigo-50 rounded-xl p-3"><span class="text-xs font-bold text-indigo-600">Gouverner</span><p class="text-gray-600 mt-1">Standards et KPIs définis · Data Dictionary</p></div>
-                        <div class="bg-emerald-50 rounded-xl p-3"><span class="text-xs font-bold text-emerald-600">Gérer</span><p class="text-gray-600 mt-1">Contrôles quotidiens · Score qualité mesuré</p></div>
-                        <div class="bg-amber-50 rounded-xl p-3"><span class="text-xs font-bold text-amber-600">Transformer</span><p class="text-gray-600 mt-1">Règles de validation ETL · Rejet auto si invalide</p></div>
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">Q</span><span style="font-weight:500;color:var(--ink);">Qualité</span></div>
+                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Standards et KPIs définis · Data Dictionary</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Contrôles quotidiens · Score qualité mesuré</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Règles de validation ETL · Rejet auto si invalide</p></div>
                     </div>
                 </div>
-                <!-- S -->
-                <div class="bg-white rounded-2xl p-6 border-2 border-red-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="font-heading text-3xl font-extrabold text-cqsev-s">S</span>
-                        <div><div class="font-bold text-gray-900">Sécurité</div><div class="text-xs text-gray-400">Protection</div></div>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <div class="bg-indigo-50 rounded-xl p-3"><span class="text-xs font-bold text-indigo-600">Gouverner</span><p class="text-gray-600 mt-1">Politique d'accès RBAC · Classification niveaux</p></div>
-                        <div class="bg-emerald-50 rounded-xl p-3"><span class="text-xs font-bold text-emerald-600">Gérer</span><p class="text-gray-600 mt-1">Revue des permissions · Audit trimestriel</p></div>
-                        <div class="bg-amber-50 rounded-xl p-3"><span class="text-xs font-bold text-amber-600">Transformer</span><p class="text-gray-600 mt-1">Chiffrement en transit · Logs et traçabilité</p></div>
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">S</span><span style="font-weight:500;color:var(--ink);">Sécurité</span></div>
+                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Politique d'accès RBAC · Classification niveaux</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Revue des permissions · Audit trimestriel</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Chiffrement en transit · Logs et traçabilité</p></div>
                     </div>
                 </div>
-                <!-- E -->
-                <div class="bg-white rounded-2xl p-6 border-2 border-amber-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="font-heading text-3xl font-extrabold text-cqsev-e">E</span>
-                        <div><div class="font-bold text-gray-900">Efficacité</div><div class="text-xs text-gray-400">Accessibilité</div></div>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <div class="bg-indigo-50 rounded-xl p-3"><span class="text-xs font-bold text-indigo-600">Gouverner</span><p class="text-gray-600 mt-1">Standards catalogage · Glossaire métier</p></div>
-                        <div class="bg-emerald-50 rounded-xl p-3"><span class="text-xs font-bold text-emerald-600">Gérer</span><p class="text-gray-600 mt-1">Métadonnées à jour · Recherche en &lt;5 min</p></div>
-                        <div class="bg-amber-50 rounded-xl p-3"><span class="text-xs font-bold text-amber-600">Transformer</span><p class="text-gray-600 mt-1">Indexation des tables · Performance pipeline</p></div>
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">E</span><span style="font-weight:500;color:var(--ink);">Efficacité</span></div>
+                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Standards catalogage · Glossaire métier</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Métadonnées à jour · Recherche en &lt;5 min</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Indexation des tables · Performance pipeline</p></div>
                     </div>
                 </div>
-                <!-- V -->
-                <div class="bg-white rounded-2xl p-6 border-2 border-purple-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="font-heading text-3xl font-extrabold text-cqsev-v">V</span>
-                        <div><div class="font-bold text-gray-900">Valorisation</div><div class="text-xs text-gray-400">Valeur métier</div></div>
-                    </div>
-                    <div class="space-y-3 text-sm">
-                        <div class="bg-indigo-50 rounded-xl p-3"><span class="text-xs font-bold text-indigo-600">Gouverner</span><p class="text-gray-600 mt-1">Cas d'usage métier · Roadmap BI/IA</p></div>
-                        <div class="bg-emerald-50 rounded-xl p-3"><span class="text-xs font-bold text-emerald-600">Gérer</span><p class="text-gray-600 mt-1">Dashboards utilisés · Adoption mesurée</p></div>
-                        <div class="bg-amber-50 rounded-xl p-3"><span class="text-xs font-bold text-amber-600">Transformer</span><p class="text-gray-600 mt-1">Data marts business · Modèles ML en prod</p></div>
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;"><span style="font-family:var(--font-serif);font-size:1.875rem;color:var(--ink);">V</span><span style="font-weight:500;color:var(--ink);">Valorisation</span></div>
+                    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gouverner</span><p class="body-sm">Cas d'usage métier · Roadmap BI/IA</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Gérer</span><p class="body-sm">Dashboards utilisés · Adoption mesurée</p></div>
+                        <div style="background:var(--paper);border-radius:12px;padding:0.75rem;"><span class="label" style="margin-bottom:0.25rem;font-size:0.625rem;">Transformer</span><p class="body-sm">Data marts business · Modèles ML en prod</p></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== VUE DESKTOP : Table ===== -->
-            <div class="matrix-desktop" data-animate data-delay="300">
-                <table class="matrix-table">
+            <!-- Desktop -->
+            <div class="matrix-desktop matrix-wrap" data-animate>
+                <table class="matrix">
                     <thead>
                         <tr>
-                            <th class="p-5" style="text-align:left;background:var(--c-gray-50);color:var(--c-gray-600);width:20%;">Axe</th>
-                            <th class="p-5 text-center text-white" style="background:var(--c-indigo);">
-                                <span style="display:block;font-size:1rem;">Gouverner</span>
-                                <span style="display:block;font-size:0.75rem;font-weight:400;color:#C7D2FE;margin-top:4px;">Les règles</span>
-                            </th>
-                            <th class="p-5 text-center text-white bg-emerald-500">
-                                <span style="display:block;font-size:1rem;">Gérer</span>
-                                <span style="display:block;font-size:0.75rem;font-weight:400;color:#A7F3D0;margin-top:4px;">Le terrain</span>
-                            </th>
-                            <th class="p-5 text-center text-white bg-amber-500">
-                                <span style="display:block;font-size:1rem;">Transformer</span>
-                                <span style="display:block;font-size:0.75rem;font-weight:400;color:#FDE68A;margin-top:4px;">L'usine</span>
-                            </th>
+                            <th style="width:25%;"></th>
+                            <th style="width:25%;">Gouverner<span class="sub">Les règles</span></th>
+                            <th style="width:25%;">Gérer<span class="sub">Le terrain</span></th>
+                            <th style="width:25%;">Transformer<span class="sub">L'usine</span></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="p-5"><div class="flex items-center gap-3"><div style="width:40px;height:40px;border-radius:12px;" class="bg-blue-100 flex items-center justify-center"><span class="font-heading font-extrabold text-blue-600">C</span></div><div><div class="font-heading font-bold text-gray-900">Conformité</div><div class="text-xs text-gray-400">Loi 25, RGPD</div></div></div></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(99,102,241,0.04);">Politique de consentement<br><span class="text-gray-400">Classification définie</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(16,185,129,0.04);">Inventaire données sensibles<br><span class="text-gray-400">Audit terrain régulier</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(245,158,11,0.04);">Masquage PII dans le pipeline<br><span class="text-gray-400">Purge automatisée</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-5"><div class="flex items-center gap-3"><div style="width:40px;height:40px;border-radius:12px;" class="bg-emerald-100 flex items-center justify-center"><span class="font-heading font-extrabold text-emerald-600">Q</span></div><div><div class="font-heading font-bold text-gray-900">Qualité</div><div class="text-xs text-gray-400">Fiabilité</div></div></div></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(99,102,241,0.04);">Standards et KPIs définis<br><span class="text-gray-400">Data Dictionary</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(16,185,129,0.04);">Contrôles quotidiens<br><span class="text-gray-400">Score qualité mesuré</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(245,158,11,0.04);">Règles de validation ETL<br><span class="text-gray-400">Rejet auto si invalide</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-5"><div class="flex items-center gap-3"><div style="width:40px;height:40px;border-radius:12px;" class="bg-red-100 flex items-center justify-center"><span class="font-heading font-extrabold text-red-600">S</span></div><div><div class="font-heading font-bold text-gray-900">Sécurité</div><div class="text-xs text-gray-400">Protection</div></div></div></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(99,102,241,0.04);">Politique d'accès RBAC<br><span class="text-gray-400">Classification niveaux</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(16,185,129,0.04);">Revue des permissions<br><span class="text-gray-400">Audit trimestriel</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(245,158,11,0.04);">Chiffrement en transit<br><span class="text-gray-400">Logs et traçabilité</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-5"><div class="flex items-center gap-3"><div style="width:40px;height:40px;border-radius:12px;" class="bg-amber-100 flex items-center justify-center"><span class="font-heading font-extrabold text-amber-600">E</span></div><div><div class="font-heading font-bold text-gray-900">Efficacité</div><div class="text-xs text-gray-400">Accessibilité</div></div></div></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(99,102,241,0.04);">Standards catalogage<br><span class="text-gray-400">Glossaire métier</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(16,185,129,0.04);">Métadonnées à jour<br><span class="text-gray-400">Recherche en &lt;5 min</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(245,158,11,0.04);">Indexation des tables<br><span class="text-gray-400">Performance pipeline</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-5"><div class="flex items-center gap-3"><div style="width:40px;height:40px;border-radius:12px;" class="bg-purple-100 flex items-center justify-center"><span class="font-heading font-extrabold text-purple-600">V</span></div><div><div class="font-heading font-bold text-gray-900">Valorisation</div><div class="text-xs text-gray-400">Valeur métier</div></div></div></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(99,102,241,0.04);">Cas d'usage métier<br><span class="text-gray-400">Roadmap BI/IA</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(16,185,129,0.04);">Dashboards utilisés<br><span class="text-gray-400">Adoption mesurée</span></td>
-                            <td class="p-5 text-center text-gray-600 text-xs" style="background:rgba(245,158,11,0.04);">Data marts business<br><span class="text-gray-400">Modèles ML en prod</span></td>
-                        </tr>
+                        <tr><td><div class="axe-cell"><span class="axe-letter">C</span><span class="axe-name">Conformité</span></div></td><td>Politique de consentement</td><td>Inventaire données sensibles</td><td>Masquage PII dans le pipeline</td></tr>
+                        <tr><td><div class="axe-cell"><span class="axe-letter">Q</span><span class="axe-name">Qualité</span></div></td><td>Standards et KPIs définis</td><td>Contrôles quotidiens</td><td>Règles de validation ETL</td></tr>
+                        <tr><td><div class="axe-cell"><span class="axe-letter">S</span><span class="axe-name">Sécurité</span></div></td><td>Politique d'accès RBAC</td><td>Revue des permissions</td><td>Chiffrement en transit</td></tr>
+                        <tr><td><div class="axe-cell"><span class="axe-letter">E</span><span class="axe-name">Efficacité</span></div></td><td>Standards catalogage</td><td>Métadonnées à jour</td><td>Indexation des tables</td></tr>
+                        <tr><td><div class="axe-cell"><span class="axe-letter">V</span><span class="axe-name">Valorisation</span></div></td><td>Cas d'usage métier</td><td>Dashboards utilisés</td><td>Data marts business</td></tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Comment lire -->
-            <div class="mt-10 max-w-4xl mx-auto" data-animate>
-                <div class="bg-amber-50 rounded-2xl p-8 border border-amber-200">
-                    <div class="flex items-start gap-4">
-                        <div style="width:40px;height:40px;min-width:40px;" class="bg-amber-500 rounded-xl flex items-center justify-center">
-                            <svg width="20" height="20" class="text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-                        </div>
-                        <div>
-                            <p class="font-heading font-bold text-amber-800 mb-2 text-lg">Comment lire cette matrice</p>
-                            <p class="text-sm text-gray-700 leading-relaxed mb-2"><strong>En ligne :</strong> si la Qualité est définie en gouvernance mais pas vérifiée en gestion ni appliquée dans le pipeline — la donnée n'est pas fiable.</p>
-                            <p class="text-sm text-gray-700 leading-relaxed"><strong>Les cases vides sont vos priorités d'action.</strong></p>
-                        </div>
-                    </div>
+            <!-- CTA Grille -->
+            <div class="card" style="margin-top:4rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;" data-animate>
+                <div>
+                    <h3 class="heading-sm" style="font-family:var(--font-serif);">Grille de Diagnostic</h3>
+                    <p class="body-sm">La matrice 5×3 en format Excel prête à remplir.</p>
                 </div>
-            </div>
-
-            <!-- CTA Lead Magnet -->
-            <div class="mt-16 max-w-3xl mx-auto text-center" data-animate>
-                <div class="bg-indigo-600 rounded-3xl p-10 text-white">
-                    <h3 class="font-heading text-2xl font-extrabold mb-3">
-                        Téléchargez la Grille CQSEV
-                    </h3>
-                    <p class="text-indigo-200 mb-6 max-w-lg mx-auto text-sm">
-                        La matrice 5×3 en format Excel prête à remplir.
-                        Faites votre diagnostic en 30 minutes.
-                    </p>
-                    <a href="cqsev-grille-diagnostic.xlsx" download
-                       class="btn btn-white inline-flex items-center gap-2">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        Télécharger gratuitement
-                    </a>
-                </div>
+                <a href="cqsev-grille-diagnostic.xlsx" download class="btn-pill btn-dark" style="flex-shrink:0;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Télécharger .XLSX
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave-divider bg-white">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,50 C360,0 1080,80 1440,30 L1440,80 L0,80 Z" fill="#FAFAFA"/>
-        </svg>
-    </div>
-
-        <!-- ====================================================== -->
-    <!-- 6. SUR LE TERRAIN                                      -->
     <!-- ====================================================== -->
-    <section id="terrain" class="section-spacing bg-gray-50" aria-label="Cas concrets">
-        <div class="container">
-            <div class="text-center mb-20">
-                <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-4" data-animate>Cas concrets</p>
-                <h2 class="font-heading font-extrabold text-gray-900 mb-6" style="font-size:clamp(2rem,5vw,3.75rem);" data-animate data-delay="100">
-                    Sur le terrain
-                </h2>
-                <p class="text-lg text-gray-500 max-w-2xl mx-auto" data-animate data-delay="200">
-                    Vous reconnaîtrez sûrement l'une de ces situations.
-                </p>
+    <!-- TERRAIN — Cas concrets                                 -->
+    <!-- ====================================================== -->
+    <section id="terrain" class="section" style="background:var(--white);" aria-label="Cas concrets">
+        <div class="container-sm">
+            <div style="margin-bottom:4rem;" data-animate>
+                <span class="label">05 // Terrain</span>
+                <h2 class="heading-lg">Cas <em>Concrets.</em></h2>
             </div>
 
-            <div class="space-y-8 max-w-4xl mx-auto">
-
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
                 <!-- Cas 1 -->
                 <div class="case-card" data-animate>
-                    <span class="giant-num" style="color:var(--c-green);opacity:0.06;">01</span>
-                    <div class="relative z-10" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
-                        <div class="flex-1" style="min-width:280px;">
-                            <h3 class="font-heading font-extrabold text-gray-900 mb-3" style="font-size:clamp(1.1rem,3vw,1.5rem);">
-                                « Marketing et Finance n'ont jamais les mêmes chiffres »
-                            </h3>
-                            <p class="text-gray-500 text-sm mb-4">Chaque département a sa version de la vérité dans son propre fichier.</p>
-                        </div>
-                        <div class="bg-emerald-50 rounded-2xl p-5 border border-emerald-200 flex-shrink-0" style="width:16rem;">
-                            <p class="text-xs font-bold text-emerald-700 mb-1">Axe → Qualité (Q)</p>
-                            <p class="text-xs text-gray-600">Définir une source unique de vérité et un glossaire métier commun.</p>
+                    <span class="case-num">01</span>
+                    <div style="flex:1;">
+                        <h3 class="heading-sm" style="font-family:var(--font-serif);">Marketing vs Finance</h3>
+                        <p class="body" style="margin-bottom:0;">Chaque département a sa version de la vérité dans son propre fichier.</p>
+                        <div class="case-footer">
+                            <span class="label" style="margin-bottom:0;font-weight:500;color:var(--ink);">Action requise :</span>
+                            <span class="body-sm">Définir une source unique de vérité et un glossaire métier commun.</span>
+                            <span class="case-tag" style="margin-left:auto;">Qualité (Q)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Cas 2 -->
                 <div class="case-card" data-animate>
-                    <span class="giant-num" style="color:var(--c-red);opacity:0.06;">02</span>
-                    <div class="relative z-10" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
-                        <div class="flex-1" style="min-width:280px;">
-                            <h3 class="font-heading font-extrabold text-gray-900 mb-3" style="font-size:clamp(1.1rem,3vw,1.5rem);">
-                                « Le fichier des salaires est accessible à tout le monde »
-                            </h3>
-                            <p class="text-gray-500 text-sm mb-4">Données sensibles sur SharePoint sans contrôle d'accès.</p>
-                        </div>
-                        <div class="bg-red-50 rounded-2xl p-5 border border-red-200 flex-shrink-0" style="width:16rem;">
-                            <p class="text-xs font-bold text-red-700 mb-1">Axe → Sécurité (S) + Conformité (C)</p>
-                            <p class="text-xs text-gray-600">Audit des permissions, classification, Loi 25.</p>
+                    <span class="case-num">02</span>
+                    <div style="flex:1;">
+                        <h3 class="heading-sm" style="font-family:var(--font-serif);">Fichier salaires public</h3>
+                        <p class="body" style="margin-bottom:0;">Données sensibles sur SharePoint sans contrôle d'accès.</p>
+                        <div class="case-footer">
+                            <span class="label" style="margin-bottom:0;font-weight:500;color:var(--ink);">Action requise :</span>
+                            <span class="body-sm">Audit des permissions, classification, Loi 25.</span>
+                            <span class="case-tag" style="margin-left:auto;">Sécurité (S) + Conformité (C)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Cas 3 -->
                 <div class="case-card" data-animate>
-                    <span class="giant-num" style="color:var(--c-amber);opacity:0.06;">03</span>
-                    <div class="relative z-10" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
-                        <div class="flex-1" style="min-width:280px;">
-                            <h3 class="font-heading font-extrabold text-gray-900 mb-3" style="font-size:clamp(1.1rem,3vw,1.5rem);">
-                                « Personne ne sait ce que CUST_STAT veut dire »
-                            </h3>
-                            <p class="text-gray-500 text-sm mb-4">Le développeur qui a créé la table est parti. Zéro documentation.</p>
-                        </div>
-                        <div class="bg-amber-50 rounded-2xl p-5 border border-amber-200 flex-shrink-0" style="width:16rem;">
-                            <p class="text-xs font-bold text-amber-700 mb-1">Axe → Efficacité (E)</p>
-                            <p class="text-xs text-gray-600">Dictionnaire de données et catalogage.</p>
+                    <span class="case-num">03</span>
+                    <div style="flex:1;">
+                        <h3 class="heading-sm" style="font-family:var(--font-serif);">CUST_STAT inconnu</h3>
+                        <p class="body" style="margin-bottom:0;">Le développeur qui a créé la table est parti. Zéro documentation.</p>
+                        <div class="case-footer">
+                            <span class="label" style="margin-bottom:0;font-weight:500;color:var(--ink);">Action requise :</span>
+                            <span class="body-sm">Dictionnaire de données et catalogage.</span>
+                            <span class="case-tag" style="margin-left:auto;">Efficacité (E)</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Cas 4 -->
-                <div class="case-card" data-animate>
-                    <span class="giant-num" style="color:var(--c-purple);opacity:0.06;">04</span>
-                    <div class="relative z-10" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
-                        <div class="flex-1" style="min-width:280px;">
-                            <h3 class="font-heading font-extrabold text-gray-900 mb-3" style="font-size:clamp(1.1rem,3vw,1.5rem);">
-                                « On a acheté un outil MDM à 500K$ — personne ne l'utilise »
-                            </h3>
-                            <p class="text-gray-500 text-sm mb-4">La technologie est là, mais personne ne comprend pourquoi.</p>
-                        </div>
-                        <div class="bg-purple-50 rounded-2xl p-5 border border-purple-200 flex-shrink-0" style="width:16rem;">
-                            <p class="text-xs font-bold text-purple-700 mb-1">Principe → Adoption avant Technologie</p>
-                            <p class="text-xs text-gray-600">Former au POURQUOI avant de donner un outil.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cas 5 -->
-                <div class="case-card" data-animate>
-                    <span class="giant-num" style="color:var(--c-blue);opacity:0.06;">05</span>
-                    <div class="relative z-10" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;">
-                        <div class="flex-1" style="min-width:280px;">
-                            <h3 class="font-heading font-extrabold text-gray-900 mb-3" style="font-size:clamp(1.1rem,3vw,1.5rem);">
-                                « On collecte des tonnes de données — on ne sait pas quoi en faire »
-                            </h3>
-                            <p class="text-gray-500 text-sm mb-4">Des téraoctets stockés, zéro insight actionnable.</p>
-                        </div>
-                        <div class="bg-blue-50 rounded-2xl p-5 border border-blue-200 flex-shrink-0" style="width:16rem;">
-                            <p class="text-xs font-bold text-blue-700 mb-1">Axe → Valorisation (V)</p>
-                            <p class="text-xs text-gray-600">Identifier 3 cas d'usage concrets. Commencer petit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Citation avec attribution -->
-            <div class="mt-16 max-w-3xl mx-auto text-center" data-animate>
-                <div class="bg-indigo-600 rounded-3xl p-10 text-white">
-                    <blockquote>
-                        <p class="font-heading font-bold leading-relaxed" style="font-size:clamp(1.1rem,3vw,1.5rem);">
-                            « Si vous n'avez que 5 minutes pour résoudre un problème de données, passez-en 4 à comprendre dans quel axe CQSEV il se situe. »
-                        </p>
-                        <footer class="mt-4 text-indigo-300 text-sm">— Oleg Chitic, créateur de CQSEV</footer>
-                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Wave -->
-    <div class="wave-divider bg-gray-50">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,30 C720,80 1080,0 1440,50 L1440,80 L0,80 Z" fill="#ffffff"/>
-        </svg>
-    </div>
-
+        <!-- ====================================================== -->
+    <!-- AUTEUR                                                 -->
     <!-- ====================================================== -->
-    <!-- 7. L'AUTEUR — Enrichi                                  -->
-    <!-- ====================================================== -->
-    <section id="auteur" class="section-spacing bg-white" aria-label="L'auteur">
+    <section id="auteur" class="section" style="background:var(--paper);" aria-label="L'auteur">
         <div class="container">
-            <div style="display:grid;gap:4rem;align-items:center;" class="lg-grid-5-2-3">
-                <div class="flex justify-center" data-animate>
-                    <div class="author-photo-wrap">
-                        <!-- Remplacer le .gif par .webp — bien plus léger -->
-                            <img src="oleg-chitic-expert-gouvernance-donnees-cqsev.gif"
-                                alt="Oleg Chitic — Expert en gouvernance des données, gestion de projets data et transformation ETL. Créateur du framework CQSEV à Montréal."
-                                title="Oleg Chitic, créateur du framework CQSEV"
-                                width="288" height="288" loading="lazy"
-                                class="author-photo">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4rem;" class="author-grid">
+                <!-- Photo arche -->
+                <div class="author-photo-wrap" style="max-width:320px;" data-animate>
+                    <div class="author-photo-arch">
+                        <img src="oleg-chitic-expert-gouvernance-donnees-cqsev.gif"
+                             alt="Oleg Chitic — Expert en gouvernance des données, créateur du framework CQSEV à Montréal."
+                             title="Oleg Chitic, créateur du framework CQSEV"
+                             width="320" height="427" loading="lazy"
+                             class="author-photo">
                     </div>
                 </div>
-                <div data-animate data-delay="100">
-                    <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-3">Derrière CQSEV</p>
-                    <h2 class="font-heading font-extrabold text-gray-900 mb-8" style="font-size:clamp(2rem,5vw,3rem);">Oleg Chitic</h2>
-                    <div class="space-y-5 text-gray-500 leading-relaxed" style="font-size:clamp(0.95rem,2vw,1.125rem);">
-                        <p>Après <strong class="text-gray-900">15 ans</strong> à voir des organisations investir dans des outils data sans résultat, j'ai compris une chose :</p>
-                        <p class="font-heading text-gray-900 font-extrabold" style="font-size:clamp(1.25rem,3vw,1.5rem);">Le problème n'est presque jamais technique.</p>
+
+                <!-- Texte -->
+                <div data-animate data-delay="1">
+                    <span class="label">06 // L'Auteur</span>
+                    <h2 class="heading-lg">Oleg Chitic</h2>
+
+                    <div style="display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem;" class="body-lg">
+                        <p>Après <strong>15 ans</strong> à voir des organisations investir dans des outils data sans résultat, j'ai compris une chose :</p>
+                        <p class="author-quote">Le problème n'est presque jamais technique.</p>
                         <p>C'est un problème d'alignement entre ceux qui définissent les règles, ceux qui les appliquent, et ceux qui construisent les pipelines.</p>
-                        <p class="text-sm text-gray-400">Intervenu dans des contextes Loi 25, migrations cloud data et mises en conformité pour des organisations de 200 à 5 000 employés dans les secteurs banque, assurance, santé, commerce de détail et gouvernement.</p>
+                        <p class="body-sm" style="color:var(--ink-light);">Intervenu dans des contextes Loi 25, migrations cloud data et mises en conformité pour des organisations de 200 à 5 000 employés dans les secteurs banque, assurance, santé, commerce de détail et gouvernement.</p>
                     </div>
 
                     <!-- Stats -->
-                    <div class="flex flex-wrap gap-10 mt-10">
-                        <div>
-                            <div class="font-heading text-4xl font-extrabold text-gray-900">15+</div>
-                            <div class="text-sm text-gray-500">Années en gouvernance data</div>
+                    <div class="grid-stats">
+                        <div class="stat-card">
+                            <div class="stat-num">15+</div>
+                            <div class="stat-label">Années Exp.</div>
                         </div>
-                        <div>
-                            <div class="font-heading text-4xl font-extrabold text-gray-900">35+</div>
-                            <div class="text-sm text-gray-500">Projets data &amp; TI</div>
+                        <div class="stat-card">
+                            <div class="stat-num">35+</div>
+                            <div class="stat-label">Projets Data</div>
                         </div>
-                        <div>
-                            <div class="font-heading text-4xl font-extrabold text-gray-900">5</div>
-                            <div class="text-sm text-gray-500">Secteurs d'industrie</div>
+                        <div class="stat-card">
+                            <div class="stat-num">5</div>
+                            <div class="stat-label">Secteurs</div>
                         </div>
                     </div>
 
                     <!-- Tags -->
-                    <div class="mt-8">
-                        <p class="text-xs text-gray-400 uppercase tracking-widest mb-3">Cadres de référence</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag tag-lg bg-gray-100 text-gray-700">DAMA-DMBOK</span>
-                            <span class="tag tag-lg bg-gray-100 text-gray-700">BABOK</span>
-                            <span class="tag tag-lg bg-gray-100 text-gray-700">PMBOK</span>
-                            <span class="tag tag-lg bg-gray-100 text-gray-700">ITIL</span>
-                            <span class="tag tag-lg bg-gray-100 text-gray-700">Scrum</span>
-                            <span class="tag tag-lg bg-gray-100 text-gray-700">Loi 25</span>
+                    <div style="margin-top:2rem;">
+                        <span class="label">Cadres de référence</span>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+                            <span class="case-tag">DAMA-DMBOK</span>
+                            <span class="case-tag">BABOK</span>
+                            <span class="case-tag">PMBOK</span>
+                            <span class="case-tag">ITIL</span>
+                            <span class="case-tag">Scrum</span>
+                            <span class="case-tag">Loi 25</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <style>
+            @media (min-width: 1024px) {
+                .author-grid {
+                    flex-direction: row !important;
+                    align-items: flex-start !important;
+                    gap: 6rem !important;
+                }
+                .author-photo-wrap { flex-shrink: 0; }
+            }
+        </style>
     </section>
 
-    <!-- Wave -->
-    <div class="wave-divider bg-white">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,40 C480,80 960,0 1440,40 L1440,80 L0,80 Z" fill="#FAFAFA"/>
-        </svg>
-    </div>
-
     <!-- ====================================================== -->
-    <!-- 8. FAQ — Visible (crucial SEO + GEO)                   -->
+    <!-- FAQ                                                    -->
     <!-- ====================================================== -->
-    <section id="faq" class="section-spacing bg-gray-50" aria-label="Questions fréquentes">
+    <section id="faq" class="section" style="background:var(--white);" aria-label="Questions fréquentes">
         <div class="container-sm">
-            <div class="text-center mb-16">
-                <p class="text-indigo-600 font-semibold text-xs uppercase tracking-widest mb-4" data-animate>FAQ</p>
-                <h2 class="font-heading font-extrabold text-gray-900 mb-6" style="font-size:clamp(2rem,5vw,3rem);" data-animate data-delay="100">
-                    Questions fréquentes
-                </h2>
+            <div style="text-align:center;margin-bottom:4rem;" data-animate>
+                <span class="label">07 // FAQ</span>
+                <h2 class="heading-lg">Questions <em>fréquentes</em></h2>
             </div>
 
-            <div data-animate data-delay="200">
+            <div data-animate data-delay="1">
                 <details class="faq-item">
                     <summary>
                         Qu'est-ce que le framework CQSEV ?
                         <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </summary>
-                    <div class="faq-content">
-                        CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions.
-                    </div>
+                    <div class="answer">CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions.</div>
                 </details>
 
                 <details class="faq-item">
@@ -1438,9 +911,7 @@
                         CQSEV remplace-t-il le DAMA-DMBOK ?
                         <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </summary>
-                    <div class="faq-content">
-                        Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires.
-                    </div>
+                    <div class="answer">Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires.</div>
                 </details>
 
                 <details class="faq-item">
@@ -1448,9 +919,7 @@
                         Pourquoi 3 volets et pas 2 ou 4 ?
                         <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </summary>
-                    <div class="faq-content">
-                        Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données).
-                    </div>
+                    <div class="answer">Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données).</div>
                 </details>
 
                 <details class="faq-item">
@@ -1458,9 +927,7 @@
                         CQSEV fonctionne-t-il pour les PME ?
                         <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </summary>
-                    <div class="faq-content">
-                        Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME.
-                    </div>
+                    <div class="answer">Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME.</div>
                 </details>
 
                 <details class="faq-item">
@@ -1468,9 +935,7 @@
                         Quelle est la différence entre gouvernance et gestion des données ?
                         <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </summary>
-                    <div class="faq-content">
-                        La gouvernance des données définit les politiques, les rôles et les standards (le « quoi » et le « qui »). La gestion des données applique ces règles au quotidien sur le terrain (le « comment » opérationnel). CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles.
-                    </div>
+                    <div class="answer">La gouvernance des données définit les politiques, les rôles et les standards (le « quoi » et le « qui »). La gestion des données applique ces règles au quotidien sur le terrain (le « comment » opérationnel). CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles.</div>
                 </details>
 
                 <details class="faq-item">
@@ -1478,209 +943,102 @@
                         Comment commencer avec CQSEV ?
                         <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </summary>
-                    <div class="faq-content">
-                        Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés (gouvernance, opérations, technique), et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action.
-                    </div>
+                    <div class="answer">Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés (gouvernance, opérations, technique), et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action.</div>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- Wave -->
-    <div class="wave-divider bg-gray-50">
-        <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,40 C480,0 960,80 1440,20 L1440,80 L0,80 Z" fill="#111827"/>
-        </svg>
-    </div>
+    <!-- ====================================================== -->
+    <!-- CONTACT                                                -->
+    <!-- ====================================================== -->
+    <section id="contact" class="section" style="background:var(--paper);" aria-label="Contact">
+        <div class="container-xs">
+            <div style="text-align:center;margin-bottom:4rem;" data-animate>
+                <span class="label">08 // Contact</span>
+                <h2 class="heading-lg">Initialiser la <em>séquence</em>.</h2>
+                <p class="body" style="color:var(--ink-light);">Une question sur le framework ? Écrivez-moi directement.</p>
+            </div>
 
-    <!-- ====================================================== -->
-    <!-- 9. CONTACT — Simplifié, formulaire en premier          -->
-    <!-- ====================================================== -->
-    <section id="contact" class="bg-gray-900 text-white" style="padding:7rem 0;" aria-label="Contact">
-        <div class="container-md">
-    
-            <!-- Titre -->
-            <div class="text-center mb-16">
-                <h2 class="font-heading font-extrabold mb-6" style="font-size:clamp(2rem,5vw,3rem);" data-animate>
-                    Continuons la conversation
-                </h2>
-                <p class="text-lg mb-4 max-w-2xl mx-auto" style="color:var(--c-gray-400);" data-animate data-delay="100">
-                    Une question sur le framework ? Écrivez-moi directement.
-                </p>
-            </div>
-    
-            <!-- Formulaire — CTA principal -->
-            <div class="max-w-lg mx-auto" data-animate data-delay="200">
-    
-                <form action="https://formspree.io/f/VOTRE_ID" method="POST">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
-                        <input type="text"
-                               name="name"
-                               placeholder="Votre nom"
-                               required
-                               class="form-input"
-                               style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);color:#fff;">
-                        <input type="email"
-                               name="email"
-                               placeholder="Votre courriel"
-                               required
-                               class="form-input"
-                               style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);color:#fff;">
+            <form action="https://formspree.io/f/VOTRE_ID" method="POST" data-animate data-delay="1">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="form-input">
                     </div>
-                    <textarea name="message"
-                              placeholder="Votre question, projet ou réflexion..."
-                              rows="4"
-                              required
-                              class="form-input"
-                              style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);color:#fff;"></textarea>
-                    <button type="submit"
-                            class="btn w-full justify-center"
-                            style="padding:16px;font-size:1rem;background:var(--c-indigo);color:#fff;border-radius:var(--r-full);font-weight:700;">
-                        Envoyer le message
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </button>
-                </form>
-    
-                <!-- Lien LinkedIn discret — sous le formulaire -->
-                <div class="text-center mt-8" style="padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);">
-                    <p style="color:var(--c-gray-500);font-size:0.875rem;margin-bottom:0.5rem;">
-                        Vous préférez les réseaux ?
-                    </p>
-                    <a href="https://www.linkedin.com/in/oleg-chitic-67426915/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       style="color:var(--c-indigo-light, #C7D2FE);font-size:0.875rem;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:color 0.3s;"
-                       onmouseover="this.style.color='#fff'"
-                       onmouseout="this.style.color='#C7D2FE'">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        Retrouvez-moi sur LinkedIn →
-                    </a>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Courriel</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required class="form-input">
+                    </div>
                 </div>
-    
-                <!-- Mention anti-spam -->
-                <p class="text-center mt-6" style="color:var(--c-gray-700, #374151);font-size:0.75rem;">
-                    Pas de spam. Pas de pitch. Réponse sous 48h.
-                </p>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Votre projet..." required class="form-input"></textarea>
+                </div>
+                <button type="submit" class="btn-pill btn-dark" style="width:100%;justify-content:center;margin-top:1rem;">
+                    Transmettre le message
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </button>
+            </form>
+
+            <!-- LinkedIn discret -->
+            <div style="text-align:center;margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--ink-5);" data-animate data-delay="2">
+                <p class="body-sm" style="margin-bottom:0.5rem;">Vous préférez les réseaux ?</p>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer"
+                   style="display:inline-flex;align-items:center;gap:0.5rem;font-size:0.875rem;font-weight:500;color:var(--ink);transition:opacity 0.3s;"
+                   onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Retrouvez-moi sur LinkedIn →
+                </a>
             </div>
+
+            <p class="body-sm" style="text-align:center;margin-top:1.5rem;color:var(--ink-30);">
+                Pas de spam. Pas de pitch. Réponse sous 48h.
+            </p>
         </div>
     </section>
 
     <!-- ====================================================== -->
-    <!-- FOOTER — Simplifié                                     -->
+    <!-- FOOTER                                                 -->
     <!-- ====================================================== -->
-    <footer class="bg-gray-950 py-10" role="contentinfo" style="color:var(--c-gray-500);">
-        <div class="container" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;">
-            <div>
-                <div class="flex items-center gap-2 mb-2">
-                    <img src="logo-icon.svg" alt="" width="24" height="24" style="height:24px;width:24px;">
-                    <p class="font-heading font-extrabold text-lg" style="color:var(--c-gray-300);">CQSEV</p>
-                </div>
-                <p class="text-sm" style="color:var(--c-gray-600);">
-                    Framework pragmatique de gouvernance, gestion et transformation des données
-                </p>
-            </div>
-            <div class="flex items-center gap-5">
-                <a href="blog/"
-                   style="color:var(--c-gray-500);font-size:0.875rem;transition:color 0.3s;"
-                   onmouseover="this.style.color='#fff'"
-                   onmouseout="this.style.color='var(--c-gray-500)'">
-                    Blog
-                </a>
-                <a href="#contact"
-                   style="color:var(--c-gray-500);font-size:0.875rem;transition:color 0.3s;"
-                   onmouseover="this.style.color='#fff'"
-                   onmouseout="this.style.color='var(--c-gray-500)'">
-                    Contact
-                </a>
-                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   style="color:var(--c-gray-500);transition:color 0.3s;"
-                   aria-label="LinkedIn"
-                   onmouseover="this.style.color='#fff'"
-                   onmouseout="this.style.color='var(--c-gray-500)'">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+            <a href="#hero" class="nav-logo" style="font-size:1.25rem;">CQSEV.</a>
+            <span class="footer-copy">© 2025 Oleg Chitic. Tous droits réservés.</span>
+            <div class="footer-links">
+                <a href="blog/">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
             </div>
-        </div>
-        <div class="container" style="margin-top:2rem;padding-top:2rem;border-top:1px solid #1F2937;">
-            <p class="text-xs text-center" style="color:var(--c-gray-600);">
-                © 2025 Oleg Chitic — CQSEV est un framework développé à partir de 15 ans d'expérience terrain en gouvernance et gestion des données.
-            </p>
         </div>
     </footer>
 
-    <!-- BACK TO TOP -->
-    <button id="back-to-top" class="back-to-top" aria-label="Retour en haut">
-        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
-    </button>
-
-    <!-- ====== FAQ SCHEMA.ORG — Correspond au contenu visible ====== -->
+    <!-- ====== FAQ SCHEMA.ORG ====== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Qu'est-ce que le framework CQSEV ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "CQSEV remplace-t-il le DAMA-DMBOK ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Pourquoi 3 volets et pas 2 ou 4 ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données)."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "CQSEV fonctionne-t-il pour les PME ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quelle est la différence entre gouvernance et gestion des données ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La gouvernance des données définit les politiques, les rôles et les standards. La gestion des données applique ces règles au quotidien sur le terrain. CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Comment commencer avec CQSEV ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés, et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action."
-                }
-            }
+            {"@type":"Question","name":"Qu'est-ce que le framework CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"CQSEV est un framework pragmatique qui évalue la maturité data sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal, il produit une matrice de 15 points de contrôle pour diagnostiquer et prioriser les actions."}},
+            {"@type":"Question","name":"CQSEV remplace-t-il le DAMA-DMBOK ?","acceptedAnswer":{"@type":"Answer","text":"Non. Le DAMA-DMBOK est le standard mondial de référence en gouvernance des données avec ses 11 knowledge areas. CQSEV est un filtre pragmatique par-dessus — 5 questions pour savoir par où commencer. Les deux sont complémentaires."}},
+            {"@type":"Question","name":"Pourquoi 3 volets et pas 2 ou 4 ?","acceptedAnswer":{"@type":"Answer","text":"Les règles sont souvent écrites mais personne ne les vérifie, et les pipelines ne les appliquent pas. CQSEV force l'évaluation dans les 3 couches où les problèmes se cachent : la gouvernance (les règles), la gestion (le terrain quotidien), et la transformation ETL/ELT (l'usine de données)."}},
+            {"@type":"Question","name":"CQSEV fonctionne-t-il pour les PME ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Les 5 questions sont les mêmes pour 50 ou 5 000 employés. Le niveau de formalisation change, mais les axes restent pertinents. Un diagnostic CQSEV peut se faire en une demi-journée pour une PME."}},
+            {"@type":"Question","name":"Quelle est la différence entre gouvernance et gestion des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance des données définit les politiques, les rôles et les standards. La gestion des données applique ces règles au quotidien sur le terrain. CQSEV ajoute un troisième volet — la transformation — qui vérifie que les pipelines ETL/ELT respectent effectivement ces règles."}},
+            {"@type":"Question","name":"Comment commencer avec CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"Téléchargez la grille CQSEV (matrice 5×3), réunissez les parties prenantes clés, et évaluez chaque case : existe-t-il une politique ? Est-elle appliquée ? Est-elle intégrée dans les pipelines ? Les cases vides sont vos priorités d'action."}}
         ]
     }
     </script>
 
     <!-- ====================================================== -->
-    <!-- JAVASCRIPT — Remplace AOS par IntersectionObserver      -->
+    <!-- JAVASCRIPT                                             -->
     <!-- ====================================================== -->
     <script>
     (function() {
         'use strict';
 
-        // ====== Scroll Animations (remplace AOS) ======
+        // ====== Scroll Animations ======
         var animObserver = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
@@ -1688,66 +1046,32 @@
                     animObserver.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.08,
-            rootMargin: '0px 0px -60px 0px'
-        });
-
+        }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
         document.querySelectorAll('[data-animate]').forEach(function(el) {
             animObserver.observe(el);
         });
 
-        // ====== Progress Bar ======
-        var progressBar = document.getElementById('progress-bar');
-        var ticking = false;
-
-        function updateProgress() {
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            if (docHeight > 0) {
-                progressBar.style.width = (scrollTop / docHeight) * 100 + '%';
-            }
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(updateProgress);
-                ticking = true;
-            }
-        }, { passive: true });
-
-        // ====== Active Nav Link ======
-        var sections = document.querySelectorAll('section[id]');
-        var navLinks = document.querySelectorAll('.nav-link');
-        var navTicking = false;
-
+        // ====== Nav Scroll Effect ======
+        var nav = document.getElementById('site-nav');
+        var scrollTicking = false;
         function updateNav() {
-            var current = '';
-            var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-            sections.forEach(function(s) {
-                if (scrollY >= s.offsetTop - 120) current = s.id;
-            });
-            navLinks.forEach(function(link) {
-                var href = link.getAttribute('href');
-                if (href && href.charAt(0) === '#') {
-                    link.classList.toggle('active', href === '#' + current);
-                }
-            });
-            navTicking = false;
+            if (window.scrollY > 20) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+            scrollTicking = false;
         }
-
         window.addEventListener('scroll', function() {
-            if (!navTicking) {
+            if (!scrollTicking) {
                 requestAnimationFrame(updateNav);
-                navTicking = true;
+                scrollTicking = true;
             }
         }, { passive: true });
 
         // ====== Mobile Menu ======
         var menuToggle = document.getElementById('menu-toggle');
         var mobMenu = document.getElementById('mob-menu');
-
         if (menuToggle && mobMenu) {
             menuToggle.addEventListener('click', function() {
                 var isOpen = mobMenu.classList.contains('open');
@@ -1755,7 +1079,6 @@
                 mobMenu.style.display = isOpen ? 'none' : 'block';
                 menuToggle.setAttribute('aria-expanded', String(!isOpen));
             });
-
             mobMenu.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
                     mobMenu.classList.remove('open');
@@ -1765,20 +1088,7 @@
             });
         }
 
-        // ====== Back to Top ======
-        var backToTop = document.getElementById('back-to-top');
-        if (backToTop) {
-            window.addEventListener('scroll', function() {
-                var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-                backToTop.classList.toggle('visible', scrollY > 600);
-            }, { passive: true });
-
-            backToTop.addEventListener('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-
-        // ====== Smooth scroll for anchor links ======
+        // ====== Smooth Scroll ======
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 var targetId = this.getAttribute('href');
