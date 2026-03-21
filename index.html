@@ -640,6 +640,159 @@
         .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
 
         /* ================================================ */
+        /* COUCHE 2 — Grain de papier                       */
+        /* Ajoute une texture micro comme du vrai papier    */
+        /* ================================================ */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+        
+        /* ================================================ */
+        /* COUCHE 3 — Grille de points architecturale       */
+        /* Pattern subtil sur les sections --paper           */
+        /* ================================================ */
+        .bg-dots {
+            position: relative;
+        }
+        .bg-dots::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.4;
+            background-image: radial-gradient(
+                circle,
+                var(--ink-10) 1px,
+                transparent 1px
+            );
+            background-size: 32px 32px;
+            background-position: 16px 16px;
+            mask-image: linear-gradient(
+                180deg,
+                transparent 0%,
+                black 15%,
+                black 85%,
+                transparent 100%
+            );
+            -webkit-mask-image: linear-gradient(
+                180deg,
+                transparent 0%,
+                black 15%,
+                black 85%,
+                transparent 100%
+            );
+        }
+        
+        /* ================================================ */
+        /* COUCHE 4 — Watermarks typographiques              */
+        /* Grands caractères derrière les titres de section  */
+        /* ================================================ */
+        .section-watermark {
+            position: relative;
+            overflow: hidden;
+        }
+        .section-watermark::after {
+            content: attr(data-watermark);
+            position: absolute;
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: clamp(8rem, 20vw, 18rem);
+            line-height: 0.85;
+            color: var(--ink);
+            opacity: 0.018;
+            pointer-events: none;
+            white-space: nowrap;
+            letter-spacing: -0.04em;
+            right: -2%;
+            top: 4rem;
+        }
+        
+        /* Position variante gauche */
+        .section-watermark.wm-left::after {
+            right: auto;
+            left: -2%;
+        }
+        
+        /* Position variante centre-bas */
+        .section-watermark.wm-bottom::after {
+            top: auto;
+            bottom: -1rem;
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* ================================================ */
+        /* ACCENTS GÉOMÉTRIQUES — Cercles décoratifs         */
+        /* Formes subtiles qui ajoutent de la profondeur     */
+        /* ================================================ */
+        .geo-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid var(--ink-10);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+        .geo-circle-lg {
+            width: 400px;
+            height: 400px;
+        }
+        .geo-circle-md {
+            width: 200px;
+            height: 200px;
+        }
+        .geo-circle-sm {
+            width: 100px;
+            height: 100px;
+        }
+        .geo-circle-filled {
+            border: none;
+            background: var(--ink-5);
+        }
+        
+        /* ================================================ */
+        /* LIGNE DÉCORATIVE — Séparateur vivant              */
+        /* ================================================ */
+        .section-rule {
+            position: relative;
+            overflow: hidden;
+        }
+        .section-rule::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 4rem;
+            background: linear-gradient(
+                180deg,
+                var(--ink-20) 0%,
+                transparent 100%
+            );
+            pointer-events: none;
+        }
+        
+        /* ================================================ */
+        /* PRINT — Masquer les couches décoratives           */
+        /* ================================================ */
+        @media print {
+            body::before,
+            .bg-dots::before,
+            .section-watermark::after,
+            .geo-circle,
+            .section-rule::before { display: none !important; }
+        }
+        
+        /* ================================================ */
         /* PRINT                                            */
         /* ================================================ */
         @media print { .site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important} body{background:#fff;color:#000} .section{padding:2rem 0} }
@@ -686,9 +839,19 @@
     <!-- ====================================================== -->
     <!-- HERO — Layout Paysage avec Cercle CQSEV                -->
     <!-- ====================================================== -->
-    <section id="hero" class="section" style="min-height:100vh;display:flex;align-items:center;padding-top:5rem;border-top:none;background:var(--paper);" aria-label="Introduction">
-        <div class="container">
-            <div data-animate>
+    <section id="hero" class="section section-watermark"
+             data-watermark="CQSEV"
+             style="min-height:100vh;display:flex;align-items:center;
+                    padding-top:5rem;border-top:none;background:var(--paper);
+                    overflow:hidden;"
+             aria-label="Introduction">
+        <div class="container" style="position:relative;">
+
+        <!-- Accents géométriques -->
+        <div class="geo-circle geo-circle-lg"
+             style="top:-120px;right:-80px;"></div>
+        <div class="geo-circle geo-circle-md geo-circle-filled"
+             style="bottom:2rem;left:-60px;"></div>
     
                 <!-- ── Grille : Heading + Cercle ── -->
                 <div class="hero-grid">
