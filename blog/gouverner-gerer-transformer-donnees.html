@@ -117,12 +117,14 @@
         /* ================================================ */
         /* LAYOUT                                           */
         /* ================================================ */
-        .container { max-width: 1320px; margin: 0 auto; padding: 0 2.5rem; }
-        .container-md { max-width: 1080px; margin: 0 auto; padding: 0 2.5rem; }
-        .article-container { max-width: 760px; margin: 0 auto; padding: 0 2.5rem; }
-        .article-breakout { max-width: 1080px; margin-left: auto; margin-right: auto; padding: 0 2.5rem; }
+        .article-breakout {
+            max-width: 1080px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2.5rem;
+        }
         @media (max-width: 767px) {
-            .container, .container-md, .article-container, .article-breakout { padding: 0 1.25rem; }
+            .article-breakout { padding: 0 1.25rem; }
         }
 
         /* ================================================ */
@@ -160,7 +162,7 @@
         .tag { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.375rem 0.75rem; border-radius: 9999px; border: 1px solid var(--ink-5); color: var(--ink); background: var(--white); }
 
         /* ================================================ */
-        /* ARTICLE HEADER — Paysage                         */
+        /* ARTICLE HEADER — Paysage 2 colonnes              */
         /* ================================================ */
         .article-header-grid {
             display: flex; flex-direction: column; gap: 2rem; margin-bottom: 3rem;
@@ -168,6 +170,50 @@
         @media (min-width: 1024px) {
             .article-header-grid {
                 display: grid; grid-template-columns: 5fr 6fr; gap: 4rem; align-items: start;
+            }
+        }
+
+        /* ================================================ */
+        /* ARTICLE BODY — Sidebar + Main (PAYSAGE)          */
+        /* ================================================ */
+        .article-content-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        @media (min-width: 1024px) {
+            .article-content-grid {
+                display: grid;
+                grid-template-columns: 240px 1fr;
+                gap: 4rem;
+                align-items: start;
+            }
+        }
+        .article-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        @media (min-width: 1024px) {
+            .article-sidebar {
+                position: sticky;
+                top: 6rem;
+            }
+        }
+        .article-main {
+            min-width: 0;
+        }
+
+        /* Intro grid (TL;DR + Vocabulaire côte à côte) */
+        .article-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        @media (min-width: 768px) {
+            .article-intro-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -180,6 +226,7 @@
         .prose h3 { font-size: 1.25rem; font-weight: 500; margin-top: 2.5rem; margin-bottom: 1rem; }
         .prose a.link { color: var(--ink); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
         .prose a.link:hover { color: var(--ink-light); }
+        .prose-first h2:first-child { margin-top: 0; }
 
         /* ================================================ */
         /* CHECK LIST                                       */
@@ -203,7 +250,7 @@
         .editorial-quote { font-family: var(--font-serif); font-size: 1.375rem; font-weight: 500; color: var(--ink); font-style: italic; line-height: 1.4; border-left: 2px solid var(--ink-20); padding-left: 1.5rem; margin: 2.5rem 0; }
 
         /* ================================================ */
-        /* CARDS — Silos (3 colonnes breakout)               */
+        /* CARDS — Silos (3 colonnes)                        */
         /* ================================================ */
         .cards-3 { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 2.5rem 0; }
         @media (min-width: 768px) { .cards-3 { grid-template-columns: repeat(3, 1fr); } }
@@ -218,7 +265,7 @@
         }
 
         /* ================================================ */
-        /* PRACTICE CARDS (3 colonnes breakout)              */
+        /* PRACTICE CARDS (3 colonnes)                       */
         /* ================================================ */
         .practice-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 2rem 0; }
         @media (min-width: 768px) { .practice-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -285,6 +332,20 @@
         .back-link a:hover { color: var(--ink); }
 
         /* ================================================ */
+        /* SIDEBAR — Sommaire styling                       */
+        /* ================================================ */
+        .sidebar-nav { background: var(--white); border-radius: 16px; padding: 1.25rem; border: 1px solid var(--ink-10); }
+        .sidebar-nav h2 { font-family: var(--font-mono); font-size: 0.625rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem; }
+        .sidebar-nav ol { list-style: none; display: flex; flex-direction: column; gap: 0.375rem; }
+        .sidebar-nav a { font-size: 0.8125rem; font-weight: 400; color: var(--ink-light); display: flex; align-items: center; gap: 0.5rem; transition: color 0.3s; padding: 0.25rem 0; }
+        .sidebar-nav a:hover { color: var(--ink); }
+        .sidebar-nav .num { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-30); }
+        .sidebar-cta { background: var(--paper); border-radius: 16px; padding: 1.25rem; border: 1px solid var(--ink-10); text-align: center; }
+        .sidebar-cta p { font-size: 0.75rem; color: var(--ink-light); font-weight: 300; margin-bottom: 0.75rem; }
+        .sidebar-cta a { font-family: var(--font-mono); font-size: 0.625rem; color: var(--ink); text-transform: uppercase; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.375rem; padding: 0.5rem 1rem; border-radius: 9999px; border: 1px solid var(--ink-20); transition: all 0.3s; }
+        .sidebar-cta a:hover { background: var(--ink); color: var(--paper); }
+
+        /* ================================================ */
         /* FOOTER                                           */
         /* ================================================ */
         .site-footer { background: var(--paper); padding: 3rem 0; border-top: 1px solid var(--ink-10); }
@@ -305,8 +366,9 @@
         /* PRINT                                            */
         /* ================================================ */
         @media print {
-            .site-nav, .mob-menu, .menu-toggle, .site-footer, .no-print { display: none !important; }
+            .site-nav, .mob-menu, .menu-toggle, .site-footer, .no-print, .article-sidebar { display: none !important; }
             body { background: #fff; color: #000; }
+            .article-content-grid { display: block; }
         }
     </style>
 </head>
@@ -358,18 +420,15 @@
             <span style="color:var(--ink);">Gouverner, Gérer, Transformer</span>
         </nav>
     </div>
-        <!-- ====================================================== -->
+
+    <!-- ====================================================== -->
     <!-- ARTICLE                                                -->
     <!-- ====================================================== -->
     <article>
 
-        <!-- ================================================== -->
-        <!-- HEADER — Paysage 2 colonnes (breakout)             -->
-        <!-- ================================================== -->
+        <!-- HEADER — Paysage 2 colonnes -->
         <div class="article-breakout" style="padding-bottom:3rem;">
             <header class="article-header-grid" data-animate>
-
-                <!-- Colonne gauche : meta + citation -->
                 <div>
                     <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
                         <span class="tag">Gouvernance</span>
@@ -389,8 +448,6 @@
                         </p>
                     </div>
                 </div>
-
-                <!-- Colonne droite : titre + sous-titre -->
                 <div>
                     <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
                         Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois
@@ -399,273 +456,273 @@
                         70 % des initiatives data échouent. Pas à cause de la technologie. Le vrai problème ? Trois mondes qui ne se parlent pas.
                     </p>
                 </div>
-
             </header>
         </div>
+                <!-- ================================================== -->
+        <!-- BODY — Sidebar sticky + Main content (PAYSAGE)     -->
+        <!-- ================================================== -->
+        <div class="article-breakout" style="padding-bottom:3rem;">
+            <div class="article-content-grid">
+
+                <!-- ══════════════════════════════ -->
+                <!-- SIDEBAR (sticky on desktop)    -->
+                <!-- ══════════════════════════════ -->
+                <aside class="article-sidebar" data-animate>
+
+                    <!-- Sommaire -->
+                    <nav class="sidebar-nav" aria-label="Sommaire">
+                        <h2>Sommaire</h2>
+                        <ol>
+                            <li><a href="#probleme"><span class="num">1.</span> Trois silos</a></li>
+                            <li><a href="#gouverner"><span class="num">2.</span> Gouverner</a></li>
+                            <li><a href="#gerer"><span class="num">3.</span> Gérer</a></li>
+                            <li><a href="#transformer"><span class="num">4.</span> Transformer</a></li>
+                            <li><a href="#cqsev"><span class="num">5.</span> CQSEV</a></li>
+                            <li><a href="#pratique"><span class="num">6.</span> En pratique</a></li>
+                            <li><a href="#conclusion"><span class="num">7.</span> Par où commencer</a></li>
+                            <li><a href="#faq-article"><span class="num">8.</span> FAQ</a></li>
+                        </ol>
+                    </nav>
+
+                    <!-- Mini CTA -->
+                    <div class="sidebar-cta">
+                        <p>Grille diagnostic 5×3</p>
+                        <a href="../cqsev-grille-diagnostic.xlsx" download>
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Télécharger
+                        </a>
+                    </div>
+
+                    <!-- Vocabulaire -->
+                    <div style="background:var(--paper);border-radius:16px;padding:1.25rem;border:1px solid var(--ink-10);">
+                        <h2 style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                            Vocabulaire
+                        </h2>
+                        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+                            <div style="font-size:0.75rem;font-weight:300;"><strong>Gouvernance</strong> — les règles</div>
+                            <div style="font-size:0.75rem;font-weight:300;"><strong>Gestion</strong> — l'application terrain</div>
+                            <div style="font-size:0.75rem;font-weight:300;"><strong>Transformation</strong> — les tuyaux automatiques</div>
+                            <div style="font-size:0.75rem;font-weight:300;"><strong>Pipeline</strong> — circuit automatisé</div>
+                            <div style="font-size:0.75rem;font-weight:300;"><strong>CRM</strong> — gestion clients</div>
+                            <div style="font-size:0.75rem;font-weight:300;"><strong>Data Steward</strong> — gardien des données</div>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <!-- ══════════════════════════════ -->
+                <!-- MAIN CONTENT                   -->
+                <!-- ══════════════════════════════ -->
+                <div class="article-main">
+
+                    <!-- TL;DR -->
+                    <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:3rem;position:relative;overflow:hidden;" data-animate>
+                        <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
+                        <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            En résumé
+                        </h2>
+                        <p style="color:var(--ink-light);line-height:1.7;font-weight:300;">
+                            La <strong>gouvernance des données</strong> ne se limite pas à écrire des politiques. Pour fiabiliser vos données, il faut connecter trois volets : <strong>gouverner</strong>, <strong>gérer</strong> et <strong>transformer</strong>. Le framework <strong>CQSEV</strong> évalue chaque axe dans ces 3 volets simultanément.
+                        </p>
+                        <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Temps de lecture : 8 minutes</p>
+                    </div>
+
+                    <!-- ════════════════════════ -->
+                    <!-- PROSE — Intro            -->
+                    <!-- ════════════════════════ -->
+                    <div class="prose prose-first">
+
+                        <p>Pourquoi <strong>70 % des initiatives de gouvernance des données</strong> échouent-elles ? Ce chiffre, cité par <strong>Gartner</strong>, reflète une réalité que j'observe depuis 15 ans. Après avoir accompagné des organisations dans leur <strong>gestion des données</strong> et leurs projets de <strong>transformation</strong>, j'ai identifié une cause récurrente : les trois volets essentiels — gouverner, gérer et transformer — vivent dans des silos séparés.</p>
+                        <p>Vous connaissez cette scène. Lundi matin, comité de direction. Le VP Marketing présente ses chiffres : <strong>« Le client moyen a dépensé 50 000 $ ce trimestre. »</strong></p>
+                        <p>Le VP Finance fronce les sourcils. Ses chiffres disent <strong>45 000 $</strong>.</p>
+                        <p>Qui a raison ? Personne ne sait. Tout le monde blâme « les données ». Le CEO demande de « régler ça ». Un consultant est engagé. Un <strong>outil de gestion des données maîtres</strong> (MDM) à 500 K$ est acheté. Six mois plus tard, les chiffres ne concordent toujours pas.</p>
+
+                    </div>
+
+                    <div class="quote-block"><p>Le problème n'était pas l'outil. Le problème, c'est que trois mondes essentiels ne se parlaient pas.</p></div>
+
+                    <!-- ════════════════════════ -->
+                    <!-- SECTION 1 — Trois silos  -->
+                    <!-- ════════════════════════ -->
+                    <div class="prose">
+                        <h2 id="probleme">Le vrai problème : trois silos</h2>
+                        <p>Dans la plupart des organisations, la donnée est gérée en trois silos qui s'ignorent :</p>
+                    </div>
+
+                    <div class="cards-3" data-animate>
+                        <div class="card-silo">
+                            <div class="card-silo-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                            <h3>Les stratèges</h3>
+                            <p>Ils écrivent les politiques. 200 pages. Personne ne les lit.</p>
+                        </div>
+                        <div class="card-silo">
+                            <div class="card-silo-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                            <h3>Les opérationnels</h3>
+                            <p>Ils font ce qu'ils peuvent. Sans directives claires. Avec des fichiers Excel.</p>
+                        </div>
+                        <div class="card-silo">
+                            <div class="card-silo-icon"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg></div>
+                            <h3>Les ingénieurs</h3>
+                            <p>Ils construisent les circuits automatisés. Sans savoir si les règles sont respectées.</p>
+                        </div>
+                    </div>
+
+                    <div class="prose">
+                        <p>Le résultat ? Les règles restent sur papier. Le terrain improvise. Les systèmes automatisés transforment des données dont personne ne garantit la qualité.</p>
+                        <p><strong>C'est exactement pour ça que j'ai créé CQSEV avec 3 volets intégrés.</strong></p>
+                        <p style="font-size:0.875rem;"><a href="../#terrain" class="link">→ Voir d'autres cas concrets dans la section Terrain</a></p>
+
+                        <!-- SECTION 2 — Gouverner -->
+                        <h2 id="gouverner">Volet 1 — Gouverner : les règles du jeu</h2>
+                        <p><strong>La gouvernance des données</strong> est l'ensemble des politiques, rôles et standards qui définissent comment une organisation gère ses données. C'est le « quoi » et le « qui » — pas le « comment ».</p>
+                        <p>Gouverner, ce n'est pas créer de la bureaucratie. C'est répondre à une question simple :</p>
+                        <p class="editorial-quote">« Qui décide quoi sur les données, et selon quelles règles ? »</p>
+                        <p>Pensez au <strong>Ministère de la Santé</strong> pour l'eau potable. Il ne filtre pas l'eau lui-même. Il définit les normes : « L'eau doit contenir moins de 0.5 mg/L de chlore. » Il nomme un responsable. Il audite les stations.</p>
+                        <p>En entreprise, c'est pareil. Le comité data définit que <strong>« client actif » = une transaction dans les 12 derniers mois</strong>. Point. Pas de débat possible.</p>
+                        <h3>Concrètement, gouverner c'est :</h3>
+                        <ul class="check-list">
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Nommer un <strong>responsable de données</strong> (Data Owner) pour chaque domaine</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Définir un <strong>glossaire métier</strong> — juste les 20 termes qui posent problème</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Écrire les <strong>3 politiques critiques</strong> : qualité, accès, rétention</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Mesurer la conformité à la <strong>Loi 25</strong> et au RGPD</span></li>
+                        </ul>
+                        <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le piège :</p><p class="body-sm">Trop de gouvernance tue la gouvernance. 3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p></div></div>
+                        <p>Pour approfondir, consultez le <a href="../#framework" class="link">framework CQSEV complet</a>.</p>
+
+                        <!-- SECTION 3 — Gérer -->
+                        <h2 id="gerer">Volet 2 — Gérer : les mains dans la terre</h2>
+                        <p><strong>La gestion des données</strong> (<em>data management</em>) est l'application opérationnelle des règles au quotidien. C'est le « comment » et le « quand ».</p>
+                        <p>Avoir des règles, c'est bien. <strong>Vérifier qu'elles sont appliquées chaque jour</strong>, c'est mieux.</p>
+                        <p>Pensez au <strong>contrôle qualité dans une usine alimentaire</strong>. Chaque matin, un inspecteur prélève des échantillons. Il vérifie la température, la traçabilité. Si quelque chose est hors norme, il retire le produit <em>avant</em> qu'il n'atteigne le consommateur.</p>
+                        <p>En entreprise, c'est le <strong>Data Steward</strong> qui fait ce travail. Chaque semaine, il vérifie le taux de doublons dans le CRM. Si c'est au-dessus de 5 %, il lance un nettoyage.</p>
+                        <h3>Concrètement, gérer c'est :</h3>
+                        <ul class="check-list">
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Mesurer</strong> la qualité chaque semaine</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Corriger</strong> les anomalies dès qu'elles sont détectées</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Tenir les <strong>métadonnées</strong> à jour</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Faire des <strong>revues d'accès</strong> trimestrielles</span></li>
+                        </ul>
+                        <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le piège :</p><p class="body-sm">Des règles sans vérification terrain = une fiction.</p></div></div>
+
+                        <!-- SECTION 4 — Transformer -->
+                        <h2 id="transformer">Volet 3 — Transformer : les systèmes automatisés</h2>
+                        <p><strong>La transformation des données</strong> désigne les processus automatisés — ETL/ELT — qui déplacent, nettoient et chargent les données. Ce sont les pipelines qui appliquent les règles à grande échelle.</p>
+                        <p>Pensez à une <strong>chaîne de montage automobile</strong>. Les pièces arrivent (Extract). Chaque pièce est vérifiée (Transform). Le véhicule fini est livré (Load). Si un capteur détecte un défaut, la chaîne s'arrête.</p>
+                        <p>En entreprise, votre pipeline extrait les données du CRM, les nettoie, et les charge dans le Data Warehouse. Mais si les <strong>règles de qualité ne sont pas programmées dans le pipeline</strong>, des données invalides passent.</p>
+                        <h3>Concrètement, transformer c'est :</h3>
+                        <ul class="check-list">
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Intégrer les règles de validation</strong> dans le pipeline</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Rejeter automatiquement</strong> les données non conformes</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Masquer les PII</strong> dès l'extraction</span></li>
+                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Alerter</strong> quand un flux échoue</span></li>
+                        </ul>
+                        <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le piège :</p><p class="body-sm">Un pipeline sans règles de gouvernance = une usine qui produit des données non fiables à grande vitesse.</p></div></div>
+
+                        <!-- SECTION 5 — CQSEV -->
+                        <h2 id="cqsev">Ce que CQSEV change : évaluer les trois en même temps</h2>
+                        <p>Le framework CQSEV pose <strong>5 questions</strong> — mais chaque question est évaluée <strong>dans les 3 volets simultanément</strong>. Prenons la <strong>Qualité</strong> :</p>
+                    </div>
+
+                    <!-- Table inline -->
+                    <div class="article-table" data-animate>
+                        <table>
+                            <thead><tr>
+                                <th style="text-align:left;background:var(--paper);">Question</th>
+                                <th style="text-align:center;background:var(--ink);color:var(--white);">Gouverner</th>
+                                <th style="text-align:center;background:var(--ink);color:var(--white);">Gérer</th>
+                                <th style="text-align:center;background:var(--ink);color:var(--white);">Transformer</th>
+                            </tr></thead>
+                            <tbody><tr>
+                                <td style="font-weight:500;color:var(--ink);">Qualité</td>
+                                <td style="text-align:center;">A-t-on défini les standards ?</td>
+                                <td style="text-align:center;">Quelqu'un les vérifie-t-il ?</td>
+                                <td style="text-align:center;">Le circuit rejette-t-il les données invalides ?</td>
+                            </tr></tbody>
+                        </table>
+                    </div>
+
+                    <div class="prose">
+                        <p>Si la réponse est « non » à un seul niveau, on sait <strong>exactement où intervenir</strong>.</p>
+
+                        <!-- SECTION 6 — En pratique -->
+                        <h2 id="pratique">En pratique — l'adresse client</h2>
+                        <p>Voyons comment les 3 volets fonctionnent ensemble sur un exemple concret : <strong>l'adresse postale d'un client</strong>.</p>
+                    </div>
+
+                    <!-- Practice cards inline -->
+                    <div class="practice-grid" data-animate>
+                        <div class="practice-card" style="border-top:3px solid var(--ink);">
+                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                                <div class="practice-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                                <h4>Gouverner</h4>
+                            </div>
+                            <p>Toute adresse doit être validée par Postes Canada avant d'être enregistrée. Règle écrite, approuvée, communiquée.</p>
+                        </div>
+                        <div class="practice-card" style="border-top:3px solid var(--ink-light);">
+                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                                <div class="practice-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                                <h4>Gérer</h4>
+                            </div>
+                            <p>Chaque semaine, le Data Steward vérifie le taux d'adresses invalides. Au-dessus de 3 %, alerte et correction.</p>
+                        </div>
+                        <div class="practice-card" style="border-top:3px solid var(--ink-30);">
+                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                                <div class="practice-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg></div>
+                                <h4>Transformer</h4>
+                            </div>
+                            <p>Le pipeline vérifie chaque adresse via l'API Postes Canada. Invalide ? Rejet automatique et signalement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Résultat -->
+                    <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:2rem;" data-animate>
+                        <p style="font-size:0.9375rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Résultat : les trois volets travaillent ensemble
+                        </p>
+                        <p style="font-size:0.875rem;font-weight:300;margin:0;">Zéro colis retourné. Zéro lettre perdue. Zéro débat. La règle est écrite, vérifiée et automatisée.</p>
+                    </div>
+
+                    <!-- ════════════════════════ -->
+                    <!-- SECTION 7 — Conclusion   -->
+                    <!-- ════════════════════════ -->
+                    <div class="prose">
+                        <p><strong>Gouverner</strong> sans gérer, c'est de la fiction. <strong>Gérer</strong> sans transformer, c'est du bricolage. <strong>Transformer</strong> sans gouverner, c'est de l'automatisation aveugle.</p>
+
+                        <h2 id="conclusion">Par où commencer ?</h2>
+                    </div>
+
+                    <div class="quote-block"><p>Ne commencez pas par acheter un outil. Commencez par poser 5 questions, dans 3 volets.</p></div>
+
+                    <div class="prose">
+                        <p>Pour chaque axe de CQSEV, demandez à votre équipe :</p>
+                        <ol style="list-style:decimal;list-style-position:inside;display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;">
+                            <li><strong>La règle existe-t-elle ?</strong> (Gouverner)</li>
+                            <li><strong>Quelqu'un la vérifie-t-il ?</strong> (Gérer)</li>
+                            <li><strong>Le circuit automatisé l'applique-t-il ?</strong> (Transformer)</li>
+                        </ol>
+                        <p>Les cases vides sont vos priorités d'action.</p>
+                        <p><a href="../#matrice" class="link">→ Voir la matrice CQSEV complète (5 axes × 3 volets)</a></p>
+
+                        <h3>Le mot de la fin</h3>
+                        <p>En 15 ans, je n'ai jamais vu une organisation échouer parce qu'elle n'avait pas le bon outil. Je les ai vues échouer parce que :</p>
+                        <ul class="check-list">
+                            <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span>Les <strong>règles existaient</strong> mais personne ne savait qu'elles existaient</span></li>
+                            <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span>La <strong>vérification</strong> n'était faite par personne</span></li>
+                            <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span>Les <strong>systèmes automatisés</strong> ignoraient totalement les politiques</span></li>
+                        </ul>
+                        <p><strong>Gouverner sans gérer, c'est de la fiction. Gérer sans transformer, c'est du bricolage. Transformer sans gouverner, c'est de l'automatisation aveugle.</strong></p>
+                        <p>Les trois ensemble, c'est la fiabilité.</p>
+                    </div>
+
+                </div><!-- ferme article-main -->
+            </div><!-- ferme article-content-grid -->
+        </div><!-- ferme article-breakout -->
 
         <!-- ================================================== -->
-        <!-- TL;DR + VOCABULAIRE + SOMMAIRE (prose width)       -->
-        <!-- ================================================== -->
-        <div class="article-container">
-
-            <!-- TL;DR -->
-            <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:2rem;position:relative;overflow:hidden;" data-animate>
-                <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
-                <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    En résumé
-                </h2>
-                <p style="color:var(--ink-light);line-height:1.7;font-weight:300;">
-                    La <strong>gouvernance des données</strong> ne se limite pas à écrire des politiques. Pour fiabiliser vos données, il faut connecter trois volets : <strong>gouverner</strong> (définir les règles), <strong>gérer</strong> (les appliquer au quotidien) et <strong>transformer</strong> (les intégrer dans les circuits automatisés). Le framework <strong>CQSEV</strong> évalue chaque axe dans ces 3 volets simultanément.
-                </p>
-                <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Temps de lecture : 8 minutes</p>
-            </div>
-
-            <!-- Vocabulaire -->
-            <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:2rem;" data-animate>
-                <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
-                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                    Vocabulaire clé de cet article
-                </h2>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
-                    <div style="font-size:0.8125rem;font-weight:300;"><strong>Gouvernance</strong> — les règles et les responsables</div>
-                    <div style="font-size:0.8125rem;font-weight:300;"><strong>Gestion</strong> — l'application quotidienne des règles</div>
-                    <div style="font-size:0.8125rem;font-weight:300;"><strong>Transformation</strong> — les tuyaux automatiques</div>
-                    <div style="font-size:0.8125rem;font-weight:300;"><strong>Pipeline</strong> — un circuit automatisé de traitement</div>
-                    <div style="font-size:0.8125rem;font-weight:300;"><strong>CRM</strong> — logiciel de gestion des clients</div>
-                    <div style="font-size:0.8125rem;font-weight:300;"><strong>Data Steward</strong> — le gardien des données</div>
-                </div>
-            </div>
-
-            <!-- Sommaire -->
-            <nav style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:3rem;" aria-label="Sommaire" data-animate>
-                <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">Dans cet article</h2>
-                <ol style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
-                    <li><a href="#probleme" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">1.</span> Le vrai problème : trois silos</a></li>
-                    <li><a href="#gouverner" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">2.</span> Gouverner — les règles du jeu</a></li>
-                    <li><a href="#gerer" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">3.</span> Gérer — les mains dans la terre</a></li>
-                    <li><a href="#transformer" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">4.</span> Transformer — les systèmes automatisés</a></li>
-                    <li><a href="#cqsev" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">5.</span> CQSEV connecte les trois volets</a></li>
-                    <li><a href="#pratique" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">6.</span> En pratique — l'adresse client</a></li>
-                    <li><a href="#conclusion" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">7.</span> Par où commencer ?</a></li>
-                    <li><a href="#faq-article" style="font-size:0.875rem;font-weight:400;color:var(--ink);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'"><span style="color:var(--ink-light);font-family:var(--font-mono);">8.</span> Questions fréquentes</a></li>
-                </ol>
-            </nav>
-
-            <!-- ================================================== -->
-            <!-- PROSE — Début                                      -->
-            <!-- ================================================== -->
-            <div class="prose">
-
-                <p>Pourquoi <strong>70 % des initiatives de gouvernance des données</strong> échouent-elles ? Ce chiffre, cité par <strong>Gartner</strong> dans ses études sur la gestion des données, reflète une réalité que j'observe depuis 15 ans sur le terrain. Après avoir accompagné des organisations dans leur <strong>gestion des données</strong> et leurs projets de <strong>transformation</strong>, j'ai identifié une cause récurrente : les trois volets essentiels — gouverner, gérer et transformer — vivent dans des silos séparés.</p>
-                <p>Vous connaissez cette scène. Lundi matin, comité de direction. Le VP Marketing présente ses chiffres : <strong>« Le client moyen a dépensé 50 000 $ ce trimestre. »</strong></p>
-                <p>Le VP Finance fronce les sourcils. Ses chiffres disent <strong>45 000 $</strong>.</p>
-                <p>Qui a raison ? Personne ne sait. Tout le monde blâme « les données ». Le CEO demande de « régler ça ». Un consultant est engagé. Un <strong>outil de gestion des données maîtres</strong> (MDM) à 500 K$ est acheté. Six mois plus tard, les chiffres ne concordent toujours pas.</p>
-
-                <div class="quote-block"><p>Le problème n'était pas l'outil. Le problème, c'est que trois mondes essentiels ne se parlaient pas.</p></div>
-
-                <!-- SECTION 1 — Trois silos -->
-                <h2 id="probleme">Le vrai problème : trois silos</h2>
-                <p>Dans la plupart des organisations, la donnée est gérée en trois silos qui s'ignorent :</p>
-
-            </div>
-        </div><!-- ferme article-container -->
-
-        <!-- BREAKOUT — 3 silos -->
-        <div class="article-breakout">
-            <div class="cards-3" data-animate>
-                <div class="card-silo">
-                    <div class="card-silo-icon">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    </div>
-                    <h3>Les stratèges</h3>
-                    <p>Ils écrivent les politiques. 200 pages. Personne ne les lit.</p>
-                </div>
-                <div class="card-silo">
-                    <div class="card-silo-icon">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    </div>
-                    <h3>Les opérationnels</h3>
-                    <p>Ils font ce qu'ils peuvent. Sans directives claires. Avec des fichiers Excel.</p>
-                </div>
-                <div class="card-silo">
-                    <div class="card-silo-icon">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-                    </div>
-                    <h3>Les ingénieurs</h3>
-                    <p>Ils construisent les circuits automatisés. Sans savoir si les règles sont respectées.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Retour prose -->
-        <div class="article-container">
-            <div class="prose">
-
-                <p>Le résultat ? Les règles restent sur papier. Le terrain improvise. Et les systèmes automatisés transforment des données dont personne ne garantit la qualité.</p>
-                <p><strong>C'est exactement pour ça que j'ai créé CQSEV avec 3 volets intégrés.</strong></p>
-                <p style="font-size:0.875rem;"><a href="../#terrain" class="link">→ Voir d'autres cas concrets dans la section Terrain</a></p>
-
-                <!-- SECTION 2 — Gouverner -->
-                <h2 id="gouverner">Volet 1 — Gouverner : les règles du jeu</h2>
-                <p><strong>La gouvernance des données</strong> est l'ensemble des politiques, rôles et standards qui définissent comment une organisation gère ses données. C'est le « quoi » et le « qui » — pas le « comment ».</p>
-                <p>Gouverner, ce n'est pas créer de la bureaucratie. C'est répondre à une question simple :</p>
-                <p class="editorial-quote">« Qui décide quoi sur les données, et selon quelles règles ? »</p>
-                <p>Pensez au <strong>Ministère de la Santé</strong> pour l'eau potable. Il ne filtre pas l'eau lui-même. Il définit les normes : « L'eau doit contenir moins de 0.5 mg/L de chlore. » Il nomme un responsable. Il audite les stations.</p>
-                <p>En entreprise, c'est pareil. Le comité data définit que <strong>« client actif » = une transaction dans les 12 derniers mois</strong>. Point. Pas de débat possible. Marketing et Finance utilisent la même définition.</p>
-                <h3>Concrètement, gouverner c'est :</h3>
-                <ul class="check-list">
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Nommer un <strong>responsable de données</strong> (Data Owner) pour chaque domaine de données</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Définir un <strong>glossaire métier</strong> — pas 200 pages, juste les 20 termes qui posent problème</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Écrire les <strong>3 politiques critiques</strong> : qualité, accès, rétention</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Mesurer la conformité à la <strong>Loi 25</strong> (la loi québécoise sur la protection des renseignements personnels) et au RGPD</span></li>
-                </ul>
-                <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le piège :</p><p class="body-sm">Trop de gouvernance tue la gouvernance. 3 politiques qui fonctionnent valent mieux que 200 pages que personne ne lit.</p></div></div>
-                <p>Pour approfondir les 5 axes de la gouvernance pragmatique, consultez le <a href="../#framework" class="link">framework CQSEV complet</a>.</p>
-
-                <!-- SECTION 3 — Gérer -->
-                <h2 id="gerer">Volet 2 — Gérer : les mains dans la terre</h2>
-                <p><strong>La gestion des données</strong> (<em>data management</em>) est l'application opérationnelle des règles de gouvernance au quotidien. C'est le « comment » et le « quand » — la vérification terrain que les règles sont respectées.</p>
-                <p>Avoir des règles, c'est bien. <strong>Vérifier qu'elles sont appliquées chaque jour</strong>, c'est mieux.</p>
-                <p>Pensez au <strong>contrôle qualité dans une usine alimentaire</strong>. Chaque matin, un inspecteur prélève des échantillons sur la ligne de production. Il vérifie la température, la date de péremption, la traçabilité des lots. Si quelque chose est hors norme, il retire le produit <em>avant</em> qu'il n'atteigne le consommateur. Il ne réécrit pas la recette — il applique les standards existants.</p>
-                <p>En entreprise, c'est le <strong>gardien des données au quotidien</strong> (Data Steward) qui fait ce travail. Chaque semaine, il vérifie le taux de doublons dans le <strong>logiciel de gestion des clients</strong> (CRM). Si c'est au-dessus de 5 %, il lance un nettoyage. Il ne demande pas la permission au comité. La règle est claire, il l'applique.</p>
-                <h3>Concrètement, gérer c'est :</h3>
-                <ul class="check-list">
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Mesurer</strong> la qualité chaque semaine (pas chaque trimestre)</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Corriger</strong> les anomalies dès qu'elles sont détectées</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Tenir les <strong>descriptions de données à jour</strong> (métadonnées) pour que tout le monde trouve ce qu'il cherche</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Faire des <strong>revues d'accès</strong> trimestrielles : qui a accès à quoi ?</span></li>
-                </ul>
-                <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le piège :</p><p class="body-sm">Des règles sans vérification terrain = une fiction. Si personne ne vérifie, les règles n'existent pas vraiment.</p></div></div>
-
-                <!-- SECTION 4 — Transformer -->
-                <h2 id="transformer">Volet 3 — Transformer : les systèmes automatisés</h2>
-                <p><strong>La transformation des données</strong> désigne les processus automatisés — souvent appelés ETL (<em>Extract, Transform, Load</em>) ou ELT — qui déplacent, nettoient et chargent les données d'un système à un autre. Ce sont les circuits automatisés (pipelines) qui appliquent les règles à grande échelle, sans intervention humaine.</p>
-                <p>Pensez à une <strong>chaîne de montage automobile</strong>. Les pièces arrivent de dizaines de fournisseurs (Extract — extraire). Chaque pièce est vérifiée, ajustée, assemblée selon un plan précis (Transform — transformer). Le véhicule fini est livré au concessionnaire (Load — charger). Si un capteur détecte qu'un boulon est mal serré, la chaîne s'arrête automatiquement.</p>
-                <p>En entreprise, c'est pareil. Votre circuit automatisé extrait les données du CRM, les nettoie, dédoublonne, et les charge dans l'<strong>entrepôt central de données</strong> (Data Warehouse). Mais si les <strong>règles de qualité définies en gouvernance ne sont pas programmées dans le circuit</strong>, des données invalides passent.</p>
-                <h3>Concrètement, transformer c'est :</h3>
-                <ul class="check-list">
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Intégrer les règles de validation</strong> directement dans le circuit automatisé</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Rejeter automatiquement</strong> les données non conformes</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Masquer les informations personnelles</strong> — noms, adresses, numéros d'assurance sociale (PII) — dès l'extraction</span></li>
-                    <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Alerter</strong> quand un flux échoue — pas découvrir le problème 3 jours après</span></li>
-                </ul>
-                <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le piège :</p><p class="body-sm">Un circuit automatisé sans règles de gouvernance intégrées = une usine qui produit des données non fiables à grande vitesse.</p></div></div>
-
-                <!-- SECTION 5 — CQSEV connecte les trois -->
-                <h2 id="cqsev">Ce que CQSEV change : évaluer les trois en même temps</h2>
-                <p>Le framework CQSEV pose <strong>5 questions</strong> — mais chaque question est évaluée <strong>dans les 3 volets simultanément</strong>. Prenons la <strong>Qualité</strong> :</p>
-
-            </div>
-        </div><!-- ferme article-container -->
-
-        <!-- BREAKOUT — Table CQSEV -->
-        <div class="article-breakout">
-            <div class="article-table" data-animate>
-                <table>
-                    <thead><tr>
-                        <th style="text-align:left;background:var(--paper);">Question</th>
-                        <th style="text-align:center;background:var(--ink);color:var(--white);">Gouverner</th>
-                        <th style="text-align:center;background:var(--ink);color:var(--white);">Gérer</th>
-                        <th style="text-align:center;background:var(--ink);color:var(--white);">Transformer</th>
-                    </tr></thead>
-                    <tbody><tr>
-                        <td style="font-weight:500;color:var(--ink);">Qualité</td>
-                        <td style="text-align:center;">A-t-on défini les standards ?</td>
-                        <td style="text-align:center;">Quelqu'un les vérifie-t-il ?</td>
-                        <td style="text-align:center;">Le circuit rejette-t-il les données invalides ?</td>
-                    </tr></tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Retour prose -->
-        <div class="article-container">
-            <div class="prose">
-
-                <p>Si la réponse est « non » à un seul niveau, on sait <strong>exactement où intervenir</strong>.</p>
-
-                <!-- SECTION 6 — En pratique -->
-                <h2 id="pratique">En pratique — l'adresse client</h2>
-                <p>Voyons comment les 3 volets fonctionnent ensemble sur un exemple concret : <strong>l'adresse postale d'un client</strong>.</p>
-
-            </div>
-        </div><!-- ferme article-container -->
-
-        <!-- BREAKOUT — 3 volets pratique -->
-        <div class="article-breakout">
-            <div class="practice-grid" data-animate>
-                <div class="practice-card" style="border-top:3px solid var(--ink);">
-                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                        <div class="practice-icon">
-                            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                        </div>
-                        <h4>Gouverner</h4>
-                    </div>
-                    <p>Toute adresse doit être validée par Postes Canada avant d'être enregistrée. Règle écrite, approuvée, communiquée.</p>
-                </div>
-                <div class="practice-card" style="border-top:3px solid var(--ink-light);">
-                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                        <div class="practice-icon">
-                            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                        </div>
-                        <h4>Gérer</h4>
-                    </div>
-                    <p>Chaque semaine, le Data Steward vérifie le taux d'adresses invalides. Au-dessus de 3 %, alerte et correction.</p>
-                </div>
-                <div class="practice-card" style="border-top:3px solid var(--ink-30);">
-                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                        <div class="practice-icon">
-                            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
-                        </div>
-                        <h4>Transformer</h4>
-                    </div>
-                    <p>Le pipeline vérifie chaque adresse via l'API Postes Canada. Invalide ? Rejet automatique et signalement.</p>
-                </div>
-            </div>
-
-            <!-- Résultat -->
-            <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-top:1rem;" data-animate>
-                <p style="font-size:0.9375rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                    Résultat : les trois volets travaillent ensemble
-                </p>
-                <p style="font-size:0.875rem;font-weight:300;margin:0;">Zéro colis retourné. Zéro lettre perdue. Zéro débat. La règle est écrite, vérifiée et automatisée.</p>
-            </div>
-        </div>
-                <!-- Retour prose — Conclusion -->
-        <div class="article-container">
-            <div class="prose">
-
-                <p>C'est ça, CQSEV appliqué au quotidien. <strong>Gouverner</strong> sans gérer, c'est de la fiction. <strong>Gérer</strong> sans transformer, c'est du bricolage. <strong>Transformer</strong> sans gouverner, c'est de l'automatisation aveugle.</p>
-
-                <!-- SECTION 7 — Par où commencer -->
-                <h2 id="conclusion">Par où commencer ?</h2>
-                <div class="quote-block"><p>Ne commencez pas par acheter un outil. Commencez par poser 5 questions, dans 3 volets.</p></div>
-                <p>Pour chaque axe de CQSEV, demandez à votre équipe :</p>
-                <ol style="list-style:decimal;list-style-position:inside;display:flex;flex-direction:column;gap:0.75rem;margin:1.5rem 0;">
-                    <li><strong>La règle existe-t-elle ?</strong> (Gouverner)</li>
-                    <li><strong>Quelqu'un la vérifie-t-il ?</strong> (Gérer)</li>
-                    <li><strong>Le circuit automatisé l'applique-t-il ?</strong> (Transformer)</li>
-                </ol>
-                <p>Les cases vides sont vos priorités d'action.</p>
-                <p><a href="../#matrice" class="link">→ Voir la matrice CQSEV complète (5 axes × 3 volets)</a></p>
-
-                <h3>Le mot de la fin</h3>
-                <p>En 15 ans, je n'ai jamais vu une organisation échouer parce qu'elle n'avait pas le bon outil. Je les ai vues échouer parce que :</p>
-                <ul class="check-list">
-                    <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span>Les <strong>règles existaient</strong> mais personne ne savait qu'elles existaient</span></li>
-                    <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span>La <strong>vérification</strong> n'était faite par personne</span></li>
-                    <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span>Les <strong>systèmes automatisés</strong> ignoraient totalement les politiques</span></li>
-                </ul>
-                <p><strong>Gouverner sans gérer, c'est de la fiction. Gérer sans transformer, c'est du bricolage. Transformer sans gouverner, c'est de l'automatisation aveugle.</strong></p>
-                <p>Les trois ensemble, c'est la fiabilité.</p>
-
-            </div>
-        </div><!-- ferme article-container -->
-
-        <!-- ================================================== -->
-        <!-- CTA — Breakout                                     -->
+        <!-- CTA — Pleine largeur                               -->
         <!-- ================================================== -->
         <div class="article-breakout">
             <div style="background:var(--ink);border-radius:24px;padding:2.5rem;text-align:center;margin-top:3rem;color:var(--white);">
@@ -679,51 +736,48 @@
         </div>
 
         <!-- ================================================== -->
-        <!-- FAQ — Breakout paysage 2 colonnes                  -->
+        <!-- FAQ — Paysage 2 colonnes                           -->
         <!-- ================================================== -->
         <div class="article-breakout" style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
             <div class="article-faq-layout">
-
                 <div>
                     <h2 id="faq-article" style="font-size:1.5rem;margin-bottom:0.5rem;">Questions <em>fréquentes</em></h2>
                     <p class="body-sm" style="color:var(--ink-light);">Sur les 3 volets du framework.</p>
                 </div>
-
                 <div>
                     <details class="faq-item" open>
-                        <summary>Quelle est la différence entre gouvernance et gestion des données ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">La <strong>gouvernance</strong> définit les règles — c'est le « quoi » et le « qui ». Par exemple : « Seuls les gestionnaires ont accès aux données salariales. » La <strong>gestion</strong> applique ces règles au quotidien — c'est le « comment ». Par exemple : « Chaque trimestre, on vérifie que seuls les gestionnaires ont encore accès. » CQSEV ajoute un troisième volet — la <strong>transformation</strong> — pour s'assurer que les circuits automatisés qui traitent vos données (pipelines ETL/ELT) respectent ces mêmes règles.</div>
+                        <summary>Quelle est la différence entre gouvernance et gestion ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">La <strong>gouvernance</strong> définit les règles. La <strong>gestion</strong> les applique au quotidien. CQSEV ajoute la <strong>transformation</strong> pour que les pipelines respectent aussi ces règles.</div>
                     </details>
                     <details class="faq-item">
                         <summary>Pourquoi inclure la transformation dans la gouvernance ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">Les règles de qualité qui ne sont pas programmées dans les circuits automatisés ne sont pas réellement appliquées. C'est comme avoir un code de la route sans radars ni policiers — les règles existent sur papier, mais personne ne les respecte. La transformation est là où les règles deviennent concrètes et automatisées à grande échelle.</div>
+                        <div class="answer">Les règles non programmées dans les pipelines ne sont pas réellement appliquées. C'est comme un code de la route sans radars.</div>
                     </details>
                     <details class="faq-item">
                         <summary>Qu'est-ce que le framework CQSEV ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer"><strong>CQSEV</strong> est un framework pragmatique qui évalue la maturité de vos données sur 5 axes — Conformité, Qualité, Sécurité, Efficacité, Valorisation — à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic après 15 ans d'expérience terrain à Montréal. <a href="../#comprendre" style="color:var(--ink);font-weight:500;">En savoir plus sur la page d'accueil</a>.</div>
+                        <div class="answer">5 axes (C-Q-S-E-V) × 3 volets = 15 points de contrôle. <a href="../#comprendre" style="color:var(--ink);font-weight:500;">En savoir plus</a>.</div>
                     </details>
                     <details class="faq-item">
-                        <summary>Par où commencer pour améliorer la gouvernance ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">Posez les 5 questions CQSEV. Pour chaque question : la règle existe-t-elle ? Quelqu'un la vérifie-t-il au quotidien ? Le circuit automatisé l'applique-t-il ? Les cases vides sont vos priorités. Commencez par un seul domaine — souvent les données clients ou financières — prouvez la valeur, puis élargissez. <a href="../cqsev-grille-diagnostic.xlsx" download style="color:var(--ink);font-weight:500;">Téléchargez la grille gratuite</a>.</div>
+                        <summary>Par où commencer ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
+                        <div class="answer">Posez les 5 questions CQSEV. Les cases vides sont vos priorités. <a href="../cqsev-grille-diagnostic.xlsx" download style="color:var(--ink);font-weight:500;">Grille gratuite</a>.</div>
                     </details>
                     <details class="faq-item">
                         <summary>Que veut dire ETL / pipeline ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer"><strong>ETL</strong> signifie Extract, Transform, Load — en français : Extraire, Transformer, Charger. C'est le processus automatisé qui prend les données d'un système (par exemple votre CRM), les nettoie et les vérifie, puis les envoie dans un autre système (par exemple votre entrepôt de données). Un <strong>pipeline</strong> est simplement le circuit complet qui fait ce travail automatiquement, comme une chaîne de montage pour vos données.</div>
+                        <div class="answer">Extract, Transform, Load — le circuit automatisé qui prend les données, les nettoie et les envoie dans un autre système.</div>
                     </details>
                 </div>
-
             </div>
         </div>
 
         <!-- ================================================== -->
-        <!-- AUTHOR — Breakout paysage                          -->
+        <!-- AUTHOR — Paysage                                   -->
         <!-- ================================================== -->
         <div class="article-breakout">
             <div class="article-author-grid">
                 <div class="avatar-lg">OC</div>
                 <div>
                     <p style="font-weight:500;font-size:1.125rem;color:var(--ink);">Oleg Chitic</p>
-                    <p class="body-sm" style="margin-top:0.25rem;">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données dans les secteurs financier, assurance, commerce de détail et technologie à Montréal.</p>
+                    <p class="body-sm" style="margin-top:0.25rem;">Créateur du framework CQSEV. 15+ ans en gouvernance et gestion des données — banque, assurance, commerce de détail, technologie — à Montréal.</p>
                     <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;color:var(--ink);font-size:0.875rem;font-weight:500;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                         Suivre sur LinkedIn
@@ -731,7 +785,6 @@
                 </div>
             </div>
 
-            <!-- Related -->
             <div class="related">
                 <h3 style="font-family:var(--font-serif);">Article connexe</h3>
                 <a href="gouvernance-donnees-guide-complet.html">
@@ -753,46 +806,11 @@
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Quelle est la différence entre gouvernance et gestion des données ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "La gouvernance définit les règles (le quoi et le qui). La gestion applique ces règles au quotidien (le comment). CQSEV ajoute un troisième volet — la transformation — pour s'assurer que les circuits automatisés qui traitent vos données respectent ces règles."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Pourquoi inclure la transformation dans la gouvernance des données ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Les règles de qualité qui ne sont pas programmées dans les circuits automatisés ne sont pas réellement appliquées. La transformation est là où les règles deviennent concrètes et automatisées à grande échelle."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Qu'est-ce que le framework CQSEV ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "CQSEV est un framework pragmatique qui évalue la maturité de vos données sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic après 15 ans d'expérience terrain à Montréal."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Par où commencer pour améliorer la gouvernance des données ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Posez les 5 questions CQSEV. Pour chaque question : la règle existe-t-elle ? Quelqu'un la vérifie-t-il au quotidien ? Le circuit automatisé l'applique-t-il ? Les cases vides sont vos priorités d'action."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Que veut dire ETL ou pipeline en gouvernance des données ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "ETL signifie Extract, Transform, Load — Extraire, Transformer, Charger. C'est le processus automatisé qui prend les données d'un système, les nettoie et les vérifie, puis les envoie dans un autre système. Un pipeline est le circuit complet qui fait ce travail automatiquement."
-                }
-            }
+            {"@type":"Question","name":"Quelle est la différence entre gouvernance et gestion des données ?","acceptedAnswer":{"@type":"Answer","text":"La gouvernance définit les règles. La gestion les applique au quotidien. CQSEV ajoute la transformation pour que les pipelines respectent aussi ces règles."}},
+            {"@type":"Question","name":"Pourquoi inclure la transformation dans la gouvernance ?","acceptedAnswer":{"@type":"Answer","text":"Les règles non programmées dans les pipelines ne sont pas réellement appliquées. La transformation est là où les règles deviennent concrètes."}},
+            {"@type":"Question","name":"Qu'est-ce que le framework CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"CQSEV évalue la maturité de vos données sur 5 axes (Conformité, Qualité, Sécurité, Efficacité, Valorisation) à travers 3 volets (Gouverner, Gérer, Transformer). Créé par Oleg Chitic à Montréal."}},
+            {"@type":"Question","name":"Par où commencer ?","acceptedAnswer":{"@type":"Answer","text":"Posez les 5 questions CQSEV. Pour chaque question : la règle existe-t-elle ? Quelqu'un la vérifie-t-il ? Le pipeline l'applique-t-il ? Les cases vides sont vos priorités."}},
+            {"@type":"Question","name":"Que veut dire ETL ou pipeline ?","acceptedAnswer":{"@type":"Answer","text":"ETL signifie Extract, Transform, Load. C'est le circuit automatisé qui prend les données d'un système, les nettoie et les envoie dans un autre système."}}
         ]
     }
     </script>
@@ -821,20 +839,16 @@
     <script>
     (function() {
         'use strict';
-
-        // Scroll Animations
         var o = new IntersectionObserver(function(e) {
             e.forEach(function(i) { if (i.isIntersecting) { i.target.classList.add('visible'); o.unobserve(i.target); } });
         }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('[data-animate]').forEach(function(el) { o.observe(el); });
 
-        // Nav Scroll
         var nav = document.getElementById('site-nav');
         var st = false;
         function un() { nav.classList.toggle('scrolled', window.scrollY > 20); st = false; }
         window.addEventListener('scroll', function() { if (!st) { requestAnimationFrame(un); st = true; } }, { passive: true });
 
-        // Mobile Menu
         var t = document.getElementById('menu-toggle'), m = document.getElementById('mob-menu');
         if (t && m) {
             t.addEventListener('click', function() {
@@ -847,7 +861,6 @@
             });
         }
 
-        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 var id = this.getAttribute('href'); if (id === '#') return;
