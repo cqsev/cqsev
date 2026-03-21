@@ -12,12 +12,20 @@
     <!-- Blog — Index -->
     <url>
         <loc>https://cqsev.github.io/blog/</loc>
-        <lastmod>2026-03-20</lastmod>
+        <lastmod>2026-03-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Blog — Article 2 (le plus récent) -->
+    <!-- Blog — Article 3 (le plus récent) -->
+    <url>
+        <loc>https://cqsev.github.io/blog/qu-est-ce-que-la-gouvernance-des-donnees.html</loc>
+        <lastmod>2026-03-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog — Article 2 -->
     <url>
         <loc>https://cqsev.github.io/blog/gouvernance-donnees-guide-complet.html</loc>
         <lastmod>2026-03-20</lastmod>
