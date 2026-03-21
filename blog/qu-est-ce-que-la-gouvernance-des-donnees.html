@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ====== SEO ====== -->
     <title>Qu'est-ce que la gouvernance des données ? L'analogie de la bibliothèque — CQSEV</title>
-    <meta name="description" content="La gouvernance des données expliquée simplement avec l'analogie de la bibliothèque. Sans jargon. Comprendre les bases, les 4 outils essentiels et les 5 questions à se poser.">
+    <meta name="description" content="La gouvernance des données expliquée simplement avec l'analogie de la bibliothèque. Sans jargon. Comprendre les bases, les 4 outils essentiels et les 5 questions à se poser. Guide accessible pour tous — du CEO au commis.">
     <meta name="author" content="Oleg Chitic">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cqsev.github.io/blog/qu-est-ce-que-la-gouvernance-des-donnees.html">
     <meta name="theme-color" content="#F7F5F0">
 
+    <!-- ====== OPEN GRAPH ====== -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="Qu'est-ce que la gouvernance des données ? L'analogie de la bibliothèque">
     <meta property="og:description" content="La gouvernance des données expliquée simplement. Sans jargon. L'analogie de la bibliothèque, les 4 outils essentiels et les 5 questions CQSEV.">
@@ -23,14 +25,17 @@
     <meta property="article:author" content="Oleg Chitic">
     <meta property="article:published_time" content="2026-04-01T00:00:00Z">
     <meta property="article:tag" content="gouvernance données">
+    <meta property="article:tag" content="data governance">
     <meta property="article:tag" content="analogie bibliothèque">
     <meta property="article:tag" content="CQSEV">
 
+    <!-- ====== TWITTER ====== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Qu'est-ce que la gouvernance des données ? L'analogie de la bibliothèque">
     <meta name="twitter:description" content="La gouvernance des données expliquée simplement. Sans jargon. Par Oleg Chitic, créateur du framework CQSEV.">
     <meta name="twitter:image" content="https://cqsev.github.io/img/og-image.png">
 
+    <!-- ====== SCHEMA.ORG ====== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -39,16 +44,20 @@
         "description": "La gouvernance des données expliquée simplement avec l'analogie de la bibliothèque. Les 4 outils essentiels et les 5 questions CQSEV.",
         "author": {"@type": "Person", "name": "Oleg Chitic", "url": "https://cqsev.github.io/", "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"]},
         "publisher": {"@type": "Organization", "name": "CQSEV Framework", "url": "https://cqsev.github.io/"},
-        "datePublished": "2026-03-21", "dateModified": "2026-03-21",
+        "datePublished": "2026-03-21",
+        "dateModified": "2026-03-21",
         "url": "https://cqsev.github.io/blog/qu-est-ce-que-la-gouvernance-des-donnees.html",
         "image": "https://cqsev.github.io/img/og-image.png",
         "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cqsev.github.io/blog/qu-est-ce-que-la-gouvernance-des-donnees.html"},
-        "articleSection": "Gouvernance des données", "wordCount": "2200", "inLanguage": "fr-CA"
+        "articleSection": "Gouvernance des données",
+        "wordCount": "2200",
+        "inLanguage": "fr-CA"
     }
     </script>
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
         "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://cqsev.github.io/"},
             {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cqsev.github.io/blog/"},
@@ -57,447 +66,622 @@
     }
     </script>
 
+    <!-- ====== ASSETS ====== -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
+    <!-- ====== GTM ====== -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
 
     <style>
-        :root { --font-serif:'Playfair Display',Georgia,serif; --font-sans:'Inter',system-ui,sans-serif; --font-mono:'JetBrains Mono',monospace; --paper:#F7F5F0; --white:#FFFFFF; --ink:#1A1A1A; --ink-light:#4A4A4A; --ink-10:rgba(26,26,26,0.10); --ink-5:rgba(26,26,26,0.05); --ink-20:rgba(26,26,26,0.20); --ink-30:rgba(26,26,26,0.30); }
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth;background:var(--paper)}
+        :root{--font-serif:'Playfair Display',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--paper:#F7F5F0;--white:#FFFFFF;--ink:#1A1A1A;--ink-light:#4A4A4A;--ink-10:rgba(26,26,26,0.10);--ink-5:rgba(26,26,26,0.05);--ink-20:rgba(26,26,26,0.20);--ink-30:rgba(26,26,26,0.30)}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;background:var(--paper)}
         body{font-family:var(--font-sans);color:var(--ink-light);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.6;font-weight:300}
         h1,h2,h3,h4,h5,h6{font-family:var(--font-serif);color:var(--ink);font-weight:500}
-        a{color:inherit;text-decoration:none} img{max-width:100%;height:auto;display:block} button{cursor:pointer;border:none;background:none;font:inherit} table{border-collapse:collapse;width:100%} strong{color:var(--ink);font-weight:500}
+        a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{cursor:pointer;border:none;background:none;font:inherit}table{border-collapse:collapse;width:100%}strong{color:var(--ink);font-weight:500}
         .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-        ::-webkit-scrollbar{width:6px} ::-webkit-scrollbar-track{background:var(--paper)} ::-webkit-scrollbar-thumb{background:#D1CDD2;border-radius:10px}
-        .article-breakout{max-width:1080px;margin-left:auto;margin-right:auto;padding:0 2.5rem}
-        @media(max-width:767px){.article-breakout{padding:0 1.25rem}}
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--paper)}::-webkit-scrollbar-thumb{background:#D1CDD2;border-radius:10px}
+        .container{max-width:1320px;margin:0 auto;padding:0 2.5rem}.article-container{max-width:760px;margin:0 auto;padding:0 2.5rem}@media(max-width:767px){.container,.article-container{padding:0 1.25rem}}
         .label{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1.5rem;display:block}
-        .body-sm{font-size:0.875rem;line-height:1.6;font-weight:300}
-        .site-nav{position:fixed;top:0;width:100%;z-index:50;transition:all 0.3s;padding:1.5rem 0;background:transparent;border-bottom:1px solid transparent}
-        .site-nav.scrolled{background:rgba(247,245,240,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--ink-10);padding:1rem 0}
-        .nav-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between} @media(max-width:767px){.nav-inner{padding:0 1.25rem}}
+        .site-nav{position:fixed;top:0;width:100%;z-index:50;transition:all 0.3s;padding:1.5rem 0;background:transparent;border-bottom:1px solid transparent}.site-nav.scrolled{background:rgba(247,245,240,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--ink-10);padding:1rem 0}
+        .nav-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between}@media(max-width:767px){.nav-inner{padding:0 1.25rem}}
         .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em}
-        .nav-links{display:none;align-items:center;gap:2rem} .nav-link{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s} .nav-link:hover,.nav-link.active{color:var(--ink)}
-        .nav-cta{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;padding:0.5rem 1.5rem;border-radius:9999px;border:1px solid var(--ink-20);transition:all 0.3s} .nav-cta:hover{background:var(--ink);color:var(--paper)}
-        .menu-toggle{display:block;color:var(--ink-light);padding:0.5rem} .mob-menu{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--paper);border-bottom:1px solid var(--ink-10);padding:1rem 1.5rem} .mob-menu.open{display:block} .mob-menu a{display:block;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;padding:0.75rem 0;border-bottom:1px solid var(--ink-5)}
+        .nav-links{display:none;align-items:center;gap:2rem}.nav-link{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.nav-link:hover,.nav-link.active{color:var(--ink)}
+        .nav-cta{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;padding:0.5rem 1.5rem;border-radius:9999px;border:1px solid var(--ink-20);transition:all 0.3s}.nav-cta:hover{background:var(--ink);color:var(--paper)}
+        .menu-toggle{display:block;color:var(--ink-light);padding:0.5rem}.mob-menu{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--paper);border-bottom:1px solid var(--ink-10);padding:1rem 1.5rem}.mob-menu.open{display:block}.mob-menu a{display:block;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;padding:0.75rem 0;border-bottom:1px solid var(--ink-5)}
         @media(min-width:768px){.nav-links{display:flex}.menu-toggle{display:none}}
-        .btn-pill{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-sans);font-size:0.875rem;font-weight:500;padding:1rem 2rem;border-radius:9999px;transition:all 0.3s} .btn-pill:hover{transform:translateY(-2px)}
+        .btn-pill{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-sans);font-size:0.875rem;font-weight:500;padding:1rem 2rem;border-radius:9999px;transition:all 0.3s}.btn-pill:hover{transform:translateY(-2px)}.btn-dark{background:var(--ink);color:var(--white)}.btn-dark:hover{background:#333;box-shadow:0 8px 24px rgba(26,26,26,0.15)}
         .tag{font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid var(--ink-5);color:var(--ink);background:var(--white)}
-        .article-header-grid{display:flex;flex-direction:column;gap:2rem;margin-bottom:3rem} @media(min-width:1024px){.article-header-grid{display:grid;grid-template-columns:5fr 6fr;gap:4rem;align-items:start}}
-        .article-content-grid{display:flex;flex-direction:column;gap:3rem} @media(min-width:1024px){.article-content-grid{display:grid;grid-template-columns:240px 1fr;gap:4rem;align-items:start}}
-        .article-sidebar{display:flex;flex-direction:column;gap:1.5rem} @media(min-width:1024px){.article-sidebar{position:sticky;top:6rem}} .article-main{min-width:0}
-        .sidebar-nav{background:var(--white);border-radius:16px;padding:1.25rem;border:1px solid var(--ink-10)}
-        .sidebar-nav h2{font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.75rem}
-        .sidebar-nav ol{list-style:none;display:flex;flex-direction:column;gap:0.375rem}
-        .sidebar-nav a{font-size:0.8125rem;font-weight:400;color:var(--ink-light);display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;padding:0.25rem 0} .sidebar-nav a:hover{color:var(--ink)}
-        .sidebar-nav .num{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-30)}
-        .sidebar-cta{background:var(--paper);border-radius:16px;padding:1.25rem;border:1px solid var(--ink-10);text-align:center}
-        .sidebar-cta p{font-size:0.75rem;color:var(--ink-light);font-weight:300;margin-bottom:0.75rem}
-        .sidebar-cta a{font-family:var(--font-mono);font-size:0.625rem;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;display:inline-flex;align-items:center;gap:0.375rem;padding:0.5rem 1rem;border-radius:9999px;border:1px solid var(--ink-20);transition:all 0.3s} .sidebar-cta a:hover{background:var(--ink);color:var(--paper)}
-        .prose{font-size:clamp(0.95rem,2vw,1.0625rem);line-height:1.8;color:var(--ink-light)} .prose p{margin-bottom:1.5rem} .prose h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:500;margin-top:4rem;margin-bottom:1.5rem;scroll-margin-top:80px} .prose h3{font-size:1.25rem;font-weight:500;margin-top:2.5rem;margin-bottom:1rem} .prose a.link{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px} .prose a.link:hover{color:var(--ink-light)} .prose-first h2:first-child{margin-top:0}
-        .check-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin:2rem 0} .check-list li{display:flex;align-items:flex-start;gap:0.75rem} .check-icon{width:20px;height:20px;flex-shrink:0;margin-top:3px;color:var(--ink)}
-        .callout{border-radius:16px;padding:1.5rem;margin:2.5rem 0;display:flex;align-items:flex-start;gap:0.75rem;background:var(--paper);border:1px solid var(--ink-20)} .callout-icon{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--ink)} .callout .callout-label{font-weight:500;color:var(--ink);margin-bottom:0.25rem}
-        .quote-block{background:var(--ink);border-radius:24px;padding:2.5rem;margin:3rem 0;text-align:center} .quote-block p{color:var(--white);font-family:var(--font-serif);font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:400;font-style:italic;line-height:1.5;margin:0}
-        .cards-2{display:grid;grid-template-columns:1fr;gap:1rem;margin:2.5rem 0} @media(min-width:768px){.cards-2{grid-template-columns:repeat(2,1fr)}}
-        .compare-card{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10)} .compare-card h3{font-family:var(--font-sans);font-size:1rem;font-weight:600;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.75rem} .compare-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem} .compare-list li{font-size:0.8125rem;font-weight:300;display:flex;align-items:flex-start;gap:0.5rem}
-        .registry-card{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);transition:all 0.3s} .registry-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06)} .registry-card h4{font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.5rem} .registry-card p{font-size:0.8125rem;font-weight:300;margin:0}
-        .card-silo-icon{width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--paper);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-        .article-faq-layout{display:flex;flex-direction:column;gap:2rem} @media(min-width:1024px){.article-faq-layout{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start}}
-        .faq-item{background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;overflow:hidden} .faq-item summary{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;cursor:pointer;font-family:var(--font-serif);font-weight:500;color:var(--ink);font-size:0.95rem;list-style:none;transition:background 0.3s} .faq-item summary::-webkit-details-marker{display:none} .faq-item summary:hover{background:var(--paper)} .faq-item .chevron{transition:transform 0.3s;flex-shrink:0;color:var(--ink-light)} .faq-item[open] .chevron{transform:rotate(180deg)} .faq-item .answer{padding:0 1.5rem 1.25rem;color:var(--ink-light);font-size:0.875rem;line-height:1.7;font-weight:300}
-        .article-author-grid{display:flex;flex-direction:column;gap:2rem;padding-top:2rem;margin-top:3rem;border-top:1px solid var(--ink-10)} @media(min-width:768px){.article-author-grid{flex-direction:row;align-items:flex-start;gap:2.5rem}}
-        .avatar-lg{width:64px;height:64px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-serif);font-size:1.25rem;font-weight:500;flex-shrink:0}
-        .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)} .related h3{font-size:1.125rem;font-weight:500;margin-bottom:1rem} .related a{display:block;padding:1rem 1.25rem;background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;transition:all 0.3s} .related a:hover{border-color:var(--ink);transform:translateX(4px)}
-        .back-link{text-align:center;margin-top:2rem;margin-bottom:3rem} .back-link a{font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s} .back-link a:hover{color:var(--ink)}
-        .site-footer{background:var(--paper);padding:3rem 0;border-top:1px solid var(--ink-10)} .footer-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem} @media(max-width:767px){.footer-inner{padding:0 1.25rem}} .footer-links{display:flex;gap:1.5rem;align-items:center} .footer-links a{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s} .footer-links a:hover{color:var(--ink)} .footer-copy{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em}
-        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)} [data-animate].visible{opacity:1;transform:translateY(0)}
-        @media print{.site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print,.article-sidebar{display:none!important} body{background:#fff;color:#000} .article-content-grid{display:block}}
+        .prose{font-size:clamp(0.95rem,2vw,1.0625rem);line-height:1.8;color:var(--ink-light)}.prose p{margin-bottom:1.5rem}.prose h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:500;margin-top:4rem;margin-bottom:1.5rem;scroll-margin-top:80px}.prose h3{font-size:1.25rem;font-weight:500;margin-top:2.5rem;margin-bottom:1rem}.prose a.link{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px}.prose a.link:hover{color:var(--ink-light)}
+        .check-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin:2rem 0}.check-list li{display:flex;align-items:flex-start;gap:0.75rem}.check-icon{width:20px;height:20px;flex-shrink:0;margin-top:3px;color:var(--ink)}
+        .callout{border-radius:16px;padding:1.5rem;margin:2.5rem 0;display:flex;align-items:flex-start;gap:0.75rem;background:var(--paper);border:1px solid var(--ink-20)}.callout-icon{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--ink)}.callout .callout-label{font-weight:500;color:var(--ink);margin-bottom:0.25rem}
+        .quote-block{background:var(--ink);border-radius:24px;padding:2.5rem;margin:3rem 0;text-align:center}.quote-block p{color:var(--white);font-family:var(--font-serif);font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:400;font-style:italic;line-height:1.5;margin:0}
+        .cards-2{display:grid;grid-template-columns:1fr;gap:1rem;margin:2.5rem 0}@media(min-width:768px){.cards-2{grid-template-columns:repeat(2,1fr)}}
+        .compare-card{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10)}.compare-card h3{font-family:var(--font-sans);font-size:1rem;font-weight:600;margin-bottom:0.75rem}.compare-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}.compare-list li{font-size:0.8125rem;font-weight:300;display:flex;align-items:flex-start;gap:0.5rem}
+        .registry-card{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);transition:all 0.3s}.registry-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06)}.registry-card h4{font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.5rem}.registry-card p{font-size:0.8125rem;font-weight:300;margin:0}
+        .faq-item{background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;overflow:hidden}.faq-item summary{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;cursor:pointer;font-family:var(--font-serif);font-weight:500;color:var(--ink);font-size:0.95rem;list-style:none;transition:background 0.3s}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:hover{background:var(--paper)}.faq-item .chevron{transition:transform 0.3s;flex-shrink:0;color:var(--ink-light)}.faq-item[open] .chevron{transform:rotate(180deg)}.faq-item .answer{padding:0 1.5rem 1.25rem;color:var(--ink-light);font-size:0.875rem;line-height:1.7;font-weight:300}
+        .author-card{display:flex;align-items:flex-start;gap:1.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)}.avatar-lg{width:64px;height:64px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-serif);font-size:1.25rem;font-weight:500;flex-shrink:0}
+        .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)}.related h3{font-size:1.125rem;font-weight:500;margin-bottom:1rem}.related a{display:block;padding:1rem 1.25rem;background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;transition:all 0.3s}.related a:hover{border-color:var(--ink);transform:translateX(4px)}
+        .back-link{text-align:center;margin-top:2rem;margin-bottom:3rem}.back-link a{font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.back-link a:hover{color:var(--ink)}
+        .site-footer{background:var(--paper);padding:3rem 0;border-top:1px solid var(--ink-10)}.footer-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}@media(max-width:767px){.footer-inner{padding:0 1.25rem}}.footer-links{display:flex;gap:1.5rem;align-items:center}.footer-links a{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.footer-links a:hover{color:var(--ink)}.footer-copy{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em}
+        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}[data-animate].visible{opacity:1;transform:translateY(0)}
+        @media print{.site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important}body{background:#fff;color:#000}}
     </style>
 </head>
 <body>
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
+    <!-- NAV -->
     <nav id="site-nav" class="site-nav" role="navigation" aria-label="Navigation principale">
         <div class="nav-inner">
             <a href="../" class="nav-logo" aria-label="Accueil CQSEV">CQSEV.</a>
             <div class="nav-links">
-                <a href="../#comprendre" class="nav-link">Comprendre</a><a href="../#concept" class="nav-link">Concept</a><a href="../#framework" class="nav-link">Framework</a><a href="../#matrice" class="nav-link">Matrice</a><a href="../#terrain" class="nav-link">Terrain</a><a href="../#auteur" class="nav-link">Auteur</a>
-                <a href="./" class="nav-link active">Blog</a><a href="../#contact" class="nav-cta">Contact</a>
+                <a href="../#comprendre" class="nav-link">Comprendre</a>
+                <a href="../#concept" class="nav-link">Concept</a>
+                <a href="../#framework" class="nav-link">Framework</a>
+                <a href="../#matrice" class="nav-link">Matrice</a>
+                <a href="../#terrain" class="nav-link">Terrain</a>
+                <a href="../#auteur" class="nav-link">Auteur</a>
+                <a href="./" class="nav-link active">Blog</a>
+                <a href="../#contact" class="nav-cta">Contact</a>
             </div>
             <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
         </div>
         <div id="mob-menu" class="mob-menu" role="menu">
-            <a href="../#comprendre" role="menuitem">Comprendre</a><a href="../#concept" role="menuitem">Concept</a><a href="../#framework" role="menuitem">Framework</a><a href="../#matrice" role="menuitem">Matrice</a><a href="../#terrain" role="menuitem">Terrain</a><a href="../#auteur" role="menuitem">Auteur</a>
+            <a href="../#comprendre" role="menuitem">Comprendre</a>
+            <a href="../#concept" role="menuitem">Concept</a>
+            <a href="../#framework" role="menuitem">Framework</a>
+            <a href="../#matrice" role="menuitem">Matrice</a>
+            <a href="../#terrain" role="menuitem">Terrain</a>
+            <a href="../#auteur" role="menuitem">Auteur</a>
             <a href="./" role="menuitem" style="color:var(--ink);font-weight:500;">Blog</a>
             <a href="../#contact" role="menuitem" style="margin-top:0.75rem;display:block;text-align:center;padding:0.75rem;border-radius:9999px;border:1px solid var(--ink-20);">Contact</a>
         </div>
     </nav>
 
-    <div class="article-breakout" style="padding-top:7rem;padding-bottom:1rem;">
+    <!-- BREADCRUMB -->
+    <div class="article-container" style="padding-top:7rem;padding-bottom:1rem;">
         <nav aria-label="Fil d'Ariane" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);">
-            <a href="../" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Accueil</a><span style="margin:0 0.5rem;">/</span>
-            <a href="./" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Blog</a><span style="margin:0 0.5rem;">/</span>
+            <a href="../" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Accueil</a>
+            <span style="margin:0 0.5rem;">/</span>
+            <a href="./" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Blog</a>
+            <span style="margin:0 0.5rem;">/</span>
             <span style="color:var(--ink);">Qu'est-ce que la gouvernance des données ?</span>
         </nav>
     </div>
 
-    <article>
+    <!-- ARTICLE -->
+    <article class="article-container" style="padding-bottom:3rem;">
 
-        <!-- HEADER paysage -->
-        <div class="article-breakout" style="padding-bottom:3rem;">
-            <header class="article-header-grid" data-animate>
+        <!-- HEADER -->
+        <header style="margin-bottom:3rem;" data-animate>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+                <span class="tag">Gouvernance</span>
+                <span class="tag">Débutant</span>
+                <span class="tag">Analogie</span>
+            </div>
+            <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
+                Qu'est-ce que la gouvernance des données ? L'analogie de la bibliothèque
+            </h1>
+            <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:var(--ink-light);line-height:1.6;margin-bottom:2rem;font-weight:300;">
+                La gouvernance des données, ça semble compliqué. En réalité, c'est aussi simple que de bien organiser une bibliothèque. Voici tout ce que vous devez savoir — expliqué sans jargon technique.
+            </p>
+            <div style="display:flex;align-items:center;gap:1rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
+                <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:500;">OC</div>
                 <div>
-                    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
-                        <span class="tag">Gouvernance</span><span class="tag">Débutant</span><span class="tag">Analogie</span>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;">
-                        <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:500;">OC</div>
-                        <div>
-                            <p style="font-weight:500;color:var(--ink);font-size:0.875rem;">Oleg Chitic</p>
-                            <p style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);margin-top:0.125rem;"><time datetime="2026-04-01">01 avril 2026</time> · 7 min</p>
-                        </div>
-                    </div>
-                    <div style="background:var(--ink);border-radius:16px;padding:1.5rem;">
-                        <p style="color:var(--white);font-family:var(--font-serif);font-size:1rem;font-style:italic;line-height:1.5;margin:0;">
-                            « La meilleure gouvernance est celle que les gens suivent naturellement parce qu'elle leur facilite la vie. »
-                        </p>
-                    </div>
+                    <p style="font-weight:500;color:var(--ink);font-size:0.875rem;">Oleg Chitic</p>
+                    <p style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);margin-top:0.125rem;"><time datetime="2026-04-01">01 avril 2026</time> · 7 min de lecture</p>
                 </div>
-                <div>
-                    <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
-                        Qu'est-ce que la gouvernance des données ? L'analogie de la bibliothèque
-                    </h1>
-                    <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:var(--ink-light);line-height:1.6;font-weight:300;">
-                        La gouvernance des données, ça semble compliqué. En réalité, c'est aussi simple que de bien organiser une bibliothèque. Voici tout ce que vous devez savoir — sans jargon.
-                    </p>
-                </div>
-            </header>
+            </div>
+        </header>
+
+        <!-- TL;DR -->
+        <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:2rem;position:relative;overflow:hidden;" data-animate>
+            <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
+            <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> En résumé</h2>
+            <p style="color:var(--ink-light);line-height:1.7;font-weight:300;">La <strong>gouvernance des données</strong> est l'ensemble des règles, des rôles et des outils qui permettent à une organisation de savoir quelles données elle possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables. Comme une bibliothèque bien organisée : chaque livre est classé, chaque section a un responsable, et tout le monde sait où chercher. Cet article présente aussi les <strong>4 outils essentiels</strong> (les registres de gouvernance) et les <strong>5 questions CQSEV</strong> pour évaluer votre situation.</p>
+            <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">⏱️ 7 minutes</p>
         </div>
 
-        <!-- BODY — Sidebar + Main -->
-        <div class="article-breakout" style="padding-bottom:3rem;">
-            <div class="article-content-grid">
+        <!-- VOCABULAIRE CLÉ -->
+        <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:2rem;" data-animate>
+            <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">📖 Vocabulaire clé de cet article</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Gouvernance</strong> — les règles et les responsables des données</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Catalogue</strong> — l'inventaire de toutes les données de l'organisation</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Dictionnaire</strong> — les définitions de chaque donnée</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Data Owner</strong> — le responsable des données d'un domaine</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Data Steward</strong> — le gardien des données au quotidien</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>CQSEV</strong> — les 5 axes pour évaluer votre gouvernance</div>
+            </div>
+        </div>
 
-                <!-- SIDEBAR -->
-                <aside class="article-sidebar" data-animate>
-                    <nav class="sidebar-nav" aria-label="Sommaire">
-                        <h2>Sommaire</h2>
-                        <ol>
-                            <li><a href="#bibliotheque"><span class="num">1.</span> La bibliothèque</a></li>
-                            <li><a href="#sans-avec"><span class="num">2.</span> Sans vs Avec</a></li>
-                            <li><a href="#valeur"><span class="num">3.</span> Valeur concrète</a></li>
-                            <li><a href="#outils"><span class="num">4.</span> 4 outils</a></li>
-                            <li><a href="#cinq-questions"><span class="num">5.</span> 5 questions CQSEV</a></li>
-                            <li><a href="#commencer"><span class="num">6.</span> Par où commencer</a></li>
-                            <li><a href="#faq-article"><span class="num">7.</span> FAQ</a></li>
-                        </ol>
-                    </nav>
-                    <div class="sidebar-cta">
-                        <p>Grille diagnostic 5×3</p>
-                        <a href="../cqsev-grille-diagnostic.xlsx" download><svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Télécharger</a>
+        <!-- SOMMAIRE -->
+        <nav style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:3rem;" aria-label="Sommaire" data-animate>
+            <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">Dans cet article</h2>
+            <ol style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+                <li><a href="#bibliotheque" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">1.</span> L'analogie de la bibliothèque</a></li>
+                <li><a href="#sans-avec" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">2.</span> Sans gouvernance vs avec gouvernance</a></li>
+                <li><a href="#valeur" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">3.</span> La valeur concrète</a></li>
+                <li><a href="#outils" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">4.</span> Les 4 outils de votre bibliothèque de données</a></li>
+                <li><a href="#cinq-questions" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">5.</span> Les 5 questions CQSEV</a></li>
+                <li><a href="#commencer" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">6.</span> Par où commencer ?</a></li>
+                <li><a href="#faq-article" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">7.</span> Questions fréquentes</a></li>
+            </ol>
+        </nav>
+
+        <!-- PROSE -->
+        <div class="prose">
+
+            <!-- SECTION 1 — La bibliothèque -->
+            <h2 id="bibliotheque">L'analogie de la bibliothèque</h2>
+
+            <p>Imaginez une bibliothèque avec des milliers de livres. Des romans, des encyclopédies, des manuels techniques, des revues. Des étagères partout, sur trois étages.</p>
+
+            <p>Maintenant, imaginez que cette bibliothèque n'a <strong>aucune organisation</strong>. Pas de classement par sujet. Pas de catalogue. Pas de bibliothécaire. Les livres sont posés n'importe où. Certains sont en double, d'autres sont abîmés, et personne ne sait qui a emprunté quoi.</p>
+
+            <p>Ce serait le chaos, n'est-ce pas ?</p>
+
+            <p><strong>La gouvernance des données, c'est exactement l'organisation de cette bibliothèque</strong> — mais appliquée aux données de votre organisation. C'est décider :</p>
+
+            <ul class="check-list">
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>📚 <strong>Comment classer les livres ?</strong> → Comment organiser et classifier vos données</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>🔑 <strong>Qui peut emprunter quoi ?</strong> → Qui a le droit d'accéder à quelles données</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>🔍 <strong>Comment savoir si un livre est abîmé ?</strong> → Comment vérifier la qualité des données</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>👤 <strong>Qui est responsable de chaque section ?</strong> → Qui s'occupe de quelles données</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>🗂️ <strong>Où trouver un livre rapidement ?</strong> → Comment retrouver les données dont on a besoin</span></li>
+            </ul>
+
+            <p>La gouvernance des données, c'est créer les fondations qui permettent à une organisation de <strong>faire confiance à ses données</strong>.</p>
+
+            <div class="callout" style="background:var(--white);border-color:var(--ink-10);">
+                <div>
+                    <p class="callout-label">Définition simple :</p>
+                    <p style="font-size:0.875rem;font-weight:300;margin:0;">La <strong>gouvernance des données</strong> est l'ensemble des règles, des rôles et des outils qui permettent à une organisation de savoir quelles données elle possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables et utiles.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 2 — Sans / Avec -->
+            <h2 id="sans-avec">Sans gouvernance vs avec gouvernance</h2>
+
+            <p>La différence est simple. Reprenons notre bibliothèque :</p>
+
+            <div class="cards-2">
+                <div class="compare-card" style="border-left:3px solid #991B1B;">
+                    <h3 style="color:#991B1B;">😰 Bibliothèque sans organisation</h3>
+                    <ul class="compare-list">
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> 15 exemplaires du même livre sur des étagères différentes</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> « C'est quoi ce livre ? Il n'a pas de titre. »</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> Deux sections disent des choses contradictoires sur le même sujet</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> Personne ne sait qui a emprunté le livre rare</li>
+                    </ul>
+                </div>
+                <div class="compare-card" style="border-left:3px solid #065F46;">
+                    <h3 style="color:#065F46;">✅ Bibliothèque bien organisée</h3>
+                    <ul class="compare-list">
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Un seul exemplaire de référence, bien classé</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Un catalogue complet — chaque livre a une fiche</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Les informations sont fiables et cohérentes</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> On sait qui emprunte quoi et quand</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>En entreprise, c'est exactement pareil :</p>
+
+            <div class="cards-2">
+                <div class="compare-card" style="border-left:3px solid #991B1B;">
+                    <h3 style="color:#991B1B;">😰 Sans gouvernance des données</h3>
+                    <ul class="compare-list">
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> 15 versions du même fichier Excel</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> « C'est quoi ce champ dans la base de données ? »</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> Marketing et Finance ont des chiffres différents</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> Personne ne sait qui a accès aux données sensibles</li>
+                    </ul>
+                </div>
+                <div class="compare-card" style="border-left:3px solid #065F46;">
+                    <h3 style="color:#065F46;">✅ Avec gouvernance des données</h3>
+                    <ul class="compare-list">
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Une seule source de vérité</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Un dictionnaire de données clair</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Données fiables et cohérentes partout</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Accès contrôlés et tracés</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 3 — Valeur concrète -->
+            <h2 id="valeur">La valeur concrète</h2>
+
+            <p>« D'accord, mais concrètement, ça sert à quoi ? » Voici ce que la gouvernance des données apporte au quotidien :</p>
+
+            <ul class="check-list">
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>⚡ <strong>Décisions plus rapides</strong> — Quand tout le monde utilise les mêmes données, on arrête de débattre sur les chiffres et on passe à l'action</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>💰 <strong>Moins d'erreurs coûteuses</strong> — Les données sont vérifiées avant d'arriver dans les rapports, pas après</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>⚖️ <strong>Conformité légale</strong> — La Loi 25 au Québec exige de protéger les données personnelles. La gouvernance rend ça possible</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>🤝 <strong>Confiance des clients</strong> — Quand vous protégez les données de vos clients, ils vous font confiance</span></li>
+            </ul>
+
+            <div class="quote-block"><p>« La meilleure gouvernance est celle que les gens suivent naturellement parce qu'elle leur facilite la vie. »</p></div>
+
+            <!-- SECTION 4 — Les 4 outils (Registres) -->
+            <h2 id="outils">Les 4 outils de votre bibliothèque de données</h2>
+
+            <p>Une bibliothèque bien organisée a des outils : un catalogue, un système de classification, un carnet pour noter les problèmes, une boîte pour les demandes. Pour vos données, c'est pareil. Voici les <strong>4 registres de gouvernance</strong> — les outils indispensables pour organiser vos données :</p>
+
+            <!-- Registre 1 — Catalogue -->
+            <div class="cards-2" style="margin-top:2rem;">
+                <div class="registry-card" style="border-left:3px solid #2563EB;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.5rem;">🗂️</span>
+                        <h4>1. Le catalogue de données</h4>
                     </div>
-                    <div style="background:var(--paper);border-radius:16px;padding:1.25rem;border:1px solid var(--ink-10);">
-                        <h2 style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
-                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                            Vocabulaire
-                        </h2>
-                        <div style="display:flex;flex-direction:column;gap:0.5rem;">
-                            <div style="font-size:0.75rem;font-weight:300;"><strong>Gouvernance</strong> — les règles</div>
-                            <div style="font-size:0.75rem;font-weight:300;"><strong>Catalogue</strong> — l'inventaire</div>
-                            <div style="font-size:0.75rem;font-weight:300;"><strong>Dictionnaire</strong> — les définitions</div>
-                            <div style="font-size:0.75rem;font-weight:300;"><strong>Data Owner</strong> — le responsable</div>
-                            <div style="font-size:0.75rem;font-weight:300;"><strong>Data Steward</strong> — le gardien</div>
-                            <div style="font-size:0.75rem;font-weight:300;"><strong>CQSEV</strong> — 5 axes d'évaluation</div>
-                        </div>
+                    <p style="font-weight:500;color:#2563EB;margin-bottom:0.5rem;">👉 « Qu'est-ce qu'on a et où ? »</p>
+                    <p>C'est l'index de votre bibliothèque. L'inventaire officiel de toutes les données de l'organisation : dans quels systèmes elles vivent, qui en est responsable, et quel est leur niveau de sensibilité.</p>
+                    <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples concrets :</p>
+                        <p style="font-size:0.8125rem;margin:0;">Table « Clients_actifs » dans le CRM · Base RH (dossiers employés) · Rapport mensuel des ventes</p>
                     </div>
-                </aside>
+                </div>
 
-                <!-- MAIN -->
-                <div class="article-main">
-
-                    <!-- TL;DR -->
-                    <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:3rem;position:relative;overflow:hidden;" data-animate>
-                        <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
-                        <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
-                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> En résumé
-                        </h2>
-                        <p style="color:var(--ink-light);line-height:1.7;font-weight:300;">La <strong>gouvernance des données</strong> est l'ensemble des règles, rôles et outils qui permettent à une organisation de savoir quelles données elle possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables. Comme une bibliothèque bien organisée. Cet article présente les <strong>4 outils essentiels</strong> et les <strong>5 questions CQSEV</strong>.</p>
-                        <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Temps de lecture : 7 minutes</p>
+                <!-- Registre 2 — Dictionnaire -->
+                <div class="registry-card" style="border-left:3px solid #4F46E5;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.5rem;">📖</span>
+                        <h4>2. Le dictionnaire de données</h4>
                     </div>
-
-                    <!-- SECTION 1 -->
-                    <div class="prose prose-first">
-                        <h2 id="bibliotheque">L'analogie de la bibliothèque</h2>
-                        <p>Imaginez une bibliothèque avec des milliers de livres. Des romans, des encyclopédies, des manuels techniques, des revues. Des étagères partout, sur trois étages.</p>
-                        <p>Maintenant, imaginez que cette bibliothèque n'a <strong>aucune organisation</strong>. Pas de classement. Pas de catalogue. Pas de bibliothécaire. Les livres sont posés n'importe où.</p>
-                        <p><strong>La gouvernance des données, c'est exactement l'organisation de cette bibliothèque</strong> — appliquée aux données de votre organisation. C'est décider :</p>
-                        <ul class="check-list">
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Comment classer les livres ?</strong> → Comment organiser vos données</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Qui peut emprunter quoi ?</strong> → Qui a le droit d'accéder à quelles données</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Comment savoir si un livre est abîmé ?</strong> → Comment vérifier la qualité</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Qui est responsable de chaque section ?</strong> → Qui s'occupe de quelles données</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Où trouver un livre rapidement ?</strong> → Comment retrouver les données</span></li>
-                        </ul>
-                        <div class="callout" style="background:var(--white);border-color:var(--ink-10);"><div><p class="callout-label">Définition simple :</p><p style="font-size:0.875rem;font-weight:300;margin:0;">La <strong>gouvernance des données</strong> est l'ensemble des règles, des rôles et des outils qui permettent à une organisation de savoir quelles données elle possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables.</p></div></div>
-
-                        <!-- SECTION 2 -->
-                        <h2 id="sans-avec">Sans gouvernance vs avec gouvernance</h2>
+                    <p style="font-weight:500;color:#4F46E5;margin-bottom:0.5rem;">👉 « Que signifient nos données ? »</p>
+                    <p>C'est le dictionnaire de votre bibliothèque. La définition claire de chaque donnée pour éviter toute ambiguïté entre les départements.</p>
+                    <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples concrets :</p>
+                        <p style="font-size:0.8125rem;margin:0;">« Client_actif » = a effectué une transaction dans les 12 derniers mois · « Date_fermeture » = clôture administrative, pas fin de service</p>
                     </div>
+                </div>
 
-                    <div class="cards-2" data-animate>
-                        <div class="compare-card" style="border-left:3px solid var(--ink);">
-                            <h3><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg> Sans gouvernance</h3>
-                            <ul class="compare-list">
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> 15 versions du même fichier</li>
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> « C'est quoi ce champ ? »</li>
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> Marketing et Finance ont des chiffres différents</li>
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> Personne ne sait qui a accès aux données sensibles</li>
-                            </ul>
-                        </div>
-                        <div class="compare-card" style="border-left:3px solid var(--ink);">
-                            <h3><svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Avec gouvernance</h3>
-                            <ul class="compare-list">
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> Une seule source de vérité</li>
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> Un dictionnaire de données clair</li>
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> Données fiables et cohérentes</li>
-                                <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> Accès contrôlés et tracés</li>
-                            </ul>
-                        </div>
+                <!-- Registre 3 — Enjeux -->
+                <div class="registry-card" style="border-left:3px solid #EA580C;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.5rem;">🔥</span>
+                        <h4>3. Le registre des enjeux</h4>
                     </div>
-
-                    <div class="prose">
-                        <!-- SECTION 3 -->
-                        <h2 id="valeur">La valeur concrète</h2>
-                        <p>« D'accord, mais concrètement, ça sert à quoi ? »</p>
-                        <ul class="check-list">
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Décisions plus rapides</strong> — Quand tout le monde utilise les mêmes données, on passe à l'action</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Moins d'erreurs coûteuses</strong> — Les données sont vérifiées avant d'arriver dans les rapports</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Conformité légale</strong> — La Loi 25 exige de protéger les données personnelles</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Confiance des clients</strong> — Quand vous protégez leurs données, ils vous font confiance</span></li>
-                        </ul>
-
-                        <!-- SECTION 4 — Les 4 outils -->
-                        <h2 id="outils">Les 4 outils de votre bibliothèque de données</h2>
-                        <p>Voici les <strong>4 registres de gouvernance</strong> :</p>
+                    <p style="font-weight:500;color:#EA580C;margin-bottom:0.5rem;">👉 « Quels problèmes sont suivis ? »</p>
+                    <p>C'est le carnet du bibliothécaire. La liste officielle des problèmes connus liés aux données : doublons, erreurs, risques de non-conformité. Chaque problème a un responsable et un plan d'action.</p>
+                    <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples concrets :</p>
+                        <p style="font-size:0.8125rem;margin:0;">Clients dupliqués dans le CRM · Taux d'erreur élevé sur les adresses · Non-conformité potentielle avec la Loi 25</p>
                     </div>
+                </div>
 
-                    <div class="cards-2" data-animate>
-                        <div class="registry-card" style="border-left:3px solid var(--ink);">
-                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                                <div class="card-silo-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
-                                <h4>1. Le catalogue de données</h4>
-                            </div>
-                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.5rem;">« Qu'est-ce qu'on a et où ? »</p>
-                            <p>L'inventaire officiel de toutes les données de l'organisation.</p>
-                            <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;"><p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples :</p><p style="font-size:0.8125rem;margin:0;">Table « Clients_actifs » dans le CRM · Base RH · Rapport mensuel des ventes</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink-light);">
-                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                                <div class="card-silo-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
-                                <h4>2. Le dictionnaire de données</h4>
-                            </div>
-                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.5rem;">« Que signifient nos données ? »</p>
-                            <p>La définition claire de chaque donnée pour éviter toute ambiguïté.</p>
-                            <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;"><p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples :</p><p style="font-size:0.8125rem;margin:0;">« Client_actif » = transaction dans les 12 derniers mois · « Date_fermeture » = clôture administrative</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink-30);">
-                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                                <div class="card-silo-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4.5c-.77-.833-2.694-.833-3.464 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg></div>
-                                <h4>3. Le registre des enjeux</h4>
-                            </div>
-                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.5rem;">« Quels problèmes sont suivis ? »</p>
-                            <p>La liste des problèmes connus : doublons, erreurs, risques de non-conformité.</p>
-                            <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;"><p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples :</p><p style="font-size:0.8125rem;margin:0;">Clients dupliqués dans le CRM · Taux d'erreur élevé sur les adresses · Non-conformité Loi 25</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink-20);">
-                            <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
-                                <div class="card-silo-icon"><svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
-                                <h4>4. Le registre des demandes</h4>
-                            </div>
-                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.5rem;">« Qui demande quoi ? »</p>
-                            <p>Un endroit unique pour recevoir et suivre toutes les demandes liées aux données.</p>
-                            <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;"><p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples :</p><p style="font-size:0.8125rem;margin:0;">Demande d'accès · Nouvelle métrique · Extraction pour audit · Rectification Loi 25</p></div>
-                        </div>
+                <!-- Registre 4 — Demandes -->
+                <div class="registry-card" style="border-left:3px solid #059669;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.5rem;">📬</span>
+                        <h4>4. Le registre des demandes</h4>
                     </div>
-
-                    <div class="prose">
-                        <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le coût de l'ambiguïté :</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Sans ces 4 registres, les équipes interprètent différemment les mêmes données. Exemple : <em>« C'est quoi <strong>cust_stat</strong> dans la base ? »</em> Sans dictionnaire, c'est une devinette.</p></div></div>
-                                                <!-- SECTION 5 — CQSEV -->
-                        <h2 id="cinq-questions">Les 5 questions CQSEV</h2>
-                        <p>Comment savoir si votre « bibliothèque de données » est bien organisée ? Posez-vous ces <strong>5 questions simples</strong> :</p>
+                    <p style="font-weight:500;color:#059669;margin-bottom:0.5rem;">👉 « Qui demande quoi ? »</p>
+                    <p>C'est la boîte aux lettres de la bibliothèque. Un endroit unique pour recevoir et suivre toutes les demandes liées aux données : accès, nouvelles métriques, extractions, corrections.</p>
+                    <div style="margin-top:1rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Exemples concrets :</p>
+                        <p style="font-size:0.8125rem;margin:0;">Demande d'accès à une base · Nouvelle métrique pour la direction · Extraction pour un audit · Demande de rectification (Loi 25)</p>
                     </div>
+                </div>
+            </div>
 
-                    <div style="display:flex;flex-direction:column;gap:1rem;margin:2rem 0;" data-animate>
-                        <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
-                            <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">C</span>
-                            <div><h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Conformité</h4><p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Respecte-t-on les lois et règlements ?</p><p>La Loi 25 et le RGPD exigent de protéger les données personnelles. Savez-vous où sont les données sensibles ?</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
-                            <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">Q</span>
-                            <div><h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Qualité</h4><p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Les données sont-elles fiables ?</p><p>Y a-t-il des doublons dans votre base clients ? Les adresses sont-elles à jour ? Les rapports sont-ils fiables ?</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
-                            <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">S</span>
-                            <div><h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Sécurité</h4><p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Les données sont-elles protégées ?</p><p>Les bonnes données aux bonnes personnes. Comme une clé de bureau : tout le monde n'a pas accès à tout.</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
-                            <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">E</span>
-                            <div><h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Efficacité</h4><p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Peut-on trouver et comprendre les données facilement ?</p><p>C'est le catalogue de votre bibliothèque. Avez-vous un dictionnaire de données ?</p></div>
-                        </div>
-                        <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
-                            <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">V</span>
-                            <div><h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Valorisation</h4><p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Les données génèrent-elles de la valeur ?</p><p>Une bibliothèque parfaitement organisée mais que personne ne visite ne sert à rien. Vos données aident-elles à prendre de meilleures décisions ?</p></div>
-                        </div>
+            <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg><div><p class="callout-label">Le coût de l'ambiguïté :</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Sans ces 4 registres, les équipes Opérations, Finance et TI interprètent différemment les mêmes données. Exemple classique : <em>« C'est quoi <strong>cust_stat</strong> dans la base ? »</em> Sans dictionnaire, c'est une devinette. Avec un dictionnaire, on sait instantanément que c'est le statut du client — Actif, Inactif ou Suspendu.</p></div></div>
+                        <!-- ============================================== -->
+            <!-- SECTION 5 — Les 5 questions CQSEV              -->
+            <!-- ============================================== -->
+            <h2 id="cinq-questions">Les 5 questions CQSEV</h2>
+
+            <p>Comment savoir si votre « bibliothèque de données » est bien organisée ? Posez-vous ces <strong>5 questions simples</strong>. C'est le cœur du framework CQSEV :</p>
+
+            <div style="display:flex;flex-direction:column;gap:1rem;margin:2rem 0;">
+
+                <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">C</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Conformité</h4>
+                        <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Respecte-t-on les lois et règlements ?</p>
+                        <p>La Loi 25 au Québec et le RGPD en Europe exigent de protéger les données personnelles. Savez-vous où sont les données sensibles dans votre organisation ? Qui y a accès ? Avez-vous un plan en cas d'incident ?</p>
                     </div>
+                </div>
 
-                    <div class="prose">
-                        <p>Ces 5 questions fonctionnent pour 30 ou 5 000 employés.</p>
-                        <p><a href="../#axes" class="link">→ Voir les 5 axes CQSEV en détail</a></p>
-
-                        <!-- SECTION 6 — Par où commencer -->
-                        <h2 id="commencer">Par où commencer ?</h2>
-                        <p>Voici <strong>3 actions concrètes</strong> que vous pouvez faire cette semaine :</p>
-                        <h3>Action 1 — Posez les 5 questions CQSEV à 3 collègues</h3>
-                        <p>30 minutes avec un collègue des opérations, un de la finance et un des TI. Les silences montrent où sont les failles.</p>
-                        <h3>Action 2 — Documentez vos 20 données les plus importantes</h3>
-                        <p>Un fichier Excel. 20 champs. Pour chacun : nom, signification, valeurs possibles, responsable. C'est le début de votre dictionnaire.</p>
-                        <h3>Action 3 — Vérifiez qui a accès aux données sensibles</h3>
-                        <p>Vos dossiers partagés les plus importants. Y a-t-il des accès « temporaires » qui durent depuis des mois ?</p>
-
-                        <div class="callout" style="background:var(--white);border-color:var(--ink-10);"><div><p class="callout-label">Le secret :</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Commencez par <strong>un seul domaine</strong> — souvent les données clients. Prouvez la valeur. Puis élargissez.</p></div></div>
-                        <p><a href="../#matrice" class="link">→ Découvrir la matrice CQSEV et télécharger la grille</a></p>
+                <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">Q</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Qualité</h4>
+                        <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Les données sont-elles fiables ?</p>
+                        <p>Des données inexactes mènent à de mauvaises décisions. Y a-t-il des doublons dans votre base clients ? Les adresses sont-elles à jour ? Les rapports sont-ils fiables ou faut-il les re-vérifier à la main ?</p>
                     </div>
+                </div>
 
-                    <div class="quote-block"><p>« La gouvernance des données n'est pas une destination. C'est une habitude organisationnelle qui se construit un axe à la fois. »</p></div>
-
-                    <div class="prose">
-                        <h3>Pour approfondir</h3>
-                        <ul class="check-list">
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="gouvernance-donnees-guide-complet.html" class="link">Guide complet 2026</a> — rôles clés, 7 erreurs, 5 étapes</span></li>
-                            <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="gouverner-gerer-transformer-donnees.html" class="link">Gouverner, Gérer, Transformer</a> — les 3 volets</span></li>
-                        </ul>
+                <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">S</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Sécurité</h4>
+                        <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Les données sont-elles protégées ?</p>
+                        <p>Les bonnes données aux bonnes personnes — et rien de plus. Comme une clé de bureau : tout le monde n'a pas accès à tout. Quand avez-vous vérifié les permissions pour la dernière fois ?</p>
                     </div>
+                </div>
 
-                </div><!-- ferme article-main -->
-            </div><!-- ferme article-content-grid -->
-        </div><!-- ferme article-breakout -->
+                <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">E</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Efficacité</h4>
+                        <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Peut-on trouver et comprendre les données facilement ?</p>
+                        <p>Si personne ne sait où sont les données ou ce qu'elles signifient, elles ne servent à rien. C'est le catalogue de votre bibliothèque. Avez-vous un dictionnaire de données ? Un catalogue ?</p>
+                    </div>
+                </div>
 
-        <!-- CTA -->
-        <div class="article-breakout">
-            <div style="background:var(--ink);border-radius:24px;padding:2.5rem;text-align:center;margin-top:3rem;color:var(--white);">
-                <h3 style="font-family:var(--font-serif);font-size:1.375rem;color:var(--white);margin-bottom:0.5rem;">Évaluez votre gouvernance en 30 minutes</h3>
-                <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem;font-weight:300;font-size:0.875rem;">La grille CQSEV (5×3) en Excel. 15 points de contrôle. Gratuit.</p>
-                <a href="../cqsev-grille-diagnostic.xlsx" download class="btn-pill" style="background:var(--white);color:var(--ink);">
-                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    Télécharger la grille
+                <div class="registry-card" style="border-left:3px solid var(--ink);display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2rem;font-weight:500;color:var(--ink);flex-shrink:0;line-height:1;">V</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;">Valorisation</h4>
+                        <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Les données génèrent-elles de la valeur ?</p>
+                        <p>Le but final. Une bibliothèque parfaitement organisée mais que personne ne visite ne sert à rien. Vos données aident-elles concrètement à prendre de meilleures décisions ?</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <p>Ces 5 questions sont universelles. Elles fonctionnent pour une PME de 30 employés comme pour une organisation de 5 000 personnes. Ce qui change, c'est le niveau de formalisation — pas les questions.</p>
+
+            <p><a href="../#axes" class="link">→ Voir les 5 axes CQSEV en détail sur la page d'accueil</a></p>
+
+            <!-- ============================================== -->
+            <!-- SECTION 6 — Par où commencer                   -->
+            <!-- ============================================== -->
+            <h2 id="commencer">Par où commencer ?</h2>
+
+            <p>Si vous lisez cet article, vous êtes probablement au début du chemin. Voici <strong>3 actions concrètes</strong> que vous pouvez faire cette semaine — sans outil coûteux, sans consultant, sans réorganisation :</p>
+
+            <h3>Action 1 — Posez les 5 questions CQSEV à 3 collègues</h3>
+            <p>Prenez 30 minutes avec un collègue des opérations, un de la finance et un des TI. Posez-leur les 5 questions ci-dessus. Notez les réponses. Les silences et les hésitations sont aussi importants que les réponses — ils montrent où sont les failles.</p>
+
+            <h3>Action 2 — Documentez vos 20 données les plus importantes</h3>
+            <p>Ouvrez un fichier Excel. Listez les 20 champs de données les plus utilisés dans votre organisation. Pour chacun, notez : comment il s'appelle, ce qu'il veut dire, quelles valeurs sont possibles, et qui en est responsable. C'est le début de votre dictionnaire de données.</p>
+
+            <h3>Action 3 — Vérifiez qui a accès aux données sensibles</h3>
+            <p>Prenez vos dossiers partagés les plus importants. Vérifiez la liste des personnes qui y ont accès. Y a-t-il des gens qui ne devraient plus y être ? Des accès « temporaires » qui durent depuis des mois ? Corrigez les cas les plus évidents.</p>
+
+            <div class="callout" style="background:var(--white);border-color:var(--ink-10);"><div><p class="callout-label">💡 Le secret :</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Ne cherchez pas à tout gouverner en même temps. Commencez par <strong>un seul domaine</strong> — souvent les données clients ou financières. Prouvez la valeur. Puis élargissez. Rome ne s'est pas construite en un jour, et votre gouvernance non plus.</p></div></div>
+
+            <p>Pour aller plus loin, téléchargez la <strong>grille de diagnostic CQSEV</strong> — une matrice 5×3 en Excel qui vous permet d'évaluer votre maturité en 30 minutes :</p>
+
+            <p><a href="../#matrice" class="link">→ Découvrir la matrice CQSEV et télécharger la grille</a></p>
+
+            <div class="quote-block"><p>« La gouvernance des données n'est pas une destination. C'est une habitude organisationnelle qui se construit un axe à la fois. »</p></div>
+
+            <h3>Pour approfondir</h3>
+            <p>Si vous voulez aller plus loin, deux articles complémentaires :</p>
+            <ul class="check-list">
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="gouvernance-donnees-guide-complet.html" class="link">Gouvernance des données : guide complet 2026</a> — les rôles clés, les 7 erreurs à éviter et comment démarrer en 5 étapes</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="gouverner-gerer-transformer-donnees.html" class="link">Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois</a> — comment connecter les règles, le terrain et les systèmes automatisés</span></li>
+            </ul>
+        </div>
+
+        <!-- ================================================== -->
+        <!-- CTA GRILLE                                         -->
+        <!-- ================================================== -->
+        <div style="background:var(--ink);border-radius:24px;padding:2.5rem;text-align:center;margin-top:3rem;color:var(--white);">
+            <h3 style="font-family:var(--font-serif);font-size:1.375rem;color:var(--white);margin-bottom:0.5rem;">📊 Évaluez votre gouvernance en 30 minutes</h3>
+            <p style="color:rgba(255,255,255,0.6);margin-bottom:1.5rem;font-weight:300;font-size:0.875rem;">La grille CQSEV (5 axes × 3 volets) en Excel. 15 points de contrôle. Gratuit.</p>
+            <a href="../cqsev-grille-diagnostic.xlsx" download class="btn-pill" style="background:var(--white);color:var(--ink);">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Télécharger la grille (Excel)
+            </a>
+        </div>
+
+        <!-- ================================================== -->
+        <!-- FAQ                                                -->
+        <!-- ================================================== -->
+        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
+            <h2 id="faq-article" style="font-size:1.5rem;margin-bottom:1.5rem;">Questions fréquentes</h2>
+
+            <details class="faq-item" open>
+                <summary>Qu'est-ce que la gouvernance des données en termes simples ?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer">C'est l'ensemble des règles, des rôles et des outils qui permettent à une organisation de savoir quelles données elle possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables. Imaginez une bibliothèque : sans classification, sans catalogue et sans bibliothécaire, c'est le chaos. La gouvernance des données, c'est l'organisation de votre bibliothèque de données.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>La gouvernance des données, c'est juste pour les grandes entreprises ?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer">Non. Une PME de 30 employés a les mêmes besoins fondamentaux : savoir où sont ses données, s'assurer qu'elles sont fiables, et respecter la Loi 25. La différence, c'est que la gouvernance d'une PME peut démarrer en une demi-journée avec un fichier Excel et 3 politiques d'une page. Pas besoin d'un outil à 500 K$.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Quels sont les outils essentiels de la gouvernance des données ?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer">Les 4 registres de gouvernance : le <strong>catalogue de données</strong> (l'inventaire — qu'est-ce qu'on a et où), le <strong>dictionnaire de données</strong> (les définitions — que signifient nos données), le <strong>registre des enjeux</strong> (les problèmes suivis — doublons, erreurs, risques) et le <strong>registre des demandes</strong> (qui demande quoi). Ces registres peuvent être de simples fichiers Excel au départ.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Qu'est-ce que le framework CQSEV ?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer">CQSEV est un framework pragmatique qui évalue la maturité de vos données sur 5 axes : Conformité (respecte-t-on les lois ?), Qualité (les données sont-elles fiables ?), Sécurité (sont-elles protégées ?), Efficacité (peut-on les trouver facilement ?) et Valorisation (créent-elles de la valeur ?). Créé par Oleg Chitic après 15 ans d'expérience terrain à Montréal. <a href="../#comprendre" style="color:var(--ink);font-weight:500;">En savoir plus</a>.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Par où commencer la gouvernance des données ?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer">Trois actions concrètes cette semaine : 1) Posez les 5 questions CQSEV à 3 collègues de départements différents. 2) Documentez vos 20 données les plus importantes dans un fichier Excel. 3) Vérifiez qui a accès aux données sensibles et corrigez les cas évidents. Commencez par un seul domaine (clients ou finances), prouvez la valeur, puis élargissez.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary>Quelle est la différence entre un catalogue et un dictionnaire de données ?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer">Le <strong>catalogue</strong> répond à « Qu'est-ce qu'on a et où ? » — c'est l'inventaire de vos systèmes et de vos bases de données. Le <strong>dictionnaire</strong> répond à « Que signifient nos données ? » — c'est la définition de chaque champ. Par exemple, le catalogue dit : « Il y a une table Clients dans le CRM. » Le dictionnaire dit : « Le champ Client_actif signifie : a effectué une transaction dans les 12 derniers mois. »</div>
+            </details>
+        </div>
+
+        <!-- ================================================== -->
+        <!-- AUTEUR                                             -->
+        <!-- ================================================== -->
+        <div class="author-card">
+            <div class="avatar-lg">OC</div>
+            <div>
+                <p style="font-weight:500;font-size:1.125rem;color:var(--ink);">Oleg Chitic</p>
+                <p class="body-sm" style="margin-top:0.25rem;">Créateur du framework CQSEV. 15+ ans d'expérience en gouvernance et gestion des données dans les secteurs financier, assurance, commerce de détail et technologie à Montréal.</p>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;color:var(--ink);font-size:0.875rem;font-weight:500;">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Suivre sur LinkedIn
                 </a>
             </div>
         </div>
 
-        <!-- FAQ paysage -->
-        <div class="article-breakout" style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
-            <div class="article-faq-layout">
-                <div>
-                    <h2 id="faq-article" style="font-size:1.5rem;margin-bottom:0.5rem;">Questions <em>fréquentes</em></h2>
-                    <p class="body-sm" style="color:var(--ink-light);">Sur la gouvernance des données.</p>
-                </div>
-                <div>
-                    <details class="faq-item" open>
-                        <summary>Qu'est-ce que la gouvernance des données en termes simples ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">L'ensemble des règles, rôles et outils qui permettent de savoir quelles données on possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables. Comme une bibliothèque bien organisée.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>C'est juste pour les grandes entreprises ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">Non. Une PME de 30 employés peut démarrer en une demi-journée avec un fichier Excel et 3 politiques d'une page.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Quels sont les outils essentiels ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">Les 4 registres : catalogue (inventaire), dictionnaire (définitions), registre des enjeux (problèmes suivis), registre des demandes (qui demande quoi). De simples fichiers Excel au départ.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Qu'est-ce que le framework CQSEV ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">5 axes — Conformité, Qualité, Sécurité, Efficacité, Valorisation — × 3 volets = 15 points de contrôle. <a href="../#comprendre" style="color:var(--ink);font-weight:500;">En savoir plus</a>.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Par où commencer ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">1) Posez les 5 questions CQSEV à 3 collègues. 2) Documentez vos 20 données clés. 3) Vérifiez les accès aux données sensibles. Un domaine à la fois.</div>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Différence entre catalogue et dictionnaire de données ?<svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></summary>
-                        <div class="answer">Le catalogue : « Qu'est-ce qu'on a et où ? » Le dictionnaire : « Que signifient nos données ? » Le catalogue dit qu'il existe une table Clients. Le dictionnaire dit que Client_actif = transaction dans les 12 derniers mois.</div>
-                    </details>
-                </div>
-            </div>
+        <!-- ================================================== -->
+        <!-- ARTICLES CONNEXES                                  -->
+        <!-- ================================================== -->
+        <div class="related">
+            <h3 style="font-family:var(--font-serif);">Articles connexes</h3>
+            <a href="gouvernance-donnees-guide-complet.html">
+                <span style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Pour approfondir</span>
+                <span style="display:block;font-weight:500;color:var(--ink);margin-top:0.25rem;">Gouvernance des données : guide complet 2026 →</span>
+            </a>
+            <a href="gouverner-gerer-transformer-donnees.html">
+                <span style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Les 3 volets</span>
+                <span style="display:block;font-weight:500;color:var(--ink);margin-top:0.25rem;">Gouverner, Gérer, Transformer : pourquoi les trois →</span>
+            </a>
         </div>
 
-        <!-- Author paysage -->
-        <div class="article-breakout">
-            <div class="article-author-grid">
-                <div class="avatar-lg">OC</div>
-                <div>
-                    <p style="font-weight:500;font-size:1.125rem;color:var(--ink);">Oleg Chitic</p>
-                    <p class="body-sm" style="margin-top:0.25rem;">Créateur du framework CQSEV. 15+ ans en gouvernance et gestion des données — banque, assurance, commerce de détail, technologie — à Montréal.</p>
-                    <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:0.5rem;color:var(--ink);font-size:0.875rem;font-weight:500;">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        Suivre sur LinkedIn
-                    </a>
-                </div>
-            </div>
-            <div class="related">
-                <h3 style="font-family:var(--font-serif);">Articles connexes</h3>
-                <a href="gouvernance-donnees-guide-complet.html">
-                    <span style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Pour approfondir</span>
-                    <span style="display:block;font-weight:500;color:var(--ink);margin-top:0.25rem;">Gouvernance des données : guide complet 2026 →</span>
-                </a>
-                <a href="gouverner-gerer-transformer-donnees.html">
-                    <span style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Les 3 volets</span>
-                    <span style="display:block;font-weight:500;color:var(--ink);margin-top:0.25rem;">Gouverner, Gérer, Transformer : pourquoi les trois →</span>
-                </a>
-            </div>
-            <div class="back-link"><a href="./">← Retour au blog</a></div>
-        </div>
+        <!-- RETOUR -->
+        <div class="back-link"><a href="./">← Retour au blog</a></div>
 
     </article>
 
+    <!-- ====================================================== -->
+    <!-- FAQ SCHEMA.ORG                                         -->
+    <!-- ====================================================== -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org", "@type": "FAQPage",
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
         "mainEntity": [
-            {"@type":"Question","name":"Qu'est-ce que la gouvernance des données en termes simples ?","acceptedAnswer":{"@type":"Answer","text":"L'ensemble des règles, rôles et outils qui permettent de savoir quelles données on possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables. Comme une bibliothèque bien organisée."}},
-            {"@type":"Question","name":"La gouvernance des données est-elle juste pour les grandes entreprises ?","acceptedAnswer":{"@type":"Answer","text":"Non. Une PME peut démarrer en une demi-journée avec un fichier Excel et 3 politiques d'une page."}},
-            {"@type":"Question","name":"Quels sont les outils essentiels de la gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"Les 4 registres : catalogue (inventaire), dictionnaire (définitions), registre des enjeux (problèmes suivis), registre des demandes (qui demande quoi)."}},
-            {"@type":"Question","name":"Qu'est-ce que le framework CQSEV ?","acceptedAnswer":{"@type":"Answer","text":"5 axes — Conformité, Qualité, Sécurité, Efficacité, Valorisation — évalués à travers 3 volets. Créé par Oleg Chitic à Montréal."}},
-            {"@type":"Question","name":"Par où commencer la gouvernance des données ?","acceptedAnswer":{"@type":"Answer","text":"1) Posez les 5 questions CQSEV à 3 collègues. 2) Documentez vos 20 données clés. 3) Vérifiez les accès aux données sensibles. Un domaine à la fois."}},
-            {"@type":"Question","name":"Quelle est la différence entre un catalogue et un dictionnaire de données ?","acceptedAnswer":{"@type":"Answer","text":"Le catalogue répond à « Qu'est-ce qu'on a et où ? ». Le dictionnaire répond à « Que signifient nos données ? »."}}
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que la gouvernance des données en termes simples ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "C'est l'ensemble des règles, des rôles et des outils qui permettent à une organisation de savoir quelles données elle possède, ce qu'elles signifient, qui peut y accéder, et comment les garder fiables. Imaginez une bibliothèque : sans classification, sans catalogue et sans bibliothécaire, c'est le chaos."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "La gouvernance des données est-elle juste pour les grandes entreprises ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Non. Une PME de 30 employés a les mêmes besoins fondamentaux. La gouvernance d'une PME peut démarrer en une demi-journée avec un fichier Excel et 3 politiques d'une page."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quels sont les outils essentiels de la gouvernance des données ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Les 4 registres de gouvernance : le catalogue de données (l'inventaire), le dictionnaire de données (les définitions), le registre des enjeux (les problèmes suivis) et le registre des demandes (qui demande quoi). Ces registres peuvent être de simples fichiers Excel au départ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Qu'est-ce que le framework CQSEV ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "CQSEV est un framework pragmatique qui évalue la maturité des données sur 5 axes : Conformité, Qualité, Sécurité, Efficacité et Valorisation. Créé par Oleg Chitic après 15 ans d'expérience terrain à Montréal."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Par où commencer la gouvernance des données ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Trois actions concrètes : 1) Posez les 5 questions CQSEV à 3 collègues. 2) Documentez vos 20 données les plus importantes. 3) Vérifiez qui a accès aux données sensibles. Commencez par un seul domaine, prouvez la valeur, puis élargissez."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Quelle est la différence entre un catalogue et un dictionnaire de données ?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Le catalogue répond à « Qu'est-ce qu'on a et où ? » — c'est l'inventaire. Le dictionnaire répond à « Que signifient nos données ? » — c'est la définition de chaque champ."
+                }
+            }
         ]
     }
     </script>
 
+    <!-- ====================================================== -->
+    <!-- FOOTER                                                 -->
+    <!-- ====================================================== -->
     <footer class="site-footer" role="contentinfo">
         <div class="footer-inner">
             <a href="../" class="nav-logo" style="font-size:1.25rem;">CQSEV.</a>
             <span class="footer-copy">© 2026 Oleg Chitic. Tous droits réservés.</span>
             <div class="footer-links">
-                <a href="./">Blog</a><a href="../#contact">Contact</a><a href="../confidentialite.html">Confidentialité</a>
-                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                <a href="./">Blog</a>
+                <a href="../#contact">Contact</a>
+                <a href="../confidentialite.html">Confidentialité</a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
             </div>
         </div>
     </footer>
 
+    <!-- ====================================================== -->
+    <!-- JAVASCRIPT                                             -->
+    <!-- ====================================================== -->
     <script>
     (function() {
         'use strict';
-        var o = new IntersectionObserver(function(e) { e.forEach(function(i) { if (i.isIntersecting) { i.target.classList.add('visible'); o.unobserve(i.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        // Scroll Animations
+        var o = new IntersectionObserver(function(e) {
+            e.forEach(function(i) { if (i.isIntersecting) { i.target.classList.add('visible'); o.unobserve(i.target); } });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
         document.querySelectorAll('[data-animate]').forEach(function(el) { o.observe(el); });
-        var nav = document.getElementById('site-nav'), st = false;
+
+        // Nav Scroll
+        var nav = document.getElementById('site-nav');
+        var st = false;
         function un() { nav.classList.toggle('scrolled', window.scrollY > 20); st = false; }
         window.addEventListener('scroll', function() { if (!st) { requestAnimationFrame(un); st = true; } }, { passive: true });
+
+        // Mobile Menu
         var t = document.getElementById('menu-toggle'), m = document.getElementById('mob-menu');
-        if (t && m) { t.addEventListener('click', function() { var open = m.classList.contains('open'); m.classList.toggle('open'); m.style.display = open ? 'none' : 'block'; t.setAttribute('aria-expanded', String(!open)); }); m.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', function() { m.classList.remove('open'); m.style.display = 'none'; t.setAttribute('aria-expanded','false'); }); }); }
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) { anchor.addEventListener('click', function(e) { var id = this.getAttribute('href'); if (id === '#') return; var target = document.querySelector(id); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+        if (t && m) {
+            t.addEventListener('click', function() {
+                var open = m.classList.contains('open');
+                m.classList.toggle('open'); m.style.display = open ? 'none' : 'block';
+                t.setAttribute('aria-expanded', String(!open));
+            });
+            m.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() { m.classList.remove('open'); m.style.display = 'none'; t.setAttribute('aria-expanded','false'); });
+            });
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var id = this.getAttribute('href'); if (id === '#') return;
+                var target = document.querySelector(id);
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
     })();
     </script>
 
