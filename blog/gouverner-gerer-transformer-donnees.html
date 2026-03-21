@@ -402,31 +402,51 @@
     <!-- ====================================================== -->
     <article class="article-container" style="padding-bottom:3rem;">
 
-        <!-- HEADER -->
-        <header style="margin-bottom:3rem;" data-animate>
-            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
-                <span class="tag">Gouvernance</span>
-                <span class="tag">Gestion</span>
-                <span class="tag">Transformation</span>
-            </div>
-            <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
-                Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois
-            </h1>
-            <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:var(--ink-light);line-height:1.6;margin-bottom:2rem;font-weight:300;">
-                70 % des initiatives data échouent. Pas à cause de la technologie. Le vrai problème ? Trois mondes qui ne se parlent pas.
-            </p>
-            <div style="display:flex;align-items:center;gap:1rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
-                <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:500;">OC</div>
+        <!-- HEADER — Breakout paysage -->
+        <div class="article-breakout" style="padding-top:1rem;padding-bottom:3rem;">
+            <header class="article-header-grid" data-animate>
+    
+                <!-- Colonne gauche : meta -->
                 <div>
-                    <p style="font-weight:500;color:var(--ink);font-size:0.875rem;">Oleg Chitic</p>
-                    <p style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);margin-top:0.125rem;"><time datetime="2026-03-01">01 mars 2026</time> · 8 min de lecture</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+                        <span class="tag">Gouvernance</span>
+                        <span class="tag">Gestion</span>
+                        <span class="tag">Transformation</span>
+                    </div>
+    
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;">
+                        <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:500;">OC</div>
+                        <div>
+                            <p style="font-weight:500;color:var(--ink);font-size:0.875rem;">Oleg Chitic</p>
+                            <p style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);margin-top:0.125rem;"><time datetime="2026-03-01">01 mars 2026</time> · 8 min</p>
+                        </div>
+                    </div>
+    
+                    <!-- Citation -->
+                    <div style="background:var(--ink);border-radius:16px;padding:1.5rem;">
+                        <p style="color:var(--white);font-family:var(--font-serif);font-size:1rem;font-style:italic;line-height:1.5;margin:0;">
+                            « Le problème n'était pas l'outil. Le problème, c'est que trois mondes essentiels ne se parlaient pas. »
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </header>
+    
+                <!-- Colonne droite : titre -->
+                <div>
+                    <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
+                        Gouverner, Gérer, Transformer : pourquoi vos données ont besoin des trois
+                    </h1>
+                    <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:var(--ink-light);line-height:1.6;font-weight:300;">
+                        70 % des initiatives data échouent. Pas à cause de la technologie. Le vrai problème ? Trois mondes qui ne se parlent pas.
+                    </p>
+                </div>
+    
+            </header>
+        </div>
 
-        <!-- ================================================== -->
-        <!-- TL;DR — Termes clarifiés                           -->
-        <!-- ================================================== -->
+    <!-- PROSE CONTAINER -->
+        <div class="article-container">
+
+        <!-- TL;DR -->
         <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:2rem;position:relative;overflow:hidden;" data-animate>
             <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
             <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
@@ -434,26 +454,24 @@
                 En résumé
             </h2>
             <p style="color:var(--ink-light);line-height:1.7;font-weight:300;">
-                La <strong>gouvernance des données</strong> ne se limite pas à écrire des politiques. Pour fiabiliser vos données, il faut connecter trois volets : <strong>gouverner</strong> (définir les règles), <strong>gérer</strong> (les appliquer au quotidien) et <strong>transformer</strong> (les intégrer dans les circuits automatisés qui traitent vos données). Le framework <strong>CQSEV</strong> évalue chaque axe dans ces 3 volets simultanément pour identifier exactement où intervenir.
+                La <strong>gouvernance des données</strong> ne se limite pas à écrire des politiques. Pour fiabiliser vos données, il faut connecter trois volets : <strong>gouverner</strong> (définir les règles), <strong>gérer</strong> (les appliquer au quotidien) et <strong>transformer</strong> (les intégrer dans les circuits automatisés). Le framework <strong>CQSEV</strong> évalue chaque axe dans ces 3 volets simultanément.
             </p>
             <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Temps de lecture : 8 minutes</p>
         </div>
 
-        <!-- ================================================== -->
-        <!-- VOCABULAIRE CLÉ — Nouveau bloc                    -->
-        <!-- ================================================== -->
+        <!-- Vocabulaire -->
         <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:2rem;" data-animate>
             <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;">
-            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-            Vocabulaire clé de cet article
-        </h2>
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                Vocabulaire clé de cet article
+            </h2>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
                 <div style="font-size:0.8125rem;font-weight:300;"><strong>Gouvernance</strong> — les règles et les responsables</div>
                 <div style="font-size:0.8125rem;font-weight:300;"><strong>Gestion</strong> — l'application quotidienne des règles</div>
-                <div style="font-size:0.8125rem;font-weight:300;"><strong>Transformation</strong> — les tuyaux automatiques qui déplacent et nettoient les données</div>
-                <div style="font-size:0.8125rem;font-weight:300;"><strong>Pipeline</strong> — un circuit automatisé de traitement des données</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Transformation</strong> — les tuyaux automatiques</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Pipeline</strong> — un circuit automatisé de traitement</div>
                 <div style="font-size:0.8125rem;font-weight:300;"><strong>CRM</strong> — logiciel de gestion des clients</div>
-                <div style="font-size:0.8125rem;font-weight:300;"><strong>Data Steward</strong> — le gardien des données au quotidien</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Data Steward</strong> — le gardien des données</div>
             </div>
         </div>
 
