@@ -643,6 +643,20 @@
         /* ================================================ */
         /* PRINT                                            */
         /* ================================================ */
+        @media print { .site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important} body{background:#fff;color:#000} .section{padding:2rem 0} }
+    </style>
+</head>
+<body>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+        @media print {
+            body::before,
+            .site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important}
+            body{background:#fff;color:#000}
+            .section{padding:2rem 0}
+        }
+        
         @media print {
             body::before {
                 display: none !important;
