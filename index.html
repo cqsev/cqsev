@@ -1237,56 +1237,71 @@
 })();
 </script>
 
-<!-- ====== CHATBOT IA — CQSEV Assistant ====== -->
+<!-- ====================================================== -->
+<!-- CHATBOT IA — CQSEV Assistant (Version Finale)         -->
+<!-- ====================================================== -->
+
+<!-- Chatbase Widget -->
 <script>
-window.chatbaseConfig = {
-    chatbotId: "o41raEM1Y-bD00ckgJ8M1",
-    domain: "www.chatbase.co",
-    isOpen: false,
-    position: "bottom-right",
-    theme: {
+    window.embeddedChatbotConfig = {
+        chatbotId: "o41raEM1Y-bD00ckgJ8M1",
+        domain: "www.chatbase.co",
+        isOpenByDefault: false,
+        position: "bottom-right",
+        theme: "light",
         buttonColor: "#1A1A1A",
-        chatWindowBackgroundColor: "#F7F5F0",
-        userMessageBackgroundColor: "#1A1A1A",
-        userMessageTextColor: "#FFFFFF",
-        botMessageBackgroundColor: "#FFFFFF",
-        botMessageTextColor: "#1A1A1A",
-        primaryColor: "#1A1A1A",
-        buttonIconColor: "#FFFFFF",
-        buttonIcon: "default",
-        borderRadius: "24px",
-        buttonBorderRadius: "9999px",
-        fontFamily: "Inter"
-    },
-    labels: {
-        title: "Assistant CQSEV",
-        subtitle: "Posez vos questions sur la gouvernance des données",
-        inputPlaceholder: "Écrivez votre message..."
+        bubbleColor: "#1A1A1A",
+        textColor: "#FFFFFF"
+    };
+</script>
+<script 
+    src="https://www.chatbase.co/embed.min.js" 
+    chatbotId="o41raEM1Y-bD00ckgJ8M1" 
+    domain="www.chatbase.co" 
+    defer>
+</script>
+
+<!-- Bouton manuel de secours (si le widget ne s'affiche pas) -->
+<button onclick="toggleChatbase()" style="
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    background: #1A1A1A;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(26,26,26,0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+">
+    <span>💬</span>
+    <span>Poser une question</span>
+</button>
+
+<script>
+    function toggleChatbase() {
+        if (typeof window.openChatbase !== 'undefined') {
+            window.openChatbase();
+        } else {
+            alert("Le chatbot est en cours de chargement. Veuillez patienter quelques secondes et réessayer.");
+        }
     }
-    }
-    </script>
-    <script src="https://www.chatbase.co/embed.min.js" defer></script>
-    
-    <style>
-    /* Corriger le conflit z-index avec le grain de papier */
-    #chatbase-bubble-button {
-        z-index: 99999 !important;
-        bottom: 24px !important;
-        right: 24px !important;
-    }
-    #chatbase-chat-window {
-        z-index: 99999 !important;
-        bottom: 90px !important;
-        right: 24px !important;
-        border: 1px solid var(--ink-10) !important;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.08) !important;
-    }
-    
-    /* Cacher le branding Chatbase */
-    #chatbase-chat-window a[href*="chatbase.co"] {
-        display: none !important;
-    }
-    </style>
+
+    // Afficher un message si le chatbot ne charge pas après 8 secondes
+    setTimeout(() => {
+        if (!document.querySelector('chatbase-chat-window')) {
+            console.warn("Chatbase n'a pas chargé correctement. Vérifiez votre ID.");
+        }
+    }, 8000);
+</script>
     
 </body>
 </html>
