@@ -1237,5 +1237,60 @@
 })();
 </script>
 
+<!-- ====== CHATBOT IA — CQSEV Assistant ====== -->
+<div id="chatbot-disclaimer" style="
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    z-index: 49;
+    background: var(--paper);
+    border: 1px solid var(--ink-10);
+    border-radius: 12px;
+    padding: 0.5rem 0.75rem;
+    max-width: 220px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+">
+    <p style="font-family:var(--font-mono);font-size:0.5625rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;margin:0 0 0.25rem;">Assistant IA</p>
+    <p style="font-family:var(--font-sans);font-size:0.75rem;color:var(--ink-light);line-height:1.4;margin:0;">
+        Réponses générées par IA. Pour un échange personnalisé, <a href="#contact" style="color:var(--ink);font-weight:500;">utilisez le formulaire</a>.
+    </p>
+    <button onclick="this.parentElement.style.display='none'" style="
+        position: absolute; top: 4px; right: 8px;
+        background: none; border: none; cursor: pointer;
+        font-size: 0.875rem; color: var(--ink-light); padding: 2px;
+    " aria-label="Fermer">×</button>
+</div>
+
+<script>
+    // Chatbase — remplacer TON_ID_CHATBASE par ton vrai ID
+    window.embeddedChatbotConfig = {
+        chatbotId: "o41raEM1Y-bD00ckgJ8M1",
+        domain: "www.chatbase.co"
+    };
+</script>
+<script
+    src="https://www.chatbase.co/embed.min.js"
+    chatbotId="o41raEM1Y-bD00ckgJ8M1"
+    domain="www.chatbase.co"
+    defer>
+</script>
+
+<script>
+    // Afficher le disclaimer quand le widget chatbot apparaît
+    (function() {
+        var disclaimer = document.getElementById('chatbot-disclaimer');
+        if (!disclaimer) return;
+        // Afficher après 3 secondes
+        setTimeout(function() {
+            disclaimer.style.display = 'block';
+            // Masquer automatiquement après 8 secondes
+            setTimeout(function() {
+                disclaimer.style.display = 'none';
+            }, 8000);
+        }, 3000);
+    })();
+</script>
+    
 </body>
 </html>
