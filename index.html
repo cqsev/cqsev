@@ -1239,17 +1239,54 @@
 
 <!-- ====== CHATBOT IA — CQSEV Assistant ====== -->
 <script>
-    window.embeddedChatbotConfig = {
-        chatbotId: "o41raEM1Y-bD00ckgJ8M1",
-        domain: "www.chatbase.co"
-    };
-</script>
-<script
-    src="https://www.chatbase.co/embed.min.js"
-    chatbotId="o41raEM1Y-bD00ckgJ8M1"
-    domain="www.chatbase.co"
-    defer>
-</script>
+window.chatbaseConfig = {
+    chatbotId: "o41raEM1Y-bD00ckgJ8M1",
+    domain: "www.chatbase.co",
+    isOpen: false,
+    position: "bottom-right",
+    theme: {
+        buttonColor: "#1A1A1A",
+        chatWindowBackgroundColor: "#F7F5F0",
+        userMessageBackgroundColor: "#1A1A1A",
+        userMessageTextColor: "#FFFFFF",
+        botMessageBackgroundColor: "#FFFFFF",
+        botMessageTextColor: "#1A1A1A",
+        primaryColor: "#1A1A1A",
+        buttonIconColor: "#FFFFFF",
+        buttonIcon: "default",
+        borderRadius: "24px",
+        buttonBorderRadius: "9999px",
+        fontFamily: "Inter"
+    },
+    labels: {
+        title: "Assistant CQSEV",
+        subtitle: "Posez vos questions sur la gouvernance des données",
+        inputPlaceholder: "Écrivez votre message..."
+    }
+    }
+    </script>
+    <script src="https://www.chatbase.co/embed.min.js" defer></script>
+    
+    <style>
+    /* Corriger le conflit z-index avec le grain de papier */
+    #chatbase-bubble-button {
+        z-index: 99999 !important;
+        bottom: 24px !important;
+        right: 24px !important;
+    }
+    #chatbase-chat-window {
+        z-index: 99999 !important;
+        bottom: 90px !important;
+        right: 24px !important;
+        border: 1px solid var(--ink-10) !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.08) !important;
+    }
+    
+    /* Cacher le branding Chatbase */
+    #chatbase-chat-window a[href*="chatbase.co"] {
+        display: none !important;
+    }
+    </style>
     
 </body>
 </html>
