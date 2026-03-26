@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ====== SEO ====== -->
+    <title>CQSEV — Govern, Manage and Transform your Data</title>
+    <meta name="description" content="CQSEV is a pragmatic framework with 5 pillars × 3 layers to govern, manage and transform your data — from compliance to value creation. Free diagnostic grid included.">
+    <meta name="author" content="Oleg Chitic">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cqsev.github.io/en/">
+    <meta name="theme-color" content="#F7F5F0">
+
+    <!-- ====== HREFLANG ====== -->
+    <link rel="alternate" hreflang="fr-CA" href="https://cqsev.github.io/">
+    <link rel="alternate" hreflang="en" href="https://cqsev.github.io/en/">
+    <link rel="alternate" hreflang="x-default" href="https://cqsev.github.io/">
+
+    <!-- ====== OPEN GRAPH ====== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CQSEV — Govern, Manage and Transform your Data">
+    <meta property="og:description" content="A framework with 5 pillars × 3 layers to make your data reliable. No bureaucracy. No unnecessary complexity. Download the free diagnostic grid. By Oleg Chitic.">
+    <meta property="og:url" content="https://cqsev.github.io/en/">
+    <meta property="og:image" content="https://cqsev.github.io/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="CQSEV">
+
+    <!-- ====== TWITTER ====== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CQSEV — From Policy to Pipeline">
+    <meta name="twitter:description" content="A pragmatic framework with 5 pillars × 3 layers to govern, manage and transform your data. Free diagnostic grid included.">
+    <meta name="twitter:image" content="https://cqsev.github.io/img/og-image.png">
+
+    <!-- ====== SCHEMA.ORG ====== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://cqsev.github.io/en/#website",
+                "name": "CQSEV",
+                "alternateName": ["CQSEV Framework", "CQSEV Data Governance Framework by Oleg Chitic"],
+                "url": "https://cqsev.github.io/en/",
+                "description": "CQSEV is a pragmatic 5-pillar framework to govern, manage and transform data.",
+                "inLanguage": "en",
+                "author": { "@id": "https://cqsev.github.io/#author" },
+                "publisher": { "@id": "https://cqsev.github.io/#author" }
+            },
+            {
+                "@type": "Person",
+                "@id": "https://cqsev.github.io/#author",
+                "name": "Oleg Chitic",
+                "jobTitle": "Data Governance and Management Expert",
+                "description": "Creator of the CQSEV framework. 15+ years of experience in data governance, management and transformation in Montreal.",
+                "image": "https://cqsev.github.io/oleg-chitic-expert-gouvernance-donnees-cqsev.gif",
+                "url": "https://cqsev.github.io/",
+                "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"],
+                "knowsAbout": ["Data Governance","Data Management","ETL/ELT","DAMA-DMBOK","Quebec Law 25","Data Quality","GDPR"]
+            },
+            {
+                "@type": "DefinedTerm",
+                "@id": "https://cqsev.github.io/#cqsev-framework",
+                "name": "CQSEV",
+                "description": "A pragmatic framework with 5 pillars (Compliance, Quality, Security, Efficiency, Value) × 3 layers (Govern, Manage, Transform) to assess an organization's data maturity. Created by Oleg Chitic in Montreal.",
+                "url": "https://cqsev.github.io/en/",
+                "termCode": "CQSEV",
+                "inDefinedTermSet": {
+                    "@type": "DefinedTermSet",
+                    "name": "Data Governance Frameworks"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ====== ASSETS ====== -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="48x48" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- ====== GTM ====== -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
+
+    <style>
+        :root {
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Inter', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --paper: #F7F5F0;
+            --white: #FFFFFF;
+            --ink: #1A1A1A;
+            --ink-light: #4A4A4A;
+            --ink-10: rgba(26,26,26,0.10);
+            --ink-5: rgba(26,26,26,0.05);
+            --ink-20: rgba(26,26,26,0.20);
+            --ink-30: rgba(26,26,26,0.30);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; background: var(--paper); }
+        section[id] { scroll-margin-top: 80px; }
+        body {
+            font-family: var(--font-sans);
+            color: var(--ink-light);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 49;
+            pointer-events: none;
+            opacity: 0.12;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        h1,h2,h3,h4,h5,h6 { font-family: var(--font-serif); color: var(--ink); font-weight: 500; }
+
+        .container { max-width: 1320px; margin: 0 auto; padding: 0 2.5rem; }
+        .container-md { max-width: 1080px; margin: 0 auto; padding: 0 2.5rem; }
+        .container-sm { max-width: 900px; margin: 0 auto; padding: 0 2.5rem; }
+        .container-xs { max-width: 760px; margin: 0 auto; padding: 0 2.5rem; }
+        @media (max-width: 767px) {
+            .container, .container-md, .container-sm, .container-xs { padding: 0 1.25rem; }
+        }
+        .section { padding: 8rem 0; border-top: 1px solid var(--ink-10); }
+        @media (max-width: 767px) { .section { padding: 4rem 0; } }
+
+        .label {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem; font-weight: 400;
+            color: var(--ink-light);
+            text-transform: uppercase; letter-spacing: 0.15em;
+            margin-bottom: 1.5rem; display: block;
+        }
+        .heading-xl { font-size: clamp(3rem, 8vw, 8rem); line-height: 0.9; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+        .heading-lg { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 1.05; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+        .heading-md { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; margin-bottom: 1rem; }
+        .heading-sm { font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.75rem; }
+        .body-lg { font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7; font-weight: 300; }
+        .body { font-size: 1rem; line-height: 1.7; font-weight: 300; }
+        .body-sm { font-size: 0.875rem; line-height: 1.6; font-weight: 300; }
+
+        .sr-only {
+            position: absolute;
+            width: 1px; height: 1px;
+            padding: 0; margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap; border: 0;
+        }
+
+        .site-nav {
+            position: fixed; top: 0; width: 100%; z-index: 50;
+            transition: all 0.3s ease;
+            padding: 1.5rem 0;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+        }
+        .site-nav.scrolled {
+            background: rgba(247,245,240,0.92);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border-bottom-color: var(--ink-10);
+            padding: 1rem 0;
+        }
+        .nav-inner {
+            max-width: 1320px; margin: 0 auto; padding: 0 2.5rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        @media (max-width: 767px) { .nav-inner { padding: 0 1.25rem; } }
+        .nav-logo {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.5rem; color: var(--ink); letter-spacing: -0.02em;
+        }
+        .nav-links { display: none; align-items: center; gap: 2rem; }
+        .nav-link {
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink-light); text-transform: uppercase;
+            letter-spacing: 0.1em; transition: color 0.3s;
+        }
+        .nav-link:hover { color: var(--ink); }
+        .nav-cta {
+            font-family: var(--font-mono); font-size: 0.6875rem;
+            color: var(--ink); text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.5rem 1.5rem; border-radius: 9999px;
+            border: 1px solid var(--ink-20); transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--ink); color: var(--paper); }
+        .menu-toggle { display: block; color: var(--ink-light); padding: 0.5rem; }
+        .mob-menu {
+            display: none; position: absolute; top: 100%; left: 0; width: 100%;
+            background: var(--paper); border-bottom: 1px solid var(--ink-10);
+            padding: 1rem 1.5rem;
+        }
+        .mob-menu.open { display: block; }
+        .mob-menu a {
+            display: block; font-family: var(--font-mono); font-size: 0.75rem;
+            color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em;
+            padding: 0.75rem 0; border-bottom: 1px solid var(--ink-5);
+        }
+        @media (min-width: 768px) { .nav-links { display: flex; } .menu-toggle { display: none; } }
+
+        .btn-pill {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500;
+            padding: 1rem 2rem; border-radius: 9999px; transition: all 0.3s ease;
+        }
+        .btn-pill:hover { transform: translateY(-2px); }
+        .btn-dark { background: var(--ink); color: var(--white); }
+        .btn-dark:hover { background: #333; box-shadow: 0 8px 24px rgba(26,26,26,0.15); }
+        .btn-outline { border: 1px solid var(--ink-20); color: var(--ink); background: transparent; }
+        .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+        .hero-bottom { display: flex; flex-direction: column; gap: 2rem; margin-top: 4rem; }
+        @media (min-width: 768px) {
+            .hero-bottom { flex-direction: row; align-items: flex-end; justify-content: space-between; gap: 4rem; }
+        }
+
+        .hero-grid { display: flex; flex-direction: column; align-items: center; gap: 3rem; }
+        @media (min-width: 1024px) {
+            .hero-grid { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4rem; }
+        }
+
+        .framework-visual {
+            --fv-size: 260px; --fv-r: -100px; --fv-ring: 30px;
+            --fv-dash: 58px; --fv-cell: 2.25rem; --fv-cell-m: -1.125rem;
+            --fv-font: 1rem; --fv-volet: 0.75rem;
+            position: relative; width: var(--fv-size); height: var(--fv-size); flex-shrink: 0;
+        }
+        @media (min-width: 768px) {
+            .framework-visual {
+                --fv-size: 340px; --fv-r: -134px; --fv-ring: 36px;
+                --fv-dash: 72px; --fv-cell: 2.75rem; --fv-cell-m: -1.375rem;
+                --fv-font: 1.125rem; --fv-volet: 0.8125rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .framework-visual {
+                --fv-size: 380px; --fv-r: -150px; --fv-ring: 40px;
+                --fv-dash: 80px; --fv-cell: 3rem; --fv-cell-m: -1.5rem;
+                --fv-font: 1.25rem; --fv-volet: 0.875rem;
+            }
+        }
+        .fv-ring-outer { position: absolute; inset: var(--fv-ring); border-radius: 50%; border: 1px solid var(--ink-10); }
+        .fv-ring-dashed { position: absolute; inset: var(--fv-dash); border-radius: 50%; border: 1px dashed var(--ink-10); animation: fv-spin 120s linear infinite; }
+        .fv-letter {
+            position: absolute; top: 50%; left: 50%;
+            width: var(--fv-cell); height: var(--fv-cell);
+            margin: var(--fv-cell-m) 0 0 var(--fv-cell-m);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-serif); font-size: var(--fv-font); font-weight: 600;
+            color: var(--ink); background: var(--white);
+            border: 1px solid var(--ink-10); border-radius: 50%; z-index: 2;
+            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+        .fv-letter:hover { background: var(--ink); color: var(--paper); box-shadow: 0 4px 16px rgba(26,26,26,0.12); }
+        .fv-c { transform: rotate(0deg)   translateY(var(--fv-r)) rotate(0deg);   }
+        .fv-q { transform: rotate(72deg)  translateY(var(--fv-r)) rotate(-72deg); }
+        .fv-s { transform: rotate(144deg) translateY(var(--fv-r)) rotate(-144deg);}
+        .fv-e { transform: rotate(216deg) translateY(var(--fv-r)) rotate(-216deg);}
+        .fv-v { transform: rotate(288deg) translateY(var(--fv-r)) rotate(-288deg);}
+        .fv-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 1; }
+        .fv-volet { font-family: var(--font-serif); font-size: var(--fv-volet); font-weight: 500; color: var(--ink); display: block; line-height: 1.4; }
+        .fv-dot { display: block; width: 3px; height: 3px; background: var(--ink-20); border-radius: 50%; margin: 0.375rem auto; }
+        .fv-tag { display: block; font-family: var(--font-mono); font-size: 0.5625rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--ink-light); margin-top: 0.75rem; }
+        @keyframes fv-spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+        .card { background: var(--white); border: 1px solid var(--ink-10); border-radius: 24px; padding: 2.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+        .card-paper { background: var(--paper); }
+        .card-icon { width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid var(--ink-10); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem; background: var(--paper); }
+        .card-watermark { position: absolute; top: 1.5rem; right: 1.5rem; font-family: var(--font-serif); font-size: 3.75rem; font-weight: 700; color: var(--ink-5); pointer-events: none; line-height: 1; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .grid-5 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .grid-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .grid-value { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 640px) { .grid-value { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .grid-value { grid-template-columns: repeat(4, 1fr); } }
+        .principle-icon { width: 4rem; height: 4rem; border-radius: 16px; border: 1px solid var(--ink-10); background: var(--white); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+        .principle-icon span { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; color: var(--ink); }
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-5 { grid-template-columns: repeat(5, 1fr); }
+        }
+        @media (max-width: 767px) { .grid-5 { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) {
+            .grid-2-sticky { display: grid; grid-template-columns: 5fr 6fr; gap: 6rem; }
+            .sticky-left { position: sticky; top: 8rem; align-self: start; }
+        }
+
+        .compare-card { background: var(--white); border-radius: 16px; padding: 2rem; border: 1px solid var(--ink-10); }
+        .compare-card h3 { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+        .compare-list { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; }
+        .compare-list li { font-size: 0.875rem; font-weight: 300; display: flex; align-items: flex-start; gap: 0.5rem; }
+
+        .case-card { display: flex; gap: 2rem; align-items: flex-start; background: var(--paper); border: 1px solid var(--ink-10); border-radius: 24px; padding: 2.5rem 3rem; transition: all 0.3s ease; }
+        .case-card:hover { background: var(--white); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+        .case-num { font-family: var(--font-serif); font-size: 3rem; font-weight: 500; color: var(--ink-5); line-height: 1; transition: color 0.3s; flex-shrink: 0; padding-top: 0.25rem; }
+        .case-card:hover .case-num { color: var(--ink); }
+        .case-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid var(--ink-10); }
+        .case-tag { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.375rem 0.75rem; border-radius: 9999px; border: 1px solid var(--ink-20); color: var(--ink); }
+        @media (max-width: 767px) { .case-card { flex-direction: column; gap: 1rem; padding: 1.5rem; } }
+
+        .author-grid { display: flex; flex-direction: column; align-items: center; gap: 4rem; }
+        @media (min-width: 1024px) { .author-grid { flex-direction: row; align-items: flex-start; gap: 6rem; } .author-photo-wrap { flex-shrink: 0; } }
+        .author-photo-wrap { width: 100%; max-width: 320px; }
+        .author-photo-arch { aspect-ratio: 3/4; border-radius: 50% 50% 0 0 / 40% 40% 0 0; overflow: hidden; border: 8px solid var(--white); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .author-photo { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: filter 0.7s ease; }
+        .author-photo:hover { filter: grayscale(0%); }
+        .author-quote { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 500; color: var(--ink); font-style: italic; line-height: 1.4; border-left: 2px solid var(--ink-20); padding-left: 1.5rem; margin: 1.5rem 0; }
+        .stat-card { background: var(--white); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--ink-5); text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .stat-num { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem; }
+        .stat-label { font-family: var(--font-mono); font-size: 0.625rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.15em; }
+
+        .faq-layout { display: flex; flex-direction: column; gap: 3rem; }
+        @media (min-width: 1024px) { .faq-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; } .faq-layout > div:first-child { position: sticky; top: 8rem; } }
+        .faq-item { background: var(--white); border-radius: 16px; border: 1px solid var(--ink-10); margin-bottom: 0.75rem; overflow: hidden; }
+        .faq-item summary { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; cursor: pointer; font-family: var(--font-serif); font-weight: 500; color: var(--ink); font-size: 0.95rem; list-style: none; transition: background 0.3s; }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary:hover { background: var(--paper); }
+        .faq-item .chevron { transition: transform 0.3s; flex-shrink: 0; color: var(--ink-light); }
+        .faq-item[open] .chevron { transform: rotate(180deg); }
+        .faq-item .answer { padding: 0 1.5rem 1.25rem; color: var(--ink-light); font-size: 0.875rem; line-height: 1.7; font-weight: 300; }
+
+        .form-group { margin-bottom: 2rem; }
+        .form-label { display: block; font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.5rem; }
+        .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--ink-20); padding: 0.75rem 0; font-family: var(--font-sans); font-size: 1rem; color: var(--ink); font-weight: 400; transition: border-color 0.3s; }
+        .form-input:focus { outline: none; border-bottom-color: var(--ink); }
+        .form-input::placeholder { color: var(--ink-30); }
+        textarea.form-input { resize: none; min-height: 120px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+
+        .site-footer { background: var(--paper); padding: 3rem 0; border-top: 1px solid var(--ink-10); }
+        .footer-inner { max-width: 1320px; margin: 0 auto; padding: 0 2.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        @media (max-width: 767px) { .footer-inner { padding: 0 1.25rem; } }
+        .footer-links { display: flex; gap: 1.5rem; align-items: center; }
+        .footer-links a { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--ink); }
+        .footer-copy { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em; }
+
+        [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+        [data-animate].visible { opacity: 1; transform: translateY(0); }
+        [data-animate][data-delay="1"] { transition-delay: 100ms; }
+        [data-animate][data-delay="2"] { transition-delay: 200ms; }
+        [data-animate][data-delay="3"] { transition-delay: 300ms; }
+        [data-animate][data-delay="4"] { transition-delay: 400ms; }
+        @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.5} }
+        .pulse { animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+        @media print {
+            body::before { display: none !important; }
+            .site-nav, .mob-menu, .menu-toggle, .site-footer, .no-print { display: none !important; }
+            body { background: #fff; color: #000; }
+            .section { padding: 2rem 0; }
+        }
+    </style>
+</head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ====================================================== -->
+<!-- NAVIGATION                                             -->
+<!-- ====================================================== -->
+<nav id="site-nav" class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="#hero" class="nav-logo" aria-label="CQSEV Home">CQSEV.</a>
+        <div class="nav-links">
+            <a href="#understand" class="nav-link">Understand</a>
+            <a href="#concept" class="nav-link">Concept</a>
+            <a href="#framework" class="nav-link">Framework</a>
+            <a href="#practice" class="nav-link">In Practice</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="blog/" class="nav-link">Blog</a>
+            <a href="#contact" class="nav-cta">Contact</a>
+            <a href="/" class="nav-link" style="display:flex;align-items:center;gap:0.375rem;" aria-label="Version française">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                FR
+            </a>
+        </div>
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-label="Menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    </div>
+    <div id="mob-menu" class="mob-menu" role="menu">
+        <a href="#understand" role="menuitem">Understand</a>
+        <a href="#concept" role="menuitem">Concept</a>
+        <a href="#framework" role="menuitem">Framework</a>
+        <a href="#practice" role="menuitem">In Practice</a>
+        <a href="#about" role="menuitem">About</a>
+        <a href="#faq" role="menuitem">FAQ</a>
+        <a href="blog/" role="menuitem">Blog</a>
+        <a href="/" role="menuitem">🌐 Français</a>
+        <a href="#contact" role="menuitem" style="margin-top:0.75rem;display:block;text-align:center;padding:0.75rem;border-radius:9999px;border:1px solid var(--ink-20);">Contact</a>
+    </div>
+</nav>
+
+<!-- ====================================================== -->
+<!-- HERO                                                   -->
+<!-- ====================================================== -->
+<section id="hero" class="section" style="min-height:100vh;display:flex;align-items:center;padding-top:5rem;border-top:none;background:var(--paper);" aria-label="Introduction">
+    <div class="container">
+        <div data-animate>
+            <div class="hero-grid">
+                <div>
+                    <div style="display:inline-flex;align-items:center;gap:0.75rem;padding:0.375rem 1rem;border-radius:9999px;border:1px solid var(--ink-10);background:rgba(255,255,255,0.5);margin-bottom:3rem;">
+                        <span style="width:6px;height:6px;background:var(--ink);border-radius:50%;" class="pulse"></span>
+                        <span class="label" style="margin-bottom:0;">Data Governance</span>
+                    </div>
+                    <h1 class="heading-xl">
+                        Govern.<br>
+                        <em style="color:var(--ink-light);">Manage.</em><br>
+                        Transform.
+                    </h1>
+                </div>
+                <div class="framework-visual" role="img" aria-label="CQSEV framework diagram: 5 pillars — Compliance, Quality, Security, Efficiency, Value — organized around 3 layers — Govern, Manage, Transform.">
+                    <div class="fv-ring-outer"></div>
+                    <div class="fv-ring-dashed"></div>
+                    <div class="fv-letter fv-c">C</div>
+                    <div class="fv-letter fv-q">Q</div>
+                    <div class="fv-letter fv-s">S</div>
+                    <div class="fv-letter fv-e">E</div>
+                    <div class="fv-letter fv-v">V</div>
+                    <div class="fv-center">
+                        <span class="fv-volet">Govern</span>
+                        <span class="fv-dot"></span>
+                        <span class="fv-volet">Manage</span>
+                        <span class="fv-dot"></span>
+                        <span class="fv-volet">Transform</span>
+                        <span class="fv-tag">5 pillars × 3 layers</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bottom">
+                <p class="body-lg" style="max-width:36rem;">
+                    <strong>CQSEV</strong> is a <strong>5-pillar × 3-layer</strong> framework to make your data reliable — from strategy all the way to the systems that process them. No bureaucracy. No unnecessary complexity.
+                </p>
+                <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:flex-start;">
+                    <a href="#understand" class="btn-pill btn-dark">
+                        Discover the approach
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                    <a href="blog/" class="btn-pill btn-outline">Read the blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================== -->
+<!-- 00 — UNDERSTAND                                        -->
+<!-- ====================================================== -->
+<section id="understand" class="section" style="background:var(--white);" aria-label="Understanding data governance">
+    <div class="container">
+        <div style="text-align:center;max-width:48rem;margin:0 auto 5rem;" data-animate>
+            <span class="label">00 // Understand</span>
+            <h2 class="heading-lg">Data governance —<br>what is it, <em>really</em>?</h2>
+        </div>
+
+        <div class="grid-2-sticky">
+            <div class="sticky-left" data-animate>
+                <p class="body-lg" style="margin-bottom:2rem;">
+                    Imagine a library with thousands of books. Without organization, it's chaos. <strong>Data governance</strong> is simply deciding:
+                </p>
+                <div style="background:var(--ink);border-radius:24px;padding:2rem;margin-top:2rem;">
+                    <p style="color:var(--white);font-family:var(--font-serif);font-size:clamp(1rem,2vw,1.25rem);font-weight:400;font-style:italic;line-height:1.5;margin:0;">
+                        "The best governance is one that people follow naturally because it makes their lives easier."
+                    </p>
+                </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:1rem;" data-animate data-delay="1">
+                <div style="display:flex;align-items:flex-start;gap:1.25rem;background:var(--paper);padding:1.25rem 1.5rem;border-radius:16px;border:1px solid var(--ink-10);">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <div><strong>How to organize the books</strong><br><span class="body-sm" style="color:var(--ink-light);">→ how you classify your data</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:1.25rem;background:var(--paper);padding:1.25rem 1.5rem;border-radius:16px;border:1px solid var(--ink-10);">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                    </div>
+                    <div><strong>Who can borrow what</strong><br><span class="body-sm" style="color:var(--ink-light);">→ security and access control</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:1.25rem;background:var(--paper);padding:1.25rem 1.5rem;border-radius:16px;border:1px solid var(--ink-10);">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div><strong>How to tell if a book is damaged</strong><br><span class="body-sm" style="color:var(--ink-light);">→ data quality</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:1.25rem;background:var(--paper);padding:1.25rem 1.5rem;border-radius:16px;border:1px solid var(--ink-10);">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <div><strong>Who's in charge of each section</strong><br><span class="body-sm" style="color:var(--ink-light);">→ roles and responsibilities</span></div>
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:1.25rem;background:var(--paper);padding:1.25rem 1.5rem;border-radius:16px;border:1px solid var(--ink-10);">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                    <div><strong>How to find a book quickly</strong><br><span class="body-sm" style="color:var(--ink-light);">→ the data catalog</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Without / With -->
+        <div class="grid-2" style="margin-top:5rem;" data-animate>
+            <div class="compare-card" style="border-left:3px solid var(--ink);">
+                <h3 style="display:flex;align-items:center;gap:0.75rem;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"/></svg>
+                    Without governance
+                </h3>
+                <ul class="compare-list">
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> 15 versions of the same file</li>
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> "What does this field mean?"</li>
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> Conflicting data between departments</li>
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">×</span> Nobody knows who has access to what</li>
+                </ul>
+            </div>
+            <div class="compare-card" style="border-left:3px solid var(--ink);">
+                <h3 style="display:flex;align-items:center;gap:0.75rem;">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    With governance
+                </h3>
+                <ul class="compare-list">
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> A single source of truth</li>
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> A clear data dictionary</li>
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> Reliable and consistent data</li>
+                    <li><span style="font-family:var(--font-mono);font-weight:500;color:var(--ink);">✓</span> Controlled and audited access</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Concrete value -->
+        <div style="margin-top:3rem;" data-animate>
+            <span class="label">Concrete value</span>
+            <div class="grid-value">
+                <div class="card card-paper" style="padding:1.5rem;text-align:center;">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <strong style="font-size:0.9375rem;display:block;margin-bottom:0.25rem;">Faster decisions</strong>
+                    <span class="body-sm" style="color:var(--ink-light);">One single version of the truth</span>
+                </div>
+                <div class="card card-paper" style="padding:1.5rem;text-align:center;">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"/></svg>
+                    </div>
+                    <strong style="font-size:0.9375rem;display:block;margin-bottom:0.25rem;">Fewer costly errors</strong>
+                    <span class="body-sm" style="color:var(--ink-light);">Data is verified at the source</span>
+                </div>
+                <div class="card card-paper" style="padding:1.5rem;text-align:center;">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <strong style="font-size:0.9375rem;display:block;margin-bottom:0.25rem;">Regulatory compliance</strong>
+                    <span class="body-sm" style="color:var(--ink-light);">Law 25 · GDPR compliant</span>
+                </div>
+                <div class="card card-paper" style="padding:1.5rem;text-align:center;">
+                    <div style="width:2.5rem;height:2.5rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--white);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <strong style="font-size:0.9375rem;display:block;margin-bottom:0.25rem;">Customer trust</strong>
+                    <span class="body-sm" style="color:var(--ink-light);">Their data is protected</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================== -->
+<!-- 01 — CONCEPT                                           -->
+<!-- ====================================================== -->
+<section id="concept" class="section" style="background:var(--paper);" aria-label="The CQSEV concept">
+    <div class="container">
+        <div class="grid-2-sticky">
+            <div class="sticky-left" data-animate>
+                <span class="label">01 // The Concept</span>
+                <h2 class="heading-lg">CQSEV: <em>the architecture</em> of trust.</h2>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2rem;" class="body-lg">
+                <div id="definition" class="card card-paper" style="padding:2rem;border-left:3px solid var(--ink);" data-animate>
+                    <h3 style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--ink-light);margin-bottom:0.75rem;">Simple definition</h3>
+                    <p class="body-lg" style="color:var(--ink);font-weight:400;margin-bottom:0;"><strong>Data governance</strong> is the set of rules, roles and processes that ensure an organization's data is <strong>reliable</strong>, <strong>secure</strong>, <strong>easy to find</strong> and <strong>useful for making good decisions</strong>.</p>
+                </div>
+                <p data-animate><strong>CQSEV</strong> is a data governance, management and transformation framework created by <strong>Oleg Chitic</strong> in Montreal. The acronym stands for 5 assessment pillars: Compliance, Quality, Security, Efficiency, and Value.</p>
+                <p data-animate data-delay="1">Unlike traditional frameworks such as DAMA-DMBOK that focus primarily on governance (the rules), CQSEV evaluates each pillar across <strong>3 layers</strong>: governance (defining the rules), management (applying them day-to-day), and transformation (embedding them into the automated systems that process your data).</p>
+                <div class="card card-paper" style="font-family:var(--font-serif);font-size:1.25rem;font-style:italic;color:var(--ink);padding:2rem;" data-animate data-delay="2">
+                    "Crossing the 5 pillars with the 3 layers produces a 15-checkpoint matrix that quickly diagnoses an organization's data maturity."
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====================================================== -->
+<!-- 02 — FRAMEWORK (layers + pillars + beliefs + CTA)      -->
+<!-- ====================================================== -->
+<section id="framework" class="section" style="background:var(--white);" aria-label="The CQSEV framework">
+    <div class="container">
+        <div style="text-align:center;max-width:48rem;margin:0 auto 5rem;" data-animate>
+            <span class="label">02 // The Framework</span>
+            <h2 class="heading-lg">From policy to pipeline:<br><em>3 layers × 5 pillars.</em></h2>
+            <p class="body-lg" style="color:var(--ink-light);">Most data governance frameworks stop at the rules. CQSEV also checks that they're applied day-to-day and embedded into the systems that process your data.</p>
+        </div>
+
+        <!-- The 3 layers -->
+        <div class="grid-3">
+            <div class="card" data-animate>
+                <span class="card-watermark">01</span>
+                <div class="card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                <h3 class="heading-md" style="font-family:var(--font-serif);">Govern</h3>
+                <span class="label">The rules of the game</span>
+                <p class="body" style="margin-bottom:2.5rem;">Define policies, roles and standards. Like the ministry that writes drinking water regulations — it doesn't filter the water, it sets the rules.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">01.</span> Who owns customer data?</p>
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> What are our quality rules?</p>
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> How do we measure compliance?</p>
+                </div>
+            </div>
+            <div class="card" data-animate data-delay="1">
+                <span class="card-watermark">02</span>
+                <div class="card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                <h3 class="heading-md" style="font-family:var(--font-serif);">Manage</h3>
+                <span class="label">Boots on the ground</span>
+                <p class="body" style="margin-bottom:2.5rem;">Apply the rules every single day. Like a food safety inspector who checks every morning that standards are met on the factory floor.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">01.</span> Are the rules followed daily?</p>
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> Who's checking data quality this week?</p>
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> How do we fix a detected issue?</p>
+                </div>
+            </div>
+            <div class="card" data-animate data-delay="2">
+                <span class="card-watermark">03</span>
+                <div class="card-icon"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg></div>
+                <h3 class="heading-md" style="font-family:var(--font-serif);">Transform</h3>
+                <span class="label">The automated systems</span>
+                <p class="body" style="margin-bottom:2.5rem;">Build the automated data pipelines (ETL/ELT) that move and cleanse your data. Like an assembly line that inspects every part before it moves forward.</p>
+                <div style="display:flex;flex-direction:column;gap:1rem;">
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">01.</span> Where does the data come from, where does it go?</p>
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">02.</span> Are validations automated?</p>
+                    <p class="body-sm" style="display:flex;align-items:flex-start;gap:0.75rem;"><span style="font-family:var(--font-mono);color:var(--ink);margin-top:1px;">03.</span> What happens when a pipeline fails?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- The 5 pillars -->
+        <div style="text-align:center;margin:5rem 0 1rem;" data-animate>
+            <h3 class="heading-md" style="font-family:var(--font-serif);">5 questions to assess your data governance</h3>
+            <p class="body" style="color:var(--ink-light);max-width:36rem;margin:0 auto;">Each pillar asks a fundamental question. If you can't answer it with confidence, that's a call to action.</p>
+        </div>
+
+        <div class="grid-5" style="margin-top:2rem;">
+            <div style="text-align:center;padding:1.25rem;" data-animate>
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;">
+                    <span style="font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--ink);">C</span>
+                </div>
+                <h4 style="font-family:var(--font-sans);font-weight:500;font-size:0.9375rem;margin-bottom:0.25rem;">Compliance</h4>
+                <p class="body-sm" style="color:var(--ink-light);font-style:italic;margin:0;">Are we following the law?</p>
+                <p style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-30);margin-top:0.375rem;">Law 25 (Quebec) · GDPR (Europe)</p>
+            </div>
+            <div style="text-align:center;padding:1.25rem;" data-animate data-delay="1">
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;">
+                    <span style="font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--ink);">Q</span>
+                </div>
+                <h4 style="font-family:var(--font-sans);font-weight:500;font-size:0.9375rem;margin-bottom:0.25rem;">Quality</h4>
+                <p class="body-sm" style="color:var(--ink-light);font-style:italic;margin:0;">Is the data reliable?</p>
+                <p style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-30);margin-top:0.375rem;">Accuracy · Completeness · Consistency</p>
+            </div>
+            <div style="text-align:center;padding:1.25rem;" data-animate data-delay="2">
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;">
+                    <span style="font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--ink);">S</span>
+                </div>
+                <h4 style="font-family:var(--font-sans);font-weight:500;font-size:0.9375rem;margin-bottom:0.25rem;">Security</h4>
+                <p class="body-sm" style="color:var(--ink-light);font-style:italic;margin:0;">Is the data protected?</p>
+                <p style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-30);margin-top:0.375rem;">Access · Encryption · Auditability</p>
+            </div>
+            <div style="text-align:center;padding:1.25rem;" data-animate data-delay="3">
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;">
+                    <span style="font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--ink);">E</span>
+                </div>
+                <h4 style="font-family:var(--font-sans);font-weight:500;font-size:0.9375rem;margin-bottom:0.25rem;">Efficiency</h4>
+                <p class="body-sm" style="color:var(--ink-light);font-style:italic;margin:0;">Can people find it easily?</p>
+                <p style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-30);margin-top:0.375rem;">Catalog · Dictionary · Metadata</p>
+            </div>
+            <div style="text-align:center;padding:1.25rem;" data-animate data-delay="4">
+                <div style="width:3rem;height:3rem;border-radius:50%;border:1px solid var(--ink-10);background:var(--paper);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;">
+                    <span style="font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--ink);">V</span>
+                </div>
+                <h4 style="font-family:var(--font-sans);font-weight:500;font-size:0.9375rem;margin-bottom:0.25rem;">Value</h4>
+                <p class="body-sm" style="color:var(--ink-light);font-style:italic;margin:0;">Does it create real value?</p>
+                <p style="font-family:var(--font-mono);font-size:0.625rem;color:var(--ink-30);margin-top:0.375rem;">Dashboards · ROI · Insights</p>
+            </div>
+        </div>
+
+        <!-- 3 beliefs -->
+        <div style="text-align:center;margin-top:5rem;margin-bottom:1.5rem;" data-animate>
+            <h3 class="heading-md" style="font-family:var(--font-serif);">Our 3 beliefs</h3>
+        </div>
+        <div class="grid-3" style="text-align:center;">
+            <div data-animate>
+                <div class="principle-icon"><span>1</span></div>
+                <h4 style="font-family:var(--font-serif);font-size:1.125rem;margin-bottom:0.25rem;">Pragmatism</h4>
+                <span class="label" style="color:var(--ink);">over Perfection</span>
+                <p class="body-sm">3 working policies beat 200 pages nobody reads.</p>
+            </div>
+            <div data-animate data-delay="1">
+                <div class="principle-icon"><span>2</span></div>
+                <h4 style="font-family:var(--font-serif);font-size:1.125rem;margin-bottom:0.25rem;">Value</h4>
+                <span class="label" style="color:var(--ink);">over Control</span>
+                <p class="body-sm">If people don't see the benefit, they'll work around the rules.</p>
+            </div>
+            <div data-animate data-delay="2">
+                <div class="principle-icon"><span>3</span></div>
+                <h4 style="font-family:var(--font-serif);font-size:1.125rem;margin-bottom:0.25rem;">Adoption</h4>
+                <span class="label" style="color:var(--ink);">over Technology</span>
+                <p class="body-sm">A tool without human buy-in collects dust.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align:center;margin-top:4rem;" data-animate>
+            <p class="body-sm" style="color:var(--ink-30);font-style:italic;margin-bottom:2rem;">
+                💡 For experts: the Excel grid crosses 5 pillars × 3 layers into 15 checkpoints — ETL/ELT pipelines · PII · data marts · RBAC · audit logging
+            </p>
+            <div class="card" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;">
+                <div style="text-align:left;">
+                    <h3 class="heading-sm" style="font-family:var(--font-serif);">CQSEV Diagnostic Grid</h3>
+                    <p class="body-sm">The 5×3 matrix in Excel format, ready to fill. Assess your maturity in 30 minutes.</p>
+                </div>
+                <a href="../cqsev-grille-diagnostic.xlsx" download class="btn-pill btn-dark" style="flex-shrink:0;">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Download .XLSX
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- END PART 1 — Part 2 starts at §03 In Practice         -->
+<!-- ══════════════════════════════════════════════════════ -->
