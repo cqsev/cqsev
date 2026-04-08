@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ====== SEO ====== -->
+    <title>Data Quality: Why 60% of Projects Fail — CQSEV</title>
+    <meta name="description" content="60% of data projects fail because of data quality. The 8 DAMA-DMBOK dimensions, the 1-10-100 rule, 4 costly myths, and a concrete action plan. By Oleg Chitic, creator of the CQSEV framework.">
+    <meta name="author" content="Oleg Chitic">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cqsev.github.io/en/blog/data-quality-why-projects-fail.html">
+    <meta name="theme-color" content="#F7F5F0">
+
+    <!-- ====== OPEN GRAPH ====== -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Data Quality: Why 60% of Projects Fail">
+    <meta property="og:description" content="The 8 DAMA-DMBOK quality dimensions, the 1-10-100 rule, costly myths, and a concrete action plan to fix data quality.">
+    <meta property="og:url" content="https://cqsev.github.io/en/blog/data-quality-why-projects-fail.html">
+    <meta property="og:image" content="https://cqsev.github.io/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en">
+    <meta property="og:site_name" content="CQSEV Framework">
+    <meta property="article:author" content="Oleg Chitic">
+    <meta property="article:published_time" content="2026-04-08T00:00:00Z">
+    <meta property="article:tag" content="data quality">
+    <meta property="article:tag" content="DAMA DMBOK">
+    <meta property="article:tag" content="CQSEV">
+
+    <!-- ====== TWITTER ====== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data Quality: Why 60% of Projects Fail — CQSEV">
+    <meta name="twitter:description" content="The 8 DAMA-DMBOK dimensions, the 1-10-100 rule, and a concrete action plan. By Oleg Chitic.">
+    <meta name="twitter:image" content="https://cqsev.github.io/img/og-image.png">
+
+    <!-- ====== HREFLANG ====== -->
+    <link rel="alternate" hreflang="fr-CA" href="https://cqsev.github.io/blog/qualite-donnees-pourquoi-projets-echouent.html">
+    <link rel="alternate" hreflang="en" href="https://cqsev.github.io/en/blog/data-quality-why-projects-fail.html">
+    <link rel="alternate" hreflang="x-default" href="https://cqsev.github.io/blog/qualite-donnees-pourquoi-projets-echouent.html">
+
+    <!-- ====== SCHEMA.ORG ====== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Data Quality: Why 60% of Projects Fail — and How to Avoid It",
+        "description": "60% of data projects fail because of data quality. The 8 DAMA-DMBOK dimensions, the 1-10-100 rule, 4 costly myths, and a concrete action plan.",
+        "author": {"@type": "Person", "name": "Oleg Chitic", "url": "https://cqsev.github.io/", "sameAs": ["https://www.linkedin.com/in/oleg-chitic-67426915/"]},
+        "publisher": {"@type": "Organization", "name": "CQSEV Framework", "url": "https://cqsev.github.io/"},
+        "datePublished": "2026-04-08",
+        "dateModified": "2026-04-08",
+        "url": "https://cqsev.github.io/en/blog/data-quality-why-projects-fail.html",
+        "image": "https://cqsev.github.io/img/og-image.png",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cqsev.github.io/en/blog/data-quality-why-projects-fail.html"},
+        "articleSection": "Data Quality",
+        "wordCount": "3500",
+        "inLanguage": "en"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cqsev.github.io/en/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cqsev.github.io/en/blog/"},
+            {"@type": "ListItem", "position": 3, "name": "Data Quality", "item": "https://cqsev.github.io/en/blog/data-quality-why-projects-fail.html"}
+        ]
+    }
+    </script>
+
+    <!-- ====== ASSETS ====== -->
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <!-- ====== GTM ====== -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MBG8NFFC');</script>
+
+    <style>
+        :root{--font-serif:'Playfair Display',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;--font-mono:'JetBrains Mono',monospace;--paper:#F7F5F0;--white:#FFFFFF;--ink:#1A1A1A;--ink-light:#4A4A4A;--ink-10:rgba(26,26,26,0.10);--ink-5:rgba(26,26,26,0.05);--ink-20:rgba(26,26,26,0.20);--ink-30:rgba(26,26,26,0.30)}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth;background:var(--paper)}
+        body{font-family:var(--font-sans);color:var(--ink-light);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.6;font-weight:300}
+        h1,h2,h3,h4,h5,h6{font-family:var(--font-serif);color:var(--ink);font-weight:500}
+        a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}button{cursor:pointer;border:none;background:none;font:inherit}table{border-collapse:collapse;width:100%}strong{color:var(--ink);font-weight:500}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--paper)}::-webkit-scrollbar-thumb{background:#D1CDD2;border-radius:10px}
+        .container{max-width:1320px;margin:0 auto;padding:0 2.5rem}.article-container{max-width:760px;margin:0 auto;padding:0 2.5rem}@media(max-width:767px){.container,.article-container{padding:0 1.25rem}}
+        .label{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1.5rem;display:block}
+        .site-nav{position:fixed;top:0;width:100%;z-index:50;transition:all 0.3s;padding:1.5rem 0;background:transparent;border-bottom:1px solid transparent}.site-nav.scrolled{background:rgba(247,245,240,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom-color:var(--ink-10);padding:1rem 0}
+        .nav-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between}@media(max-width:767px){.nav-inner{padding:0 1.25rem}}
+        .nav-logo{font-family:var(--font-serif);font-weight:700;font-size:1.5rem;color:var(--ink);letter-spacing:-0.02em}
+        .nav-links{display:none;align-items:center;gap:2rem}.nav-link{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.nav-link:hover,.nav-link.active{color:var(--ink)}
+        .nav-cta{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;padding:0.5rem 1.5rem;border-radius:9999px;border:1px solid var(--ink-20);transition:all 0.3s}.nav-cta:hover{background:var(--ink);color:var(--paper)}
+        .menu-toggle{display:block;color:var(--ink-light);padding:0.5rem}.mob-menu{display:none;position:absolute;top:100%;left:0;width:100%;background:var(--paper);border-bottom:1px solid var(--ink-10);padding:1rem 1.5rem}.mob-menu.open{display:block}.mob-menu a{display:block;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;padding:0.75rem 0;border-bottom:1px solid var(--ink-5)}
+        @media(min-width:768px){.nav-links{display:flex}.menu-toggle{display:none}}
+        .btn-pill{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--font-sans);font-size:0.875rem;font-weight:500;padding:1rem 2rem;border-radius:9999px;transition:all 0.3s}.btn-pill:hover{transform:translateY(-2px)}.btn-dark{background:var(--ink);color:var(--white)}.btn-dark:hover{background:#333;box-shadow:0 8px 24px rgba(26,26,26,0.15)}
+        .tag{font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.375rem 0.75rem;border-radius:9999px;border:1px solid var(--ink-5);color:var(--ink);background:var(--white)}
+        .prose{font-size:clamp(0.95rem,2vw,1.0625rem);line-height:1.8;color:var(--ink-light)}.prose p{margin-bottom:1.5rem}.prose h2{font-size:clamp(1.5rem,4vw,2rem);font-weight:500;margin-top:4rem;margin-bottom:1.5rem;scroll-margin-top:80px}.prose h3{font-size:1.25rem;font-weight:500;margin-top:2.5rem;margin-bottom:1rem}.prose a.link{color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px}.prose a.link:hover{color:var(--ink-light)}
+        .check-list{list-style:none;display:flex;flex-direction:column;gap:1rem;margin:2rem 0}.check-list li{display:flex;align-items:flex-start;gap:0.75rem}.check-icon{width:20px;height:20px;flex-shrink:0;margin-top:3px;color:var(--ink)}
+        .callout{border-radius:16px;padding:1.5rem;margin:2.5rem 0;display:flex;align-items:flex-start;gap:0.75rem;background:var(--paper);border:1px solid var(--ink-20)}.callout-icon{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--ink)}.callout .callout-label{font-weight:500;color:var(--ink);margin-bottom:0.25rem}
+        .quote-block{background:var(--ink);border-radius:24px;padding:2.5rem;margin:3rem 0;text-align:center}.quote-block p{color:var(--white);font-family:var(--font-serif);font-size:clamp(1.125rem,2.5vw,1.5rem);font-weight:400;font-style:italic;line-height:1.5;margin:0}
+        .cards-2{display:grid;grid-template-columns:1fr;gap:1rem;margin:2.5rem 0}@media(min-width:768px){.cards-2{grid-template-columns:repeat(2,1fr)}}
+        .compare-card{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10)}.compare-card h3{font-family:var(--font-sans);font-size:1rem;font-weight:600;margin-bottom:0.75rem}.compare-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem}.compare-list li{font-size:0.8125rem;font-weight:300;display:flex;align-items:flex-start;gap:0.5rem}
+        .registry-card{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);transition:all 0.3s}.registry-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.06)}.registry-card h4{font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.5rem}.registry-card p{font-size:0.8125rem;font-weight:300;margin:0}
+        .faq-item{background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;overflow:hidden}.faq-item summary{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;cursor:pointer;font-family:var(--font-serif);font-weight:500;color:var(--ink);font-size:0.95rem;list-style:none;transition:background 0.3s}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:hover{background:var(--paper)}.faq-item .chevron{transition:transform 0.3s;flex-shrink:0;color:var(--ink-light)}.faq-item[open] .chevron{transform:rotate(180deg)}.faq-item .answer{padding:0 1.5rem 1.25rem;color:var(--ink-light);font-size:0.875rem;line-height:1.7;font-weight:300}
+        .author-card{display:flex;align-items:flex-start;gap:1.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)}.avatar-lg{width:64px;height:64px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--font-serif);font-size:1.25rem;font-weight:500;flex-shrink:0}
+        .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--ink-10)}.related h3{font-size:1.125rem;font-weight:500;margin-bottom:1rem}.related a{display:block;padding:1rem 1.25rem;background:var(--white);border-radius:16px;border:1px solid var(--ink-10);margin-bottom:0.75rem;transition:all 0.3s}.related a:hover{border-color:var(--ink);transform:translateX(4px)}
+        .back-link{text-align:center;margin-top:2rem;margin-bottom:3rem}.back-link a{font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.back-link a:hover{color:var(--ink)}
+        .site-footer{background:var(--paper);padding:3rem 0;border-top:1px solid var(--ink-10)}.footer-inner{max-width:1320px;margin:0 auto;padding:0 2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}@media(max-width:767px){.footer-inner{padding:0 1.25rem}}.footer-links{display:flex;gap:1.5rem;align-items:center}.footer-links a{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;transition:color 0.3s}.footer-links a:hover{color:var(--ink)}.footer-copy{font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em}
+        [data-animate]{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}[data-animate].visible{opacity:1;transform:translateY(0)}
+        @media print{.site-nav,.mob-menu,.menu-toggle,.site-footer,.no-print{display:none!important}body{background:#fff;color:#000}}
+    </style>
+</head>
+<body>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBG8NFFC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- NAV -->
+    <nav id="site-nav" class="site-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="../" class="nav-logo" aria-label="CQSEV Home">CQSEV.</a>
+            <div class="nav-links">
+                <a href="../#understand" class="nav-link">Understand</a>
+                <a href="../#concept" class="nav-link">Concept</a>
+                <a href="../#framework" class="nav-link">Framework</a>
+                <a href="../#field" class="nav-link">Field</a>
+                <a href="../#author" class="nav-link">Author</a>
+                <a href="#faq-article" class="nav-link">FAQ</a>
+                <a href="./" class="nav-link active">Blog</a>
+                <a href="../#contact" class="nav-cta">Contact</a>
+                <a href="/blog/qualite-donnees-pourquoi-projets-echouent.html" class="nav-link" style="display:flex;align-items:center;gap:0.375rem;" aria-label="Version française">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                    FR
+                </a>
+            </div>
+            <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        </div>
+        <div id="mob-menu" class="mob-menu" role="menu">
+            <a href="../#understand" role="menuitem">Understand</a>
+            <a href="../#concept" role="menuitem">Concept</a>
+            <a href="../#framework" role="menuitem">Framework</a>
+            <a href="../#field" role="menuitem">Field</a>
+            <a href="../#author" role="menuitem">Author</a>
+            <a href="./" role="menuitem" style="color:var(--ink);font-weight:500;">Blog</a>
+            <a href="../#contact" role="menuitem" style="margin-top:0.75rem;display:block;text-align:center;padding:0.75rem;border-radius:9999px;border:1px solid var(--ink-20);">Contact</a>
+            <a href="/blog/qualite-donnees-pourquoi-projets-echouent.html" role="menuitem" style="display:flex;align-items:center;gap:0.375rem;" aria-label="Version française">
+                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                FR
+            </a>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="article-container" style="padding-top:7rem;padding-bottom:1rem;">
+        <nav aria-label="Breadcrumb" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);">
+            <a href="../" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Home</a>
+            <span style="margin:0 0.5rem;">/</span>
+            <a href="./" style="transition:color 0.3s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink-light)'">Blog</a>
+            <span style="margin:0 0.5rem;">/</span>
+            <span style="color:var(--ink);">Data Quality</span>
+        </nav>
+    </div>
+
+    <!-- ARTICLE -->
+    <article class="article-container" style="padding-bottom:3rem;">
+
+        <!-- HEADER -->
+        <header style="margin-bottom:3rem;" data-animate>
+            <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;">
+                <span class="tag">Quality</span>
+                <span class="tag">DAMA-DMBOK</span>
+                <span class="tag">Practical guide</span>
+            </div>
+            <h1 style="font-size:clamp(2rem,5vw,3.25rem);font-weight:500;line-height:1.1;margin-bottom:1.5rem;">
+                Data Quality: Why 60% of Projects Fail — and How to Avoid It
+            </h1>
+            <p style="font-size:clamp(1rem,2.5vw,1.25rem);color:var(--ink-light);line-height:1.6;margin-bottom:2rem;font-weight:300;">
+                Data is everywhere. But if it's not reliable, it might as well be nowhere. This guide explains the real definition of quality, the 8 dimensions to measure, and where to start — no jargon.
+            </p>
+            <div style="display:flex;align-items:center;gap:1rem;padding-top:2rem;border-top:1px solid var(--ink-10);">
+                <div style="width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-weight:500;">OC</div>
+                <div>
+                    <p style="font-weight:500;color:var(--ink);font-size:0.875rem;">Oleg Chitic</p>
+                    <p style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);margin-top:0.125rem;"><time datetime="2026-04-08">April 8, 2026</time> · 12 min read</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- TL;DR -->
+        <div style="background:var(--white);border-radius:24px;padding:2rem;border:1px solid var(--ink-10);box-shadow:0 1px 3px rgba(0,0,0,0.04);margin-bottom:2rem;position:relative;overflow:hidden;" data-animate>
+            <div style="position:absolute;top:0;left:0;width:3px;height:100%;background:var(--ink);"></div>
+            <h2 style="font-size:1.125rem;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;"><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> In a nutshell</h2>
+            <p style="color:var(--ink-light);line-height:1.7;font-weight:300;"><strong>Data quality</strong> is the leading cause of data project failure — ahead of technology and budget. Yet most organizations confuse quality with "surface cleaning" (capitalization, duplicates, formats). True quality is measured across <strong>8 dimensions</strong> defined by the DAMA-DMBOK standard. This article explains them one by one, deconstructs 4 persistent myths, introduces the <strong>1-10-100 rule</strong>, and provides a concrete action plan aligned with the <strong>CQSEV</strong> framework.</p>
+            <p style="margin-top:0.75rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">⏱️ 12 minutes</p>
+        </div>
+
+        <!-- KEY VOCABULARY -->
+        <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:2rem;" data-animate>
+            <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">📖 Key vocabulary</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>DAMA-DMBOK</strong> — the global data management standard</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Dimension</strong> — a measurable quality criterion</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Completeness</strong> — is all the necessary information there?</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Integrity</strong> — are the relationships between data valid?</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Pipeline / ETL</strong> — automated circuit that moves and cleans data</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>Data Steward</strong> — the day-to-day data guardian</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>KPI</strong> — a measurable indicator that tracks a specific result</div>
+                <div style="font-size:0.8125rem;font-weight:300;"><strong>1-10-100 Rule</strong> — the cost of an error depending on when it's caught</div>
+            </div>
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <nav style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin-bottom:3rem;" aria-label="Table of contents" data-animate>
+            <h2 style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">In this article</h2>
+            <ol style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;">
+                <li><a href="#impact" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">1.</span> The number that hurts</a></li>
+                <li><a href="#misunderstanding" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">2.</span> Cleaning ≠ Quality: the big misunderstanding</a></li>
+                <li><a href="#dimensions" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">3.</span> The 8 dimensions of data quality (DAMA-DMBOK)</a></li>
+                <li><a href="#rule" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">4.</span> The golden rule: 1-10-100</a></li>
+                <li><a href="#myths" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">5.</span> 4 myths that cost a fortune</a></li>
+                <li><a href="#causes" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">6.</span> The root causes</a></li>
+                <li><a href="#cqsev-quality" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">7.</span> CQSEV and quality: Q axis × 3 pillars</a></li>
+                <li><a href="#start" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">8.</span> Where to start?</a></li>
+                <li><a href="#faq-article" style="font-size:0.875rem;color:var(--ink);display:flex;align-items:center;gap:0.5rem;"><span style="color:var(--ink-light);font-family:var(--font-mono);">9.</span> Frequently asked questions</a></li>
+            </ol>
+        </nav>
+
+        <!-- PROSE -->
+        <div class="prose">
+
+            <!-- ============================================== -->
+            <!-- SECTION 1 — The number that hurts              -->
+            <!-- ============================================== -->
+            <h2 id="impact">The number that hurts</h2>
+
+            <p><strong>$3,300.</strong> That's the ballpark figure that poor-quality data can cost an organization — <strong>per employee, per year</strong> — in wasted time, rework, and missed opportunities.</p>
+
+            <p>At 200 employees, this is no longer a detail. It's a silent leak.</p>
+
+            <p>And the damage doesn't stop there:</p>
+
+            <ul class="check-list">
+                <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span><strong>30% of employee time</strong> is spent searching for, verifying, or correcting erroneous data (Harvard Business Review)</span></li>
+                <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span><strong>68% of customers</strong> leave a company due to poor experiences linked to incorrect data (Experian Data Quality)</span></li>
+                <li><span style="color:var(--ink);font-weight:700;flex-shrink:0;">×</span><span><strong>15 to 25% of revenue</strong> is impacted by poor-quality data in the most affected organizations (Gartner Research)</span></li>
+            </ul>
+
+            <div class="quote-block"><p>"Data quality isn't optional — it's a strategic necessity that determines our ability to innovate and stay competitive."</p></div>
+
+            <p>Yet, despite these alarming figures, most organizations don't treat quality at the root. They clean up. They don't govern.</p>
+
+            <!-- ============================================== -->
+            <!-- SECTION 2 — Cleaning ≠ Quality                 -->
+            <!-- ============================================== -->
+            <h2 id="misunderstanding">Cleaning ≠ Quality: the big misunderstanding</h2>
+
+            <p>When people say "data quality," here's what most teams picture:</p>
+
+            <ul class="check-list">
+                <li><span style="color:var(--ink-light);flex-shrink:0;">→</span><span>Fixing capitalization and accents</span></li>
+                <li><span style="color:var(--ink-light);flex-shrink:0;">→</span><span>Standardizing date formats</span></li>
+                <li><span style="color:var(--ink-light);flex-shrink:0;">→</span><span>Removing the most obvious duplicates</span></li>
+                <li><span style="color:var(--ink-light);flex-shrink:0;">→</span><span>Filling in empty fields</span></li>
+            </ul>
+
+            <p>That's not quality. <strong>That's surface cleaning.</strong></p>
+
+            <p>It's like repainting the façade of a building with cracked foundations. From the outside, everything looks clean. But the structure is fragile — and the next shock will bring it down.</p>
+
+            <div class="cards-2">
+                <div class="compare-card" style="border-left:3px solid #991B1B;">
+                    <h3 style="color:#991B1B;">🧹 Surface cleaning</h3>
+                    <ul class="compare-list">
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> Fixing formats after the fact</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> De-duplicating once a quarter</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> Manually filling empty fields</li>
+                        <li><span style="color:#991B1B;font-weight:500;">×</span> No prevention rules at the source</li>
+                    </ul>
+                </div>
+                <div class="compare-card" style="border-left:3px solid #065F46;">
+                    <h3 style="color:#065F46;">🏗️ True quality</h3>
+                    <ul class="compare-list">
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> 8 dimensions measured continuously</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Validation rules at the point of entry</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Automated controls in the systems</li>
+                        <li><span style="color:#065F46;font-weight:500;">✓</span> Named owners, tracked indicators</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout" style="background:var(--white);border-color:var(--ink-10);"><div><p class="callout-label">Analogy:</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Imagine a <strong>library</strong> where someone comes in every month to put books back in alphabetical order — but with no classification system, no catalog, and no librarian. A month later, it's chaos again. Cleaning never replaces organization.</p></div></div>
+
+            <p>True quality is <strong>the strength of the foundations</strong>: data that is accurate, complete, consistent, unique, valid, current, well-connected, and plausible.</p>
+
+            <p>These are the <strong>8 dimensions</strong> of the global DAMA-DMBOK standard.</p>
+
+            <!-- ============================================== -->
+            <!-- SECTION 3 — The 8 dimensions (DAMA-DMBOK)      -->
+            <!-- ============================================== -->
+            <h2 id="dimensions">The 8 dimensions of data quality (DAMA-DMBOK)</h2>
+
+            <p>The <strong>DAMA-DMBOK</strong> (<em>Data Management Body of Knowledge</em>) is the global standard for data management. It defines <strong>8 dimensions</strong> to measure quality. Each dimension answers a simple business question — and translates into technical rules that can be automated in your data processing pipelines (ETL).</p>
+
+            <p>Think of these dimensions as the <strong>8 pillars of a building</strong>. If even one is missing, the entire structure is weakened.</p>
+
+            <div class="cards-2" style="margin-top:2rem;">
+
+                <!-- Dimension 1 — Accuracy -->
+                <div class="registry-card" style="border-left:3px solid #2563EB;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#2563EB;">1</span>
+                        <h4>Accuracy</h4>
+                    </div>
+                    <p style="font-weight:500;color:#2563EB;margin-bottom:0.375rem;">"Does the data reflect reality?"</p>
+                    <p>The data matches the real world and aligns with a trusted source.</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">The price in your enterprise resource planning system (ERP) matches the actual price → accurate billing, reliable margins.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 2 — Completeness -->
+                <div class="registry-card" style="border-left:3px solid #4F46E5;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#4F46E5;">2</span>
+                        <h4>Completeness</h4>
+                    </div>
+                    <p style="font-weight:500;color:#4F46E5;margin-bottom:0.375rem;">"Is any information missing?"</p>
+                    <p>All required fields are filled. The record is complete for its intended use.</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">Customer record with shipping address and primary contact filled in → delivery guaranteed.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 3 — Consistency -->
+                <div class="registry-card" style="border-left:3px solid #EA580C;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#EA580C;">3</span>
+                        <h4>Consistency</h4>
+                    </div>
+                    <p style="font-weight:500;color:#EA580C;margin-bottom:0.375rem;">"Does the data contradict itself?"</p>
+                    <p>Data is uniform and non-contradictory across systems. Logical consistency is maintained (e.g., age vs. date of birth).</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">Order status is identical in sales and logistics → seamless process.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 4 — Uniqueness -->
+                <div class="registry-card" style="border-left:3px solid #059669;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#059669;">4</span>
+                        <h4>Uniqueness</h4>
+                    </div>
+                    <p style="font-weight:500;color:#059669;margin-bottom:0.375rem;">"Are there duplicates?"</p>
+                    <p>One single record per entity. Redundancy is controlled and intentional.</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">1 customer = 1 master record → 360° view, no duplicate emails or billing errors.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 5 — Validity -->
+                <div class="registry-card" style="border-left:3px solid #7C3AED;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#7C3AED;">5</span>
+                        <h4>Validity</h4>
+                    </div>
+                    <p style="font-weight:500;color:#7C3AED;margin-bottom:0.375rem;">"Is the format correct?"</p>
+                    <p>Data follows defined formats, types, and value ranges. Controlled by reference lists.</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">Order date in DD/MM/YYYY format → successful system import, no rejection.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 6 — Timeliness -->
+                <div class="registry-card" style="border-left:3px solid #0891B2;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#0891B2;">6</span>
+                        <h4>Timeliness</h4>
+                    </div>
+                    <p style="font-weight:500;color:#0891B2;margin-bottom:0.375rem;">"Is the data up to date?"</p>
+                    <p>Data is available when expected and current enough for its intended use.</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">System inventory matches actual inventory → reliable delivery promises.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 7 — Integrity -->
+                <div class="registry-card" style="border-left:3px solid #DC2626;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#DC2626;">7</span>
+                        <h4>Integrity</h4>
+                    </div>
+                    <p style="font-weight:500;color:#DC2626;margin-bottom:0.375rem;">"Are the relationships between data valid?"</p>
+                    <p>Referential integrity is respected — foreign keys point to existing records. No orphans.</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">Every order is linked to an existing customer → no "ghost" orders without an owner.</p>
+                    </div>
+                </div>
+
+                <!-- Dimension 8 — Reasonableness -->
+                <div class="registry-card" style="border-left:3px solid #B45309;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-family:var(--font-serif);font-size:1.5rem;font-weight:500;color:#B45309;">8</span>
+                        <h4>Reasonableness</h4>
+                    </div>
+                    <p style="font-weight:500;color:#B45309;margin-bottom:0.375rem;">"Does the data make sense?"</p>
+                    <p>Values are credible within the business context. Would domain experts validate this data?</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.75rem;font-weight:500;color:var(--ink);margin-bottom:0.25rem;">Example:</p>
+                        <p style="font-size:0.8125rem;margin:0;">An annual salary of $10,000,000 → automatic alert. Something is wrong.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg><div><p class="callout-label">Key takeaway:</p><p style="font-size:0.875rem;font-weight:300;margin:0;">These 8 dimensions are not independent. Data can be <strong>accurate</strong> but <strong>outdated</strong>. <strong>Complete</strong> but <strong>inconsistent</strong>. <strong>Unique</strong> but <strong>invalid</strong>. Each missing pillar weakens the whole — and directly impacts your results.</p></div></div>
+
+            <p>Data quality is about respecting all 8 pillars <strong>together</strong>. Not just the capitalization.</p>
+                        <!-- ============================================== -->
+            <!-- SECTION 4 — The 1-10-100 rule                  -->
+            <!-- ============================================== -->
+            <h2 id="rule">The golden rule: 1-10-100</h2>
+
+            <p>If you remember only one thing from this article, let it be this rule. It explains why <strong>prevention</strong> is always cheaper than <strong>correction</strong>:</p>
+
+            <div style="display:flex;flex-direction:column;gap:1rem;margin:2rem 0;">
+
+                <div class="registry-card" style="border-left:3px solid #065F46;display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2.5rem;font-weight:500;color:#065F46;flex-shrink:0;line-height:1;">$1</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;color:#065F46;">Prevent</h4>
+                        <p>Validate the data <strong>at the point of entry</strong>. A required field, a dropdown list, an enforced format. Simple, fast, and virtually free.</p>
+                        <p style="font-size:0.8125rem;margin-top:0.5rem;"><em>→ "The address is validated by Canada Post before saving."</em></p>
+                    </div>
+                </div>
+
+                <div class="registry-card" style="border-left:3px solid #EA580C;display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2.5rem;font-weight:500;color:#EA580C;flex-shrink:0;line-height:1;">$10</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;color:#EA580C;">Correct</h4>
+                        <p>Detect and fix the error <strong>in the system</strong> after entry. You need to find it, understand it, correct it, and verify it hasn't propagated other errors.</p>
+                        <p style="font-size:0.8125rem;margin-top:0.5rem;"><em>→ "The address is invalid. The data team corrects it manually."</em></p>
+                    </div>
+                </div>
+
+                <div class="registry-card" style="border-left:3px solid #991B1B;display:flex;align-items:flex-start;gap:1rem;">
+                    <span style="font-family:var(--font-serif);font-size:2.5rem;font-weight:500;color:#991B1B;flex-shrink:0;line-height:1;">$100+</span>
+                    <div>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0.25rem;color:#991B1B;">Suffer</h4>
+                        <p>The error went undetected. It <strong>causes a failure</strong>: returned package, wrong invoice, false report sent to management, regulatory fine, lost customer.</p>
+                        <p style="font-size:0.8125rem;margin-top:0.5rem;"><em>→ "The package comes back. The customer calls, furious. They never return."</em></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="quote-block"><p>"Every accurate entry today saves time and money tomorrow."</p></div>
+
+            <p>The 1-10-100 rule is universal. It works for a customer address, a product price, an order status, or an employee's social insurance number. <strong>Prevention always costs 100× less than suffering the consequences.</strong></p>
+
+            <div class="callout"><svg class="callout-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg><div><p class="callout-label">CQSEV application:</p><p style="font-size:0.875rem;font-weight:300;margin:0;">In the CQSEV framework, the 1-10-100 rule maps directly to the 3 pillars. <strong>Govern</strong> = write the validation rule. <strong>Manage</strong> = verify the rule is applied every week. <strong>Transform</strong> = program the validation into the automated pipeline so the error is blocked before it enters the system.</p></div></div>
+
+            <!-- ============================================== -->
+            <!-- SECTION 5 — 4 myths that cost a fortune         -->
+            <!-- ============================================== -->
+            <h2 id="myths">4 myths that cost a fortune</h2>
+
+            <p>After 15+ years in the field, I encounter the same misconceptions in almost every organization. Here are the 4 most dangerous myths — and the reality behind each one.</p>
+
+            <div style="display:flex;flex-direction:column;gap:1.5rem;margin:2rem 0;">
+
+                <!-- Myth 1 -->
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);">
+                    <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#991B1B;color:white;flex-shrink:0;height:fit-content;">Myth</span>
+                        <p style="font-weight:500;color:var(--ink);font-size:1rem;margin:0;">"Data quality is a technical problem."</p>
+                    </div>
+                    <div style="display:flex;gap:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#065F46;color:white;flex-shrink:0;height:fit-content;">Reality</span>
+                        <div>
+                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">It's an organizational and human issue.</p>
+                            <p style="font-size:0.8125rem;font-weight:300;margin:0;"><strong>78% of quality problems</strong> come from processes and human practices. Only 22% are technical in origin. The people who enter data, the processes that are missing, the rules that don't exist — those are the real causes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Myth 2 -->
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);">
+                    <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#991B1B;color:white;flex-shrink:0;height:fit-content;">Myth</span>
+                        <p style="font-weight:500;color:var(--ink);font-size:1rem;margin:0;">"Automated tools fix everything."</p>
+                    </div>
+                    <div style="display:flex;gap:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#065F46;color:white;flex-shrink:0;height:fit-content;">Reality</span>
+                        <div>
+                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Technology + People + Process = Success.</p>
+                            <p style="font-size:0.8125rem;font-weight:300;margin:0;">The real breakdown: <strong>30% technology, 70% organizational</strong>. A tool without process and business expertise just moves the problem around. The tool is the last link, not the first.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Myth 3 -->
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);">
+                    <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#991B1B;color:white;flex-shrink:0;height:fit-content;">Myth</span>
+                        <p style="font-weight:500;color:var(--ink);font-size:1rem;margin:0;">"Our data is good by default."</p>
+                    </div>
+                    <div style="display:flex;gap:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#065F46;color:white;flex-shrink:0;height:fit-content;">Reality</span>
+                        <div>
+                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">Degradation is continuous and natural.</p>
+                            <p style="font-size:0.8125rem;font-weight:300;margin:0;">Data degrades by <strong>2 to 3% per month</strong> naturally — people move, change jobs, products evolve. And <strong>80% of executives overestimate</strong> their data quality. Blind trust is the worst enemy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Myth 4 -->
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);">
+                    <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#991B1B;color:white;flex-shrink:0;height:fit-content;">Myth</span>
+                        <p style="font-weight:500;color:var(--ink);font-size:1rem;margin:0;">"Data quality is a one-time project."</p>
+                    </div>
+                    <div style="display:flex;gap:1rem;">
+                        <span style="font-family:var(--font-mono);font-size:0.6875rem;text-transform:uppercase;letter-spacing:0.1em;padding:0.25rem 0.75rem;border-radius:9999px;background:#065F46;color:white;flex-shrink:0;height:fit-content;">Reality</span>
+                        <div>
+                            <p style="font-weight:500;color:var(--ink);margin-bottom:0.375rem;">It's a mandatory ongoing process.</p>
+                            <p style="font-size:0.8125rem;font-weight:300;margin:0;">Once cleaned, data <strong>doesn't stay clean</strong>. Natural degradation runs at <strong>15 to 25% per year</strong>. It's like building maintenance: you don't clean once and call it done for 10 years. Maintenance is permanent.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="callout" style="background:var(--white);border-color:var(--ink-10);"><div><p class="callout-label">Key takeaway:</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Data quality is a <strong>corporate culture</strong> to be built collectively. Organizations that adopt it improve their operational efficiency by <strong>35% on average</strong>.</p></div></div>
+
+            <!-- ============================================== -->
+            <!-- SECTION 6 — The root causes                     -->
+            <!-- ============================================== -->
+            <h2 id="causes">The root causes</h2>
+
+            <p>If 60% of projects fail because of quality, it's not an accident. The same <strong>root causes</strong> appear in nearly every organization I've worked with:</p>
+
+            <ul class="check-list">
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Manual processes</strong> — Human entry without validation is the number one source of errors. No dropdown, no required field, no control at the source</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Silos between departments</strong> — Marketing has its version of the customer. Finance has its own. Logistics too. Three systems, three truths, zero consistency</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>No clear rules</strong> — Nobody has defined what an "active customer," an "in-stock product," or a "valid address" means. Everyone interprets their own way</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Scattered local files</strong> — Excel files on everyone's workstation. No single source of truth. Impossible to know which version is correct</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Lack of user training</strong> — People don't know that how they enter data impacts everything downstream. Nobody explained the 1-10-100 rule to them</span></li>
+            </ul>
+
+            <p>Notice a pattern: <strong>none of these causes are technological</strong>. They are all human and organizational. That's myth #1 in action.</p>
+
+            <div class="quote-block"><p>"Data is everywhere… but if it's not well organized, it's as if it were nowhere."</p></div>
+
+            <!-- ============================================== -->
+            <!-- SECTION 7 — CQSEV and quality                   -->
+            <!-- ============================================== -->
+            <h2 id="cqsev-quality">CQSEV and quality: Q axis × 3 pillars</h2>
+
+            <p>In the <strong>CQSEV</strong> framework, <strong>Quality</strong> is one of the 5 axes — and it's evaluated across <strong>3 pillars simultaneously</strong>. That's what makes the difference between a theoretical audit and an actionable diagnostic.</p>
+
+            <div style="display:flex;flex-direction:column;gap:1rem;margin:2rem 0;">
+
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);border-left:3px solid var(--ink);">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.25rem;">🏛️</span>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0;">Govern — Does the rule exist?</h4>
+                    </div>
+                    <p style="font-size:0.8125rem;font-weight:300;margin:0;">Has "quality" been defined for each domain? Are the 8 dimensions documented? Is an owner named? Are measurable indicators (KPIs) set?</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.8125rem;margin:0;"><strong>Example:</strong> "Customer address completeness must exceed 97%. The Data Owner for the Customer domain is Jean Tremblay."</p>
+                    </div>
+                </div>
+
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);border-left:3px solid var(--ink-light);">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.25rem;">🔧</span>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0;">Manage — Is someone checking?</h4>
+                    </div>
+                    <p style="font-size:0.8125rem;font-weight:300;margin:0;">Does the day-to-day data guardian (Data Steward) measure quality every week? Are anomalies fixed quickly? Are results visible to the teams?</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.8125rem;margin:0;"><strong>Example:</strong> "Every Monday, Marie checks the duplicate rate in the CRM. If it's above 3%, she launches a cleanup."</p>
+                    </div>
+                </div>
+
+                <div style="background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);border-left:3px solid var(--ink-30);">
+                    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                        <span style="font-size:1.25rem;">⚙️</span>
+                        <h4 style="font-family:var(--font-sans);font-weight:500;font-size:1rem;margin-bottom:0;">Transform — Do the systems enforce it?</h4>
+                    </div>
+                    <p style="font-size:0.8125rem;font-weight:300;margin:0;">Do the automated data processing pipelines (ETL) check the 8 dimensions? Is invalid data automatically rejected? Are alerts sent?</p>
+                    <div style="margin-top:0.75rem;background:var(--paper);padding:0.75rem;border-radius:8px;">
+                        <p style="font-size:0.8125rem;margin:0;"><strong>Example:</strong> "The pipeline validates every address through Canada Post. If invalid → automatic rejection + alert to the Data Steward."</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="background:var(--paper);border-radius:16px;padding:1.5rem;border:1px solid var(--ink-10);margin:2rem 0;">
+                <p style="font-size:0.9375rem;font-weight:500;color:var(--ink);margin-bottom:0.5rem;">✅ The CQSEV quality test</p>
+                <p style="font-size:0.875rem;font-weight:300;margin:0;">If you can answer <strong>"yes"</strong> to all 3 questions above for each of the 8 dimensions, your quality is solid. The boxes where you answer "no" or "I don't know" are your <strong>immediate action priorities</strong>.</p>
+            </div>
+
+            <p><a href="../#framework" class="link">→ See the full CQSEV matrix (5 axes × 3 pillars)</a></p>
+
+            <!-- ============================================== -->
+            <!-- SECTION 8 — Where to start                      -->
+            <!-- ============================================== -->
+            <h2 id="start">Where to start?</h2>
+
+            <p>Don't try to measure all 8 dimensions across all your data at once. <strong>Start small. Prove the value. Expand.</strong></p>
+
+            <h3>Action 1 — Pick ONE critical domain</h3>
+            <p>Customer data or financial data are almost always the best starting point. They're the most visible, the most used, and the ones whose problems cost the most.</p>
+
+            <h3>Action 2 — Measure 3 dimensions this week</h3>
+            <p>Open your main database. Measure:</p>
+            <ul class="check-list">
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Completeness</strong> — What percentage of customer records have a filled address? An email? A phone number?</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Uniqueness</strong> — How many duplicates are in the database? 1%, 5%, 15%?</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Timeliness</strong> — When was the last update? Are there records that haven't been touched in over a year?</span></li>
+            </ul>
+
+            <p>These 3 numbers are your <strong>baseline</strong>. They'll let you demonstrate progress in 3 months.</p>
+
+            <h3>Action 3 — Name an owner and a steward</h3>
+            <p>For your chosen domain, name a <strong>Data Owner</strong> who decides the rules, and a <strong>Data Steward</strong> who checks every week. These aren't new positions to create — they're often people who are already doing this work without knowing it.</p>
+
+            <div class="callout" style="background:var(--white);border-color:var(--ink-10);"><div><p class="callout-label">The secret:</p><p style="font-size:0.875rem;font-weight:300;margin:0;">Don't <strong>start</strong> by buying a tool. Start by measuring. If you don't know your duplicate rate today, no tool will magically solve the problem. The tool comes after the process. Always.</p></div></div>
+
+            <h3>Further reading</h3>
+            <p>If you want to go deeper, three complementary articles:</p>
+            <ul class="check-list">
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="what-is-data-governance.html" class="link">What Is Data Governance? The Library Analogy</a> — the fundamentals and the 4 essential registries</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="data-governance-complete-guide.html" class="link">Data Governance: Complete Guide 2026</a> — key roles, 7 mistakes to avoid, and the 5-step method</span></li>
+                <li><svg class="check-icon" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><a href="govern-manage-transform-data.html" class="link">Govern, Manage, Transform: Why All Three</a> — how to connect rules, fieldwork, and automated systems</span></li>
+            </ul>
+
+            <div class="quote-block"><p>"Data quality isn't a one-time project. It's a corporate culture built one dimension at a time."</p></div>
+
+        </div>
+
+        <!-- ============================================== -->
+        <!-- CTA — Diagnostic grid                          -->
+        <!-- ============================================== -->
+        <div style="background:var(--ink);border-radius:24px;padding:2.5rem;margin:3rem 0;text-align:center;" data-animate>
+            <h2 style="color:var(--white);font-size:clamp(1.5rem,3vw,2rem);font-weight:500;margin-bottom:1rem;">Assess your data quality in 30 minutes</h2>
+            <p style="color:rgba(255,255,255,0.7);font-size:1rem;font-weight:300;max-width:540px;margin:0 auto 2rem;line-height:1.6;">The CQSEV diagnostic grid helps you identify your empty boxes across all 5 axes — including Quality. Free, concrete, no strings attached.</p>
+            <a href="../../cqsev-grille-diagnostic.xlsx" class="btn-pill" style="background:var(--white);color:var(--ink);" download>
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Download the CQSEV grid
+            </a>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- FAQ                                             -->
+        <!-- ============================================== -->
+        <section id="faq-article" style="margin-top:4rem;scroll-margin-top:80px;" data-animate>
+            <span class="label">Frequently asked questions</span>
+            <h2 style="font-size:clamp(1.5rem,3vw,2rem);margin-bottom:2rem;">FAQ — Data Quality</h2>
+
+            <details class="faq-item">
+                <summary>
+                    What is data quality exactly?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer"><p>Data quality measures how reliable, complete, and usable your data is for decision-making. The global DAMA-DMBOK standard defines it through 8 dimensions: accuracy, completeness, consistency, uniqueness, validity, timeliness, integrity, and reasonableness. Quality data is data you can trust — from the front lines to the boardroom.</p></div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    How much does poor data quality cost?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer"><p>The ballpark is roughly $3,300 per employee per year in wasted time, rework, and missed opportunities. For a 200-person organization, that's about $660,000 per year. According to Gartner, 15 to 25% of revenue can be impacted in the worst cases. The 1-10-100 rule shows that preventing an error costs $1, correcting it $10, and suffering the consequences $100 or more.</p></div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    What's the difference between data cleaning and data quality?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer"><p>Cleaning is a one-time, surface-level action: fixing capitalization, removing duplicates, filling empty fields. Quality is a structural, ongoing approach: measuring 8 dimensions, defining validation rules, naming responsible owners, and automating controls in systems. Cleaning treats symptoms. Quality treats causes.</p></div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    How do I measure data quality concretely?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer"><p>Start with 3 simple measurements on your most critical domain (customers or finances): the completeness rate (percentage of required fields filled), the duplicate rate, and the date of last update. These 3 numbers are your baseline. Then gradually expand to all 8 DAMA-DMBOK dimensions. The CQSEV framework helps you structure this assessment across 3 pillars: rules, field verification, and automation.</p></div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    What's the link between data quality and governance?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer"><p>Quality is one of the pillars of data governance. Without governance — meaning without rules, owners, and processes — quality naturally degrades by 2 to 3% per month. In the CQSEV framework, Quality (Q) is one of 5 axes, evaluated across 3 pillars: Govern (define the rules), Manage (verify in the field), and Transform (automate in the systems). Governance provides the framework. Quality is its measurable result.</p></div>
+            </details>
+
+            <details class="faq-item">
+                <summary>
+                    Where should I start to improve data quality?
+                    <svg class="chevron" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div class="answer"><p>Three concrete actions this week: (1) pick a critical domain — customers or finances; (2) measure completeness, uniqueness, and timeliness for that domain; (3) name a Data Owner who decides the rules and a Data Steward who checks every week. Don't start by buying a tool — start by measuring. The tool comes after the process. Always.</p></div>
+            </details>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- AUTHOR                                          -->
+        <!-- ============================================== -->
+        <div class="author-card" data-animate>
+            <div class="avatar-lg">OC</div>
+            <div>
+                <p style="font-weight:500;color:var(--ink);font-size:1rem;">Oleg Chitic</p>
+                <p style="font-size:0.875rem;font-weight:300;margin-top:0.25rem;line-height:1.6;">Data governance and management expert with 15+ years of experience in banking, insurance, healthcare, retail, and government. Creator of the CQSEV framework — a pragmatic approach to structuring data governance around 5 axes and 3 pillars.</p>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.375rem;font-family:var(--font-mono);font-size:0.75rem;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.5rem;transition:color 0.3s;" onmouseover="this.style.color='var(--ink-light)'" onmouseout="this.style.color='var(--ink)'">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- RELATED ARTICLES                                -->
+        <!-- ============================================== -->
+        <div class="related" data-animate>
+            <h3>Related articles</h3>
+            <a href="what-is-data-governance.html">
+                <span style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Fundamentals</span>
+                <p style="font-weight:500;color:var(--ink);margin-top:0.25rem;font-size:0.9375rem;">What Is Data Governance? The Library Analogy</p>
+            </a>
+            <a href="data-governance-complete-guide.html">
+                <span style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Guide</span>
+                <p style="font-weight:500;color:var(--ink);margin-top:0.25rem;font-size:0.9375rem;">Data Governance: Complete Guide 2026</p>
+            </a>
+            <a href="govern-manage-transform-data.html">
+                <span style="font-family:var(--font-mono);font-size:0.6875rem;color:var(--ink-light);text-transform:uppercase;letter-spacing:0.1em;">Framework</span>
+                <p style="font-weight:500;color:var(--ink);margin-top:0.25rem;font-size:0.9375rem;">Govern, Manage, Transform: Why All Three</p>
+            </a>
+        </div>
+
+        <!-- BACK TO BLOG -->
+        <div class="back-link">
+            <a href="./">← Back to blog</a>
+        </div>
+
+    </article>
+
+    <!-- ============================================== -->
+    <!-- FOOTER                                          -->
+    <!-- ============================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span class="footer-copy">CQSEV. © 2026</span>
+            <div class="footer-links">
+                <a href="./">Blog</a>
+                <a href="../#contact">Contact</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="https://www.linkedin.com/in/oleg-chitic-67426915/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================== -->
+    <!-- SCHEMA.ORG — FAQPage                            -->
+    <!-- ============================================== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is data quality exactly?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Data quality measures how reliable, complete, and usable your data is for decision-making. The global DAMA-DMBOK standard defines it through 8 dimensions: accuracy, completeness, consistency, uniqueness, validity, timeliness, integrity, and reasonableness. Quality data is data you can trust — from the front lines to the boardroom."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does poor data quality cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The ballpark is roughly $3,300 per employee per year in wasted time, rework, and missed opportunities. For a 200-person organization, that's about $660,000 per year. According to Gartner, 15 to 25% of revenue can be impacted in the worst cases. The 1-10-100 rule shows that preventing an error costs $1, correcting it $10, and suffering the consequences $100 or more."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the difference between data cleaning and data quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Cleaning is a one-time, surface-level action: fixing capitalization, removing duplicates, filling empty fields. Quality is a structural, ongoing approach: measuring 8 dimensions, defining validation rules, naming responsible owners, and automating controls in systems. Cleaning treats symptoms. Quality treats causes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I measure data quality concretely?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with 3 simple measurements on your most critical domain (customers or finances): the completeness rate (percentage of required fields filled), the duplicate rate, and the date of last update. These 3 numbers are your baseline. Then gradually expand to all 8 DAMA-DMBOK dimensions. The CQSEV framework helps you structure this assessment across 3 pillars: rules, field verification, and automation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the link between data quality and governance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Quality is one of the pillars of data governance. Without governance — meaning without rules, owners, and processes — quality naturally degrades by 2 to 3% per month. In the CQSEV framework, Quality (Q) is one of 5 axes, evaluated across 3 pillars: Govern (define the rules), Manage (verify in the field), and Transform (automate in the systems). Governance provides the framework. Quality is its measurable result."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where should I start to improve data quality?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Three concrete actions this week: (1) pick a critical domain — customers or finances; (2) measure completeness, uniqueness, and timeliness for that domain; (3) name a Data Owner who decides the rules and a Data Steward who checks every week. Don't start by buying a tool — start by measuring. The tool comes after the process. Always."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ============================================== -->
+    <!-- JAVASCRIPT                                      -->
+    <!-- ============================================== -->
+    <script>
+    (function(){
+        var nav = document.getElementById('site-nav');
+        var lastScroll = 0;
+        function onScroll(){
+            var y = window.scrollY;
+            if(y > 60) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+            lastScroll = y;
+        }
+        window.addEventListener('scroll', onScroll, {passive:true});
+        onScroll();
+
+        var toggle = document.getElementById('menu-toggle');
+        var mob = document.getElementById('mob-menu');
+        if(toggle && mob){
+            toggle.addEventListener('click', function(){
+                var open = mob.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open);
+            });
+            mob.querySelectorAll('a').forEach(function(a){
+                a.addEventListener('click', function(){
+                    mob.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        var animEls = document.querySelectorAll('[data-animate]');
+        if('IntersectionObserver' in window){
+            var obs = new IntersectionObserver(function(entries){
+                entries.forEach(function(e){
+                    if(e.isIntersecting){
+                        e.target.classList.add('visible');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, {threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+            animEls.forEach(function(el){ obs.observe(el); });
+        } else {
+            animEls.forEach(function(el){ el.classList.add('visible'); });
+        }
+    })();
+    </script>
+
+    <!-- ============================================== -->
+    <!-- CHATBASE                                        -->
+    <!-- ============================================== -->
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "o41raEM1Y-bD00ckgJ8M1",
+            domain: "www.chatbase.co"
+        };
+    </script>
+    <script
+        src="https://www.chatbase.co/embed.min.js"
+        chatbotId="o41raEM1Y-bD00ckgJ8M1"
+        domain="www.chatbase.co"
+        defer>
+    </script>
+
+</body>
+</html>
